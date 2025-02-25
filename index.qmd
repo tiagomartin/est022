@@ -1,0 +1,62 @@
+---
+title: "Estatística Multivariada II"
+page-layout: full
+title-block-banner: false
+comments: false
+toc: FALSE
+bibliography: references.bib
+---
+
+::: {#hero-heading}
+Página dedicada à disciplina **EST022 - Estatística Multivariada II**
+:::
+
+------------------------------------------------------------------------
+
+Estatística Multivariada II é uma disciplina que aprofunda o estudo de técnicas estatísticas voltadas para a análise simultânea de múltiplas variáveis. O curso abrange temas como inferência multivariada, regressão multivariada, MANOVA, análise de correspondências, escalonamento multidimensional e análise de correlações canônicas. Essas metodologias são amplamente aplicadas em diversas áreas do conhecimento, permitindo a extração de informações relevantes a partir de conjuntos de dados complexos. O objetivo da disciplina é fornecer tanto a fundamentação teórica quanto a aplicação prática dessas técnicas, capacitando os alunos a utilizar ferramentas estatísticas avançadas em suas pesquisas e projetos.
+
+![](images/multi02.jpeg){width="1000"}
+
+
+
+# Ementa
+
+Inferências sobre Vetores de Médias. Testes de Hipóteses sobre Matrizes de Covariâncias. Análise de Variância Multivariada. Análise de Regressão Multivariada. Escalonamento Multidimensional. Análise de Correlação Canônica. Análise de Correspondência.
+
+
+
+
+# Conteúdo Programático
+
+1. **Inferências sobre Vetores de Médias:** introdução. Estimadores de Máxima Verossimilhança da Média e Covariância. Testes de hipóteses sobre a média de uma população normal multivariada. Região de confiança do vetor de médias. Intervalos de confiança simultâneos.
+
+
+2. **Testes de Hipóteses sobre Matrizes de Covariâncias:** introdução. Testes sobre matrizes de covariâncias de uma população: Teste para uma covariância específica. Teste para matrizes de covariâncias de várias populações. Teste para homogeneidade de matrizes de covariâncias. 
+
+3. **Análise de Variância Multivariada:** introdução. Análise de variância multivariada (MANOVA). Teste de hipóteses multivariadas. Exemplos de aplicação. 
+
+4. **Análise de Regressão Multivariada:** introdução. Análise de Regressão Multivariada: obtenção do modelo; seleção de variáveis; verificação do ajuste. Exemplos de aplicação.
+
+5. **Escalonamento Multidimensional (MDS):** introdução. MDS métrico clássico. MDS não métrico. O modelo INDSCAL e o método para escalonamento de diferenças individuais. Análise multidimensional de preferência. Exemplos de aplicação.
+
+6. **Análise de Correlação Canônica:** introdução. Variáveis canônicas e correlação canônica populacional. Correlação canônica populacional de variáveis padronizadas. Variáveis canônicas e correlação canônica amostral. Qualidade da análise de variáveis canônicas. Exemplos de aplicação.
+
+7. **Análise de Correspondência:** introdução. Formulação matemática: decomposição em coordenadas principais. Representação gráfica das coordenadas principais. Exemplos de aplicação.
+
+
+# Horário de Aulas
+
+Neste semestre, as aulas da disciplina serão ministradas no LABEST III.
+
+| Dia           | Horário         | Local        |
+|---------------|-----------------|--------------|
+| Segunda-feira | 17:10 - 18:50   | LABEST III   |
+| Quarta-feira  | 17:10 - 18:50   | LABEST III   |
+
+
+# Referências Bibliográficas
+
+---
+nocite: |
+  @johnson2007applied, @anderson2009introduction, @mingoti05, @hair2009, @ferreira18, @rencher2012methods, @lattin11, @corrar07, @favero2017manual
+---
