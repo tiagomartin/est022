@@ -95,4 +95,8 @@ $$\begin{eqnarray*} P(\text{pelo menos uma rejeição}) &=& 1 - P(\text{todos os
 
 
 4) Muitos testes multivariados envolvendo médias têm como **subproduto** a construção de uma **combinação linear** das variáveis que revela mais sobre como as variáveis se **unem** para rejeitar a hipótese.
- 
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ conhecido
+
+Num primeiro momento, vamos revisar o **caso univariado** de se testar a média, $\mu$, de uma população com $\sigma^2$ **conhecido**.
