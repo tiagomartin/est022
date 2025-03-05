@@ -196,8 +196,4 @@ $$
 . . .
 
 
-<<<<<<< HEAD
-Usando um nível de significância $\alpha = 0,05$, temos que [$\chi^2_{(2;0,05)} = 5,991$](/documentos/Tabela da Qui-quadrado.pdf) e, portanto, rejeitamos a hipótese $H_0: \mathbf{\mu} = [70, 170]^t$, uma vez que $Z^2 = 8,4036 > 5,991$.
-=======
-Usando um nível de significância $\alpha = 0,05$, temos que [$\chi_2^2(0,05) = 5,991$](/documentos/Tabela da Qui-quadrado.pdf) e, portanto, rejeitamos a hipótese $H_0: \mathbf{\mu} = [70, 170]^t$, uma vez que $Z^2 = 8,4036 > 5,991$.
->>>>>>> 46674126de90e0f3b0b74f19e263d63a9a58fe13
+Usando um nível de significância $\alpha = 0,05$, temos que [$\chi^2_{(2;0,05)} = 5,991$](https://github.com/tiagomartin/est022/blob/main/documentos/Tabela%20da%20Qui-quadrado.pdf) e, portanto, rejeitamos a hipótese $H_0: \mathbf{\mu} = [70, 170]^t$, uma vez que $Z^2 = 8,4036 > 5,991$.
