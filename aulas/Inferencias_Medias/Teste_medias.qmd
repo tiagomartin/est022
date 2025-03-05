@@ -8,6 +8,8 @@ format:
     theme: quartomonothemer.scss
     slide-number: c/t
     show-slide-number: all
+    preview-links: auto
+    self-contained: true
 incremental: false
 code-link: true
 bibliography: references.bib
