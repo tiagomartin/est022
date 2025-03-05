@@ -57,6 +57,7 @@
     "title": "Inferências sobre Vetores de Médias",
     "section": "Testes multivariados versus univariados",
     "text": "Testes multivariados versus univariados\n🤔 Por que utilizar testes multivariados ao invés de testes univariados?\n\n\nOs testes univariados ignoram completamente as correlações entre as variáveis.\n\n\n\n\nOs testes multivariados são mais poderosos em muitos casos.\n\n\nPoder de um teste: probabilidade de rejeitar \\(H_0\\), quando esta é realmente falsa.\n\n\n\n\nMuitos testes multivariados envolvendo médias têm como subproduto a construção de uma combinação linear das variáveis que revela mais sobre como as variáveis se unem para rejeitar a hipótese."
+<<<<<<< HEAD
   },
   {
     "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-matbfmu-com-mathbfsigma-conhecido",
@@ -71,5 +72,7 @@
     "title": "Inferências sobre Vetores de Médias",
     "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido",
     "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido\nNum primeiro momento, vamos revisar o caso univariado de se testar a média, \\(\\mu\\), de uma população com \\(\\sigma^2\\) conhecido."
+=======
+>>>>>>> 81738ade40481854ffb5234642454d2068a229c6
   }
 ]
