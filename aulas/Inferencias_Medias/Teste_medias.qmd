@@ -102,3 +102,98 @@ $$\begin{eqnarray*} P(\text{pelo menos uma rejeição}) &=& 1 - P(\text{todos os
 ## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ conhecido
 
 Num primeiro momento, vamos revisar o **caso univariado** de se testar a média, $\mu$, de uma população com $\sigma^2$ **conhecido**.
+
+. . . 
+
+Sejam as seguintes hipóteses:
+
+
+$$H_0: \mu = \mu_0 \text{          vs.          } H_a: \mu \neq \mu_0$$
+
+
+Considere uma amostra aleatória $X$ de tamanho $n$, de forma que $X \sim N(\mu, \sigma^2)$, com $\sigma^2$ conhecido. Uma estatística de teste apropriada para este tipo de situação é 
+
+$$z = \dfrac{\bar{x}- \mu_0}{\dfrac{\sigma}{\sqrt{n}}} \sim N(0,1)$$
+
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ conhecido
+
+
+Em que $\bar{x} = \dfrac{\displaystyle{\sum_{i=1}^n x_i}}{n}$. Para um nível $\alpha$ de significância, rejeitamos $H_0$ se $|z| \geq z_{\frac{\alpha}{2}}$.
+
+. . .
+
+Equivalentemente, podemos usar $z^2$ que segue uma distribuição $\chi^2_1$ e rejeitamos a hipótese nula $H_0$ se $z^2 \geq \chi^2_1(\alpha)$.
+
+. . .
+
+
+Se $n$ for grande, o Teorema Central do Limite garante que $z$ é aproximadamente normal, mesmo que as observações não sejam normais.
+
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ conhecido
+
+Considere agora um vetor aleatório $\mathbf{x} = \{X_1, X_2, \cdots, X_p\}^t \sim N_p(\mathbf{\mu}, \mathbf{\Sigma})$, com vetor de médias $\mathbf{\mu} = \{\mu_1, \mu_2, \cdots, \mu_p\}^t$ e matriz de variâncias e covariâncias 
+
+$$\mathbf{\Sigma} = \begin{bmatrix}
+\sigma_{11} & \sigma_{12} & \cdots & \sigma_{1p}\\
+\sigma_{21} & \sigma_{22} & \cdots & \sigma_{2p}\\
+\vdots & \vdots & \ddots & \vdots\\
+\sigma_{p1} & \sigma_{p2} & \cdots & \sigma_{pp}
+\end{bmatrix}$$
+
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ conhecido
+
+Queremos testar as seguintes hipóteses:
+
+$$H_0: \mathbf{\mu} = \mathbf{\mu}_0 \text{          vs.          } H_a: \mathbf{\mu} \neq \mathbf{\mu}_0$$
+
+. . .
+
+
+
+Podemos generalizar a estatistica $z^2$ do teste univariado da seguinte forma:
+
+$$Z^2 = n(\mathbf{\bar{x}}-\mathbf{\mu}_0)^t\mathbf{\Sigma}^{-1}(\mathbf{\bar{x}}-\mathbf{\mu}_0)$$
+
+Se $H_0$ é verdadeira, $Z^2 \sim \chi^2_p$ e, portanto, rejeitamos a hipótese nula $H_0$ se $Z^2 > \chi^2_p(\alpha)$
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ conhecido
+
+
+**Exemplo:** Considere uma amostra aleatória de tamanho $n = 20$, com vetor de médias $\mathbf{\bar{x}} = (71,45;164,7)^t$, de uma população normal bivariada cuja matriz de variâncias e covariâncias seja dada por
+
+$$\mathbf{\Sigma} = \begin{bmatrix}
+20 & 100 \\
+100 & 1000\\
+\end{bmatrix}$$
+
+Suponha que desejássemos testar as seguintes hipóteses
+
+$$H_0: \mathbf{\mu} = [70, 170]^t \text{          vs.          } H_a: \mathbf{\mu} \neq [70, 170]^t$$
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ conhecido
+
+Temos que,
+
+$$\begin{eqnarray*} Z^2 &=& n(\mathbf{\bar{x}}-\mathbf{\mu}_0)^t\mathbf{\Sigma}^{-1}(\mathbf{\bar{x}}-\mathbf{\mu}_0) \\ &=& 20 \times \left[ \begin{array}{c} 71,45 - 70 & 164,7 - 170 \end{array} \right]\begin{bmatrix}
+20 & 100 \\
+100 & 1000\\
+\end{bmatrix}^{-1}\left[ \begin{array}{c} 71,45 - 70 \\ 164,7 - 170 \end{array} \right] \\ &=& 20 \times \left[ \begin{array}{c} 1,45 & -5,30 \end{array} \right]\begin{bmatrix}
+0,1 & -0,01 \\
+-0,01 & 0,002\\
+\end{bmatrix}\left[ \begin{array}{c} 1,45 \\ -5,30 \end{array} \right] = 8,4036
+\end{eqnarray*}
+$$
+
+
+. . .
+
+
+Usando um nível de significância $\alpha = 0,05$, temos que [$\chi^2_{(2;0,05)} = 5,991$](/documentos/Tabela da Qui-quadrado.pdf) e, portanto, rejeitamos a hipótese $H_0: \mathbf{\mu} = [70, 170]^t$, uma vez que $Z^2 = 8,4036 > 5,991$.
