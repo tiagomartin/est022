@@ -1,0 +1,98 @@
+---
+title: "Inferências sobre Vetores de Médias"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    footer: ""
+    theme: quartomonothemer.scss
+    slide-number: c/t
+    show-slide-number: all
+incremental: false
+code-link: true
+bibliography: references.bib
+title-slide-attributes:
+    data-background-image: /images/back.jpeg
+    data-background-size: cover
+    data-background-opacity: "0.3"
+---
+
+# Introdução
+
+## Testes multivariados *versus* univariados
+
+
+&#x1F449; Os testes de hipóteses em um **contexto multivariado** são muito mais complexos do que num **contexto univariado**.
+
+. . .
+
+
+Considerando a **distribuição normal**, temos
+
+- no caso univariado, uma média ($\mu$) e uma variância ($\sigma^2$), totalizando dois parâmetros,
+
+- no caso $p$-variado, $p$ médias, $p$ variâncias e $\left( \begin{array}{c} p \\ 2 \end{array}  \right)$ covariâncias, totalizando
+
+$$p + p +\left( \begin{array}{c} p \\ 2 \end{array}  \right) = \dfrac{1}{2} p(p+3)$$
+
+parâmetros.
+
+
+## Testes multivariados *versus* univariados
+
+Por exemplo, para $p = 10$, temos
+
+$$\dfrac{1}{2} p(p+3) = \dfrac{10(10+3)}{2} = \dfrac{130}{2} = 65$$
+
+parâmetros, **para cada um dos quais uma hipótese poderia ser formulada**.
+
+. . .
+
+
+Além disso, podemos estar interessados em testar hipóteses sobre **subconjuntos** desses parâmetros, ou ainda, sobre **funções deles**.
+
+
+## Testes multivariados *versus* univariados
+
+<span style='font-size:50px;'>&#129300;</span> Por que utilizar testes **multivariados** ao invés de testes **univariados**?
+
+
+. . .
+
+
+1) Usar $p$ testes univariados **inflaciona** o **erro tipo I**, $\alpha$, enquanto o teste multivariado **preserva** o valor exato de $\alpha$.
+
+  - Por exemplo, se fizermos $p = 10$ testes univariados ao nível $\alpha = 0,05$, a probabilidade de pelo menos uma **falsa rejeição** é maior que 0,05. 
+    - Se as variáveis forem independentes, teríamos, sob $H_0$:
+    
+$$\begin{eqnarray*} P(\text{pelo menos uma rejeição}) &=& 1 - P(\text{todos os 10 testes não rejeitarem } H_0) \\ &=& 1 - (0,95)^{10} = 0,40 \end{eqnarray*}$$
+
+ <p align="center"> 
+&#128073;  Se as **variáveis não forem independentes**, teríamos $0,05 < \alpha < 0,40$
+</p>  
+
+
+
+## Testes multivariados *versus* univariados
+
+<span style='font-size:50px;'>&#129300;</span> Por que utilizar testes **multivariados** ao invés de testes **univariados**?
+
+
+. . .
+
+
+2) Os testes univariados **ignoram** completamente as correlações entre as variáveis.
+
+
+. . .
+
+3) Os testes multivariados são mais **poderosos** em muitos casos. 
+
+  - **Poder de um teste:** probabilidade de **rejeitar** $H_0$, quando esta é **realmente falsa**.
+  
+
+. . .
+
+
+4) Muitos testes multivariados envolvendo médias têm como **subproduto** a construção de uma **combinação linear** das variáveis que revela mais sobre como as variáveis se **unem** para rejeitar a hipótese.
+ 
