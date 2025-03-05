@@ -22,5 +22,40 @@
     "crumbs": [
       "Aulas"
     ]
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "",
+    "text": "Introdução"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Testes multivariados versus univariados",
+    "text": "Testes multivariados versus univariados\n👉 Os testes de hipóteses em um contexto multivariado são muito mais complexos do que num contexto univariado.\n\nConsiderando a distribuição normal, temos\n\nno caso univariado, uma média (\\(\\mu\\)) e uma variância (\\(\\sigma^2\\)), totalizando dois parâmetros,\nno caso \\(p\\)-variado, \\(p\\) médias, \\(p\\) variâncias e \\(\\left( \\begin{array}{c} p \\\\ 2 \\end{array}  \\right)\\) covariâncias, totalizando\n\n\\[p + p +\\left( \\begin{array}{c} p \\\\ 2 \\end{array}  \\right) = \\dfrac{1}{2} p(p+3)\\]\nparâmetros."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados-1",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados-1",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Testes multivariados versus univariados",
+    "text": "Testes multivariados versus univariados\nPor exemplo, para \\(p = 10\\), temos\n\\[\\dfrac{1}{2} p(p+3) = \\dfrac{10(10+3)}{2} = \\dfrac{130}{2} = 65\\]\nparâmetros, para cada um dos quais uma hipótese poderia ser formulada.\n\nAlém disso, podemos estar interessados em testar hipóteses sobre subconjuntos desses parâmetros, ou ainda, sobre funções deles."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados-2",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados-2",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Testes multivariados versus univariados",
+    "text": "Testes multivariados versus univariados\n🤔 Por que utilizar testes multivariados ao invés de testes univariados?\n\n\nUsar \\(p\\) testes univariados inflaciona o erro tipo I, \\(\\alpha\\), enquanto o teste multivariado preserva o valor exato de \\(\\alpha\\).\n\n\nPor exemplo, se fizermos \\(p = 10\\) testes univariados ao nível \\(\\alpha = 0,05\\), a probabilidade de pelo menos uma falsa rejeição é maior que 0,05.\n\nSe as variáveis forem independentes, teríamos, sob \\(H_0\\):\n\n\n\\[\\begin{eqnarray*} P(\\text{pelo menos uma rejeição}) &=& 1 - P(\\text{todos os 10 testes não rejeitarem } H_0) \\\\ &=& 1 - (0,95)^{10} = 0,40 \\end{eqnarray*}\\]\n\n👉 Se as variáveis não forem independentes, teríamos \\(0,05 &lt; \\alpha &lt; 0,40\\)"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados-3",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados-3",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Testes multivariados versus univariados",
+    "text": "Testes multivariados versus univariados\n🤔 Por que utilizar testes multivariados ao invés de testes univariados?\n\n\nOs testes univariados ignoram completamente as correlações entre as variáveis.\n\n\n\n\nOs testes multivariados são mais poderosos em muitos casos.\n\n\nPoder de um teste: probabilidade de rejeitar \\(H_0\\), quando esta é realmente falsa.\n\n\n\n\nMuitos testes multivariados envolvendo médias têm como subproduto a construção de uma combinação linear das variáveis que revela mais sobre como as variáveis se unem para rejeitar a hipótese."
   }
 ]

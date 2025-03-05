@@ -50,5 +50,5 @@ format:
     code-overflow: wrap
     toc: true
 
-freeze: auto
+freeze: false
 
