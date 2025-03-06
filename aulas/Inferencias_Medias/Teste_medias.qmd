@@ -17,6 +17,8 @@ title-slide-attributes:
     data-background-image: /images/back.jpeg
     data-background-size: cover
     data-background-opacity: "0.3"
+execute:
+  echo: true
 ---
 
 # Introdução
@@ -166,7 +168,7 @@ Se $H_0$ é verdadeira, $Z^2 \sim \chi^2_p$ e, portanto, rejeitamos a hipótese 
 ## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ conhecido
 
 
-**Exemplo:** Considere uma amostra aleatória de tamanho $n = 20$, com vetor de médias $\mathbf{\bar{x}} = (71,45;164,7)^t$, de uma população normal bivariada cuja matriz de variâncias e covariâncias seja dada por
+**Exemplo 01:** Considere uma amostra aleatória de tamanho $n = 20$, com vetor de médias $\mathbf{\bar{x}} = (71,45;164,7)^t$, de uma população normal bivariada cuja matriz de variâncias e covariâncias seja dada por
 
 $$\mathbf{\Sigma} = \begin{bmatrix}
 20 & 100 \\
@@ -188,7 +190,7 @@ $$\begin{eqnarray*} Z^2 &=& n(\mathbf{\bar{x}}-\mathbf{\mu}_0)^t\mathbf{\Sigma}^
 \end{bmatrix}^{-1}\left[ \begin{array}{c} 71,45 - 70 \\ 164,7 - 170 \end{array} \right] \\ &=& 20 \times \left[ \begin{array}{c} 1,45 & -5,30 \end{array} \right]\begin{bmatrix}
 0,1 & -0,01 \\
 -0,01 & 0,002\\
-\end{bmatrix}\left[ \begin{array}{c} 1,45 \\ -5,30 \end{array} \right] = 8,4036
+\end{bmatrix}\left[ \begin{array}{c} 1,45 \\ -5,30 \end{array} \right] = 8,4026
 \end{eqnarray*}
 $$
 
@@ -196,4 +198,218 @@ $$
 . . .
 
 
-Usando um nível de significância $\alpha = 0,05$, temos que [$\chi^2_{(2;0,05)} = 5,991$](https://github.com/tiagomartin/est022/blob/main/documentos/Tabela%20da%20Qui-quadrado.pdf) e, portanto, rejeitamos a hipótese $H_0: \mathbf{\mu} = [70, 170]^t$, uma vez que $Z^2 = 8,4036 > 5,991$.
+Usando um nível de significância $\alpha = 0,05$, temos que [$\chi^2_{(2;0,05)} = 5,991$](https://github.com/tiagomartin/est022/blob/main/documentos/Tabela_qui-quadrado.pdf) e, portanto, rejeitamos a hipótese $H_0: \mathbf{\mu} = [70, 170]^t$, uma vez que $Z^2 = 8,4026 > 5,991$.
+
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ conhecido{auto-animate="true"}
+
+```{r}
+#| output-location: column
+n = 20
+p = 2
+alpha = 0.05
+xbarra = c(71.45,164.7)
+mi0 = c(70,170)
+Sigma = matrix(c(20,100,100,1000), nrow = p, byrow = TRUE)
+
+# H0: mu = [70, 170]^t  -   Estatística Z2
+Z2 = n*t(xbarra-mi0)%*%solve(Sigma)%*%(xbarra-mi0)
+
+# valor crítico da distribuição qui-quadrado
+qui = qchisq(1-alpha, p)
+
+# p-valor
+pvalor = 1-pchisq(Z2, p)  
+
+Z2 > qui # Rejeita H0
+Z2
+qui
+pvalor
+```
+
+
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+Considere o caso univariado de uma amostra aleatória de tamanho $n$, $X_1, X_2, \cdots, X_n$, da distribuição $N(\mu,\sigma^2)$, em que ambos os parâmetros $\mu$ e $\sigma$ são desconhecidos.
+ 
+. . .
+ 
+Considere também, que desejamos testar se um determinado valor $\mu_0$ é um possível valor para a média populacional $\mu$. Do ponto de vista de teste de hipóteses, isso é equivalente a testar:
+ 
+ $$H_0: \mu = \mu_0  \hspace{0.5cm} \text{ vs } \hspace{0.5cm} H_a: \mu \neq \mu_0$$
+ 
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+Neste caso, uma estatística de teste apropriada é 
+ 
+ $$t = \displaystyle{\frac{\bar{X} - \mu_0}{s/\sqrt{n}}}$$
+ 
+ em que $\bar{X} =  \dfrac{\displaystyle{\sum_{j=1}^{n}} X_{j}}{n}$ e $s^{2} =  \dfrac{\displaystyle{\sum_{j=1}^{n}}(X_{j}-\bar{X})^2}{n-1}$.
+ 
+. . .
+ 
+Esta estatística de teste tem uma distribuição t-Student com $n − 1$ graus de liberdade. Rejeita-se $H_0$, se o valor observado de $|t|$ exceder um valor específico da distribuição t-Student com $n − 1$ graus de liberdade.
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+Rejeitar $H_{0}$ quando $|t|$ é grande é equivalente a rejeitar $H_{0}$ quando o valor de 
+ \begin{equation} t^{2}=\frac{(\bar{X}-\mu_{0})^{2}}{s^2/{n}}= n(\bar{X}-\mu_{0})(s^{2})^{-1}(\bar{X}-\mu_{0})
+ \label{eq1} \end{equation}
+for grande.
+ 
+. . .
+
+Uma vez que $\bar{X}$ e $s^{2}$ são observados, rejeitamos $H_{0}$ em favor a $H_{a}$ a um nível $\alpha$ de significância, se:
+$$n(\bar{X}-\mu_{0})(s^{2})^{-1}(\bar{X}-\mu_{0})>t^{2}_{n-1,{\alpha}/{2}}$$
+
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+
+Ou, de forma equivalente,
+ 
+$$n(\bar{X}-\mu_{0})(s^{2})^{-1}(\bar{X}-\mu_{0})>F_{1, n-1}(\alpha)$$
+
+Se $H_{0}$ não for rejeitada, concluímos que $\mu_{0}$ é um possível valor para a média populacional $\mu$.
+
+
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+Considere agora o problema de se determinar se um dado vetor $\mathbf{\mu}_{0}$, $p \times 1$, é um possível valor para o vetor de médias $\mathbf{\mu}$ de uma distribuição normal $p$-variada.
+ 
+. . .
+ 
+Uma generalização natural da distância quadrática encontrada para o caso multivariado é dada por:
+
+ \begin{equation}T^{2}=(\bar{\mathbf{x}}-{\mathbf{\mu}_{0}})^{t}\left ( \frac{\mathbf{S}}{n} \right )^{-1}(\bar{\mathbf{x}}-{\mathbf{\mu}_{0}})=n(\bar{\mathbf{x}}-{\mathbf{\mu}_{0}})^{t}\mathbf{S}^{-1}(\bar{\mathbf{x}}-{\mathbf{\mu}_{0}})\end{equation}
+
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+em que  
+ 
+ $$\bar{\mathbf{x}} = \frac{1}{n} \sum_{j=1}^{n}{\mathbf{X}_{j}}$$ 
+ 
+ $$\mathbf{S} = \frac{1}{n-1} \sum_{j=1}^{n}(\mathbf{X}_{j} -\bar{\mathbf{x}})(\mathbf{X}_j-\bar{\mathbf{x}})^{t}$$
+ 
+$$\mathbf{\mu}_{0} = \left[  \begin{array}{c} \mu_{10}\\  \vdots \\  \mu_{p0}\\ \end{array} \right] $$
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+
+A estatística $T^{2}$ é chamada de $T^{2}$ de Hotelling. 
+
+
+. . .
+
+
+Se o valor observado da estatística $T^{2}$ é muito grande, isto é, se $\bar{\mathbf{x}}$ está "muito longe" de ${\mathbf{\mu}}_{0}$, a hipótese $H_{0}:{\mathbf{\mu}}={\mathbf{\mu}}_{0}$ é rejeitada. 
+
+
+
+. . .
+
+
+**Proposição 01:** Sejam $\mathbf{x}_1, \mathbf{x}_2, \cdots, \mathbf{x}_n$ uma amostra aleatória de uma distribuição $N_p(\mathbf{\mu}, \mathbf{\Sigma})$ e $T^2 = n(\bar{\mathbf{x}}-\mathbf{\mu}_{0})^{t}\mathbf{S}^{-1}(\bar{\mathbf{x}}-\mathbf{\mu}_{0})$. Então,
+
+$$\displaystyle{\frac{n - p}{(n - 1)p}}T^2 \sim F_{p,n-p}$$
+
+
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+
+Dessa forma, um teste para as hipóteses 
+
+$$H_{0}:\mathbf{\mu} = \mathbf{\mu}_{0} \text{           vs.           } H_{a} :\mathbf{\mu} \neq \mathbf{\mu}_{0}$$
+
+pode ser formulado. 
+
+
+. . .
+
+
+Ao nível $\alpha$ de significância, rejeita-se $H_{0}$ em favor de $H_{a}$ se
+
+$$T^{2}=n(\bar{\mathbf{x}}-{\mathbf{\mu}_{0}})^{t}\mathbf{S}^{-1}(\bar{\mathbf{x}}-{\mathbf{\mu}_{0}}) > \frac{(n-1)p}{(n-p)}F_{p,n-p}(\alpha)$$ 
+
+de acordo com a proposição 01. $F_{p,n-p} (\alpha)$ denota o $100(1 − \alpha)$-ésimo percentil superior de uma distribuição $F[p; (n−p)]$.
+
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+**Exemplo 02:** Suponha que a matriz de dados para uma amostra aleatória de tamanho $n = 3$ de uma população normal bivariada seja dada por
+
+$$\mathbf{X} = \begin{bmatrix}
+9 & 9 \\
+10 & 6\\
+8 & 6
+\end{bmatrix}$$
+
+Avalie o valor observado de $T^2$ para $\mathbf{\mu}_0 = [9,5]^t$. Qual a distribuição amostral de $T^2$ neste caso?
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+
+Temos que
+
+$$\mathbf{\bar{x}} = \begin{bmatrix} \bar{x}_1 \\ \bar{x}_2 \end{bmatrix} = \begin{bmatrix} \dfrac{6 + 10 + 8}{3} \\ \dfrac{9 + 6 + 3}{3} \end{bmatrix} = \begin{bmatrix} 8 \\ 6 \end{bmatrix}$$
+Além disso,
+
+$$s_{11} = \dfrac{(6-8)^2 + (10-8)^2 + (8-8)^2}{2} = 4$$
+
+$$s_{12} = \dfrac{(6-8)(9-6) + (10-8)(6-6) + (8-8)(3-6)}{2} = -3$$
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+$$s_{22} = \dfrac{(9-6)^2 + (6-6)^2 + (3-6)^2}{2} = 9$$
+
+De forma que,
+
+$$\mathbf{S} = \begin{bmatrix} 4 & -3 \\ -3 & 9 \end{bmatrix}$$
+
+e,
+
+$$\mathbf{S}^{-1} = \dfrac{1}{(4 \times 9) - ((-3) \times (-3))}\begin{bmatrix} 9 & 3 \\ 3 & 4 \end{bmatrix} = \begin{bmatrix} \frac{1}{3} & \frac{1}{9} \\ \frac{1}{9} & \frac{4}{27} \end{bmatrix}$$
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+Sendo a estatística $T^2$ de Hotelling dada por
+
+
+$$\begin{eqnarray*}T^2 &=& n(\bar{\mathbf{x}}-{\mathbf{\mu}_{0}})^{t}\mathbf{S}^{-1}(\bar{\mathbf{x}}-{\mathbf{\mu}_{0}}) \\ &=& 3 \times \begin{bmatrix} 8-9 & 6-5 \end{bmatrix}\begin{bmatrix} \frac{1}{3} & \frac{1}{9} \\ \frac{1}{9} & \frac{4}{27} \end{bmatrix}\begin{bmatrix} 8-9 \\ 6-5 \end{bmatrix}\\ &=& 3 \times \begin{bmatrix} -1 & 1 \end{bmatrix}\begin{bmatrix} -\frac{2}{9} \\ \frac{1}{27} \end{bmatrix} = \dfrac{7}{9}\end{eqnarray*}$$
+
+Antes da amostra ser selecionada, a distribuição de $T^2$ é dada por
+
+$$\dfrac{(n-1)p}{(n-p)}F_{p,n-p}(\alpha) = \frac{(3-1) \times 2}{(3-2)}F_{2,3-2} = 4F_{2,1}$$
+
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+Sendo assim, para testarmos as hipóteses
+
+$$H_{0}:\mathbf{\mu} = \begin{bmatrix} 9 \\ 5 \end{bmatrix} \text{           vs.           } H_{a} :\mathbf{\mu} \neq \begin{bmatrix} 9 \\ 5 \end{bmatrix}$$
+
+Basta comparar o valor observado de $T^2$ com o valor crítico da distribuição [$F_{2,1}$](/documentos/tabelas F.pdf), ao nível de significância de $\alpha = 0,05$, dado por $4F_{2,1}(0,05) = 4 \times 199,5 = 798$
+
+$$T^2 = \dfrac{7}{9} = 0,778 << 798 = 4F_{2,1}(0,05)$$
+Logo, **não existem** evidências significativas a favor da rejeição de $H_0$, ao nível de 5% de significância.
+
+## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ desconhecido
+
+**Exemplo 03:** A transpiração de 20 mulheres saudáveis foi analisada. As observações são trivariadas, a saber: $X_1$ - taxa de suor, $X_2$ - conteúdo de sódio e $X_3$ - conteúdo de potássio. Deseja-se testar, ao nível de significância de 10\%, as seguintes hipóteses:
+
+$$H_0: \mathbf{\mu} =  \left[  \begin{array}{c} 4 \\  50 \\  10\\ \end{array} \right] \text{           vs           } H_a: \mathbf{\mu} \neq  \left[  \begin{array}{c} 4 \\  50 \\  10\\ \end{array} \right]$$
+
