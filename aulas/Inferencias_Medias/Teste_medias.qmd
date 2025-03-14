@@ -1085,6 +1085,51 @@ $$\dfrac{n_1+n_2-p-1}{(n_1+n_2-2)p}T^2 = F_{p, n_1+n_2-p-1}$$
 
 
 
+## Teste para duas amostras independentes com $\mathbf{\Sigma}$ desconhecido
+
+**Exemplo 06:** Quatro testes psicológicos foram aplicados em 32 homens e 32 mulheres. As variáveis mensuradas foram:
+
+- $X_1:$ falsas memórias
+- $X_2:$ habilidades de visualização mental
+- $X_3:$ reconhecimento de ferramentas
+- $X_4:$ vocabulário
+
+
+Teste as hipóteses de que 
+
+$$H_0: \mathbf{\mu}_{\text{Homens}} = \mathbf{\mu}_{\text{Mulheres}} \text{          vs.          } H_a: \mathbf{\mu}_{\text{Homens}} \neq \mathbf{\mu}_{\text{Mulheres}}$$
+
+
+## Teste para duas amostras independentes com $\mathbf{\Sigma}$ desconhecido
+
+```{r, eval=TRUE}
+pacman::p_load(
+  tidyverse,
+  goft,
+  MVTests,
+  ellipse,
+  confintr
+)
+```
+
+```{r}
+dados = read.csv("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/testes_psico.csv", sep = ";") %>% mutate(Sexo=ifelse(Sexo=="M", 1,2))
+dados %>% str()
+```
+
+
+## Teste para duas amostras independentes com $\mathbf{\Sigma}$ desconhecido
+
+
+```{r}
+res = TwoSamplesHT2(dados %>% dplyr::select(-Sexo), group=dados$Sexo, alpha = 0.05, Homogenity = TRUE)
+summary(res)
+```
+
+
+<p align="center"> 
+**p-valor** = 1,46e-11 < 0,05 = $\alpha$ &#8594; $RH_0$
+</p>
 
 
 

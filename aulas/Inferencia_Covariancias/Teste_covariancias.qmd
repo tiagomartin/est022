@@ -1,0 +1,293 @@
+---
+title: "Inferências sobre Matrizes de Covariâncias"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    footer: ""
+    theme: quartomonothemer.scss
+    slide-number: c/t
+    show-slide-number: all
+    preview-links: auto
+    self-contained: true
+incremental: false
+code-link: true
+bibliography: references.bib
+title-slide-attributes:
+    data-background-image: /images/back.jpeg
+    data-background-size: cover
+    data-background-opacity: "0.3"
+execute:
+  echo: true
+---
+
+# Inferências sobre Matrizes de Covariâncias
+
+## Inferências sobre Matrizes de Covariâncias
+
+Esses testes são frequentemente realizados para **verificar suposições relativas** a outros testes.
+
+. . .
+
+Basicamente, veremos três tipos de testes:
+
+- Teste para uma matriz de covariância específica,
+
+- Teste para igualdade de matrizes de covariâncias e,
+
+- Teste para independência de algumas variáveis aleatórias.
+
+
+. . .
+
+
+Na maioria dos casos, usamos a abordagem da **razão de verossimilhança**. As estatísticas de teste resultantes envolvem a razão dos determinantes da matriz de covariância amostral sob a hipótese nula e sob a hipótese alternativa.
+
+
+## Teste para uma covariância específica
+
+Seja uma amostra aleatória $\{\mathbf{x}_1, \mathbf{x}_2, \cdots, \mathbf{x}_n\}$, de tamanho $n$, de uma $N_p(\mathbf{\mu}, \mathbf{\Sigma})$.
+
+. . .
+
+
+Suponha que o vetor de médias $\mathbf{\mu}$ seja desconhecido e que desejamos testar as seguintes hipóteses:
+
+$$H_0: \mathbf{\Sigma} = \mathbf{\Sigma}_0 \hspace{0.5cm} \text{vs} \hspace{0.5cm} H_a: \mathbf{\Sigma} \neq \mathbf{\Sigma}_0$$
+
+
+. . .
+
+
+Para verificar se a matriz de covariâncias amostral $\mathbf{S}$ é significativamente diferente de $\mathbf{\Sigma}_0$, nós usamos a seguinte estatística de teste, que é uma modificação da razão de verossimilhança
+
+
+$$u = (n-1)[\ln|\mathbf{\Sigma}_0| - \ln|\mathbf{S}| + \text{tr}(\mathbf{S}\mathbf{\Sigma}_0^{-1}) - p]$$
+
+
+
+## Teste para uma covariância específica
+
+
+Se $n$ é grande, tem-se que a estatística $u$  possui assintoticamente distribuição qui-quadrado, sob $H_0$, com $f =  \displaystyle{\dfrac{p(p+1)}{2}}$ graus de liberdade.
+
+
+. . .
+
+Para valores moderados de $n$, 
+
+
+$$u´ = \left[ 1 - \dfrac{1}{6n - 7} \left( 2p + 1 - \dfrac{2}{p+1}\right)\right]u$$
+
+
+é uma melhor aproximação para $\chi^2_f$.
+
+
+
+## Teste para uma covariância específica
+
+
+Dessa forma, podemos formular um teste de hipóteses
+
+$$H_0: \mathbf{\Sigma} = \mathbf{\Sigma}_0 \hspace{0.5cm} \text{vs} \hspace{0.5cm} H_a: \mathbf{\Sigma} \neq \mathbf{\Sigma}_0$$
+
+
+Ao nível de significância $\alpha$, rejeitamos $H_0$ em favor de $H_a$ se observarmos
+
+$$u (\text{ ou } u´) > \chi^2_f(\alpha)$$ 
+
+$\chi^2_f(\alpha)$ denota o $100(1 − \alpha)$-ésimo percentil superior de uma distribuição $\chi^2_f$, sendo $f = \displaystyle{\dfrac{p(p+1)}{2}}$ gl.
+
+
+## Teste de independência
+
+$$H_0: \mathbf{\Sigma} = \mathbf{\Sigma}_0  = \left[ \begin{array}{cccc} \sigma_{11} & 0 & \cdots & 0 \\
+0 & \sigma_{22} & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \sigma_{pp}
+\end{array} \right] $$
+
+
+
+
+## Teste de esfericidade
+
+$$H_0: \mathbf{\Sigma} = \mathbf{\Sigma}_0  = \left[ \begin{array}{cccc} \sigma^2 & 0 & \cdots & 0 \\
+0 & \sigma^2 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \sigma^2
+\end{array} \right] = \sigma^2 \mathbf{I}$$
+
+
+
+## Teste para uma covariância específica
+
+
+**Exemplo 01 - Pardais sobreviventes a tempestades:** Após uma forte tempestade em 1º de fevereiro de 1898, diversos pardais moribundos foram levados ao laboratório biológico de Hermon Bumpus na Universidade de Brown em Rhode Island. 
+
+Subsequentemente, cerca de metade dos pássaros morreu, e Bumpus viu isso como uma oportunidade de encontrar suporte para a teoria da seleção natural de Charles Darwin.  
+
+
+Para esse fim, ele fez oito medidas morfológicas em cada pássaro, e também os pesou. Os resultados de cinco das medidas são disponibilizados na base de dados [Bumpus_sparrows](/dados/Bumpus_sparrows.csv), para fêmeas somente.
+
+
+
+## Teste para homogeneidade de matrizes de covariâncias
+
+Considere amostras aleatórias $K \geqslant 2$ populações normais $p$-variadas $N_{p}({\mathbf{\mu}}_{k},\mathbf{\Sigma}_{k})$ de tamanho $n_{k}$, $k=1,...,K$. 
+
+
+
+. . .
+
+
+A amostra da $k$-ésima população é dada por $\mathbf{x}_{k1},\mathbf{x}_{k2},\cdots ,\mathbf{x}_{kn_{k}}$, em que ${\mathbf{x}}_{kj} \in \mathbb{R}^{p}$ corresponde à j-ésima unidade da k-ésima população.
+
+
+
+. . .
+
+
+Considere também que $n = \displaystyle{\sum_{k=1}^{k}n_{k}}$.
+
+
+
+## Teste para homogeneidade de matrizes de covariâncias
+
+Queremos testar a hipótese de homogeneidade sobre as covariâncias das $k$ populações, ou seja, queremos testar
+
+
+$$H_{0}:\mathbf{\Sigma}_{1} = \mathbf{\Sigma}_{2} = \cdots = \mathbf{\Sigma}_{k} = \mathbf{\Sigma}$$ 
+
+
+
+### Teste da razão de verossimilhanças
+
+Sejam
+
+$$\hat{\mathbf{\Sigma}}_k = \displaystyle{\dfrac{n_k - 1}{n_k}} \mathbf{S}_k \text{                         e                     } \hat{\mathbf{\Sigma}} =  \displaystyle{\frac{\displaystyle{\sum_{k=1}^K}n_k \hat{\mathbf{\Sigma}}_k }{n}}$$ 
+
+
+
+
+## Teste para homogeneidade de matrizes de covariâncias
+
+
+A estatística do teste da razão da máxima verossimilhança é dada por:
+
+
+ 
+$$
+ \Lambda = \displaystyle{\dfrac{\displaystyle \prod_{k=1}^{K}|\hat{\mathbf{\Sigma}}_{k}|^{\dfrac{n_{k}}{2}} }{|\hat{\mathbf{\Sigma}}|^{\dfrac{n}{2}} }}
+$$
+
+
+
+
+## Teste para homogeneidade de matrizes de covariâncias
+
+
+De forma que, 
+
+$$ 
+ \begin{eqnarray*}
+ -2 \ln \left( \Lambda \right)  &=& -2 \ln \left({\frac{\displaystyle \prod_{k=1}^{K}|\hat{\mathbf{\Sigma}}_{k}|^{\dfrac{n_{k}}{2}} }{|\hat{\mathbf{\Sigma}}|^{\dfrac{n}{2}} }} \right) = -\left [ \sum_{k=1}^{K}n_{k}\ln|\hat{\mathbf{\Sigma}}_{k}|-n\ln|\hat{\mathbf{\Sigma}}| \right ]
+ \end{eqnarray*}
+$$
+
+
+possui assintoticamente distribuição qui-quadrado, sob $H_0$, com $f =  \displaystyle{\dfrac{(k-1)p(p+1)}{2}}$ graus de liberdade.
+ 
+
+## Teste para homogeneidade de matrizes de covariâncias
+
+ 
+Dessa forma, podemos formular um teste de hipóteses
+
+$$H_{0}:\mathbf{\Sigma}_{1} = \mathbf{\Sigma}_{2} = \cdots = \mathbf{\Sigma}_{k} = \mathbf{\Sigma}  \hspace{0.5cm} \text{vs} \hspace{0.5cm} H_a: \text{pelo menos uma difere}$$
+
+Ao nível de significância $\alpha$, rejeitamos $H_0$ em favor de $H_a$ se observarmos
+
+$$\chi_2 = -\left [ \sum_{k=1}^{K}n_{k}\ln|\hat{\mathbf{\Sigma}}_{k}|-n\ln|\hat{\mathbf{\Sigma}}| \right ] > \chi_f^2(\alpha)$$ 
+
+em que $\chi^2_f(\alpha)$ denota o $100(1 − \alpha)$-ésimo percentil superior de uma distribuição $\chi^2_f$, sendo $f = \displaystyle{\dfrac{(k-1)p(p+1)}{2}}$ gl.
+
+
+
+
+## Teste para homogeneidade de matrizes de covariâncias
+
+
+### Teste M de Box
+
+A estatística do teste $M$ de Box é dad por
+
+$$M = (n - K) \ln|\mathbf{S}_p| - \sum_{k=1}^{K}(n_{k} - 1)|\mathbf{S}_k|,$$
+
+com 
+
+$$\mathbf{S}_p = \dfrac{\sum_{k=1}^{K}(n_{k} - 1)\mathbf{S}_k}{n - K}$$
+
+
+
+## Teste para homogeneidade de matrizes de covariâncias
+
+Admita 
+
+$$A = 1 - \dfrac{2p^2 + 3p - 1}{6(p + 1)(K - 1)} \left(\sum_{k=1}^{K} \dfrac{1}{n_k - 1} - \dfrac{1}{n - K}\right)$$
+
+
+Pode ser demonstrado que, sob $H_0$, a distribuição de $AM$ aproxima-se da distribuição qui-quadrado com $f = \displaystyle{\dfrac{(k-1)p(p+1)}{2}}$ gl.
+
+
+## Teste para homogeneidade de matrizes de covariâncias
+
+
+Assim, rejeita-se a hipótese nula se $AM \geq \chi^2_f(\alpha)$ para o nível de significância $\alpha$, em que $\chi^2_f(\alpha)$ denota o $100(1 − \alpha)$-ésimo percentil superior de uma distribuição $\chi^2_f$, sendo $f = \displaystyle{\dfrac{(k-1)p(p+1)}{2}}$ gl.
+
+
+. . .
+
+
+Seja
+
+$$B = \dfrac{1 - a_1 - \dfrac{a}{b}}{a}$$
+
+
+## Teste para homogeneidade de matrizes de covariâncias
+
+Outra aproximação, sob $H_0$, é
+
+
+$$BM \stackrel{H_0}{\sim} F(a,b)$$
+
+
+com 
+
+$$a = \dfrac{p(p+1)(K-1)}{2}, \hspace{1cm} b = \dfrac{a + 2}{a_2 - a_1^2}$$
+
+
+
+## Teste para homogeneidade de matrizes de covariâncias
+
+
+
+sendo
+
+
+$$a_1 = 1 - A, \hspace{1cm} a_2 = \dfrac{(p-1)(p+2)}{6(K-1)}\left[ \sum_{k=1}^{K} \dfrac{1}{(n_k - 1)^2} - \dfrac{1}{(n - K)^2}\right]$$
+
+
+. . .
+
+
+Rejeita-se a hipótese nula se $BM \geq F_{(a,b)}(\alpha)$ para o nível de significância $\alpha$, em que $F_{(a,b)}(\alpha)$ é o quantil superior $100 \alpha%$ da distribuição $F_{(a,b)}$.
+
+
+
+
+
+## References {visibility="uncounted"}
+
+::: {#refs}
+:::
