@@ -128,7 +128,28 @@ $$H_0: \mathbf{\Sigma} = \mathbf{\Sigma}_0  = \left[ \begin{array}{cccc} \sigma^
 Subsequentemente, cerca de metade dos pássaros morreu, e Bumpus viu isso como uma oportunidade de encontrar suporte para a teoria da seleção natural de Charles Darwin.  
 
 
-Para esse fim, ele fez oito medidas morfológicas em cada pássaro, e também os pesou. Os resultados de cinco das medidas são disponibilizados na base de dados [Bumpus_sparrows](/dados/Bumpus_sparrows.csv), para fêmeas somente.
+Para esse fim, ele fez oito medidas morfológicas em cada pássaro, e também os pesou. Os resultados de cinco das medidas são disponibilizados na base de dados [Bumpus_sparrows](https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Bumpus_sparrows.csv), para fêmeas somente.
+
+
+
+## Teste para uma covariância específica
+
+
+```{r, eval=TRUE}
+pacman::p_load(
+  tidyverse,
+  goft,
+  MVTests
+)
+```
+
+```{r}
+dados = read.csv("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Bumpus_sparrows.csv", sep = ',')
+dados %>% str()
+```
+
+
+
 
 
 
