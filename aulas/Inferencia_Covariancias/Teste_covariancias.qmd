@@ -99,7 +99,9 @@ $$u (\text{ ou } u´) > \chi^2_f(\alpha)$$
 $\chi^2_f(\alpha)$ denota o $100(1 − \alpha)$-ésimo percentil superior de uma distribuição $\chi^2_f$, sendo $f = \displaystyle{\dfrac{p(p+1)}{2}}$ gl.
 
 
-## Teste de independência
+## Teste para uma covariância específica
+
+### Teste de independência
 
 $$H_0: \mathbf{\Sigma} = \mathbf{\Sigma}_0  = \left[ \begin{array}{cccc} \sigma_{11} & 0 & \cdots & 0 \\
 0 & \sigma_{22} & \cdots & 0 \\
@@ -108,9 +110,7 @@ $$H_0: \mathbf{\Sigma} = \mathbf{\Sigma}_0  = \left[ \begin{array}{cccc} \sigma_
 \end{array} \right] $$
 
 
-
-
-## Teste de esfericidade
+### Teste de esfericidade
 
 $$H_0: \mathbf{\Sigma} = \mathbf{\Sigma}_0  = \left[ \begin{array}{cccc} \sigma^2 & 0 & \cdots & 0 \\
 0 & \sigma^2 & \cdots & 0 \\
@@ -139,16 +139,108 @@ Para esse fim, ele fez oito medidas morfológicas em cada pássaro, e também os
 pacman::p_load(
   tidyverse,
   goft,
-  MVTests
+  MVTests,
+  mvhtests
 )
 ```
 
 ```{r}
-dados = read.csv("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Bumpus_sparrows.csv", sep = ',')
+dados = read.csv("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Bumpus_sparrows.csv", sep = ',',check.names = F, stringsAsFactors = T) %>% filter(Sobrevivencia == "S") %>% dplyr::select(-c(Sobrevivencia))
 dados %>% str()
 ```
 
 
+```{r}
+# Teste de normalidade multivariada
+# H_0: dados seguem distribuição normal trivariada
+
+mvshapiro_test(as.matrix(dados))
+```
+
+
+## Teste para uma covariância específica
+
+
+```{r}
+
+## Teste para uma covariância específica
+
+#H0: Sigma = S0
+
+S0 = matrix(c(11.0,9.0,1.5,0.8,1.3,
+              9.0,17.0,1.9,1.3,1.0,
+              1.5,1.9,0.5,0.2,0.2,
+              0.8,1.3,0.2,0.15,0.15,
+              1.3,1.0,0.2,0.15,0.6),ncol=5,nrow=5, byrow = T)
+S0
+
+resultado = Bcov(data=dados,Sigma=S0)
+summary(resultado)
+
+# p-valor = 0,926 > 0,05 ---> NRH0
+```
+
+
+
+## Teste para uma covariância específica
+
+
+```{r}
+
+## Teste de independência
+
+#H0: Sigma = S0
+
+S0 = matrix(c(11,0,0,0,0,
+              0,17,0,0,0,
+              0,0,0.5,0,0,
+              0,0,0,0.15,0,
+              0,0,0,0,0.6),ncol=5,nrow=5)
+S0
+
+resultado = Bcov(data=dados,Sigma=S0)
+summary(resultado)
+
+# p-valor = 3,9e-05 < 0,05 ---> RH0
+```
+
+
+
+## Teste para uma covariância específica
+
+
+```{r}
+
+## Teste de esfericidade
+
+#H0: Sigma = sigma2*I
+
+sigma = 5.85
+
+S0 = sigma*diag(1,nrow=5,ncol=5)
+S0
+
+resultado = Bcov(data=dados,Sigma=S0)
+summary(resultado)
+
+# p-valor < 2e-16 < 0,05 ---> RH0
+```
+
+
+## Teste para uma covariância específica
+
+
+
+```{r}
+### Alternativa ao teste de esfericidade
+
+# H0: R = I
+
+resultado = Bsper(dados)
+summary(resultado)
+
+# p-valor = 2,43e-06 < 0,05 ---> RH0
+```
 
 
 
@@ -241,7 +333,7 @@ em que $\chi^2_f(\alpha)$ denota o $100(1 − \alpha)$-ésimo percentil superior
 
 ### Teste M de Box
 
-A estatística do teste $M$ de Box é dad por
+A estatística do teste $M$ de Box é dada por
 
 $$M = (n - K) \ln|\mathbf{S}_p| - \sum_{k=1}^{K}(n_{k} - 1)|\mathbf{S}_k|,$$
 
@@ -308,7 +400,49 @@ Rejeita-se a hipótese nula se $BM \geq F_{(a,b)}(\alpha)$ para o nível de sign
 
 
 
-## References {visibility="uncounted"}
+## Teste para homogeneidade de matrizes de covariâncias
 
-::: {#refs}
-:::
+
+```{r}
+dados = read.csv("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Bumpus_sparrows.csv", sep = ',',check.names = F, stringsAsFactors = T) 
+dados %>% str()
+```
+
+```{r}
+## Teste da razão de veroossimilhança
+
+# H0: Sigma_S = Sigma_NS
+
+x = as.matrix(dados %>% dplyr::select(-c(Sobrevivencia)))
+ina = as.integer(unlist(dados %>% dplyr::select(Sobrevivencia)))
+
+likel.cov(x, ina, a = 0.05)
+
+## p-valor = 0,6383781 > 0,05 ---> NRH0
+```
+
+
+
+## Teste para homogeneidade de matrizes de covariâncias
+
+
+```{r}
+## Teste M de Box
+
+# H0: Sigma_S = Sigma_NS
+
+resultado = BoxM(dados %>% dplyr::select(-c(Sobrevivencia)), as.integer(unlist(dados %>% dplyr::select(Sobrevivencia))))
+
+summary(resultado)
+
+## p-valor = 0,793 > 0,05 ---> NRH0
+```
+
+
+
+
+
+<!-- ## References {visibility="uncounted"} -->
+
+<!-- ::: {#refs} -->
+<!-- ::: -->

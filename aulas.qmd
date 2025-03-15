@@ -4,7 +4,7 @@ title: "Aulas"
 
 - [Inferências sobre Vetores de Médias](/aulas/Inferencias_Medias/Teste_medias.html "Inferências sobre Vetores de Médias"){aria-label="Inferências sobre Vetores de Médias"}
 
-- Testes de Hipóteses sobre Matrizes de Covariâncias
+- [Testes de Hipóteses sobre Matrizes de Covariâncias](/aulas/Inferencia_Covariancias/Teste_covariancias.html "Testes de Hipóteses sobre Matrizes de Covariâncias"){aria-label="Testes de Hipóteses sobre Matrizes de Covariâncias"}
 
 - Análise de Variância Multivariada
 
