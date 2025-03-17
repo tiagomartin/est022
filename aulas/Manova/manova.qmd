@@ -1,0 +1,790 @@
+---
+title: "Análise de Variância Multivariada (MANOVA)"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    footer: ""
+    theme: quartomonothemer.scss
+    slide-number: c/t
+    show-slide-number: all
+    preview-links: auto
+    self-contained: true
+incremental: false
+code-link: true
+bibliography: references.bib
+title-slide-attributes:
+    data-background-image: /images/back.jpeg
+    data-background-size: cover
+    data-background-opacity: "0.3"
+execute:
+  echo: true
+---
+
+
+# Análise de Variância Multivariada (MANOVA)
+
+## ANOVA $\times$ MANOVA
+
+<br>
+
+A análise multivariada de variância **(MANOVA)** é uma generalização da análise de variância univariada **(ANOVA)**
+
+. . .
+
+
+Enquanto a **ANOVA** se concentra no estudo das diferenças entre as médias populacionais dos grupos em **uma única variável dependente**, a **MANOVA** examina essas diferenças em **duas ou mais variáveis dependentes simultaneamente**.
+
+
+## ANOVA $\times$ MANOVA
+
+
+Tanto a **ANOVA** quanto a **MANOVA** só fornecem informações sobre a existência de diferenças estatisticamente 
+significativas entre as médias dos grupos em um conjunto de variáveis dependentes, necessitando de outros testes para obtermos resultados mais confiáveis e precisos.
+
+
+
+. . .
+
+
+
+A maioria das pesquisas não estão interessadas em avaliar as diferenças entre médias para uma **única variável dependente**, mas sim para um **conjunto de variáveis dependentes**.
+
+
+. . .
+
+
+Se fizermos várias ANOVAs, presumimos que não existe uma **estrutura de correlação entre as variáveis dependentes**, ou que uma tal estrutura não é de interesse.
+
+
+## ANOVA $\times$ MANOVA
+
+
+A **MANOVA** presume existência de **correlação significativa** entre as variáveis **dependentes**.
+
+
+. . .
+
+
+Neste contexto, se realizarmos várias **ANOVAs**...
+
+
+
+. . .
+
+
+<p align="center"> 
+**ERRO TIPO I:** Rejeitar $H_0$ quando esta é verdadeira!
+</p>
+
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](/images/manova_1.jpg){.fragment width="450" fig-align="center"}
+:::
+
+::: {.column width="60%"}
+![](/images/manova_2.jpg){.fragment width="450" fig-align="center"}
+:::
+
+::::
+
+
+# ANOVA: Pequena revisão...
+
+
+## Modelo ANOVA a um fator univariado
+
+<br>
+
+Considere *g* amostras aleatórias independentes $X_{j1}, X_{j2}, \cdots, X_{jn_j}$, $j = 1, \cdots, g$ de tamanhos $n_j$ de distribuições $N(\mu_j,\sigma^2)$.
+
+
+
+. . .
+
+
+
+As hipóteses de interesse são:
+
+
+
+$$H_0: \mu_1 = \mu_2 = \cdots = \mu_g$$
+$$H_a: \text{pelo menos uma média é diferente das demais}$$
+
+
+## Modelo ANOVA a um fator univariado
+
+O modelo ANOVA é definido por
+
+
+
+$$X_{ji} = \mu_j + \epsilon_{ji}$$
+
+
+. . .
+
+
+
+$$X_{ji} = \underbrace{\mu_j}_{\text{média da j-ésima amostra}} + \overbrace{\epsilon_{ji}}^{\text{erro aleatório i-ésima observação na j-ésima amostra}}$$
+
+
+$i = 1, \cdots, n_j$ e $j = 1, \cdots, g$
+
+
+
+## Modelo ANOVA a um fator univariado
+
+
+Em geral, adota-se a seguinte reparametrização:
+
+
+. . .
+
+
+
+$$\mu_j = \mu + \tau_j$$
+
+
+. . .
+
+
+
+
+$$\mu_j = \underbrace{\mu}_{\text{média geral}} + \overbrace{\tau_{j}}^{\text{efeito do j-ésimo tratamento}}$$
+
+
+
+
+
+e, assim, as hipóteses equivalentes são:
+
+
+. . .
+
+
+
+$$H_0: \tau_1 = \tau_2 = \cdots = \tau_g = 0$$
+$$H_a: \text{pelo menos um é não-nulo}$$
+
+
+
+## Modelo ANOVA a um fator univariado
+
+
+O modelo ANOVA é redefinido por
+
+
+
+
+$$X_{ji} = \mu + \tau_j + \epsilon_{ji}$$
+
+$i = 1, \cdots, n_j$ e $j = 1, \cdots, g$
+
+
+
+. . .
+
+
+
+
+
+**Suposição:** $\epsilon_{ji} \stackrel{\text{ind}}{\sim} N(0,\sigma^2)$
+
+
+
+## Modelo ANOVA a um fator univariado
+
+
+
+No modelo de efeito fixo, temos:
+
+$$\mu = \displaystyle{\frac{\displaystyle{\sum_{j=i}^g n_j \mu_j}}{\displaystyle{\sum_{j=1}^g n_j}}} =  \displaystyle{\frac{\displaystyle{\sum_{j=i}^g n_j (\mu + \tau_j)}}{\displaystyle{\sum_{j=1}^g n_j}}} = \displaystyle{\mu + \frac{\displaystyle{\sum_{j=i}^g n_j \tau_j}}{\displaystyle{\sum_{j=1}^g n_j}}} \Rightarrow  \displaystyle{\sum_{j=1}^g n_j\tau_j = 0}$$
+
+
+
+
+
+
+## Modelo ANOVA a um fator univariado
+
+
+O procedimento básico adotado é a decomposição da soma de quadrados totais:
+
+
+. . .
+
+
+
+\begin{eqnarray}
+ \underbrace{\displaystyle{\sum_{j=1}^g} \displaystyle{\sum_{i=1}^{n_j}}(x_{ji} - \bar{x}_{\ldotp \ldotp})^2}_{\text{SQ Total}} &=& 
+\displaystyle{\sum_{j=1}^g} \displaystyle{\sum_{i=1}^{n_j}}(x_{ji} - \bar{x}_{j \ldotp} + \bar{x}_{j \ldotp} - \bar{x}_{\ldotp \ldotp})^2 = 
+\nonumber \\ &=& \underbrace{\displaystyle{\sum_{j=1}^g} n_j (\bar{x}_{j \ldotp} - \bar{x}_{\ldotp \ldotp})^2}_{\text{SQ Tratamentos}} + 
+\underbrace{\displaystyle{\sum_{j=1}^g} \displaystyle{\sum_{i=1}^{n_j}}(x_{ji} - \bar{x}_{j \ldotp})^2}_{\text{SQ Resíduos}} \nonumber
+\end{eqnarray}
+
+
+
+## Modelo ANOVA a um fator univariado
+
+
+As estimativas de mínimos quadrados de $\mu$ e $\tau_j$ são dadas por 
+
+
+ $$\widehat{\mu} = \bar{x}_{\ldotp \ldotp} = 
+\displaystyle{\frac{1}{n}}\displaystyle{\sum_{j=1}^g} \displaystyle{\sum_{i=1}^{n_j}} x_{ji},\text{ com }n = \displaystyle{\sum_{j=1}^g n_j}$$
+
+$$\widehat{\tau}_j = \bar{x}_{j \ldotp} - \bar{x}_{\ldotp \ldotp}, \text{ com } \bar{x}_{j \ldotp} = \displaystyle{\frac{1}{n_j}} \displaystyle{
+\sum_{i=1}^{n_j} x_{ji}}$$
+
+
+. . .
+
+
+Um estimador não viciado para $\sigma^2$ é dado por $\widehat{\sigma}^2 = \displaystyle{\frac{\text{SQ Resíduos}}{n - g}}$, com $n = \displaystyle{\sum_{j=1}^g n_j}$.
+
+
+## Modelo ANOVA a um fator univariado
+
+### Tabela ANOVA a um fator em *g* níveis
+
+<br>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow">Fonte de Variação</th>
+    <th class="tg-c3ow">G.L.</th>
+    <th class="tg-c3ow">SQ</th>
+    <th class="tg-c3ow">QM</th>
+    <th class="tg-c3ow">F</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Tratamento</td>
+    <td class="tg-c3ow">$g - 1$</td>
+    <td class="tg-c3ow">$\displaystyle{\sum_{j=1}^g} n_j (\bar{x}_{j \ldotp} - \bar{x}_{\ldotp \ldotp})^2$</td>
+    <td class="tg-c3ow">$\displaystyle{\frac{SQ Trat}{g - 1}}$</td>
+    <td class="tg-c3ow">$\displaystyle{\frac{QM Trat}{QM Res}}$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Resíduos</td>
+    <td class="tg-c3ow">$n - g$</td>
+    <td class="tg-c3ow">$\displaystyle{\sum_{j=1}^g} \displaystyle{\sum_{i=1}^{n_j}}(x_{ji} - \bar{x}_{j \ldotp})^2$</td>
+    <td class="tg-c3ow">$\displaystyle{\frac{SQ Res}{n - g}}$</td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Total</td>
+    <td class="tg-c3ow">$n - 1$</td>
+    <td class="tg-c3ow">$\displaystyle{\sum_{j=1}^g} \displaystyle{\sum_{i=1}^{n_j}}(x_{ji} - \bar{x}_{\ldotp \ldotp})^2$</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+  </tr>
+  <tr></tr>
+</tbody></table>
+
+
+
+
+
+## Modelo ANOVA a um fator univariado
+
+
+<br>
+
+
+ Se $H_0$ é verdadeira, $F \sim F_{g - 1, n-g}$. Logo, rejeitamos $H_0$ ao nível de significância $\alpha$ se $F > F_{g - 1, n-g}(\alpha)$.
+
+
+. . .
+
+
+Observe que isto é equivalente a dizer que o teste rejeita $H_0$ para valores grandes da razão $\displaystyle{\frac{SQ Trat}{SQ Res}}$.
+
+
+## Modelo ANOVA a um fator univariado
+
+<br>
+
+Equivalentemente, valores grandes de $1 + \displaystyle{\frac{SQ Trat}{SQ Res}}$, ou de forma análoga, valores pequenos da recíproca, dada por
+
+
+
+$$\displaystyle{\frac{SQ Res}{SQ Trat + SQ Res}}$$
+
+
+. . .
+
+
+
+Adiante, veremos que uma estatística de teste multivariada, com suas devidas adaptações, tem forma similar à esta acima.
+
+
+
+# MANOVA: Uma generalização da ANOVA
+
+## Modelo MANOVA a um fator
+
+<br>
+
+Considere as seguintes amostras aleatórias coletadas de $g \geqslant 2$ populações:
+
+. . .
+
+<p align="center"> 
+**Amostra 1:** $\mathbf{x}_{11}, \mathbf{x}_{12}, \cdots, \mathbf{x}_{1n_1}$ da população $\pi_1$
+</p>
+
+<p align="center"> 
+**Amostra 2:** $\mathbf{x}_{21}, \mathbf{x}_{22}, \cdots, \mathbf{x}_{2n_2}$ da população $\pi_2$
+</p>
+
+
+$$\vdots$$
+<p align="center"> 
+**Amostra g:** $\mathbf{x}_{g1}, \mathbf{x}_{g2}, \cdots, \mathbf{x}_{gn_g}$ da população $\pi_g$
+</p>
+
+
+
+
+## Modelo MANOVA a um fator
+
+
+<br>
+
+
+- **Suposições**
+
+. . .
+
+
+  1) $\mathbf{x}_{j1}, \mathbf{x}_{j2}, \cdots, \mathbf{x}_{jn_j}$ é uma amostra de tamanho $n_j$ de uma população com média $\mathbf{\mu}_j$, $j = 1, 2, \cdots, g$; 
+
+
+. . .
+
+
+  2) Todas as populações têm matriz de covariâncias comum $\mathbf{\Sigma}$;
+
+
+. . .
+
+
+  3) Cada população é normal p-variada;
+
+
+. . .
+
+
+  4) As amostras são independentes.
+
+
+
+
+## Modelo MANOVA a um fator
+
+
+O modelo MANOVA é definido por
+
+
+
+
+$$\mathbf{x}_{ji} = \mathbf{\mu} + \mathbf{\tau}_j + \mathbf{\epsilon}_{ji}$$
+
+
+
+$i = 1, \cdots, n_j$ e $j = 1, \cdots, g$
+
+
+. . .
+
+
+
+- **Suposição:** $\mathbf{\epsilon}_{ji} \stackrel{\text{ind}}{\sim} N_p(\mathbf{0},\mathbf{\Sigma})$
+
+
+
+
+- **Restrição:** $\displaystyle{\sum_{j=1}^g n_j \mathbf{\tau}_j = \mathbf{0}}$
+
+
+
+## Modelo MANOVA a um fator
+
+<br>
+
+
+Soma de Quadrados Total:
+
+
+
+$$SQ Tot = \displaystyle{\sum_{j=1}^g} \displaystyle{\sum_{i=1}^{n_j}}(\mathbf{x}_{ji} - \bar{\mathbf{x}}_{\ldotp \ldotp})(\mathbf{x}_{ji} - \bar{\mathbf{X}}_{\ldotp \ldotp})^t$$
+
+
+## Modelo MANOVA a um fator
+
+
+
+
+- **Observações:**
+
+
+. . .
+
+
+
+  1) $\bar{\mathbf{x}}_{\ldotp \ldotp}$ é o vetor de médias amostral geral;
+
+. . .
+
+
+  2) Agora, SQ Tot é uma matriz $p \times p$;
+
+
+. . .
+
+
+  3) Os elementos de sua diagonal principal correspondem às somas de quadrados totais para cada variável separada;
+
+
+. . .
+
+
+  4) Fora da diagonal, temos as somas dos produtos cruzados dos desvios, caracterizando a estrutura de dependência das p variáveis estudadas.
+  
+  
+
+## Modelo MANOVA a um fator
+
+
+Decomposição da Soma de Quadrados Total:
+
+
+
+$$\underbrace{\displaystyle{\sum_{j=1}^g} n_j (\bar{\mathbf{x}}_{j \ldotp} - \bar{\mathbf{x}}_{\ldotp \ldotp})
+(\bar{\mathbf{x}}_{j \ldotp} - \bar{\mathbf{x}}_{\ldotp \ldotp})^t}_{\text{SQ Tratamentos}} + 
+\underbrace{\displaystyle{\sum_{j=1}^g} \displaystyle{\sum_{i=1}^{n_j}}(\mathbf{x}_{ji} - \bar{\mathbf{x}}_{j \ldotp})(\mathbf{x}_{ji} - \bar{\mathbf{x}}_{j \ldotp})^t}_{\text{SQ Resíduos}}$$
+
+
+
+. . .
+
+
+**Observação:** Os graus de liberdade de todos os casos são os mesmos do caso univariado. 
+
+
+. . .
+
+
+
+- **Hipóteses:**
+
+
+
+$$H_0: \mathbf{\tau}_1 = \mathbf{\tau}_2 = \cdots = \mathbf{\tau}_g = \mathbf{0}$$
+$$H_a: \text{pelo menos um é não-nulo}$$ 
+
+
+## Modelo MANOVA a um fator 
+
+### Tabela MANOVA a um fator em *g* níveis
+
+<br>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:font-family:"Montserrat", sans-serif !default;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow">Fonte de Variação</th>
+    <th class="tg-c3ow">G.L.</th>
+    <th class="tg-c3ow">Matriz de SQ</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Tratamento</td>
+    <td class="tg-c3ow">$g - 1$</td>
+    <td class="tg-c3ow">$H = \displaystyle{\sum_{j=1}^g} n_j (\bar{\mathbf{x}}_{j \ldotp} - \bar{\mathbf{x}}_{\ldotp \ldotp}) (\bar{\mathbf{x}}_{j \ldotp} - \bar{\mathbf{x}}_{\ldotp \ldotp})^t$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Resíduos</td>
+    <td class="tg-c3ow">$n - g$</td>
+    <td class="tg-c3ow">$E = \displaystyle{\sum_{j=1}^g} \displaystyle{\sum_{i=1}^{n_j}}(\mathbf{x}_{ji} - \bar{\mathbf{x}}_{j \ldotp}) (\mathbf{x}_{ji} - \bar{\mathbf{x}}_{j \ldotp})^t$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Total</td>
+    <td class="tg-c3ow">$n - 1$</td>
+    <td class="tg-c3ow">$T = \displaystyle{\sum_{j=1}^g} \displaystyle{\sum_{i=1}^{n_j}}(\mathbf{x}_{ji} - \bar{\mathbf{x}}_{\ldotp \ldotp}) (\mathbf{x}_{ji} - \bar{\mathbf{x}}_{\ldotp \ldotp})^t$</td>
+  </tr>
+  <tr></tr>
+</tbody></table>
+
+
+
+## Modelo MANOVA a um fator 
+
+
+
+- **Observações:**
+
+
+. . .
+
+
+  1) $T = H + E$
+
+
+
+. . .
+
+
+  2) As diagonais principais de cada uma dessas matrizes de somas de quadrados e produtos cruzados fornecerão as somas de quadrados da ANOVA para cada variável separadamente.
+
+
+
+. . . 
+
+
+
+Uma possível estatística de teste envolve variâncias generalizadas. Seja,
+
+
+$$\Lambda = \displaystyle{\frac{|E|}{|H + E|}}$$
+
+
+
+Rejeitamos $H_0$ se $\Lambda$ for um valor pequeno.
+
+
+
+
+## Modelo MANOVA a um fator 
+
+
+<br>
+
+
+- A estatística $\Lambda$ foi originalmente proposta por Wilks e corresponde a uma forma equivalente ao teste F da hipótese de ausência de efeito de tratamento do caso univariado.
+
+
+. . .
+
+
+
+- A estatística lambda de Wilks tem a vantagem de ser conveniente e estar correlacionada ao teste da razão de verossimilhança.
+
+
+
+. . .
+
+
+- distribuição exata de $\Lambda$ pode ser derivada para os casos especiais apresentados a seguir:
+
+
+
+## Modelo MANOVA a um fator 
+
+
+
+<p align="center"> 
+**Casos especiais**
+</p>
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-0pky">$p = 1$</th>
+    <th class="tg-0pky">$g \geqslant 2$</th>
+    <th class="tg-0pky">$\displaystyle{\left(\frac{n - g}{g - 1}\right)} \displaystyle{\left(\frac{1 - \Lambda}{\Lambda}\right)} \sim F_{g - 1,n - g}$</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">$p = 2$</td>
+    <td class="tg-0pky">$g \geqslant 2$</td>
+    <td class="tg-0pky">$\displaystyle{\left(\frac{n - g - 1}{g - 1}\right)} \displaystyle{\left(\frac{1 - \sqrt{\Lambda}}{\sqrt{\Lambda}}\right)} \sim F_{2(g - 1),2(n - g - 1)}$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">$p \geqslant 1$</td>
+    <td class="tg-0pky">$g = 2$</td>
+    <td class="tg-0pky">$\displaystyle{\left(\frac{n - p - 1}{p}\right)} \displaystyle{\left(\frac{1 - \Lambda}{\Lambda}\right)} \sim F_{p, n - p- 1}$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">$p \geqslant 1$</td>
+    <td class="tg-0pky">$g = 3$</td>
+    <td class="tg-0pky">$\displaystyle{\left(\frac{n - p - 2}{p}\right)} \displaystyle{\left(\frac{1 - \sqrt{\Lambda}}{\sqrt{\Lambda}}\right)} \sim F_{2p,2(n - p - 2)}$</td>
+  </tr>
+  <tr></tr>
+</tbody></table>
+
+
+- **Observação:** Para outros casos e tamanhos amostrais grandes, uma modificação de $\Lambda$ devido da Bartlett pode ser usada para testar $H_0$.
+
+
+
+## Modelo MANOVA a um fator 
+
+<br>
+
+Bartlett mostrou que se $H_0$ é verdadeira e $n$ é grande, então,
+
+
+. . .
+
+$$-\left(n - 1 - \displaystyle{\frac{p + g}{2}}\right) \ln(\Lambda) \dot{\sim} \chi_{p(g - 1)}^2$$
+
+
+
+. . .
+
+
+Consequentemente, se $n$ é grande, rejeitamos $H_0$ ao nível de significância $\alpha$, se
+
+
+
+. . .
+
+
+
+$$-\left(n - 1 - \displaystyle{\frac{p + g}{2}}\right) \ln(\Lambda) > \chi_{p(g - 1)}^2(\alpha)$$
+
+
+
+## Modelo MANOVA a um fator
+
+
+### Outros testes multivariados
+
+
+- Traço de Hotelling-Lawley:
+
+
+
+$$U = tr(HE^{-1})$$
+
+
+
+
+
+
+Sob $H_0$, temos que
+
+
+
+$$\displaystyle{\frac{2(sn + 1)}{s^2(2m + s + 1)}U \hspace{0.2cm} \dot{\sim} \hspace{0.2cm}  F_{s(2m + s + 1),2(sn + 1)}}$$
+
+
+
+
+## Modelo MANOVA a um fator
+
+
+### Outros testes multivariados
+
+
+- Traço de Pillai:
+
+
+
+$$V = tr[H(H + E)^{-1}]$$
+
+
+
+
+Sob $H_0$, temos que
+
+
+
+$$\left(\displaystyle{\frac{V}{s - V}} \right) \left(\displaystyle{\frac{2n + s + 1}{2m + s + 1}}\right) 
+\hspace{0.2cm} \dot{\sim} \hspace{0.2cm}  F_{s(2m + s + 1),s(2n + s + 1)}$$
+
+
+
+
+## Modelo MANOVA a um fator
+
+
+### Outros testes multivariados
+
+
+- Raiz máxima de Roy:
+
+
+
+$$\Theta = \lambda_1$$
+
+sendo $\lambda_1$ o maior autovalor da matriz $HE^{-1}$.
+
+
+
+Sob $H_0$, temos que
+
+$$\displaystyle{\frac{\Theta(\nu - d + q)}{d}} \hspace{0.2cm} \dot{\sim} \hspace{0.2cm}  F_{d,\nu - d + q}$$
+
+
+
+
+## Modelo MANOVA a um fator
+
+
+### Outros testes multivariados
+
+
+<br>
+
+<p align="center"> 
+**Observações**
+</p>
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow">$\nu$ = G.L. Resíduo</th>
+    <th class="tg-c3ow">$d = \max(p,q)$</th>
+    <th class="tg-c3ow">$s = \min(p,q)$</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">$n = \displaystyle{\frac{\nu - p - 1}{2}}$</td>
+    <td class="tg-c3ow">$m = \displaystyle{\frac{|p - q| - 1}{2}}$</td>
+    <td class="tg-c3ow">$q$ = G.L. Tratamento</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" colspan="3">$p$ = número de variáveis</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
