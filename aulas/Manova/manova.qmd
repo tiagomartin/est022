@@ -788,3 +788,40 @@ $$\displaystyle{\frac{\Theta(\nu - d + q)}{d}} \hspace{0.2cm} \dot{\sim} \hspace
   <tr></tr>
 </tbody>
 </table>
+
+
+
+## Modelo MANOVA a um fator
+
+**Exemplo - Análise dos dados de uma casa de repouso para idosos:** 
+
+
+O departamento de saúde e serviços sociais de determinada cidade reembolsa casas de repouso para idosos no estado por serviços oferecidos. 
+
+
+O departamento desenvolve um conjunto de fórmulas para as taxas com facilidade, baseado em fatores tais como níveis de cuidados, taxa média de salários e taxa média de salários no estado.
+
+
+
+As casas de repouso podem ser classificadas com relação à propriedade: privadas, sem fins lucrativos e públicas e também com relação à certificação: especializadas em enfermagem, unidades de cuidados intermediários ou uma combinação dos dois.
+
+
+## Modelo MANOVA a um fator
+
+
+O objetivo foi verificar os efeitos de propriedade e certificação (ou ambos) sobre os custos. Quatro custos, calculados por paciente/dia, medidos em horas/paciente, foram usados:
+
+
+- $X_1$: Custo de mão de obra de enfermagem;
+
+
+- $X_2$: Custo de nutricionista;
+
+
+- $X_3$: Custo de trabalho de manutenção e funcionamento;
+
+
+- $X_4$: Custo de limpeza e lavanderia.
+
+
+Um total de $N = 516$ observações sobre os $p = 4$ custos foram separadas pelo tipo de propriedade e estão disponíveis no arquivo **Exemplo Manova.dat**.
