@@ -825,3 +825,401 @@ O objetivo foi verificar os efeitos de propriedade e certificação (ou ambos) s
 
 
 Um total de $N = 516$ observações sobre os $p = 4$ custos foram separadas pelo tipo de propriedade e estão disponíveis no arquivo **Exemplo Manova.dat**.
+
+
+
+## Modelo MANOVA a um fator
+
+
+
+```{r, eval=TRUE}
+pacman::p_load(
+  tidyverse,
+  rstatix,
+  ggpubr
+)
+```
+
+```{r}
+dados = read.table("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Exemplo_Manova.dat", sep = ' ',header = TRUE) %>% mutate(tipo = as.factor(tipo))
+dados %>% str()
+```
+
+
+## Modelo MANOVA a um fator
+
+Com fins ilustrativos assumiremos normalidade e igualdade de variâncias.
+
+
+```{r}
+# H0: mu1 = mu2 = mu3
+
+modelo = manova(cbind(x1, x2, x3, x4) ~ tipo, data = dados)
+
+## Teste lambda de Wilks
+summary(modelo, test = "Wilks")
+
+H = summary(modelo)$SS$tipo
+
+E = summary(modelo)$SS$Residuals
+
+Lam = det(E)/det(H+E)
+Lam
+```
+
+
+## Modelo MANOVA a um fator
+
+
+
+```{r}
+## Teste traço de Pillai 
+summary(modelo, test = "Pillai")
+
+## Teste raiz máxima de Roy
+summary(modelo,test="Roy")
+
+## Teste traço de Hotelling-Lawley
+summary(modelo, test = "Hotelling-Lawley")
+```
+
+
+## Intervalos simultâneos de confiança para efeitos de tratamento
+
+Quando $H_0$ é rejeitada, os efeitos que levaram à rejeição são de interesse. 
+
+. . .
+
+Para efeito de comparações pareadas, a abordagem de Bonferroni pode ser usada para construir intervalos simultâneos de confiança para os componentes dos vetores diferença $\mathbf{\tau}_j - \mathbf{\tau}_k$.
+
+
+. . .
+
+
+Seja $\tau_{ji}$ o i-ésimo componente de $\mathbf{\tau}_j$. Como $\mathbf{\tau}_j$ é estimado por $\widehat{\mathbf{\tau}}_j = \bar{\mathbf{x}}_{j \ldotp} - \bar{\mathbf{x}}_{\ldotp \ldotp}$, temos que o i-ésimo componente de $\mathbf{\tau}_j$ é estimado por $\bar{{x}}_{ji} - \bar{\mathbf{x}}_{\ldotp i}$.
+
+
+
+## Intervalos simultâneos de confiança para efeitos de tratamento
+
+Assim, $\tau_{ji} - \tau_{ki}$ é estimado por 
+
+
+$$\widehat{\tau}_{ji} - \widehat{\tau}_{ki} = \bar{x}_{ji} - \bar{x}_{ki}$$
+
+
+que é uma diferença entre médias de duas amostras independentes.
+
+
+. . .
+
+
+O teste t para duas amostras independentes é válido para um nível de significância apropriado.
+
+
+## Intervalos simultâneos de confiança para efeitos de tratamento
+
+Temos ainda que,
+
+
+$$\text{Var}(\widehat{\tau}_{ji} - \widehat{\tau}_{ki}) = \left(\displaystyle{\frac{1}{n_j}} + \displaystyle{\frac{1}{n_k}}\right) \sigma_{ii}$$
+
+
+
+
+com $\sigma_{ii}$ o i-ésimo elemento da diagonal de $\Sigma$. Como sugerido, $\sigma_{ii}$ é estimado pelo i-ésimo elemento da diagonal da matriz $\mathbf{E}$ dividido pelos respectivos graus de liberdade, a saber, $\widehat{\sigma}_{ii} = \displaystyle{\frac{1}{n - g}}e_{ii}$.
+
+
+## Intervalos simultâneos de confiança para efeitos de tratamento
+
+Resta identificar o número de intervalos. Como são $g$ tratamentos para $p$ medidas, segue que ao todo teremos $m = \displaystyle{\dfrac{pg(g-1)}{2}}$ intervalos.
+
+
+. . .
+
+
+Logo, com confiança de pelo menos $(1 - \alpha)$, os intervalos de confiança simultâneos para $\tau_{ji} - \tau_{ki}$ são dados por:
+
+
+
+$$(\bar{x}_{ji} - \bar{x}_{ki}) \pm t_{n-g} \left(\displaystyle{\frac{\alpha}{pg/(g - 1)}}\right) \sqrt{\left(\displaystyle{\frac{1}{n_j}} + 
+\displaystyle{\frac{1}{n_k}}\right)\displaystyle{\frac{e_{ii}}{n - g}} }$$
+
+
+em que $e_{ii}$ é o i-ésimo elemento da diagonal da matriz $\mathbf{E}$.
+
+
+
+## Intervalos simultâneos de confiança para efeitos de tratamento
+
+**Exemplo - Análise dos dados de uma casa de repouso para idosos**
+
+
+```{r}
+summary.aov(modelo)
+```
+
+## Intervalos simultâneos de confiança para efeitos de tratamento
+
+```{r}
+dados %>% emmeans_test(x1 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
+
+dados %>% emmeans_test(x2 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
+```
+
+## Intervalos simultâneos de confiança para efeitos de tratamento
+
+```{r}
+dados %>% emmeans_test(x3 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
+
+dados %>% emmeans_test(x4 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
+```
+## Intervalos simultâneos de confiança para efeitos de tratamento
+
+ <p align="center"> 
+**Intervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 1 e 2**
+</p>
+
+<p></p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7ab7{border-color:inherit;font-size:36px;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-bwtg{border-color:inherit;font-size:36px;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-7ab7">Grupo</th>
+    <th class="tg-7ab7">variáveis</th>
+    <th class="tg-7ab7">dif médias</th>
+    <th class="tg-7ab7">lim inf</th>
+    <th class="tg-7ab7">lim sup</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-bwtg"></td>
+    <td class="tg-bwtg">1</td>
+    <td class="tg-bwtg">-0,172</td>
+    <td class="tg-7ab7">-0,298</td>
+    <td class="tg-7ab7">-0,046</td>
+  </tr>
+  <tr>
+    <td class="tg-bwtg">1,2</td>
+    <td class="tg-bwtg">2</td>
+    <td class="tg-bwtg">-0,106</td>
+    <td class="tg-7ab7">-0,132</td>
+    <td class="tg-7ab7">-0,081</td>
+  </tr>
+  <tr>
+    <td class="tg-bwtg"></td>
+    <td class="tg-bwtg">3</td>
+    <td class="tg-bwtg">-0,029</td>
+    <td class="tg-7ab7">-0,049</td>
+    <td class="tg-7ab7">-0,025</td>
+  </tr>
+  <tr>
+    <td class="tg-bwtg"></td>
+    <td class="tg-bwtg">4</td>
+    <td class="tg-bwtg">-0,063</td>
+    <td class="tg-7ab7">-0,087</td>
+    <td class="tg-7ab7">-0,039</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
+
+
+## Intervalos simultâneos de confiança para efeitos de tratamento
+
+ <p align="center"> 
+**Intervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 1 e 3**
+</p>
+
+<p></p>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7ab7{border-color:inherit;font-size:36px;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-bwtg{border-color:inherit;font-size:36px;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-7ab7">Grupo</th>
+    <th class="tg-7ab7">variáveis</th>
+    <th class="tg-7ab7">dif médias</th>
+    <th class="tg-7ab7">lim inf</th>
+    <th class="tg-7ab7">lim sup</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-bwtg"></td>
+    <td class="tg-bwtg">1</td>
+    <td class="tg-bwtg">-0,295</td>
+    <td class="tg-7ab7">-0,433</td>
+    <td class="tg-7ab7">-0,157</td>
+  </tr>
+  <tr>
+    <td class="tg-bwtg">1,3</td>
+    <td class="tg-bwtg">2</td>
+    <td class="tg-bwtg">-0,045</td>
+    <td class="tg-7ab7">-0,073</td>
+    <td class="tg-7ab7">-0,017</td>
+  </tr>
+  <tr>
+    <td class="tg-bwtg"></td>
+    <td class="tg-bwtg">3</td>
+    <td class="tg-bwtg">-0,037</td>
+    <td class="tg-7ab7">-0,049</td>
+    <td class="tg-7ab7">-0,025</td>
+  </tr>
+  <tr>
+    <td class="tg-bwtg"></td>
+    <td class="tg-bwtg">4</td>
+    <td class="tg-bwtg">-0,043</td>
+    <td class="tg-7ab7">-0,068</td>
+    <td class="tg-7ab7">-0,017</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
+
+
+## Intervalos simultâneos de confiança para efeitos de tratamento
+
+ <p align="center"> 
+**Intervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 2 e 3**
+</p>
+
+<p></p>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7ab7{border-color:inherit;font-size:36px;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-bwtg{border-color:inherit;font-size:36px;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-7ab7">Grupo</th>
+    <th class="tg-7ab7">variáveis</th>
+    <th class="tg-7ab7">dif médias</th>
+    <th class="tg-7ab7">lim inf</th>
+    <th class="tg-7ab7">lim sup</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-bwtg"></td>
+    <td class="tg-bwtg">1</td>
+    <td class="tg-bwtg">-0,123</td>
+    <td class="tg-bwtg">-0,279</td>
+    <td class="tg-bwtg">0,032</td>
+  </tr>
+  <tr>
+    <td class="tg-bwtg">2,3</td>
+    <td class="tg-bwtg">2</td>
+    <td class="tg-bwtg">0,062</td>
+    <td class="tg-7ab7">0,030</td>
+    <td class="tg-7ab7">0,093</td>
+  </tr>
+  <tr>
+    <td class="tg-bwtg"></td>
+    <td class="tg-bwtg">3</td>
+    <td class="tg-bwtg">-0,008</td>
+    <td class="tg-bwtg">-0,021</td>
+    <td class="tg-bwtg">0,005</td>
+  </tr>
+  <tr>
+    <td class="tg-bwtg"></td>
+    <td class="tg-bwtg">4</td>
+    <td class="tg-bwtg">0,021</td>
+    <td class="tg-bwtg">-0,008</td>
+    <td class="tg-bwtg">0,049</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
+
+
+## Intervalos simultâneos de confiança para efeitos de tratamento
+
+
+
+ <p align="center"> 
+**Observações**
+</p>
+
+
+
+- Codificação: 1 - Estabelecimento privado; 2 - Estabelecimento sem fins lucrativos; 3 - Estabelecimento público
+
+
+. . .
+
+
+- Foram destacados os intervalos que excluíram o zero.
+
+
+. . .
+
+- Em relação aos estabelecimentos privados, podemos notar que estes apresentam custos totais mais baixos em relação aos outros 
+tipos de estabelecimento.
+
+
+. . .
+
+
+- Considerando os estabelecimentos sem fins lucrativos e os públicos, notamos que não existem diferenças entre os custos, exceto para
+custos com nutricionistas, que parece ser maior em entidades sem fins lucrativos.
+
+
+
+## Visualizando graficamente
+
+```{r}
+pwc <- dados %>%
+  gather(key = "variables", value = "value", x1, x2,x3,x4) %>%
+  group_by(variables) %>%
+  games_howell_test(value ~ tipo)
+pwc
+```
+
+## Visualizando graficamente
+
+```{r}
+#| output-location: slide
+#| fig-width: 16
+#| fig-height: 8
+#| out-width: 16in
+#| out-height: 8in
+
+pwc <- pwc %>% add_xy_position(x = "tipo")
+test.label <- create_test_label(
+  description = "MANOVA", statistic.text = quote(italic("F")),
+  statistic = 15.13, p= "<0.0001", parameter = "8,1020",
+  type = "expression", detailed = F
+)
+ggboxplot(
+  dados, x = "tipo", y = c("x1", "x2", "x3", "x4"), 
+  merge = TRUE, palette = "jco"
+) + 
+  stat_pvalue_manual(
+    pwc, hide.ns = TRUE, tip.length = 0, 
+    step.increase = 0.1, step.group.by = "variables",
+    color = "variables"
+  ) +
+  labs(
+    subtitle = test.label,
+    caption = get_pwc_label(pwc, type = "expression")
+  )
+```
+

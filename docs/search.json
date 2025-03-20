@@ -7,28 +7,221 @@
     "text": "Página dedicada à disciplina EST022 - Estatística Multivariada II\n\n\nEstatística Multivariada II é uma disciplina que aprofunda o estudo de técnicas estatísticas voltadas para a análise simultânea de múltiplas variáveis. O curso abrange temas como inferência multivariada, regressão multivariada, MANOVA, análise de correspondências, escalonamento multidimensional e análise de correlações canônicas. Essas metodologias são amplamente aplicadas em diversas áreas do conhecimento, permitindo a extração de informações relevantes a partir de conjuntos de dados complexos. O objetivo da disciplina é fornecer tanto a fundamentação teórica quanto a aplicação prática dessas técnicas, capacitando os alunos a utilizar ferramentas estatísticas avançadas em suas pesquisas e projetos.\n\n\nEmenta\nInferências sobre Vetores de Médias. Testes de Hipóteses sobre Matrizes de Covariâncias. Análise de Variância Multivariada. Análise de Regressão Multivariada. Escalonamento Multidimensional. Análise de Correlação Canônica. Análise de Correspondência.\n\n\nConteúdo Programático\n\nInferências sobre Vetores de Médias: introdução. Estimadores de Máxima Verossimilhança da Média e Covariância. Testes de hipóteses sobre a média de uma população normal multivariada. Região de confiança do vetor de médias. Intervalos de confiança simultâneos.\nTestes de Hipóteses sobre Matrizes de Covariâncias: introdução. Testes sobre matrizes de covariâncias de uma população: Teste para uma covariância específica. Teste para matrizes de covariâncias de várias populações. Teste para homogeneidade de matrizes de covariâncias.\nAnálise de Variância Multivariada: introdução. Análise de variância multivariada (MANOVA). Teste de hipóteses multivariadas. Exemplos de aplicação.\nAnálise de Regressão Multivariada: introdução. Análise de Regressão Multivariada: obtenção do modelo; seleção de variáveis; verificação do ajuste. Exemplos de aplicação.\nEscalonamento Multidimensional (MDS): introdução. MDS métrico clássico. MDS não métrico. O modelo INDSCAL e o método para escalonamento de diferenças individuais. Análise multidimensional de preferência. Exemplos de aplicação.\nAnálise de Correlação Canônica: introdução. Variáveis canônicas e correlação canônica populacional. Correlação canônica populacional de variáveis padronizadas. Variáveis canônicas e correlação canônica amostral. Qualidade da análise de variáveis canônicas. Exemplos de aplicação.\nAnálise de Correspondência: introdução. Formulação matemática: decomposição em coordenadas principais. Representação gráfica das coordenadas principais. Exemplos de aplicação.\n\n\n\nHorário de Aulas\nNeste semestre, as aulas da disciplina serão ministradas no LABEST III.\n\n\n\nDia\nHorário\nLocal\n\n\n\n\nSegunda-feira\n17:10 - 18:50\nLABEST III\n\n\nQuarta-feira\n17:10 - 18:50\nLABEST III\n\n\n\n\n\n\n\n\n\n\n\nReferências Bibliográficas\n\nAnderson, T. W. 2009. AN INTRODUCTION TO MULTIVARIATE STATISTICAL ANALYSIS, 3RD ED. Wiley India Pvt. Limited.\n\n\nCORRAR, Luiz J., Edilson PAULO, and José M. DIAS FILHO. 2007. Análise Multivariada: Para Os Cursos de Administração, Ciências Contábeis e Economia. Editora Atlas.\n\n\nFávero, L. P., and P. Belfiore. 2017. Manual de análise de Dados: Estatı́stica e Modelagem Multivariada Com Excel, SPSS e Stata. Elsevier Editora Ltda.\n\n\nFerreira, D. F. 2018. Estatística Multivariada. Editora UFLA.\n\n\nHair, J. F., W. C. Black, B. J. Babin, R. E. Anderson, and R. L. Tatham. 2009. Análise Multivariada de Dados - 6ed. Bookman.\n\n\nJohnson, R. A., and D. W. Wichern. 2007. Applied Multivariate Statistical Analysis. Applied Multivariate Statistical Analysis. Pearson Prentice Hall.\n\n\nLATTIN, James, J. Douglas CARROLL, and Paul E. GREEN. 2011. Análise de Dados Multivariados. CENGAGE Learning.\n\n\nMingoti, Sueli. 2005. Análise de Dados Através de Métodos de Estatística Multivariada: Uma Abordagem Aplicada.\n\n\nRencher, A. C., and W. F. Christensen. 2012. Methods of Multivariate Analysis. Wiley Series in Probability and Statistics. Wiley."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "objectID": "aulas/Manova/manova.html#anova-times-manova",
+    "href": "aulas/Manova/manova.html#anova-times-manova",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "ANOVA \\(\\times\\) MANOVA",
+    "text": "ANOVA \\(\\times\\) MANOVA\n\nA análise multivariada de variância (MANOVA) é uma generalização da análise de variância univariada (ANOVA)\n\nEnquanto a ANOVA se concentra no estudo das diferenças entre as médias populacionais dos grupos em uma única variável dependente, a MANOVA examina essas diferenças em duas ou mais variáveis dependentes simultaneamente."
   },
   {
-    "objectID": "aulas.html",
-    "href": "aulas.html",
-    "title": "Aulas",
-    "section": "",
-    "text": "Inferências sobre Vetores de Médias\nTestes de Hipóteses sobre Matrizes de Covariâncias\nAnálise de Variância Multivariada\nAnálise de Regressão Multivariada\nEscalonamento Multidimensional (MDS)\nAnálise de Correlação Canônica\nAnálise de Correspondência",
-    "crumbs": [
-      "Aulas"
-    ]
+    "objectID": "aulas/Manova/manova.html#anova-times-manova-1",
+    "href": "aulas/Manova/manova.html#anova-times-manova-1",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "ANOVA \\(\\times\\) MANOVA",
+    "text": "ANOVA \\(\\times\\) MANOVA\nTanto a ANOVA quanto a MANOVA só fornecem informações sobre a existência de diferenças estatisticamente significativas entre as médias dos grupos em um conjunto de variáveis dependentes, necessitando de outros testes para obtermos resultados mais confiáveis e precisos.\n\nA maioria das pesquisas não estão interessadas em avaliar as diferenças entre médias para uma única variável dependente, mas sim para um conjunto de variáveis dependentes.\n\n\nSe fizermos várias ANOVAs, presumimos que não existe uma estrutura de correlação entre as variáveis dependentes, ou que uma tal estrutura não é de interesse."
   },
   {
-    "objectID": "aulas/Inferencias_Medias/Teste_medias.html",
-    "href": "aulas/Inferencias_Medias/Teste_medias.html",
-    "title": "Inferências sobre Vetores de Médias",
-    "section": "",
-    "text": "Introdução"
+    "objectID": "aulas/Manova/manova.html#anova-times-manova-2",
+    "href": "aulas/Manova/manova.html#anova-times-manova-2",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "ANOVA \\(\\times\\) MANOVA",
+    "text": "ANOVA \\(\\times\\) MANOVA\nA MANOVA presume existência de correlação significativa entre as variáveis dependentes.\n\nNeste contexto, se realizarmos várias ANOVAs…\n\n\n\nERRO TIPO I: Rejeitar \\(H_0\\) quando esta é verdadeira!"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado",
+    "href": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo ANOVA a um fator univariado",
+    "text": "Modelo ANOVA a um fator univariado\n\nConsidere g amostras aleatórias independentes \\(X_{j1}, X_{j2}, \\cdots, X_{jn_j}\\), \\(j = 1, \\cdots, g\\) de tamanhos \\(n_j\\) de distribuições \\(N(\\mu_j,\\sigma^2)\\).\n\nAs hipóteses de interesse são:\n\\[H_0: \\mu_1 = \\mu_2 = \\cdots = \\mu_g\\] \\[H_a: \\text{pelo menos uma média é diferente das demais}\\]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-1",
+    "href": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-1",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo ANOVA a um fator univariado",
+    "text": "Modelo ANOVA a um fator univariado\nO modelo ANOVA é definido por\n\\[X_{ji} = \\mu_j + \\epsilon_{ji}\\]\n\n\\[X_{ji} = \\underbrace{\\mu_j}_{\\text{média da j-ésima amostra}} + \\overbrace{\\epsilon_{ji}}^{\\text{erro aleatório i-ésima observação na j-ésima amostra}}\\]\n\\(i = 1, \\cdots, n_j\\) e \\(j = 1, \\cdots, g\\)"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-2",
+    "href": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-2",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo ANOVA a um fator univariado",
+    "text": "Modelo ANOVA a um fator univariado\nEm geral, adota-se a seguinte reparametrização:\n\n\\[\\mu_j = \\mu + \\tau_j\\]\n\n\n\\[\\mu_j = \\underbrace{\\mu}_{\\text{média geral}} + \\overbrace{\\tau_{j}}^{\\text{efeito do j-ésimo tratamento}}\\]\ne, assim, as hipóteses equivalentes são:\n\n\n\\[H_0: \\tau_1 = \\tau_2 = \\cdots = \\tau_g = 0\\] \\[H_a: \\text{pelo menos um é não-nulo}\\]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-3",
+    "href": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-3",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo ANOVA a um fator univariado",
+    "text": "Modelo ANOVA a um fator univariado\nO modelo ANOVA é redefinido por\n\\[X_{ji} = \\mu + \\tau_j + \\epsilon_{ji}\\]\n\\(i = 1, \\cdots, n_j\\) e \\(j = 1, \\cdots, g\\)\n\nSuposição: \\(\\epsilon_{ji} \\stackrel{\\text{ind}}{\\sim} N(0,\\sigma^2)\\)"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-4",
+    "href": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-4",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo ANOVA a um fator univariado",
+    "text": "Modelo ANOVA a um fator univariado\nNo modelo de efeito fixo, temos:\n\\[\\mu = \\displaystyle{\\frac{\\displaystyle{\\sum_{j=i}^g n_j \\mu_j}}{\\displaystyle{\\sum_{j=1}^g n_j}}} =  \\displaystyle{\\frac{\\displaystyle{\\sum_{j=i}^g n_j (\\mu + \\tau_j)}}{\\displaystyle{\\sum_{j=1}^g n_j}}} = \\displaystyle{\\mu + \\frac{\\displaystyle{\\sum_{j=i}^g n_j \\tau_j}}{\\displaystyle{\\sum_{j=1}^g n_j}}} \\Rightarrow  \\displaystyle{\\sum_{j=1}^g n_j\\tau_j = 0}\\]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-5",
+    "href": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-5",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo ANOVA a um fator univariado",
+    "text": "Modelo ANOVA a um fator univariado\nO procedimento básico adotado é a decomposição da soma de quadrados totais:\n\n\\[\\begin{eqnarray}\n\\underbrace{\\displaystyle{\\sum_{j=1}^g} \\displaystyle{\\sum_{i=1}^{n_j}}(x_{ji} - \\bar{x}_{\\ldotp \\ldotp})^2}_{\\text{SQ Total}} &=&\n\\displaystyle{\\sum_{j=1}^g} \\displaystyle{\\sum_{i=1}^{n_j}}(x_{ji} - \\bar{x}_{j \\ldotp} + \\bar{x}_{j \\ldotp} - \\bar{x}_{\\ldotp \\ldotp})^2 =\n\\nonumber \\\\ &=& \\underbrace{\\displaystyle{\\sum_{j=1}^g} n_j (\\bar{x}_{j \\ldotp} - \\bar{x}_{\\ldotp \\ldotp})^2}_{\\text{SQ Tratamentos}} +\n\\underbrace{\\displaystyle{\\sum_{j=1}^g} \\displaystyle{\\sum_{i=1}^{n_j}}(x_{ji} - \\bar{x}_{j \\ldotp})^2}_{\\text{SQ Resíduos}} \\nonumber\n\\end{eqnarray}\\]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-6",
+    "href": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-6",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo ANOVA a um fator univariado",
+    "text": "Modelo ANOVA a um fator univariado\nAs estimativas de mínimos quadrados de \\(\\mu\\) e \\(\\tau_j\\) são dadas por\n\\[\\widehat{\\mu} = \\bar{x}_{\\ldotp \\ldotp} =\n\\displaystyle{\\frac{1}{n}}\\displaystyle{\\sum_{j=1}^g} \\displaystyle{\\sum_{i=1}^{n_j}} x_{ji},\\text{ com }n = \\displaystyle{\\sum_{j=1}^g n_j}\\]\n\\[\\widehat{\\tau}_j = \\bar{x}_{j \\ldotp} - \\bar{x}_{\\ldotp \\ldotp}, \\text{ com } \\bar{x}_{j \\ldotp} = \\displaystyle{\\frac{1}{n_j}} \\displaystyle{\n\\sum_{i=1}^{n_j} x_{ji}}\\]\n\nUm estimador não viciado para \\(\\sigma^2\\) é dado por \\(\\widehat{\\sigma}^2 = \\displaystyle{\\frac{\\text{SQ Resíduos}}{n - g}}\\), com \\(n = \\displaystyle{\\sum_{j=1}^g n_j}\\)."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-7",
+    "href": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-7",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo ANOVA a um fator univariado",
+    "text": "Modelo ANOVA a um fator univariado\nTabela ANOVA a um fator em g níveis\n\n\n\n\n\nFonte de Variação\n\n\nG.L.\n\n\nSQ\n\n\nQM\n\n\nF\n\n\n\n\n\nTratamento\n\n\n\\(g - 1\\)\n\n\n\\(\\displaystyle{\\sum_{j=1}^g} n_j (\\bar{x}_{j \\ldotp} - \\bar{x}_{\\ldotp \\ldotp})^2\\)\n\n\n\\(\\displaystyle{\\frac{SQ Trat}{g - 1}}\\)\n\n\n\\(\\displaystyle{\\frac{QM Trat}{QM Res}}\\)\n\n\n\n\nResíduos\n\n\n\\(n - g\\)\n\n\n\\(\\displaystyle{\\sum_{j=1}^g} \\displaystyle{\\sum_{i=1}^{n_j}}(x_{ji} - \\bar{x}_{j \\ldotp})^2\\)\n\n\n\\(\\displaystyle{\\frac{SQ Res}{n - g}}\\)\n\n\n\n\n\n\nTotal\n\n\n\\(n - 1\\)\n\n\n\\(\\displaystyle{\\sum_{j=1}^g} \\displaystyle{\\sum_{i=1}^{n_j}}(x_{ji} - \\bar{x}_{\\ldotp \\ldotp})^2\\)"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-8",
+    "href": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-8",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo ANOVA a um fator univariado",
+    "text": "Modelo ANOVA a um fator univariado\n\nSe \\(H_0\\) é verdadeira, \\(F \\sim F_{g - 1, n-g}\\). Logo, rejeitamos \\(H_0\\) ao nível de significância \\(\\alpha\\) se \\(F &gt; F_{g - 1, n-g}(\\alpha)\\).\n\nObserve que isto é equivalente a dizer que o teste rejeita \\(H_0\\) para valores grandes da razão \\(\\displaystyle{\\frac{SQ Trat}{SQ Res}}\\)."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-9",
+    "href": "aulas/Manova/manova.html#modelo-anova-a-um-fator-univariado-9",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo ANOVA a um fator univariado",
+    "text": "Modelo ANOVA a um fator univariado\n\nEquivalentemente, valores grandes de \\(1 + \\displaystyle{\\frac{SQ Trat}{SQ Res}}\\), ou de forma análoga, valores pequenos da recíproca, dada por\n\\[\\displaystyle{\\frac{SQ Res}{SQ Trat + SQ Res}}\\]\n\nAdiante, veremos que uma estatística de teste multivariada, com suas devidas adaptações, tem forma similar à esta acima."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\nConsidere as seguintes amostras aleatórias coletadas de \\(g \\geqslant 2\\) populações:\n\n\nAmostra 1: \\(\\mathbf{x}_{11}, \\mathbf{x}_{12}, \\cdots, \\mathbf{x}_{1n_1}\\) da população \\(\\pi_1\\)\n\n\nAmostra 2: \\(\\mathbf{x}_{21}, \\mathbf{x}_{22}, \\cdots, \\mathbf{x}_{2n_2}\\) da população \\(\\pi_2\\)\n\n\\[\\vdots\\]\n\nAmostra g: \\(\\mathbf{x}_{g1}, \\mathbf{x}_{g2}, \\cdots, \\mathbf{x}_{gn_g}\\) da população \\(\\pi_g\\)"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-1",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-1",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\n\nSuposições\n\n\n\n\n\\(\\mathbf{x}_{j1}, \\mathbf{x}_{j2}, \\cdots, \\mathbf{x}_{jn_j}\\) é uma amostra de tamanho \\(n_j\\) de uma população com média \\(\\mathbf{\\mu}_j\\), \\(j = 1, 2, \\cdots, g\\);\n\n\n\n\nTodas as populações têm matriz de covariâncias comum \\(\\mathbf{\\Sigma}\\);\n\n\n\n\nCada população é normal p-variada;\n\n\n\n\nAs amostras são independentes."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-2",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-2",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\nO modelo MANOVA é definido por\n\\[\\mathbf{x}_{ji} = \\mathbf{\\mu} + \\mathbf{\\tau}_j + \\mathbf{\\epsilon}_{ji}\\]\n\\(i = 1, \\cdots, n_j\\) e \\(j = 1, \\cdots, g\\)\n\n\nSuposição: \\(\\mathbf{\\epsilon}_{ji} \\stackrel{\\text{ind}}{\\sim} N_p(\\mathbf{0},\\mathbf{\\Sigma})\\)\nRestrição: \\(\\displaystyle{\\sum_{j=1}^g n_j \\mathbf{\\tau}_j = \\mathbf{0}}\\)"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-3",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-3",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\nSoma de Quadrados Total:\n\\[SQ Tot = \\displaystyle{\\sum_{j=1}^g} \\displaystyle{\\sum_{i=1}^{n_j}}(\\mathbf{x}_{ji} - \\bar{\\mathbf{x}}_{\\ldotp \\ldotp})(\\mathbf{x}_{ji} - \\bar{\\mathbf{X}}_{\\ldotp \\ldotp})^t\\]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-4",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-4",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\nObservações:\n\n\n\n\n\\(\\bar{\\mathbf{x}}_{\\ldotp \\ldotp}\\) é o vetor de médias amostral geral;\n\n\n\n\nAgora, SQ Tot é uma matriz \\(p \\times p\\);\n\n\n\n\nOs elementos de sua diagonal principal correspondem às somas de quadrados totais para cada variável separada;\n\n\n\n\nFora da diagonal, temos as somas dos produtos cruzados dos desvios, caracterizando a estrutura de dependência das p variáveis estudadas."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-5",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-5",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\nDecomposição da Soma de Quadrados Total:\n\\[\\underbrace{\\displaystyle{\\sum_{j=1}^g} n_j (\\bar{\\mathbf{x}}_{j \\ldotp} - \\bar{\\mathbf{x}}_{\\ldotp \\ldotp})\n(\\bar{\\mathbf{x}}_{j \\ldotp} - \\bar{\\mathbf{x}}_{\\ldotp \\ldotp})^t}_{\\text{SQ Tratamentos}} +\n\\underbrace{\\displaystyle{\\sum_{j=1}^g} \\displaystyle{\\sum_{i=1}^{n_j}}(\\mathbf{x}_{ji} - \\bar{\\mathbf{x}}_{j \\ldotp})(\\mathbf{x}_{ji} - \\bar{\\mathbf{x}}_{j \\ldotp})^t}_{\\text{SQ Resíduos}}\\]\n\nObservação: Os graus de liberdade de todos os casos são os mesmos do caso univariado.\n\n\n\nHipóteses:\n\n\\[H_0: \\mathbf{\\tau}_1 = \\mathbf{\\tau}_2 = \\cdots = \\mathbf{\\tau}_g = \\mathbf{0}\\] \\[H_a: \\text{pelo menos um é não-nulo}\\]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-6",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-6",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\nTabela MANOVA a um fator em g níveis\n\n\n\n\n\nFonte de Variação\n\n\nG.L.\n\n\nMatriz de SQ\n\n\n\n\n\nTratamento\n\n\n\\(g - 1\\)\n\n\n\\(H = \\displaystyle{\\sum_{j=1}^g} n_j (\\bar{\\mathbf{x}}_{j \\ldotp} - \\bar{\\mathbf{x}}_{\\ldotp \\ldotp}) (\\bar{\\mathbf{x}}_{j \\ldotp} - \\bar{\\mathbf{x}}_{\\ldotp \\ldotp})^t\\)\n\n\n\n\nResíduos\n\n\n\\(n - g\\)\n\n\n\\(E = \\displaystyle{\\sum_{j=1}^g} \\displaystyle{\\sum_{i=1}^{n_j}}(\\mathbf{x}_{ji} - \\bar{\\mathbf{x}}_{j \\ldotp}) (\\mathbf{x}_{ji} - \\bar{\\mathbf{x}}_{j \\ldotp})^t\\)\n\n\n\n\nTotal\n\n\n\\(n - 1\\)\n\n\n\\(T = \\displaystyle{\\sum_{j=1}^g} \\displaystyle{\\sum_{i=1}^{n_j}}(\\mathbf{x}_{ji} - \\bar{\\mathbf{x}}_{\\ldotp \\ldotp}) (\\mathbf{x}_{ji} - \\bar{\\mathbf{x}}_{\\ldotp \\ldotp})^t\\)"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-7",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-7",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\nObservações:\n\n\n\n\\(T = H + E\\)\n\n\n\n\nAs diagonais principais de cada uma dessas matrizes de somas de quadrados e produtos cruzados fornecerão as somas de quadrados da ANOVA para cada variável separadamente.\n\n\n\nUma possível estatística de teste envolve variâncias generalizadas. Seja,\n\\[\\Lambda = \\displaystyle{\\frac{|E|}{|H + E|}}\\]\nRejeitamos \\(H_0\\) se \\(\\Lambda\\) for um valor pequeno."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-8",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-8",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\n\nA estatística \\(\\Lambda\\) foi originalmente proposta por Wilks e corresponde a uma forma equivalente ao teste F da hipótese de ausência de efeito de tratamento do caso univariado.\n\n\n\nA estatística lambda de Wilks tem a vantagem de ser conveniente e estar correlacionada ao teste da razão de verossimilhança.\n\n\n\n\ndistribuição exata de \\(\\Lambda\\) pode ser derivada para os casos especiais apresentados a seguir:"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-9",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-9",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\nCasos especiais\n\n\n\n\n\n\\(p = 1\\)\n\n\n\\(g \\geqslant 2\\)\n\n\n\\(\\displaystyle{\\left(\\frac{n - g}{g - 1}\\right)} \\displaystyle{\\left(\\frac{1 - \\Lambda}{\\Lambda}\\right)} \\sim F_{g - 1,n - g}\\)\n\n\n\n\n\n\\(p = 2\\)\n\n\n\\(g \\geqslant 2\\)\n\n\n\\(\\displaystyle{\\left(\\frac{n - g - 1}{g - 1}\\right)} \\displaystyle{\\left(\\frac{1 - \\sqrt{\\Lambda}}{\\sqrt{\\Lambda}}\\right)} \\sim F_{2(g - 1),2(n - g - 1)}\\)\n\n\n\n\n\\(p \\geqslant 1\\)\n\n\n\\(g = 2\\)\n\n\n\\(\\displaystyle{\\left(\\frac{n - p - 1}{p}\\right)} \\displaystyle{\\left(\\frac{1 - \\Lambda}{\\Lambda}\\right)} \\sim F_{p, n - p- 1}\\)\n\n\n\n\n\\(p \\geqslant 1\\)\n\n\n\\(g = 3\\)\n\n\n\\(\\displaystyle{\\left(\\frac{n - p - 2}{p}\\right)} \\displaystyle{\\left(\\frac{1 - \\sqrt{\\Lambda}}{\\sqrt{\\Lambda}}\\right)} \\sim F_{2p,2(n - p - 2)}\\)\n\n\n\n\n\n\n\nObservação: Para outros casos e tamanhos amostrais grandes, uma modificação de \\(\\Lambda\\) devido da Bartlett pode ser usada para testar \\(H_0\\)."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-10",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-10",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\nBartlett mostrou que se \\(H_0\\) é verdadeira e \\(n\\) é grande, então,\n\n\\[-\\left(n - 1 - \\displaystyle{\\frac{p + g}{2}}\\right) \\ln(\\Lambda) \\dot{\\sim} \\chi_{p(g - 1)}^2\\]\n\n\nConsequentemente, se \\(n\\) é grande, rejeitamos \\(H_0\\) ao nível de significância \\(\\alpha\\), se\n\n\n\\[-\\left(n - 1 - \\displaystyle{\\frac{p + g}{2}}\\right) \\ln(\\Lambda) &gt; \\chi_{p(g - 1)}^2(\\alpha)\\]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-11",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-11",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\nOutros testes multivariados\n\nTraço de Hotelling-Lawley:\n\n\\[U = tr(HE^{-1})\\]\nSob \\(H_0\\), temos que\n\\[\\displaystyle{\\frac{2(sn + 1)}{s^2(2m + s + 1)}U \\hspace{0.2cm} \\dot{\\sim} \\hspace{0.2cm}  F_{s(2m + s + 1),2(sn + 1)}}\\]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-12",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-12",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\nOutros testes multivariados\n\nTraço de Pillai:\n\n\\[V = tr[H(H + E)^{-1}]\\]\nSob \\(H_0\\), temos que\n\\[\\left(\\displaystyle{\\frac{V}{s - V}} \\right) \\left(\\displaystyle{\\frac{2n + s + 1}{2m + s + 1}}\\right)\n\\hspace{0.2cm} \\dot{\\sim} \\hspace{0.2cm}  F_{s(2m + s + 1),s(2n + s + 1)}\\]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-13",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-13",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\nOutros testes multivariados\n\nRaiz máxima de Roy:\n\n\\[\\Theta = \\lambda_1\\]\nsendo \\(\\lambda_1\\) o maior autovalor da matriz \\(HE^{-1}\\).\nSob \\(H_0\\), temos que\n\\[\\displaystyle{\\frac{\\Theta(\\nu - d + q)}{d}} \\hspace{0.2cm} \\dot{\\sim} \\hspace{0.2cm}  F_{d,\\nu - d + q}\\]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-14",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-14",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\nOutros testes multivariados\n\n\nObservações\n\n\n\n\n\n\\(\\nu\\) = G.L. Resíduo\n\n\n\\(d = \\max(p,q)\\)\n\n\n\\(s = \\min(p,q)\\)\n\n\n\n\n\n\\(n = \\displaystyle{\\frac{\\nu - p - 1}{2}}\\)\n\n\n\\(m = \\displaystyle{\\frac{|p - q| - 1}{2}}\\)\n\n\n\\(q\\) = G.L. Tratamento\n\n\n\n\n\\(p\\) = número de variáveis"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-15",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-15",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\nExemplo - Análise dos dados de uma casa de repouso para idosos:\nO departamento de saúde e serviços sociais de determinada cidade reembolsa casas de repouso para idosos no estado por serviços oferecidos.\nO departamento desenvolve um conjunto de fórmulas para as taxas com facilidade, baseado em fatores tais como níveis de cuidados, taxa média de salários e taxa média de salários no estado.\nAs casas de repouso podem ser classificadas com relação à propriedade: privadas, sem fins lucrativos e públicas e também com relação à certificação: especializadas em enfermagem, unidades de cuidados intermediários ou uma combinação dos dois."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-16",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-16",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\nO objetivo foi verificar os efeitos de propriedade e certificação (ou ambos) sobre os custos. Quatro custos, calculados por paciente/dia, medidos em horas/paciente, foram usados:\n\n\\(X_1\\): Custo de mão de obra de enfermagem;\n\\(X_2\\): Custo de nutricionista;\n\\(X_3\\): Custo de trabalho de manutenção e funcionamento;\n\\(X_4\\): Custo de limpeza e lavanderia.\n\nUm total de \\(N = 516\\) observações sobre os \\(p = 4\\) custos foram separadas pelo tipo de propriedade e estão disponíveis no arquivo Exemplo Manova.dat."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-17",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-17",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\npacman::p_load(\n  tidyverse,\n  rstatix,\n  ggpubr\n)\n\n\ndados = read.table(\"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Exemplo_Manova.dat\", sep = ' ',header = TRUE) %&gt;% mutate(tipo = as.factor(tipo))\ndados %&gt;% str()\n\n'data.frame':   516 obs. of  5 variables:\n $ x1  : num  2.14 2.19 2.12 2.75 2.59 ...\n $ x2  : num  0.5 0.543 0.58 0.367 0.492 0.362 0.494 0.379 0.621 0.389 ...\n $ x3  : num  0.122 0.07 0.135 0.075 0.014 0.113 0.122 0.117 0.05 0.06 ...\n $ x4  : num  0.246 0.459 0.501 0.466 0.258 0.443 0.302 0.282 0.38 0.411 ...\n $ tipo: Factor w/ 3 levels \"1\",\"2\",\"3\": 1 1 1 1 1 1 1 1 1 1 ..."
   },
   {
     "objectID": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados",
@@ -49,30 +242,800 @@
     "href": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados-2",
     "title": "Inferências sobre Vetores de Médias",
     "section": "Testes multivariados versus univariados",
-    "text": "Testes multivariados versus univariados\n🤔 Por que utilizar testes multivariados ao invés de testes univariados?\n\n\nUsar \\(p\\) testes univariados inflaciona o erro tipo I, \\(\\alpha\\), enquanto o teste multivariado preserva o valor exato de \\(\\alpha\\).\n\n\nPor exemplo, se fizermos \\(p = 10\\) testes univariados ao nível \\(\\alpha = 0,05\\), a probabilidade de pelo menos uma falsa rejeição é maior que 0,05.\n\nSe as variáveis forem independentes, teríamos, sob \\(H_0\\):\n\n\n\\[\\begin{eqnarray*} P(\\text{pelo menos uma rejeição}) &=& 1 - P(\\text{todos os 10 testes não rejeitarem } H_0) \\\\ &=& 1 - (0,95)^{10} = 0,40 \\end{eqnarray*}\\]\n\n👉 Se as variáveis não forem independentes, teríamos \\(0,05 &lt; \\alpha &lt; 0,40\\)"
+    "text": "Testes multivariados versus univariados\n🤔 Por que utilizar testes multivariados ao invés de testes univariados?\n\n\nUsar \\(p\\) testes univariados inflaciona o erro tipo I, \\(\\alpha\\), enquanto o teste multivariado preserva o valor exato de \\(\\alpha\\).\n\n\nPor exemplo, se fizermos \\(p = 10\\) testes univariados ao nível \\(\\alpha = 0,05\\), a probabilidade de pelo menos uma falsa rejeição é maior que 0,05.\n\nSe as variáveis forem independentes, teríamos, sob \\(H_0\\):\n\n\n\n\\[\\begin{eqnarray*} P(\\text{pelo menos uma rejeição}) &=& 1 - P(\\text{todos os 10 testes não rejeitarem } H_0) \\\\ &=& 1 - (0,95)^{10} = 0,40 \\end{eqnarray*}\\]\n\n👉 Se as variáveis não forem independentes, teríamos \\(0,05 &lt; \\alpha &lt; 0,40\\)"
   },
   {
     "objectID": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados-3",
     "href": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados-3",
     "title": "Inferências sobre Vetores de Médias",
     "section": "Testes multivariados versus univariados",
-    "text": "Testes multivariados versus univariados\n🤔 Por que utilizar testes multivariados ao invés de testes univariados?\n\n\nOs testes univariados ignoram completamente as correlações entre as variáveis.\n\n\n\n\nOs testes multivariados são mais poderosos em muitos casos.\n\n\nPoder de um teste: probabilidade de rejeitar \\(H_0\\), quando esta é realmente falsa.\n\n\n\n\nMuitos testes multivariados envolvendo médias têm como subproduto a construção de uma combinação linear das variáveis que revela mais sobre como as variáveis se unem para rejeitar a hipótese."
-<<<<<<< HEAD
-  },
-  {
-    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-matbfmu-com-mathbfsigma-conhecido",
-    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-matbfmu-com-mathbfsigma-conhecido",
-    "title": "Inferências sobre Vetores de Médias",
-    "section": "Teste para \\(\\matbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido",
-    "text": "Teste para \\(\\matbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido"
+    "text": "Testes multivariados versus univariados\n🤔 Por que utilizar testes multivariados ao invés de testes univariados?\n\n\nOs testes univariados ignoram completamente as correlações entre as variáveis.\n\n\n\n\nOs testes multivariados são mais poderosos em muitos casos.\n\n\n\nPoder de um teste: probabilidade de rejeitar \\(H_0\\), quando esta é realmente falsa.\n\n\n\n\nMuitos testes multivariados envolvendo médias têm como subproduto a construção de uma combinação linear das variáveis que revela mais sobre como as variáveis se unem para rejeitar a hipótese."
   },
   {
     "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido",
     "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido",
     "title": "Inferências sobre Vetores de Médias",
     "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido",
-    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido\nNum primeiro momento, vamos revisar o caso univariado de se testar a média, \\(\\mu\\), de uma população com \\(\\sigma^2\\) conhecido."
-=======
->>>>>>> 81738ade40481854ffb5234642454d2068a229c6
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido\nNum primeiro momento, vamos revisar o caso univariado de se testar a média, \\(\\mu\\), de uma população com \\(\\sigma^2\\) conhecido.\n\nSejam as seguintes hipóteses:\n\\[H_0: \\mu = \\mu_0 \\text{          vs.          } H_a: \\mu \\neq \\mu_0\\]\nConsidere uma amostra aleatória \\(X\\) de tamanho \\(n\\), de forma que \\(X \\sim N(\\mu, \\sigma^2)\\), com \\(\\sigma^2\\) conhecido. Uma estatística de teste apropriada para este tipo de situação é\n\\[z = \\dfrac{\\bar{x}- \\mu_0}{\\dfrac{\\sigma}{\\sqrt{n}}} \\stackrel{H_0}{\\sim} N(0,1)\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-1",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-1",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido\nEm que \\(\\bar{x} = \\dfrac{\\displaystyle{\\sum_{i=1}^n x_i}}{n}\\). Para um nível \\(\\alpha\\) de significância, rejeitamos \\(H_0\\) se \\(|z| \\geq z_{\\frac{\\alpha}{2}}\\).\n\nEquivalentemente, podemos usar \\(z^2\\) que segue uma distribuição \\(\\chi^2_1\\) e rejeitamos a hipótese nula \\(H_0\\) se \\(z^2 \\geq \\chi^2_1(\\alpha)\\).\n\n\nSe \\(n\\) for grande, o Teorema Central do Limite garante que \\(z\\) é aproximadamente normal, mesmo que as observações não sejam normais."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-2",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-2",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido\nConsidere agora uma amoostra aleatória \\(\\mathbf{x} = \\{X_1, X_2, \\cdots, X_n\\}\\) de uma população \\(N_p(\\mathbf{\\mu}, \\mathbf{\\Sigma})\\), com vetor de médias \\(\\mathbf{\\mu} = \\{\\mu_1, \\mu_2, \\cdots, \\mu_p\\}^t\\) e matriz de variâncias e covariâncias\n\\[\\mathbf{\\Sigma} = \\begin{bmatrix}\n\\sigma_{11} & \\sigma_{12} & \\cdots & \\sigma_{1p}\\\\\n\\sigma_{21} & \\sigma_{22} & \\cdots & \\sigma_{2p}\\\\\n\\vdots & \\vdots & \\ddots & \\vdots\\\\\n\\sigma_{p1} & \\sigma_{p2} & \\cdots & \\sigma_{pp}\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-3",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-3",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido\nQueremos testar as seguintes hipóteses:\n\\[H_0: \\mathbf{\\mu} = \\mathbf{\\mu}_0 \\text{          vs.          } H_a: \\mathbf{\\mu} \\neq \\mathbf{\\mu}_0\\]\n\nPodemos generalizar a estatistica \\(z^2\\) do teste univariado da seguinte forma:\n\\[Z^2 = n(\\mathbf{\\bar{x}}-\\mathbf{\\mu}_0)^t\\mathbf{\\Sigma}^{-1}(\\mathbf{\\bar{x}}-\\mathbf{\\mu}_0)\\]\nSe \\(H_0\\) é verdadeira, \\(Z^2 \\stackrel{H_0}{\\sim} \\chi^2_p\\) e, portanto, rejeitamos a hipótese nula \\(H_0\\) se \\(Z^2 &gt; \\chi^2_p(\\alpha)\\)"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-4",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-4",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido\nExemplo 01: Considere uma amostra aleatória de tamanho \\(n = 20\\), com vetor de médias \\(\\mathbf{\\bar{x}} = (71,45;164,7)^t\\), de uma população normal bivariada cuja matriz de variâncias e covariâncias seja dada por\n\\[\\mathbf{\\Sigma} = \\begin{bmatrix}\n20 & 100 \\\\\n100 & 1000\\\\\n\\end{bmatrix}\\]\nSuponha que desejássemos testar as seguintes hipóteses\n\\[H_0: \\mathbf{\\mu} = [70, 170]^t \\text{          vs.          } H_a: \\mathbf{\\mu} \\neq [70, 170]^t\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-5",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-5",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido\nTemos que,\n\\[\\begin{eqnarray*} Z^2 &=& n(\\mathbf{\\bar{x}}-\\mathbf{\\mu}_0)^t\\mathbf{\\Sigma}^{-1}(\\mathbf{\\bar{x}}-\\mathbf{\\mu}_0) \\\\ &=& 20 \\times \\left[ \\begin{array}{c} 71,45 - 70 & 164,7 - 170 \\end{array} \\right]\\begin{bmatrix}\n20 & 100 \\\\\n100 & 1000\\\\\n\\end{bmatrix}^{-1}\\left[ \\begin{array}{c} 71,45 - 70 \\\\ 164,7 - 170 \\end{array} \\right] \\\\ &=& 20 \\times \\left[ \\begin{array}{c} 1,45 & -5,30 \\end{array} \\right]\\begin{bmatrix}\n0,1 & -0,01 \\\\\n-0,01 & 0,002\\\\\n\\end{bmatrix}\\left[ \\begin{array}{c} 1,45 \\\\ -5,30 \\end{array} \\right] = 8,4026\n\\end{eqnarray*}\n\\]\n\nUsando um nível de significância \\(\\alpha = 0,05\\), temos que \\(\\chi^2_{(2;0,05)} = 5,991\\) e, portanto, rejeitamos a hipótese \\(H_0: \\mathbf{\\mu} = [70, 170]^t\\), uma vez que \\(Z^2 = 8,4026 &gt; 5,991\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-6",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-6",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido\n\n\nn = 20\np = 2\nalpha = 0.05\nxbarra = c(71.45,164.7)\nmi0 = c(70,170)\nSigma = matrix(c(20,100,100,1000), nrow = p, byrow = TRUE)\n\n# H0: mu = [70, 170]^t  -   Estatística Z2\nZ2 = n*t(xbarra-mi0)%*%solve(Sigma)%*%(xbarra-mi0)\n\n# valor crítico da distribuição qui-quadrado\nqui = qchisq(1-alpha, p)\n\n# p-valor\npvalor = 1-pchisq(Z2, p)  \n\nZ2 &gt; qui # Rejeita H0\n\n\n     [,1]\n[1,] TRUE\n\nZ2\n\n       [,1]\n[1,] 8.4026\n\nqui\n\n[1] 5.991465\n\npvalor\n\n          [,1]\n[1,] 0.0149761"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nConsidere o caso univariado de uma amostra aleatória de tamanho \\(n\\), \\(X_1, X_2, \\cdots, X_n\\), da distribuição \\(N(\\mu,\\sigma^2)\\), em que ambos os parâmetros \\(\\mu\\) e \\(\\sigma\\) são desconhecidos.\n\nConsidere também, que desejamos testar se um determinado valor \\(\\mu_0\\) é um possível valor para a média populacional \\(\\mu\\). Do ponto de vista de teste de hipóteses, isso é equivalente a testar:\n\\[H_0: \\mu = \\mu_0  \\hspace{0.5cm} \\text{ vs } \\hspace{0.5cm} H_a: \\mu \\neq \\mu_0\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-1",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-1",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nNeste caso, uma estatística de teste apropriada é\n\\[t = \\displaystyle{\\frac{\\bar{X} - \\mu_0}{s/\\sqrt{n}}}\\]\nem que \\(\\bar{X} =  \\dfrac{\\displaystyle{\\sum_{j=1}^{n}} X_{j}}{n}\\) e \\(s^{2} =  \\dfrac{\\displaystyle{\\sum_{j=1}^{n}}(X_{j}-\\bar{X})^2}{n-1}\\).\n\nEsta estatística de teste tem uma distribuição t-Student com \\(n − 1\\) graus de liberdade. Rejeita-se \\(H_0\\), se o valor observado de \\(|t|\\) exceder um valor específico da distribuição t-Student com \\(n − 1\\) graus de liberdade."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-2",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-2",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nRejeitar \\(H_{0}\\) quando \\(|t|\\) é grande é equivalente a rejeitar \\(H_{0}\\) quando o valor de \\[\\begin{equation} t^{2}=\\frac{(\\bar{X}-\\mu_{0})^{2}}{s^2/{n}}= n(\\bar{X}-\\mu_{0})(s^{2})^{-1}(\\bar{X}-\\mu_{0})\n\\label{eq1} \\end{equation}\\] for grande.\n\nUma vez que \\(\\bar{X}\\) e \\(s^{2}\\) são observados, rejeitamos \\(H_{0}\\) em favor a \\(H_{a}\\) a um nível \\(\\alpha\\) de significância, se: \\[n(\\bar{X}-\\mu_{0})(s^{2})^{-1}(\\bar{X}-\\mu_{0})&gt;t^{2}_{n-1,{\\alpha}/{2}}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-3",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-3",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nOu, de forma equivalente,\n\\[n(\\bar{X}-\\mu_{0})(s^{2})^{-1}(\\bar{X}-\\mu_{0})&gt;F_{1, n-1}(\\alpha)\\]\nSe \\(H_{0}\\) não for rejeitada, concluímos que \\(\\mu_{0}\\) é um possível valor para a média populacional \\(\\mu\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-4",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-4",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nConsidere agora o problema de se determinar se um dado vetor \\(\\mathbf{\\mu}_{0}\\), \\(p \\times 1\\), é um possível valor para o vetor de médias \\(\\mathbf{\\mu}\\) de uma distribuição normal \\(p\\)-variada.\n\nUma generalização natural da distância quadrática encontrada para o caso multivariado é dada por:\n\\[\\begin{equation}T^{2}=(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}_{0}})^{t}\\left ( \\frac{\\mathbf{S}}{n} \\right )^{-1}(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}_{0}})=n(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}_{0}})^{t}\\mathbf{S}^{-1}(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}_{0}})\\end{equation}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-5",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-5",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nem que\n\\[\\bar{\\mathbf{x}} = \\frac{1}{n} \\sum_{j=1}^{n}{\\mathbf{X}_{j}}\\]\n\\[\\mathbf{S} = \\frac{1}{n-1} \\sum_{j=1}^{n}(\\mathbf{X}_{j} -\\bar{\\mathbf{x}})(\\mathbf{X}_j-\\bar{\\mathbf{x}})^{t}\\]\n\\[\\mathbf{\\mu}_{0} = \\left[  \\begin{array}{c} \\mu_{10}\\\\  \\vdots \\\\  \\mu_{p0}\\\\ \\end{array} \\right] \\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-6",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-6",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nA estatística \\(T^{2}\\) é chamada de \\(T^{2}\\) de Hotelling.\n\nSe o valor observado da estatística \\(T^{2}\\) é muito grande, isto é, se \\(\\bar{\\mathbf{x}}\\) está “muito longe” de \\({\\mathbf{\\mu}}_{0}\\), a hipótese \\(H_{0}:{\\mathbf{\\mu}}={\\mathbf{\\mu}}_{0}\\) é rejeitada.\n\n\nProposição 01: Sejam \\(\\mathbf{x}_1, \\mathbf{x}_2, \\cdots, \\mathbf{x}_n\\) uma amostra aleatória de uma distribuição \\(N_p(\\mathbf{\\mu}, \\mathbf{\\Sigma})\\) e \\(T^2 = n(\\bar{\\mathbf{x}}-\\mathbf{\\mu}_{0})^{t}\\mathbf{S}^{-1}(\\bar{\\mathbf{x}}-\\mathbf{\\mu}_{0})\\). Então,\n\\[\\displaystyle{\\frac{n - p}{(n - 1)p}}T^2 \\stackrel{H_0}{\\sim} F_{p,n-p}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-7",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-7",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nDessa forma, um teste para as hipóteses\n\\[H_{0}:\\mathbf{\\mu} = \\mathbf{\\mu}_{0} \\text{           vs.           } H_{a} :\\mathbf{\\mu} \\neq \\mathbf{\\mu}_{0}\\]\npode ser formulado.\n\nAo nível \\(\\alpha\\) de significância, rejeita-se \\(H_{0}\\) em favor de \\(H_{a}\\) se\n\\[T^{2}=n(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}_{0}})^{t}\\mathbf{S}^{-1}(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}_{0}}) &gt; \\frac{(n-1)p}{(n-p)}F_{p,n-p}(\\alpha)\\]\nde acordo com a proposição 01. \\(F_{p,n-p} (\\alpha)\\) denota o \\(100(1 − \\alpha)\\)-ésimo percentil superior de uma distribuição \\(F[p; (n−p)]\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-8",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-8",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nExemplo 02: Suponha que a matriz de dados para uma amostra aleatória de tamanho \\(n = 3\\) de uma população normal bivariada seja dada por\n\\[\\mathbf{X} = \\begin{bmatrix}\n9 & 9 \\\\\n10 & 6\\\\\n8 & 6\n\\end{bmatrix}\\]\nAvalie o valor observado de \\(T^2\\) para \\(\\mathbf{\\mu}_0 = [9,5]^t\\). Qual a distribuição amostral de \\(T^2\\) neste caso?"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-9",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-9",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nTemos que\n\\[\\mathbf{\\bar{x}} = \\begin{bmatrix} \\bar{x}_1 \\\\ \\bar{x}_2 \\end{bmatrix} = \\begin{bmatrix} \\dfrac{6 + 10 + 8}{3} \\\\ \\dfrac{9 + 6 + 3}{3} \\end{bmatrix} = \\begin{bmatrix} 8 \\\\ 6 \\end{bmatrix}\\] Além disso,\n\\[s_{11} = \\dfrac{(6-8)^2 + (10-8)^2 + (8-8)^2}{2} = 4\\]\n\\[s_{12} = \\dfrac{(6-8)(9-6) + (10-8)(6-6) + (8-8)(3-6)}{2} = -3\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-10",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-10",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\n\\[s_{22} = \\dfrac{(9-6)^2 + (6-6)^2 + (3-6)^2}{2} = 9\\]\nDe forma que,\n\\[\\mathbf{S} = \\begin{bmatrix} 4 & -3 \\\\ -3 & 9 \\end{bmatrix}\\]\ne,\n\\[\\mathbf{S}^{-1} = \\dfrac{1}{(4 \\times 9) - ((-3) \\times (-3))}\\begin{bmatrix} 9 & 3 \\\\ 3 & 4 \\end{bmatrix} = \\begin{bmatrix} \\frac{1}{3} & \\frac{1}{9} \\\\ \\frac{1}{9} & \\frac{4}{27} \\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-11",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-11",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nSendo a estatística \\(T^2\\) de Hotelling dada por\n\\[\\begin{eqnarray*}T^2 &=& n(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}_{0}})^{t}\\mathbf{S}^{-1}(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}_{0}}) \\\\ &=& 3 \\times \\begin{bmatrix} 8-9 & 6-5 \\end{bmatrix}\\begin{bmatrix} \\frac{1}{3} & \\frac{1}{9} \\\\ \\frac{1}{9} & \\frac{4}{27} \\end{bmatrix}\\begin{bmatrix} 8-9 \\\\ 6-5 \\end{bmatrix}\\\\ &=& 3 \\times \\begin{bmatrix} -1 & 1 \\end{bmatrix}\\begin{bmatrix} -\\frac{2}{9} \\\\ \\frac{1}{27} \\end{bmatrix} = \\dfrac{7}{9}\\end{eqnarray*}\\]\nAntes da amostra ser selecionada, a distribuição de \\(T^2\\) é dada por\n\\[\\dfrac{(n-1)p}{(n-p)}F_{p,n-p}(\\alpha) = \\frac{(3-1) \\times 2}{(3-2)}F_{2,3-2} = 4F_{2,1}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-12",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-12",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nSendo assim, para testarmos as hipóteses\n\\[H_{0}:\\mathbf{\\mu} = \\begin{bmatrix} 9 \\\\ 5 \\end{bmatrix} \\text{           vs.           } H_{a} :\\mathbf{\\mu} \\neq \\begin{bmatrix} 9 \\\\ 5 \\end{bmatrix}\\]\nBasta comparar o valor observado de \\(T^2\\) com o valor crítico da distribuição \\(F_{2,1}\\), ao nível de significância de \\(\\alpha = 0,05\\), dado por \\(4F_{2,1}(0,05) = 4 \\times 199,5 = 798\\)\n\\[T^2 = \\dfrac{7}{9} = 0,778 &lt;&lt; 798 = 4F_{2,1}(0,05)\\] Logo, não existem evidências significativas a favor da rejeição de \\(H_0\\), ao nível de 5% de significância."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-13",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-13",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nExemplo 03: A transpiração de 20 mulheres saudáveis foi analisada. As observações são trivariadas, a saber: \\(X_1\\) - taxa de suor, \\(X_2\\) - conteúdo de sódio e \\(X_3\\) - conteúdo de potássio. Deseja-se testar, ao nível de significância de 10%, as seguintes hipóteses:\n\\[H_0: \\mathbf{\\mu} =  \\left[  \\begin{array}{c} 4 \\\\  50 \\\\  10\\\\ \\end{array} \\right] \\text{           vs           } H_a: \\mathbf{\\mu} \\neq  \\left[  \\begin{array}{c} 4 \\\\  50 \\\\  10\\\\ \\end{array} \\right]\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-14",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-14",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\n\npacman::p_load(\n  tidyverse,\n  goft,\n  MVTests\n)\n\n\ndados = read.table(\"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/suor.dat\", col.names = c(\"suor\",\"sodio\",\"potassio\"))\ndados %&gt;% str()\n\n'data.frame':   20 obs. of  3 variables:\n $ suor    : num  3.7 5.7 3.8 3.2 3.1 4.6 2.4 7.2 6.7 5.4 ...\n $ sodio   : num  48.5 65.1 47.2 53.2 55.5 36.1 24.8 33.1 47.4 54.1 ...\n $ potassio: num  9.3 8 10.9 12 9.7 7.9 14 7.6 8.5 11.3 ...\n\n\n\n# Teste de normalidade multivariada\n# H_0: dados seguem distribuição normal trivariada\n\nmvshapiro_test(as.matrix(dados))\n\n\n    Generalized Shapiro-Wilk test for Multivariate Normality\n\ndata:  as.matrix(dados)\nMVW = 0.94446, p-value = 0.2567\n\n\n\np-valor = 0,2567 &gt; 0,10 = \\(\\alpha\\) → \\(NRH_0\\)"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-15",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-15",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\n\nmu0 = c(4,50,10)\n\nres = OneSampleHT2(dados, mu0=mu0, alpha = 0.10)\nsummary(res)\n\n       One Sample Hotelling T Square Test \n\nHotelling T Sqaure Statistic = 9.738773 \n F value = 2.905 , df1 = 3 , df2 = 17 , p-value: 0.0649 \n\n                  Descriptive Statistics\n\n          suor    sodio  potassio\nN     20.00000 20.00000 20.000000\nMeans  4.64000 45.40000  9.965000\nSd     1.69687 14.13465  1.904641\n\n\n                Detection important variable(s)\n\n             Lower     Upper Mu0 Important Variables?\nsuor      3.555292  5.724708   4                FALSE\nsodio    36.364555 54.435445  50                FALSE\npotassio  8.747476 11.182524  10                FALSE"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#propriedades-do-teste-t2-de-hotelling",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#propriedades-do-teste-t2-de-hotelling",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Propriedades do teste \\(T^2\\) de Hotelling",
+    "text": "Propriedades do teste \\(T^2\\) de Hotelling\n\n\nDevemos ter \\(n-1 &gt; p\\). Caso contrário, a matriz \\(\\mathbf{S}\\) é singular e a estatística \\(T^2\\) não pode ser calculada.\n\n\n\nOs graus de liberdade oara a estatística \\(T^2\\) são os mesmos que para o teste univariado, isto é, \\(n-1\\).\n\n\n\n\nA hipótese alternativa é bilateral. No espaço multidimensional, não consideramos hipóteses alternativas unilaterais. No entanto, a região crítica é unilateral (rejeitamos \\(H_0\\) para valores grandes de \\(T^2\\)). Isso é típico de muitos testes multivariados."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#propriedades-do-teste-t2-de-hotelling-1",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#propriedades-do-teste-t2-de-hotelling-1",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Propriedades do teste \\(T^2\\) de Hotelling",
+    "text": "Propriedades do teste \\(T^2\\) de Hotelling\n\n\nNo caso univariado, \\(t^2_{n-1} = F_{1,n-1}\\). A estatística \\(T^2\\) pode ser convertida para uma estatística \\(F\\) da seguinte forma:\n\n\\[\\dfrac{n-p}{(n-1)p}T^2 = F_{p, n-p}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Região de Confiança do Vetor de Médias",
+    "text": "Região de Confiança do Vetor de Médias\n\nA rejeição da hipótese nula nos conduz ao problema de identificar quais variáveis são responsáveis pela rejeição dessa hipótese.\n\nA região de confiança (RC) é uma generalização dos intervalos de confiança univariados.\n\n\nA definição dessa região nos auxilia a identificar os componentes do vetor de parâmetros que são responsáveis pela rejeição de \\(H_0\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-1",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-1",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Região de Confiança do Vetor de Médias",
+    "text": "Região de Confiança do Vetor de Médias\n\nSeja \\(\\mathbf{\\theta}\\) um vetor de parâmetros populacional desconhecidos e \\(\\mathbf{\\Theta}\\) o conjunto de todos os possíveis valores de \\(\\mathbf{\\theta}\\). A RC é uma região de possíveis valores de \\(\\mathbf{\\theta}\\).\n\nA RC é chamada de região com \\(100(1 - \\alpha)\\%\\) de confiança se, antes da amostra ser selecionada,\n\\[P(\\mathbf{\\theta} \\in RC) = 1 - \\alpha\\]\n\n\nEsta probabilidade é calculada sob o verdadeiro, porém desconhecido, valor de \\(\\mathbf{\\theta}\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-2",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-2",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Região de Confiança do Vetor de Médias",
+    "text": "Região de Confiança do Vetor de Médias\nA RC para o vetor de médias populacional \\(\\mathbf{\\mu}\\), quando se dispõe de uma amostra aleatória da distribuição \\(N_p(\\mathbf{\\mu}, \\mathbf{\\Sigma})\\) é dada por,\n\\[P\\left[ n(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}})^{t}\\mathbf{S}^{-1}(\\bar{\\mathbf{X}}-{\\mathbf{\\mu}}) \\leqslant  \\frac{(n-1)p}{(n-p)}F_{p,n-p}(\\alpha) \\right] = 1 - \\alpha\\]\nde forma que,\n\\[RC = \\left\\lbrace \\mathbf{\\mu} \\in \\mathbf{R}^p | n(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}})^{t}\\mathbf{S}^{-1}(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}}) \\leqslant  \\frac{(n-1)p}{(n-p)}F_{p,n-p}(\\alpha) \\right\\rbrace \\]\nem que \\(F_{p,n-p} (\\alpha)\\) denota o \\(100(1 − \\alpha)\\)-ésimo percentil superior de uma distribuição \\(F[p; (n−p)]\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-3",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-3",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Região de Confiança do Vetor de Médias",
+    "text": "Região de Confiança do Vetor de Médias\nTemos que a região de confiança é dada pelo hiper elipsoide de eixos determinados pelos autovetores da matriz de covariância amostral \\(\\mathbf{S}\\) e cujas medidas são proporcionais às raízes quadradas dos respectivos autovalores.\n\nPara verificar se um dado vetor \\(\\mathbf{\\mu}_0\\) pertence à região de confiança, basta calcular o valor de\n\\[n(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}_0})^{t}\\mathbf{S}^{-1}(\\bar{\\mathbf{x}}-{\\mathbf{\\mu}_0})\\]\ne compará-lo com o valor de\n\\[\\frac{(n-1)p}{(n-p)}F_{p,n-p}(\\alpha)\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-4",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-4",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Região de Confiança do Vetor de Médias",
+    "text": "Região de Confiança do Vetor de Médias\nPara \\(p \\geqslant 4\\) não é possível representar visualmente a RC. No entanto, podemos calcular as medidas dos eixos do hiper elipsoide de confiança centrado em \\(\\mathbf{\\bar x}\\):\n\\[n(\\mathbf{\\bar x}-{\\mathbf{\\mu}})^{t}\\mathbf{S}^{-1}(\\mathbf{\\bar x}-{\\mathbf{\\mu}}) \\leqslant c^2 =  \\frac{(n-1)p}{(n-p)}F_{p,n-p}(\\alpha)\\]\n\nOs semi-eixos têm medida\n\\[\\sqrt{\\lambda_i} \\displaystyle{\\frac{c}{\\sqrt{n}}} = \\sqrt{\\lambda_i} \\sqrt{\\displaystyle{\\frac{(n-1)p}{n(n-p)}F_{p,n-p}(\\alpha)}}\\]\nunidades na direção de \\(\\mathbf{e}_i\\), em que \\(\\lambda_i\\) e \\(\\mathbf{e}_i\\) são os autovalores e autovetores de \\(\\mathbf{S}\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-5",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-5",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Região de Confiança do Vetor de Médias",
+    "text": "Região de Confiança do Vetor de Médias\n\nComeçando no centro \\(\\mathbf{\\bar x}\\), os eixos do elipsoide de confiança são\n\\[\\pm \\left( \\sqrt{\\lambda_i} \\sqrt{\\displaystyle{\\frac{(n-1)p}{n(n-p)}F_{p,n-p}(\\alpha)}}\\right) \\mathbf{e}_i\\]\nem que \\(\\lambda_i\\) e \\(\\mathbf{e}_i\\) são os autovalores e autovetores de \\(\\mathbf{S}\\), \\(i = 1, \\cdots, p\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-6",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-6",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Região de Confiança do Vetor de Médias",
+    "text": "Região de Confiança do Vetor de Médias\nExemplo 04: Uma empresa quer verificar se a média do desempenho dos funcionários em dois critérios-chave está de acordo com o padrão estabelecido pela diretoria.\nOs critérios avaliados são:\n\nProdutividade (número médio de tarefas concluídas por dia).\nSatisfação no trabalho (escalonada de 1 a 10).\n\nA diretoria espera que a média populacional dos funcionários seja:\n\\[\\mathbf{\\mu}_0 = \\left[  \\begin{array}{c} 80 \\\\ 7,5 \\end{array} \\right]\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-7",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-7",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Região de Confiança do Vetor de Médias",
+    "text": "Região de Confiança do Vetor de Médias\n\npacman::p_load(\n  tidyverse,\n  goft,\n  MVTests,\n  ellipse,\n  confintr\n)\n\n\ndados = read.csv(\"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/dados_desempenho.csv\", row.names = 1)\ndados %&gt;% str()\n\n'data.frame':   20 obs. of  2 variables:\n $ Produtividade: num  90.5 87.3 69.3 84.2 83.7 ...\n $ Satisfacao   : num  7.9 6.88 6.15 7.09 6.95 6.62 5.38 7.38 8.07 5.75 ...\n\n\n\n# Teste de normalidade multivariada\n# H_0: dados seguem distribuição normal trivariada\n\nmvshapiro_test(as.matrix(dados))\n\n\n    Generalized Shapiro-Wilk test for Multivariate Normality\n\ndata:  as.matrix(dados)\nMVW = 0.9466, p-value = 0.3127"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-8",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-8",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Região de Confiança do Vetor de Médias",
+    "text": "Região de Confiança do Vetor de Médias\n\n\nmu0 = c(80,7.5)\n\nres = OneSampleHT2(dados, mu0=mu0, alpha = 0.05)\nsummary(res)\n\n\n       One Sample Hotelling T Square Test \n\nHotelling T Sqaure Statistic = 67.55705 \n F value = 32.001 , df1 = 2 , df2 = 18 , p-value: 1.18e-06 \n\n                  Descriptive Statistics\n\n      Produtividade Satisfacao\nN         20.000000  20.000000\nMeans     83.580500   6.431500\nSd         9.732401   1.026195\n\n\n                Detection important variable(s)\n\n                  Lower     Upper  Mu0 Important Variables?\nProdutividade 77.619031 89.541969 80.0                FALSE\nSatisfacao     5.802916  7.060084  7.5               *TRUE*\n\n\n\np-valor = 0,00000118 &lt; 0,05 = \\(\\alpha\\) → \\(RH_0\\)\n\n\n🤔 Qual variável foi a responsável?"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-9",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#região-de-confiança-do-vetor-de-médias-9",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Região de Confiança do Vetor de Médias",
+    "text": "Região de Confiança do Vetor de Médias\nSe a média esperada \\(\\mathbf{\\mu}_0\\) estiver fora da elipse, há indícios de que o desempenho real dos funcionários não está de acordo com a expectativa.\n\n\nx_barra = colMeans(dados)\nn = nrow(dados)\np = ncol(dados)\nS = var(dados)/n\nalpha = 0.05\nc2 = (n-1)*p*qf(1-alpha,p,n-p)/(n-p)\n\nci.prod=ci_mean(dados$Produtividade, type = \"t\")$interval\nci.satis=ci_mean(dados$Satisfacao, type = \"t\")$interval\n\n# Cálculo da elipse de confiança (nível 95%)\nRadius = sqrt(eigen(S)$values) * sqrt(c2)\nsegments = 51\nangles = (0:segments) * 2 * pi/segments\nunit.circle = cbind(cos(angles), sin(angles))\nQ = sweep(eigen(S)$vectors, 2, Radius, \"*\")\nelipse_conf = data.frame(sweep(unit.circle %*% t(Q), 2, as.vector(x_barra), \"+\")) \nnames(elipse_conf) = c(\"Produtividade\", \"Satisfacao\")\n\n\n# Criando o gráfico\n\ndados %&gt;% \n  ggplot() +\n    geom_point(aes(x = Produtividade, y = Satisfacao), color = \"blue\", alpha = 0.6) +\n    geom_path(data = elipse_conf, aes(x = Produtividade, y = Satisfacao), color = \"red\") +\n    geom_point(aes(x = x_barra[1], y = x_barra[2]), color = \"red\", size = 3) +\n    geom_point(aes(x = mu0[1], y = mu0[2]), color = \"black\", size = 3, shape = 17) +\n    geom_hline(yintercept=ci.satis, linetype=\"dashed\", color = \"red\") + \n    geom_vline(xintercept = ci.prod,linetype=\"dashed\", color = \"red\")+\n    labs(title = \"Elipse de Confiança 95% para a Média Populacional\",\n       x = \"Produtividade (tarefas/dia)\",\n       y = \"Satisfação no Trabalho (escala 1-10)\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança Simultâneos",
+    "text": "Intervalos de Confiança Simultâneos\n\nQuando \\(p \\geqslant 4\\), não conseguimos visualizar graficamente a região de confiança, de forma que necessitaremos de um procedimento alternativo para descobrir qual componente do vetor de parâmetros foi o responsável pela rejeição de \\(H_0\\).\n\nA ideia básica é fazermos intervalos de confiança para cada componente, ou para combinações lineares dos componentes do vetor de parâmetros."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-1",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-1",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança Simultâneos",
+    "text": "Intervalos de Confiança Simultâneos\nSejam \\(\\mathbf{x} \\sim N_p(\\mathbf{\\mu}, \\mathbf{\\Sigma})\\) e a combinação linear\n\\[Z = \\mathbf{l}^t \\mathbf{x} = l_1X_1 + l_2X_2 + \\cdots + l_pX_p\\]\n\nTemos que\n\\[\\mu_Z = E(Z) = \\mathbf{l}^t \\mathbf{\\mu} \\hspace{0.5cm} \\text{e} \\hspace{0.5cm} \\sigma^2_Z = \\mathbf{l}^t \\mathbf{\\Sigma} \\mathbf{l}\\]\nde forma que\n\\[Z \\sim N(\\mathbf{l}^t \\mathbf{\\mu}, \\mathbf{l}^t \\mathbf{\\Sigma} \\mathbf{l})\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-2",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-2",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança Simultâneos",
+    "text": "Intervalos de Confiança Simultâneos\nLogo, se \\(\\mathbf{x}_1, \\mathbf{x}_2, \\cdots, \\mathbf{x}_n\\) é uma amostra aleatória de uma população \\(N_p(\\mathbf{\\mu}, \\mathbf{\\Sigma})\\), segue que \\(Z_1, Z_2, \\cdots, Z_n\\), definidos por\n\\[Z_i = \\mathbf{l}^t \\mathbf{x}_i, \\hspace{0.5cm} i = 1, 2, \\cdots n\\]\né uma amostra aleatória de uma população \\(N(\\mathbf{l}^t \\mathbf{\\mu}, \\mathbf{l}^t \\mathbf{\\Sigma} \\mathbf{l})\\).\n\nDa teoria normal univariada, para \\(\\mathbf{l}\\) fixo e \\(\\sigma^2\\) desconhecido, temos que um intervalo de \\(100(1-\\alpha)\\%\\) de confiança para \\(\\mu_Z = \\mathbf{l}^t \\mathbf{\\mu}\\) é baseado na razão t-Student, isto é,\n\\[\nt = \\displaystyle{\\frac{\\bar{z} - \\mu_Z}{s_Z/\\sqrt{n}}} = \\displaystyle{\\frac{\\sqrt{n}(\\mathbf{l}^t \\bar{\\mathbf{x}} - \\mathbf{l}^t \\mathbf{\\mu})}{\\sqrt{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}}}\n\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-3",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-3",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança Simultâneos",
+    "text": "Intervalos de Confiança Simultâneos\nO que conduz a,\n\\[\\bar{z} - t_{\\left[ (n-1);\\frac{\\alpha}{2}\\right] } \\displaystyle{\\frac{\\sqrt{s_Z}}{\\sqrt{n}}} \\leqslant \\mu_Z \\leqslant \\bar{z} + t_{\\left[ (n-1);\\frac{\\alpha}{2}\\right] } \\displaystyle{\\frac{\\sqrt{s_Z}}{\\sqrt{n}}}\\]\nou,\n\\[\n\\begin{eqnarray}\n\\mathbf{l}^t  \\bar{\\mathbf{x}} - t_{\\left[ (n-1);\\frac{\\alpha}{2}\\right] } \\displaystyle{\\frac{\\sqrt{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}}{\\sqrt{n}}} \\leqslant \\mathbf{l}^t \\mathbf{\\mu} \\leqslant \\mathbf{l}^t  \\bar{\\mathbf{x}} + t_{\\left[ (n-1);\\frac{\\alpha}{2}\\right] } \\displaystyle{\\frac{\\sqrt{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}}{\\sqrt{n}}}\n\\end{eqnarray}\n\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-4",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-4",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança Simultâneos",
+    "text": "Intervalos de Confiança Simultâneos\nPodemos construir vários intervalos de confiança sobre combinações lineares dos componentes do vetor \\(\\mathbf{\\mu}\\), cada um associado com um coeficiente de confiança \\(1 − \\alpha\\), escolhendo diferentes vetores de constantes \\(\\mathbf{l}\\). Porém, o coeficiente de confiança conjunto do grupo de intervalos resultantes não seria mais \\(1 − \\alpha\\).\n\nÉ desejável então, associar um coeficiente de confiança coletivo de \\(1 − \\alpha\\) aos intervalos de confiança que podem ser gerados para diferentes escolhas de \\(\\mathbf{l}\\) (Bônus).\n\n\nÔnus: intervalos que têm amplitudes maiores (mais largos, menos precisos) do que os intervalos apresentados anteriormente via a distribuição amostral t-Student com \\(n − 1\\) graus de liberdade."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-5",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-5",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança Simultâneos",
+    "text": "Intervalos de Confiança Simultâneos\nUma solução para o problema de cobertura é a construção dos intervalos simultâneos. Dado um conjunto de dados observados \\(\\mathbf{x}_1, \\mathbf{x}_2, \\cdots, \\mathbf{x}_n\\) e uma particular escolha do vetor \\(\\mathbf{l}\\), temos que o intervalo de confiança\n\\[\n\\begin{eqnarray}\n\\mathbf{l}^t  \\bar{\\mathbf{x}} - t_{\\left[ (n-1);\\frac{\\alpha}{2}\\right] } \\displaystyle{\\frac{\\sqrt{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}}{\\sqrt{n}}} \\leqslant \\mathbf{l}^t \\mathbf{\\mu} \\leqslant \\mathbf{l}^t  \\bar{\\mathbf{x}} + t_{\\left[ (n-1);\\frac{\\alpha}{2}\\right] } \\displaystyle{\\frac{\\sqrt{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}}{\\sqrt{n}}}\n\\end{eqnarray}\n\\]\nrepresenta o conjunto de valores de \\(\\mathbf{l}^t \\mathbf{\\mu}\\) para os quais\n\\[|t| = \\left|\\displaystyle{\\frac{\\sqrt{n}(\\mathbf{l}^t \\bar{\\mathbf{x}} - \\mathbf{l}^t \\mathbf{\\mu})}{\\sqrt{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}}}\\right| \\leqslant t_{\\left[ (n-1);\\frac{\\alpha}{2}\\right]}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-6",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-6",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança Simultâneos",
+    "text": "Intervalos de Confiança Simultâneos\nOu, equivalentemente,\n\\[t^2 = \\displaystyle{\\frac{n(\\mathbf{l}^t \\bar{\\mathbf{x}} - \\mathbf{l}^t \\mathbf{\\mu})^2}{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}} = \\displaystyle{\\frac{n\\left[ \\mathbf{l}^t( \\bar{\\mathbf{x}} -  \\mathbf{\\mu})\\right] ^2}{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}} \\leqslant t^2_{\\left[ (n-1);\\frac{\\alpha}{2}\\right]}\\]\n\nUma região de confiança simultânea é dada pelos valores de \\(\\mathbf{l}^t \\mathbf{\\mu}\\) tais que \\(t^2\\) é relativamente pequeno para todas as escolhas de \\(\\mathbf{l}\\).\n\n\nParece razoável esperar que a constante \\(t_{\\left[ (n-1);\\frac{\\alpha}{2}\\right]}\\) seja trocada por um valor maior, \\(c^2\\), quando as declarações forem desenvolvidas para muitas escolhas de \\(\\mathbf{l}\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-7",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-7",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança Simultâneos",
+    "text": "Intervalos de Confiança Simultâneos\nA constante \\(c^{2}\\) deve ser obtida para manter o valor global do coeficiente de confiança \\(1-\\alpha\\) simultâneo para todas as escolhas de \\(\\mathbf{l}\\).\n\nPode ser demonstrado que, tomando\n\\[c^{2}= \\displaystyle{\\frac{(n-1)p}{n-p}F_{p,n-p}(\\alpha)}\\]\ntem-se a garantia do valor global para o coeficiente de confiança igual a \\(100(1-\\alpha)\\%\\) para qualquer escolha não-nula do vetor \\(\\mathbf{l}\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-8",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-8",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança Simultâneos",
+    "text": "Intervalos de Confiança Simultâneos\nÉ conveniente nos referirmos aos intervalos simultâneos como intervalos \\(T^2\\), uma vez que a probabilidade de cobertura é determinada pela distribuição de \\(T^2\\)\n\nAssim, os intervalos de confiança simultâneos (ou intervalos \\(T^2\\)) são dados por:\n\\[\n\\begin{eqnarray}\n\\mathbf{l}^t  \\bar{\\mathbf{x}} - \\sqrt{\\displaystyle{\\frac{(n-1)p}{n-p}F_{p,n-p}(\\alpha)}} \\displaystyle{\\frac{\\sqrt{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}}{\\sqrt{n}}} \\leqslant \\mathbf{l}^t \\mathbf{\\mu} \\leqslant \\mathbf{l}^t  \\bar{\\mathbf{x}} + \\sqrt{\\displaystyle{\\frac{(n-1)p}{n-p}F_{p,n-p}(\\alpha)}} \\displaystyle{\\frac{\\sqrt{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}}{\\sqrt{n}}}\n\\end{eqnarray}\n\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-9",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-9",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança Simultâneos",
+    "text": "Intervalos de Confiança Simultâneos\nExemplo 05: Voltando ao exemplo anterior referente à uma empresa que quer verificar se a média do desempenho dos funcionários em dois critérios-chave (produtividade e satisfação) está de acordo com o padrão estabelecido pela diretoria.\nEncontre os intervalos de confiança simultâneos \\(T^2\\) de Hotelling e compare com os intervalos univariados."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-10",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-simultâneos-10",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança Simultâneos",
+    "text": "Intervalos de Confiança Simultâneos\n\n\nlim = cbind(x_barra - sqrt(c2)*sqrt(diag(S)),\n            x_barra + sqrt(c2)*sqrt(diag(S)))\n\n# Criando o gráfico\n\ndados %&gt;% \n  ggplot() +\n  geom_point(aes(x = Produtividade, y = Satisfacao), color = \"blue\", alpha = 0.6) +\n  geom_path(data = elipse_conf, aes(x = Produtividade, y = Satisfacao), color = \"red\") +\n  geom_point(aes(x = x_barra[1], y = x_barra[2]), color = \"red\", size = 3) +\n  geom_point(aes(x = mu0[1], y = mu0[2]), color = \"black\", size = 3, shape = 17) +\n  geom_hline(yintercept = ci.satis, linetype=\"dashed\", color = \"red\") + \n  geom_vline(xintercept = ci.prod,linetype=\"dashed\", color = \"red\")+\n  geom_hline(yintercept = lim[2,], linetype=\"dashed\", color = \"blue\") + \n  geom_vline(xintercept = lim[1,], linetype=\"dashed\", color = \"blue\")+\n  labs(title = \"Elipse de Confiança 95% para a Média Populacional\",\n       x = \"Produtividade (tarefas/dia)\",\n       y = \"Satisfação no Trabalho (escala 1-10)\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-com-correção-de-bonferroni",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-com-correção-de-bonferroni",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança com Correção de Bonferroni",
+    "text": "Intervalos de Confiança com Correção de Bonferroni\nUma alternativa aos intervalos simultâneos são os Intervalos de Confiança com Correção de Bonferroni, baseada na Desigualdade de Bonferroni.\n\nSejam \\(A_1, A_2, \\cdots, A_m\\) uma coleção de eventos em um espaço de probabilidade tais que \\(P(A_i) = 1 - \\alpha_i\\), \\(i = 1, \\cdots, m\\). Então,\n\\[\n\\begin{eqnarray*}\nP(\\cap_{i = 1}^m A_i) &=& 1 - P \\left(``\\text{pelo menos um } A_i \\text{ não ocorre}\"\\right) \\\\&\\geqslant& 1 - \\displaystyle{\\sum_{i = 1}^m P(A_i^c)} = 1 - \\displaystyle{\\sum_{i = 1}^m \\alpha_i} \\\\&=& 1 - (\\alpha_1 + \\alpha_2 + \\cdots + \\alpha_m)\n\\end{eqnarray*}\n\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-com-correção-de-bonferroni-1",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-com-correção-de-bonferroni-1",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança com Correção de Bonferroni",
+    "text": "Intervalos de Confiança com Correção de Bonferroni\nA desigualdade de Bonferroni nos permite o controle da taxa de erro global \\(\\alpha_1 + \\alpha_2 + \\cdots + \\alpha_m\\), independente da estrutura de correlação que está por trás dos intervalos de confiança.\n\nAssim, se o problema envolve a construção de \\(m\\) intervalos de confiança, a ideia é fazer\n\\[\\alpha^{\\ast}=\\dfrac{\\alpha}{m}\\]\ne tomar os intervalos separadamente, dados por\n\\[\n\\begin{eqnarray}\n  \\mathbf{l}^t  \\bar{\\mathbf{x}} - t_{\\left[ (n-1);\\frac{\\alpha^{\\ast}}{2}\\right] } \\displaystyle{\\frac{\\sqrt{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}}{\\sqrt{n}}} \\leqslant \\mathbf{l}^t \\mathbf{\\mu} \\leqslant \\mathbf{l}^t  \\bar{\\mathbf{x}} + t_{\\left[ (n-1);\\frac{\\alpha^{\\ast}}{2}\\right] } \\displaystyle{\\frac{\\sqrt{\\mathbf{l}^t \\mathbf{S} \\mathbf{l}}}{\\sqrt{n}}}\n\\end{eqnarray}\n\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-com-correção-de-bonferroni-2",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-com-correção-de-bonferroni-2",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança com Correção de Bonferroni",
+    "text": "Intervalos de Confiança com Correção de Bonferroni\nObserve agora, que o coeficiente de confiança coletivo vale pelo menos,\n\\[1 - \\left( \\underbrace{\\displaystyle{\\frac{\\alpha}{m}} + \\displaystyle{\\frac{\\alpha}{m}} + \\cdots + \\displaystyle{\\frac{\\alpha}{m}}}_{\\text{m termos}}\\right) = 1 - \\alpha\\]\n\nEstes intervalos podem, de forma mais apropriada, serem comparados com os intervalos \\(T^2\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-com-correção-de-bonferroni-3",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-com-correção-de-bonferroni-3",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança com Correção de Bonferroni",
+    "text": "Intervalos de Confiança com Correção de Bonferroni\nExemplo 06: Voltando ao exemplo anterior referente à uma empresa que quer verificar se a média do desempenho dos funcionários em dois critérios-chave (produtividade e satisfação) está de acordo com o padrão estabelecido pela diretoria.\nEncontre os intervalos de confiança com correção de Bonferroni e os compare com os intervalos simultâneos \\(T^2\\) de Hotelling e com os intervalos univariados."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-com-correção-de-bonferroni-4",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#intervalos-de-confiança-com-correção-de-bonferroni-4",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Intervalos de Confiança com Correção de Bonferroni",
+    "text": "Intervalos de Confiança com Correção de Bonferroni\n\n\nm=2\nalpha_corr = alpha/m\nci_bonf.prod=ci_mean(dados$Produtividade, type = \"t\", probs=c(alpha_corr/2, 1-alpha_corr/2))$interval\nci_bonf.satis=ci_mean(dados$Satisfacao, type = \"t\", probs=c(alpha_corr/2, 1-alpha_corr/2))$interval\n\n# Criando o gráfico\n\ndados %&gt;% \n  ggplot() +\n  geom_point(aes(x = Produtividade, y = Satisfacao), color = \"blue\", alpha = 0.6) +\n  geom_path(data = elipse_conf, aes(x = Produtividade, y = Satisfacao), color = \"red\") +\n  geom_point(aes(x = x_barra[1], y = x_barra[2]), color = \"red\", size = 3) +\n  geom_point(aes(x = mu0[1], y = mu0[2]), color = \"black\", size = 3, shape = 17) +\n  geom_hline(yintercept = ci.satis, linetype=\"dashed\", color = \"red\") + \n  geom_vline(xintercept = ci.prod,linetype=\"dashed\", color = \"red\")+\n  geom_hline(yintercept = lim[2,], linetype=\"dashed\", color = \"blue\") + \n  geom_vline(xintercept = lim[1,], linetype=\"dashed\", color = \"blue\") +\n  geom_hline(yintercept = ci_bonf.satis, linetype=\"dashed\", color = \"#006400\") + \n  geom_vline(xintercept = ci_bonf.prod,linetype=\"dashed\", color = \"#006400\")+\n  labs(title = \"Elipse de Confiança 95% para a Média Populacional\",\n       x = \"Produtividade (tarefas/dia)\",\n       y = \"Satisfação no Trabalho (escala 1-10)\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido\nNovamente, vamos revisar o caso univariado. Sejam uma amostra aleatória \\(x_{11}, x_{12}, \\cdots, x_{1n_1}\\) de uma população \\(N(\\mu_1, \\sigma^2_1)\\) e uma segunda amostra \\(x_{21}, x_{22}, \\cdots, x_{2n_2}\\) de uma população \\(N(\\mu_2, \\sigma^2_2)\\). Vamos assumir que as amostras são independentes e que \\(\\sigma^2_1 = \\sigma_2^2 = \\sigma^2\\), com \\(\\sigma^2\\) desconhecido.\n\nSejam as seguintes hipóteses:\n\\[H_0: \\mu_1 = \\mu_2 \\text{          vs.          } H_a: \\mu_1 \\neq \\mu_2\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-1",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-1",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido\nUma estatística de teste apropriada para este tipo de situação é\n\\[t = \\dfrac{\\bar{x_1}- \\bar{x}_2}{s_p\\sqrt{\\dfrac{1}{{n_1}}+\\dfrac{1}{n_2}}} \\stackrel{H_0}{\\sim} t_{n_1 + n_2 - 2}\\]\nem que\n\\[s_p^2 = \\dfrac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-2",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-2",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido\nConsidere agora uma amostra aleatória \\(\\mathbf{x_1} = \\{X_{11}, X_{12}, \\cdots, X_{1n_1}\\}\\) de uma população \\(N_p(\\mathbf{\\mu_1}, \\mathbf{\\Sigma_1})\\) e uma segunda amostra \\(\\mathbf{x_2} = \\{X_{21}, X_{22}, \\cdots, X_{2n_2}\\}\\) de uma população \\(N_p(\\mathbf{\\mu_2}, \\mathbf{\\Sigma_2})\\)\n\nAssumiremos que as duas amostras são independentes e que \\(\\mathbf{\\Sigma_1} = \\mathbf{\\Sigma_2} = \\mathbf{\\Sigma}\\).\n\n\nQueremos testar as seguintes hipóteses:\n\\[H_0: \\mathbf{\\mu}_1 = \\mathbf{\\mu}_2 \\text{          vs.          } H_a: \\mathbf{\\mu}_1 \\neq \\mathbf{\\mu}_2\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-3",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-3",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido\nQuandoo as matrizes de covariâncias populacionais são iguais, as hipóteses podem ser testadas utilizando a seguinte estatística,\n\\[T^2 = (\\mathbf{\\bar{x}}_1 - \\mathbf{\\bar{x}}_2)^t \\left[ \\left( \\dfrac{1}{n_1} + \\dfrac{1}{n_2} \\right) \\mathbf{S}_p \\right]^{-1}(\\mathbf{\\bar{x}}_1 - \\mathbf{\\bar{x}}_2)\\]\nem que\n\\[\\mathbf{S}_p = \\dfrac{(n_1-1)\\mathbf{S}_1 + (n_2-1)\\mathbf{S}_2}{n_1 + n_2 - 2}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-4",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-4",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido\nSob \\(H_0\\), temos que\n\\[T^2 \\stackrel{H_0}{\\sim} \\displaystyle{\\frac{p(n_1 + n_2 - 2)}{n_1 + n_2 - p - 1}} F_{(p,n_1+n_2-p-1)}\\]\n\nAo nível \\(\\alpha\\) de significância, rejeita-se \\(H_{0}\\) em favor de \\(H_{a}\\) se\n\\[T^{2}\\geq \\displaystyle{\\frac{p(n_1 + n_2 - 2)}{n_1 + n_2 - p - 1}} F_{(p,n_1+n_2-p-1)}(\\alpha)\\]\nem que \\(F_{(p,n_1+n_2-p-1)}(\\alpha)\\) denota o \\(100(1 − \\alpha)\\)-ésimo percentil superior de uma distribuição \\(F[p,(n_1+n_2-p-1)]\\)."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#propriedades-do-teste-t2-de-hotelling-para-duas-amostras-independentes",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#propriedades-do-teste-t2-de-hotelling-para-duas-amostras-independentes",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Propriedades do teste \\(T^2\\) de Hotelling para duas amostras independentes",
+    "text": "Propriedades do teste \\(T^2\\) de Hotelling para duas amostras independentes\n\n\nDevemos ter \\(n_1 + n_2-2 &gt; p\\) para a matriz \\(\\mathbf{S}_p\\) ser não-singular.\n\n\n\nOs graus de liberdade oara a estatística \\(T^2\\) são os mesmos que para o teste univariado, isto é, \\(n_1+n_2-2\\).\n\n\n\n\nA hipótese alternativa é bilateral. No entanto, a região crítica é unilateral. Isso é típico de muitos testes multivariados."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#propriedades-do-teste-t2-de-hotelling-para-duas-amostras-independentes-1",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#propriedades-do-teste-t2-de-hotelling-para-duas-amostras-independentes-1",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Propriedades do teste \\(T^2\\) de Hotelling para duas amostras independentes",
+    "text": "Propriedades do teste \\(T^2\\) de Hotelling para duas amostras independentes\n\n\nA estatística \\(T^2\\) pode ser convertida para uma estatística \\(F\\) da seguinte forma:\n\n\\[\\dfrac{n_1+n_2-p-1}{(n_1+n_2-2)p}T^2 = F_{p, n_1+n_2-p-1}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-5",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-5",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido\nExemplo 06: Quatro testes psicológicos foram aplicados em 32 homens e 32 mulheres. As variáveis mensuradas foram:\n\n\n\\(X_1:\\) falsas memórias\n\n\\(X_2:\\) habilidades de visualização mental\n\n\\(X_3:\\) reconhecimento de ferramentas\n\n\\(X_4:\\) vocabulário\n\nTeste as hipóteses de que\n\\[H_0: \\mathbf{\\mu}_{\\text{Homens}} = \\mathbf{\\mu}_{\\text{Mulheres}} \\text{          vs.          } H_a: \\mathbf{\\mu}_{\\text{Homens}} \\neq \\mathbf{\\mu}_{\\text{Mulheres}}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-6",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-6",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido\n\npacman::p_load(\n  tidyverse,\n  goft,\n  MVTests,\n  ellipse,\n  confintr\n)\n\n\ndados = read.csv(\"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/testes_psico.csv\", sep = \";\") %&gt;% mutate(Sexo=ifelse(Sexo==\"M\", 1,2))\ndados %&gt;% str()\n\n'data.frame':   64 obs. of  5 variables:\n $ X1  : int  15 17 15 13 20 15 15 13 14 17 ...\n $ X2  : int  17 15 14 12 17 21 13 5 7 15 ...\n $ X3  : int  24 32 29 10 26 26 26 22 30 30 ...\n $ X4  : int  14 26 23 16 28 21 22 22 17 27 ...\n $ Sexo: num  1 1 1 1 1 1 1 1 1 1 ..."
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-7",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-7",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido\n\nres = TwoSamplesHT2(dados %&gt;% dplyr::select(-Sexo), group=dados$Sexo, alpha = 0.05, Homogenity = TRUE)\nsummary(res)\n\n              Two Independent Samples Hotelling T Square Test \n\nHotelling T Sqaure Statistic = 97.6015 \n F value = 23.22 , df1 = 4 , df2 = 59 , p-value: 1.46e-11 \n\n           Descriptive Statistics (The First Group) \n\n             X1        X2        X3        X4\nMeans 15.968750 15.906250 27.187500 22.750000\nSd     2.278715  3.631043  5.354754  4.079848\n\n\n           Descriptive Statistics (The Second Group) \n\n             X1        X2        X3        X4\nMeans 12.343750 13.906250 16.656250 21.937500\nSd     3.022596  4.313216  5.480813  5.291122\n\n\n           Detection important variable(s)\n\n       Lower     Upper Important Variables?\nX1  1.443739  5.806261               *TRUE*\nX2 -1.248920  5.248920                FALSE\nX3  6.115836 14.946664               *TRUE*\nX4 -3.037608  4.662608                FALSE\n\n\n\np-valor = 1,46e-11 &lt; 0,05 = \\(\\alpha\\) → \\(RH_0\\)"
+  },
+  {
+    "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-8",
+    "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-duas-amostras-independentes-com-mathbfsigma-desconhecido-8",
+    "title": "Inferências sobre Vetores de Médias",
+    "section": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido",
+    "text": "Teste para duas amostras independentes com \\(\\mathbf{\\Sigma}\\) desconhecido\nPara o caso em que \\(\\mathbf{\\Sigma}_1 \\neq \\mathbf{\\Sigma}_2\\), ou seja, as matrizes de covariâncias populacionais se diferem, sugere-se o uso da estatística\n\\[T^2 = (\\mathbf{\\bar{x}}_1 - \\mathbf{\\bar{x}}_2)^t \\left[ \\left( \\dfrac{\\mathbf{S}_1}{n_1} + \\dfrac{\\mathbf{S}_2}{n_2} \\right)  \\right]^{-1}(\\mathbf{\\bar{x}}_1 - \\mathbf{\\bar{x}}_2)\\]\n\nPara grandes amostras, pode-se utilizar\n\\[T^2 \\stackrel{H_0}{\\sim} \\chi^2_p,\\] sendo \\(\\chi^2_p\\) a distribuição qui-quadrado com \\(p\\) graus de liberdade.\n\n\nA hipótese nula deve ser rejeitada se \\(T^2 \\geq \\chi ^2_p(\\alpha)\\) para o nível de significância \\(\\alpha\\)."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#inferências-sobre-matrizes-de-covariâncias-1",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#inferências-sobre-matrizes-de-covariâncias-1",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Inferências sobre Matrizes de Covariâncias",
+    "text": "Inferências sobre Matrizes de Covariâncias\nEsses testes são frequentemente realizados para verificar suposições relativas a outros testes.\n\nBasicamente, veremos três tipos de testes:\n\nTeste para uma matriz de covariância específica,\nTeste para igualdade de matrizes de covariâncias e,\nTeste para independência de algumas variáveis aleatórias.\n\n\n\nNa maioria dos casos, usamos a abordagem da razão de verossimilhança. As estatísticas de teste resultantes envolvem a razão dos determinantes da matriz de covariância amostral sob a hipótese nula e sob a hipótese alternativa."
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para uma covariância específica",
+    "text": "Teste para uma covariância específica\nSeja uma amostra aleatória \\(\\{\\mathbf{x}_1, \\mathbf{x}_2, \\cdots, \\mathbf{x}_n\\}\\), de tamanho \\(n\\), de uma \\(N_p(\\mathbf{\\mu}, \\mathbf{\\Sigma})\\).\n\nSuponha que o vetor de médias \\(\\mathbf{\\mu}\\) seja desconhecido e que desejamos testar as seguintes hipóteses:\n\\[H_0: \\mathbf{\\Sigma} = \\mathbf{\\Sigma}_0 \\hspace{0.5cm} \\text{vs} \\hspace{0.5cm} H_a: \\mathbf{\\Sigma} \\neq \\mathbf{\\Sigma}_0\\]\n\n\nPara verificar se a matriz de covariâncias amostral \\(\\mathbf{S}\\) é significativamente diferente de \\(\\mathbf{\\Sigma}_0\\), nós usamos a seguinte estatística de teste, que é uma modificação da razão de verossimilhança\n\\[u = (n-1)[\\ln|\\mathbf{\\Sigma}_0| - \\ln|\\mathbf{S}| + \\text{tr}(\\mathbf{S}\\mathbf{\\Sigma}_0^{-1}) - p]\\]"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-1",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-1",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para uma covariância específica",
+    "text": "Teste para uma covariância específica\nSe \\(n\\) é grande, tem-se que a estatística \\(u\\) possui assintoticamente distribuição qui-quadrado, sob \\(H_0\\), com \\(f =  \\displaystyle{\\dfrac{p(p+1)}{2}}\\) graus de liberdade.\n\nPara valores moderados de \\(n\\),\n\\[u´ = \\left[ 1 - \\dfrac{1}{6n - 7} \\left( 2p + 1 - \\dfrac{2}{p+1}\\right)\\right]u\\]\né uma melhor aproximação para \\(\\chi^2_f\\)."
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-2",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-2",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para uma covariância específica",
+    "text": "Teste para uma covariância específica\nDessa forma, podemos formular um teste de hipóteses\n\\[H_0: \\mathbf{\\Sigma} = \\mathbf{\\Sigma}_0 \\hspace{0.5cm} \\text{vs} \\hspace{0.5cm} H_a: \\mathbf{\\Sigma} \\neq \\mathbf{\\Sigma}_0\\]\nAo nível de significância \\(\\alpha\\), rejeitamos \\(H_0\\) em favor de \\(H_a\\) se observarmos\n\\[u (\\text{ ou } u´) &gt; \\chi^2_f(\\alpha)\\]\n\\(\\chi^2_f(\\alpha)\\) denota o \\(100(1 − \\alpha)\\)-ésimo percentil superior de uma distribuição \\(\\chi^2_f\\), sendo \\(f = \\displaystyle{\\dfrac{p(p+1)}{2}}\\) gl."
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-3",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-3",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para uma covariância específica",
+    "text": "Teste para uma covariância específica\nTeste de independência\n\\[H_0: \\mathbf{\\Sigma} = \\mathbf{\\Sigma}_0  = \\left[ \\begin{array}{cccc} \\sigma_{11} & 0 & \\cdots & 0 \\\\\n0 & \\sigma_{22} & \\cdots & 0 \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n0 & 0 & \\cdots & \\sigma_{pp}\n\\end{array} \\right] \\]\nTeste de esfericidade\n\\[H_0: \\mathbf{\\Sigma} = \\mathbf{\\Sigma}_0  = \\left[ \\begin{array}{cccc} \\sigma^2 & 0 & \\cdots & 0 \\\\\n0 & \\sigma^2 & \\cdots & 0 \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\n0 & 0 & \\cdots & \\sigma^2\n\\end{array} \\right] = \\sigma^2 \\mathbf{I}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-4",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-4",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para uma covariância específica",
+    "text": "Teste para uma covariância específica\nExemplo 01 - Pardais sobreviventes a tempestades: Após uma forte tempestade em 1º de fevereiro de 1898, diversos pardais moribundos foram levados ao laboratório biológico de Hermon Bumpus na Universidade de Brown em Rhode Island.\nSubsequentemente, cerca de metade dos pássaros morreu, e Bumpus viu isso como uma oportunidade de encontrar suporte para a teoria da seleção natural de Charles Darwin.\nPara esse fim, ele fez oito medidas morfológicas em cada pássaro, e também os pesou. Os resultados de cinco das medidas são disponibilizados na base de dados Bumpus_sparrows, para fêmeas somente."
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-5",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-5",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para uma covariância específica",
+    "text": "Teste para uma covariância específica\n\npacman::p_load(\n  tidyverse,\n  goft,\n  MVTests,\n  mvhtests\n)\n\n\ndados = read.csv(\"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Bumpus_sparrows.csv\", sep = ',',check.names = F, stringsAsFactors = T) %&gt;% filter(Sobrevivencia == \"S\") %&gt;% dplyr::select(-c(Sobrevivencia))\ndados %&gt;% str()\n\n'data.frame':   21 obs. of  5 variables:\n $ C_total_(mm)            : int  156 154 153 153 155 163 157 155 164 158 ...\n $ Extensao_alar_(mm)      : int  245 240 240 236 243 247 238 239 248 238 ...\n $ C_bico_cabeca_(mm)      : num  31.6 30.4 31 30.9 31.5 32 30.9 32.8 32.7 31 ...\n $ C_umero_(mm)            : num  18.5 17.9 18.4 17.7 18.6 19 18.4 18.6 19.1 18.8 ...\n $ C_quilha_do_esterno_(mm): num  20.5 19.6 20.6 20.2 20.3 20.9 20.2 21.2 21.1 22 ...\n\n\n\n# Teste de normalidade multivariada\n# H_0: dados seguem distribuição normal trivariada\n\nmvshapiro_test(as.matrix(dados))\n\n\n    Generalized Shapiro-Wilk test for Multivariate Normality\n\ndata:  as.matrix(dados)\nMVW = 0.92883, p-value = 0.02363"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-6",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-6",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para uma covariância específica",
+    "text": "Teste para uma covariância específica\n\n## Teste para uma covariância específica\n\n#H0: Sigma = S0\n\nS0 = matrix(c(11.0,9.0,1.5,0.8,1.3,\n              9.0,17.0,1.9,1.3,1.0,\n              1.5,1.9,0.5,0.2,0.2,\n              0.8,1.3,0.2,0.15,0.15,\n              1.3,1.0,0.2,0.15,0.6),ncol=5,nrow=5, byrow = T)\nS0\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,] 11.0  9.0  1.5 0.80 1.30\n[2,]  9.0 17.0  1.9 1.30 1.00\n[3,]  1.5  1.9  0.5 0.20 0.20\n[4,]  0.8  1.3  0.2 0.15 0.15\n[5,]  1.3  1.0  0.2 0.15 0.60\n\nresultado = Bcov(data=dados,Sigma=S0)\nsummary(resultado)\n\n       Bartlett's Test for One Sample Covariance Matrix \n\nChi-Squared Value = 8.723529 , df = 15  and p-value: 0.926 \n\n# p-valor = 0,926 &gt; 0,05 ---&gt; NRH0"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-7",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-7",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para uma covariância específica",
+    "text": "Teste para uma covariância específica\n\n## Teste de independência\n\n#H0: Sigma = S0\n\nS0 = matrix(c(11,0,0,0,0,\n              0,17,0,0,0,\n              0,0,0.5,0,0,\n              0,0,0,0.15,0,\n              0,0,0,0,0.6),ncol=5,nrow=5)\nS0\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,]   11    0  0.0 0.00  0.0\n[2,]    0   17  0.0 0.00  0.0\n[3,]    0    0  0.5 0.00  0.0\n[4,]    0    0  0.0 0.15  0.0\n[5,]    0    0  0.0 0.00  0.6\n\nresultado = Bcov(data=dados,Sigma=S0)\nsummary(resultado)\n\n       Bartlett's Test for One Sample Covariance Matrix \n\nChi-Squared Value = 51.45842 , df = 15  and p-value: 3.9e-05 \n\n# p-valor = 3,9e-05 &lt; 0,05 ---&gt; RH0"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-8",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-8",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para uma covariância específica",
+    "text": "Teste para uma covariância específica\n\n## Teste de esfericidade\n\n#H0: Sigma = sigma2*I\n\nsigma = 5.85\n\nS0 = sigma*diag(1,nrow=5,ncol=5)\nS0\n\n     [,1] [,2] [,3] [,4] [,5]\n[1,] 5.85 0.00 0.00 0.00 0.00\n[2,] 0.00 5.85 0.00 0.00 0.00\n[3,] 0.00 0.00 5.85 0.00 0.00\n[4,] 0.00 0.00 0.00 5.85 0.00\n[5,] 0.00 0.00 0.00 0.00 5.85\n\nresultado = Bcov(data=dados,Sigma=S0)\nsummary(resultado)\n\n       Bartlett's Test for One Sample Covariance Matrix \n\nChi-Squared Value = 182.9264 , df = 15  and p-value: &lt;2e-16 \n\n# p-valor &lt; 2e-16 &lt; 0,05 ---&gt; RH0"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-9",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-uma-covariância-específica-9",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para uma covariância específica",
+    "text": "Teste para uma covariância específica\n\n### Alternativa ao teste de esfericidade\n\n# H0: R = I\n\nresultado = Bsper(dados)\nsummary(resultado)\n\n       Bartlett's Sphericity Test \n\nChi-Squared Value = 44.73381 , df = 10  and p-value: 2.43e-06 \n\n       Correlation Matrix \n\n                         C_total_(mm) Extensao_alar_(mm) C_bico_cabeca_(mm)\nC_total_(mm)                1.0000000          0.6544674          0.6425068\nExtensao_alar_(mm)          0.6544674          1.0000000          0.6263698\nC_bico_cabeca_(mm)          0.6425068          0.6263698          1.0000000\nC_umero_(mm)                0.6239195          0.7464418          0.6180476\nC_quilha_do_esterno_(mm)    0.5103557          0.2774378          0.4336368\n                         C_umero_(mm) C_quilha_do_esterno_(mm)\nC_total_(mm)                0.6239195                0.5103557\nExtensao_alar_(mm)          0.7464418                0.2774378\nC_bico_cabeca_(mm)          0.6180476                0.4336368\nC_umero_(mm)                1.0000000                0.4165447\nC_quilha_do_esterno_(mm)    0.4165447                1.0000000\n\n# p-valor = 2,43e-06 &lt; 0,05 ---&gt; RH0"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\nConsidere amostras aleatórias \\(K \\geqslant 2\\) populações normais \\(p\\)-variadas \\(N_{p}({\\mathbf{\\mu}}_{k},\\mathbf{\\Sigma}_{k})\\) de tamanho \\(n_{k}\\), \\(k=1,...,K\\).\n\nA amostra da \\(k\\)-ésima população é dada por \\(\\mathbf{x}_{k1},\\mathbf{x}_{k2},\\cdots ,\\mathbf{x}_{kn_{k}}\\), em que \\({\\mathbf{x}}_{kj} \\in \\mathbb{R}^{p}\\) corresponde à j-ésima unidade da k-ésima população.\n\n\nConsidere também que \\(n = \\displaystyle{\\sum_{k=1}^{k}n_{k}}\\)."
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-1",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-1",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\nQueremos testar a hipótese de homogeneidade sobre as covariâncias das \\(k\\) populações, ou seja, queremos testar\n\\[H_{0}:\\mathbf{\\Sigma}_{1} = \\mathbf{\\Sigma}_{2} = \\cdots = \\mathbf{\\Sigma}_{k} = \\mathbf{\\Sigma}\\]\nTeste da razão de verossimilhanças\nSejam\n\\[\\hat{\\mathbf{\\Sigma}}_k = \\displaystyle{\\dfrac{n_k - 1}{n_k}} \\mathbf{S}_k \\text{                         e                     } \\hat{\\mathbf{\\Sigma}} =  \\displaystyle{\\frac{\\displaystyle{\\sum_{k=1}^K}n_k \\hat{\\mathbf{\\Sigma}}_k }{n}}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-2",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-2",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\nA estatística do teste da razão da máxima verossimilhança é dada por:\n\\[\n\\Lambda = \\displaystyle{\\dfrac{\\displaystyle \\prod_{k=1}^{K}|\\hat{\\mathbf{\\Sigma}}_{k}|^{\\dfrac{n_{k}}{2}} }{|\\hat{\\mathbf{\\Sigma}}|^{\\dfrac{n}{2}} }}\n\\]"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-3",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-3",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\nDe forma que,\n\\[\n\\begin{eqnarray*}\n-2 \\ln \\left( \\Lambda \\right)  &=& -2 \\ln \\left({\\frac{\\displaystyle \\prod_{k=1}^{K}|\\hat{\\mathbf{\\Sigma}}_{k}|^{\\dfrac{n_{k}}{2}} }{|\\hat{\\mathbf{\\Sigma}}|^{\\dfrac{n}{2}} }} \\right) = -\\left [ \\sum_{k=1}^{K}n_{k}\\ln|\\hat{\\mathbf{\\Sigma}}_{k}|-n\\ln|\\hat{\\mathbf{\\Sigma}}| \\right ]\n\\end{eqnarray*}\n\\]\npossui assintoticamente distribuição qui-quadrado, sob \\(H_0\\), com \\(f =  \\displaystyle{\\dfrac{(k-1)p(p+1)}{2}}\\) graus de liberdade."
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-4",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-4",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\nDessa forma, podemos formular um teste de hipóteses\n\\[H_{0}:\\mathbf{\\Sigma}_{1} = \\mathbf{\\Sigma}_{2} = \\cdots = \\mathbf{\\Sigma}_{k} = \\mathbf{\\Sigma}  \\hspace{0.5cm} \\text{vs} \\hspace{0.5cm} H_a: \\text{pelo menos uma difere}\\]\nAo nível de significância \\(\\alpha\\), rejeitamos \\(H_0\\) em favor de \\(H_a\\) se observarmos\n\\[\\chi_2 = -\\left [ \\sum_{k=1}^{K}n_{k}\\ln|\\hat{\\mathbf{\\Sigma}}_{k}|-n\\ln|\\hat{\\mathbf{\\Sigma}}| \\right ] &gt; \\chi_f^2(\\alpha)\\]\nem que \\(\\chi^2_f(\\alpha)\\) denota o \\(100(1 − \\alpha)\\)-ésimo percentil superior de uma distribuição \\(\\chi^2_f\\), sendo \\(f = \\displaystyle{\\dfrac{(k-1)p(p+1)}{2}}\\) gl."
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-5",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-5",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\nTeste M de Box\nA estatística do teste \\(M\\) de Box é dada por\n\\[M = (n - K) \\ln|\\mathbf{S}_p| - \\sum_{k=1}^{K}(n_{k} - 1)|\\mathbf{S}_k|,\\]\ncom\n\\[\\mathbf{S}_p = \\dfrac{\\sum_{k=1}^{K}(n_{k} - 1)\\mathbf{S}_k}{n - K}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-6",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-6",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\nAdmita\n\\[A = 1 - \\dfrac{2p^2 + 3p - 1}{6(p + 1)(K - 1)} \\left(\\sum_{k=1}^{K} \\dfrac{1}{n_k - 1} - \\dfrac{1}{n - K}\\right)\\]\nPode ser demonstrado que, sob \\(H_0\\), a distribuição de \\(AM\\) aproxima-se da distribuição qui-quadrado com \\(f = \\displaystyle{\\dfrac{(k-1)p(p+1)}{2}}\\) gl."
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-7",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-7",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\nAssim, rejeita-se a hipótese nula se \\(AM \\geq \\chi^2_f(\\alpha)\\) para o nível de significância \\(\\alpha\\), em que \\(\\chi^2_f(\\alpha)\\) denota o \\(100(1 − \\alpha)\\)-ésimo percentil superior de uma distribuição \\(\\chi^2_f\\), sendo \\(f = \\displaystyle{\\dfrac{(k-1)p(p+1)}{2}}\\) gl.\n\nSeja\n\\[B = \\dfrac{1 - a_1 - \\dfrac{a}{b}}{a}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-8",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-8",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\nOutra aproximação, sob \\(H_0\\), é\n\\[BM \\stackrel{H_0}{\\sim} F(a,b)\\]\ncom\n\\[a = \\dfrac{p(p+1)(K-1)}{2}, \\hspace{1cm} b = \\dfrac{a + 2}{a_2 - a_1^2}\\]"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-9",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-9",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\nsendo\n\\[a_1 = 1 - A, \\hspace{1cm} a_2 = \\dfrac{(p-1)(p+2)}{6(K-1)}\\left[ \\sum_{k=1}^{K} \\dfrac{1}{(n_k - 1)^2} - \\dfrac{1}{(n - K)^2}\\right]\\]\n\nRejeita-se a hipótese nula se \\(BM \\geq F_{(a,b)}(\\alpha)\\) para o nível de significância \\(\\alpha\\), em que \\(F_{(a,b)}(\\alpha)\\) é o quantil superior \\(100 \\alpha%\\) da distribuição \\(F_{(a,b)}\\)."
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-10",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-10",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\n\ndados = read.csv(\"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Bumpus_sparrows.csv\", sep = ',',check.names = F, stringsAsFactors = T) \ndados %&gt;% str()\n\n'data.frame':   49 obs. of  6 variables:\n $ Sobrevivencia           : Factor w/ 2 levels \"NS\",\"S\": 2 2 2 2 2 2 2 2 2 2 ...\n $ C_total_(mm)            : int  156 154 153 153 155 163 157 155 164 158 ...\n $ Extensao_alar_(mm)      : int  245 240 240 236 243 247 238 239 248 238 ...\n $ C_bico_cabeca_(mm)      : num  31.6 30.4 31 30.9 31.5 32 30.9 32.8 32.7 31 ...\n $ C_umero_(mm)            : num  18.5 17.9 18.4 17.7 18.6 19 18.4 18.6 19.1 18.8 ...\n $ C_quilha_do_esterno_(mm): num  20.5 19.6 20.6 20.2 20.3 20.9 20.2 21.2 21.1 22 ...\n\n\n\n## Teste da razão de veroossimilhança\n\n# H0: Sigma_S = Sigma_NS\n\nx = as.matrix(dados %&gt;% dplyr::select(-c(Sobrevivencia)))\nina = as.integer(unlist(dados %&gt;% dplyr::select(Sobrevivencia)))\n\nlikel.cov(x, ina, a = 0.05)\n\n      test    p-value         df   critical \n12.5322335  0.6383781 15.0000000 24.9957901 \n\n## p-valor = 0,6383781 &gt; 0,05 ---&gt; NRH0"
+  },
+  {
+    "objectID": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-11",
+    "href": "aulas/Inferencia_Covariancias/Teste_covariancias.html#teste-para-homogeneidade-de-matrizes-de-covariâncias-11",
+    "title": "Inferências sobre Matrizes de Covariâncias",
+    "section": "Teste para homogeneidade de matrizes de covariâncias",
+    "text": "Teste para homogeneidade de matrizes de covariâncias\n\n## Teste M de Box\n\n# H0: Sigma_S = Sigma_NS\n\nresultado = BoxM(dados %&gt;% dplyr::select(-c(Sobrevivencia)), as.integer(unlist(dados %&gt;% dplyr::select(Sobrevivencia))))\n\nsummary(resultado)\n\n       Box's M Test \n\nChi-Squared Value = 10.40798 , df = 15  and p-value: 0.793 \n\n## p-valor = 0,793 &gt; 0,05 ---&gt; NRH0"
+  },
+  {
+    "objectID": "aulas.html",
+    "href": "aulas.html",
+    "title": "Aulas",
+    "section": "",
+    "text": "Inferências sobre Vetores de Médias\nTestes de Hipóteses sobre Matrizes de Covariâncias\nAnálise de Variância Multivariada\nAnálise de Regressão Multivariada\nEscalonamento Multidimensional (MDS)\nAnálise de Correlação Canônica\nAnálise de Correspondência",
+    "crumbs": [
+      "Aulas"
+    ]
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-18",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-18",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\nCom fins ilustrativos assumiremos normalidade e igualdade de variâncias.\n\n# H0: mu1 = mu2 = mu3\n\nmodelo = manova(cbind(x1, x2, x3, x4) ~ tipo, data = dados)\n\n## Teste lambda de Wilks\nsummary(modelo, test = \"Wilks\")\n\n           Df   Wilks approx F num Df den Df    Pr(&gt;F)    \ntipo        2 0.79914   15.126      8   1020 &lt; 2.2e-16 ***\nResiduals 513                                             \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nH = summary(modelo)$SS$tipo\n\nE = summary(modelo)$SS$Residuals\n\nLam = det(E)/det(H+E)\nLam\n\n[1] 0.7991428"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-19",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-19",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\n## Teste traço de Pillai \nsummary(modelo, test = \"Pillai\")\n\n           Df  Pillai approx F num Df den Df    Pr(&gt;F)    \ntipo        2 0.20726   14.769      8   1022 &lt; 2.2e-16 ***\nResiduals 513                                             \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n## Teste raiz máxima de Roy\nsummary(modelo,test=\"Roy\")\n\n           Df     Roy approx F num Df den Df    Pr(&gt;F)    \ntipo        2 0.20406   26.069      4    511 &lt; 2.2e-16 ***\nResiduals 513                                             \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n## Teste traço de Hotelling-Lawley\nsummary(modelo, test = \"Hotelling-Lawley\")\n\n           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    \ntipo        2          0.24333   15.482      8   1018 &lt; 2.2e-16 ***\nResiduals 513                                                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-20",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-20",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\ndados %&gt;%\n  group_by(tipo) %&gt;%\n  identify_outliers(x2)\n\n# A tibble: 11 × 7\n   tipo     x1    x2     x3    x4 is.outlier is.extreme\n   &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;      &lt;lgl&gt;     \n 1 1      2.62 0.184  0.1   0.265 TRUE       FALSE     \n 2 1      2.33 0.73   0.127 0.488 TRUE       FALSE     \n 3 1      2.06 0.162  0.066 0.22  TRUE       FALSE     \n 4 1      1.55 0.724  0.106 0.365 TRUE       FALSE     \n 5 1      2.96 0.234  0.056 0.222 TRUE       FALSE     \n 6 1      2.00 0.77  -0.012 0.534 TRUE       FALSE     \n 7 1      2.1  0.226  0.115 0.212 TRUE       FALSE     \n 8 1      2.24 0.205  0.078 0.177 TRUE       FALSE     \n 9 3      1.64 0.184  0.062 0.22  TRUE       FALSE     \n10 3      1.50 0.217  0.138 0.234 TRUE       FALSE     \n11 3      2.68 0.876  0.195 0.35  TRUE       FALSE"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-21",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-21",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\ndados %&gt;%\n  group_by(tipo) %&gt;%\n  identify_outliers(x3)\n\n# A tibble: 12 × 7\n   tipo     x1    x2     x3    x4 is.outlier is.extreme\n   &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;      &lt;lgl&gt;     \n 1 1     0.978 0.439  0.004 0.4   TRUE       FALSE     \n 2 1     1.41  0.508 -0.003 0.448 TRUE       FALSE     \n 3 1     2.56  0.503  0.173 0.351 TRUE       FALSE     \n 4 1     2.00  0.77  -0.012 0.534 TRUE       FALSE     \n 5 2     1.92  0.777  0.279 0.604 TRUE       FALSE     \n 6 2     1.14  0.722  0.279 0.194 TRUE       FALSE     \n 7 2     2.95  0.568  0.307 0.427 TRUE       FALSE     \n 8 2     1.72  0.434 -0.097 0.332 TRUE       FALSE     \n 9 2     3.11  0.768  0.276 0.563 TRUE       FALSE     \n10 2     3.39  0.718  0.291 0.61  TRUE       FALSE     \n11 3     3.05  0.437  0.312 0.455 TRUE       FALSE     \n12 3     1.86  0.504  0.301 0.44  TRUE       FALSE"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-22",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-22",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\ndados %&gt;%\n  group_by(tipo) %&gt;%\n  identify_outliers(x4)\n\n# A tibble: 1 × 7\n  tipo     x1    x2    x3    x4 is.outlier is.extreme\n  &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;      &lt;lgl&gt;     \n1 1      2.49 0.548 0.106 0.679 TRUE       FALSE"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-23",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-23",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\ndados %&gt;%\n group_by(tipo) %&gt;%\n mahalanobis_distance() %&gt;%\n filter(is.outlier == TRUE) %&gt;%\n  as.data.frame()\n\n      x1    x2     x3    x4 mahal.dist is.outlier\n1  1.138 0.722  0.279 0.194     20.441       TRUE\n2  4.344 0.714 -0.057 0.631     28.227       TRUE\n3 -0.606 0.871  0.162 0.158     33.401       TRUE\n4  3.048 0.437  0.312 0.455     19.451       TRUE"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-24",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-24",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\ndados %&gt;%\n  dplyr::select(-c(tipo)) %&gt;% \n  mshapiro_test()\n\n# A tibble: 1 × 2\n  statistic    p.value\n      &lt;dbl&gt;      &lt;dbl&gt;\n1     0.979 0.00000103\n\n\n\nresults &lt;- dados %&gt;%\n  group_by(tipo) %&gt;%\n  doo(~ggpairs(.) + theme_bw(), result = \"plots\")\nresults\n\n# A tibble: 3 × 2\n  tipo  plots \n  &lt;fct&gt; &lt;list&gt;\n1 1     &lt;gg&gt;  \n2 2     &lt;gg&gt;  \n3 3     &lt;gg&gt;"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-25",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-25",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\n# Show the plots\nresults$plots[[1]]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-26",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-26",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\n# Show the plots\nresults$plots[[2]]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-27",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-27",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\n# Show the plots\nresults$plots[[3]]"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-28",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-28",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\nresultado = BoxM(dados %&gt;% dplyr::select(-c(tipo)), as.integer(unlist(dados %&gt;% dplyr::select(tipo))))\n\nsummary(resultado)\n\n       Box's M Test \n\nChi-Squared Value = 247.9963 , df = 20  and p-value: &lt;2e-16"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nQuando \\(H_0\\) é rejeitada, os efeitos que levaram à rejeição são de interesse.\n\nPara efeito de comparações pareadas, a abordagem de Bonferroni pode ser usada para construir intervalos simultâneos de confiança para os componentes dos vetores diferença \\(\\mathbf{\\tau}_j - \\mathbf{\\tau}_k\\).\n\n\nSeja \\(\\tau_{ji}\\) o i-ésimo componente de \\(\\mathbf{\\tau}_j\\). Como \\(\\mathbf{\\tau}_j\\) é estimado por \\(\\widehat{\\mathbf{\\tau}}_j = \\bar{\\mathbf{x}}_{j \\ldotp} - \\bar{\\mathbf{x}}_{\\ldotp \\ldotp}\\), temos que o i-ésimo componente de \\(\\mathbf{\\tau}_j\\) é estimado por \\(\\bar{{x}}_{ji} - \\bar{\\mathbf{x}}_{\\ldotp i}\\)."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-1",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-1",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nAssim, \\(\\tau_{ji} - \\tau_{ki}\\) é estimado por\n\\[\\widehat{\\tau}_{ji} - \\widehat{\\tau}_{ki} = \\bar{x}_{ji} - \\bar{x}_{ki}\\]\nque é uma diferença entre médias de duas amostras independentes.\n\nO teste t para duas amostras independentes é válido para um nível de significância apropriado."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-2",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-2",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nTemos ainda que,\n\\[\\text{Var}(\\widehat{\\tau}_{ji} - \\widehat{\\tau}_{ki}) = \\left(\\displaystyle{\\frac{1}{n_j}} + \\displaystyle{\\frac{1}{n_k}}\\right) \\sigma_{ii}\\]\ncom \\(\\sigma_{ii}\\) o i-ésimo elemento da diagonal de \\(\\Sigma\\). Como sugerido, \\(\\sigma_{ii}\\) é estimado pelo i-ésimo elemento da diagonal da matriz \\(\\mathbf{E}\\) dividido pelos respectivos graus de liberdade, a saber, \\(\\widehat{\\sigma}_{ii} = \\displaystyle{\\frac{1}{n - g}}e_{ii}\\)."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-3",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-3",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nResta identificar o número de intervalos. Como são \\(g\\) tratamentos para \\(p\\) medidas, segue que ao todo teremos \\(m = \\displaystyle{\\dfrac{pg(g-1)}{2}}\\) intervalos.\n\nLogo, com confiança de pelo menos \\((1 - \\alpha)\\), os intervalos de confiança simultâneos para \\(\\tau_{ji} - \\tau_{ki}\\) são dados por:\n\\[(\\bar{x}_{ji} - \\bar{x}_{ki}) \\pm t_{n-g} \\left(\\displaystyle{\\frac{\\alpha}{pg/(g - 1)}}\\right) \\sqrt{\\left(\\displaystyle{\\frac{1}{n_j}} +\n\\displaystyle{\\frac{1}{n_k}}\\right)\\displaystyle{\\frac{e_{ii}}{n - g}} }\\]\nem que \\(e_{ii}\\) é o i-ésimo elemento da diagonal da matriz \\(\\mathbf{E}\\)."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-4",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-4",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nExemplo - Análise dos dados de uma casa de repouso para idosos\n\nsummary.aov(modelo)\n\n Response x1 :\n             Df  Sum Sq Mean Sq F value    Pr(&gt;F)    \ntipo          2   7.473  3.7363  9.9001 6.044e-05 ***\nResiduals   513 193.608  0.3774                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n Response x2 :\n             Df Sum Sq Mean Sq F value    Pr(&gt;F)    \ntipo          2 1.0430 0.52149  33.268 2.601e-14 ***\nResiduals   513 8.0415 0.01568                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n Response x3 :\n             Df  Sum Sq  Mean Sq F value    Pr(&gt;F)    \ntipo          2 0.13858 0.069290   25.48 2.816e-11 ***\nResiduals   513 1.39502 0.002719                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n Response x4 :\n             Df Sum Sq  Mean Sq F value    Pr(&gt;F)    \ntipo          2 0.4048 0.202389  15.299 3.517e-07 ***\nResiduals   513 6.7863 0.013229                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-5",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-5",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\ndados %&gt;% emmeans_test(x1 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate     se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  x1    1      2               0   -0.172 0.0642   513   -0.298   -0.0458\n2 tipo  x1    1      3               0   -0.295 0.0701   513   -0.433   -0.157 \n3 tipo  x1    2      3               0   -0.123 0.0791   513   -0.279    0.0324\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;\n\ndados %&gt;% emmeans_test(x2 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate     se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  x2    1      2               0  -0.106  0.0131   513  -0.132    -0.0807\n2 tipo  x2    1      3               0  -0.0447 0.0143   513  -0.0728   -0.0167\n3 tipo  x2    2      3               0   0.0617 0.0161   513   0.0300    0.0934\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-6",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-6",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\ndados %&gt;% emmeans_test(x3 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate      se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  x3    1      2               0 -0.0287  0.00545   513  -0.0394  -0.0180 \n2 tipo  x3    1      3               0 -0.0370  0.00595   513  -0.0487  -0.0253 \n3 tipo  x3    2      3               0 -0.00835 0.00672   513  -0.0215   0.00484\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;\n\ndados %&gt;% emmeans_test(x4 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate     se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  x4    1      2               0  -0.0633 0.0120   513 -0.0869    -0.0397\n2 tipo  x4    1      3               0  -0.0426 0.0131   513 -0.0684    -0.0168\n3 tipo  x4    2      3               0   0.0207 0.0148   513 -0.00840    0.0498\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-7",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-7",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nIntervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 1 e 2\n\n\n\n\n\n\n\nGrupo\n\n\nvariáveis\n\n\ndif médias\n\n\nlim inf\n\n\nlim sup\n\n\n\n\n\n\n\n1\n\n\n-0,172\n\n\n-0,298\n\n\n-0,046\n\n\n\n\n1,2\n\n\n2\n\n\n-0,106\n\n\n-0,132\n\n\n-0,081\n\n\n\n\n\n\n3\n\n\n-0,029\n\n\n-0,049\n\n\n-0,025\n\n\n\n\n\n\n4\n\n\n-0,063\n\n\n-0,087\n\n\n-0,039"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-8",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-8",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nIntervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 1 e 3\n\n\n\n\n\n\n\nGrupo\n\n\nvariáveis\n\n\ndif médias\n\n\nlim inf\n\n\nlim sup\n\n\n\n\n\n\n\n1\n\n\n-0,295\n\n\n-0,433\n\n\n-0,157\n\n\n\n\n1,3\n\n\n2\n\n\n-0,045\n\n\n-0,073\n\n\n-0,017\n\n\n\n\n\n\n3\n\n\n-0,037\n\n\n-0,049\n\n\n-0,025\n\n\n\n\n\n\n4\n\n\n-0,043\n\n\n-0,068\n\n\n-0,017"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-9",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-9",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nIntervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 2 e 3\n\n\n\n\n\n\n\nGrupo\n\n\nvariáveis\n\n\ndif médias\n\n\nlim inf\n\n\nlim sup\n\n\n\n\n\n\n\n1\n\n\n-0,123\n\n\n-0,279\n\n\n0,032\n\n\n\n\n2,3\n\n\n2\n\n\n0,062\n\n\n0,030\n\n\n0,093\n\n\n\n\n\n\n3\n\n\n-0,008\n\n\n-0,021\n\n\n0,005\n\n\n\n\n\n\n4\n\n\n0,021\n\n\n-0,008\n\n\n0,049"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-10",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-10",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nObservações\n\n\nCodificação: 1 - Estabelecimento privado; 2 - Estabelecimento sem fins lucrativos; 3 - Estabelecimento público\n\n\n\nForam destacados os intervalos que excluíram o zero.\n\n\n\n\nEm relação aos estabelecimentos privados, podemos notar que estes apresentam custos totais mais baixos em relação aos outros tipos de estabelecimento.\n\n\n\n\nConsiderando os estabelecimentos sem fins lucrativos e os públicos, notamos que não existem diferenças entre os custos, exceto para custos com nutricionistas, que parece ser maior em entidades sem fins lucrativos."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#visualizando-graficamente",
+    "href": "aulas/Manova/manova.html#visualizando-graficamente",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Visualizando graficamente",
+    "text": "Visualizando graficamente\n\npwc &lt;- dados %&gt;%\n  gather(key = \"variables\", value = \"value\", x1, x2,x3,x4) %&gt;%\n  group_by(variables) %&gt;%\n  games_howell_test(value ~ tipo)\npwc\n\n# A tibble: 12 × 9\n   variables .y.   group1 group2 estimate conf.low conf.high    p.adj\n * &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 x1        value 1      2       0.172   -0.00643    0.351  6.2 e- 2\n 2 x1        value 1      3       0.295    0.161      0.429  1.39e- 6\n 3 x1        value 2      3       0.123   -0.0696     0.316  2.9 e- 1\n 4 x2        value 1      2       0.106    0.0711     0.142  6.30e-11\n 5 x2        value 1      3       0.0447   0.0124     0.0771 4   e- 3\n 6 x2        value 2      3      -0.0617  -0.105     -0.0187 2   e- 3\n 7 x3        value 1      2       0.0287   0.0136     0.0437 3.74e- 5\n 8 x3        value 1      3       0.0370   0.0218     0.0522 1.63e- 7\n 9 x3        value 2      3       0.00835 -0.0119     0.0286 5.96e- 1\n10 x4        value 1      2       0.0633   0.0325     0.0941 6.94e- 6\n11 x4        value 1      3       0.0426   0.0128     0.0724 3   e- 3\n12 x4        value 2      3      -0.0207  -0.0579     0.0165 3.89e- 1\n# ℹ 1 more variable: p.adj.signif &lt;chr&gt;"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#visualizando-graficamente-1",
+    "href": "aulas/Manova/manova.html#visualizando-graficamente-1",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Visualizando graficamente",
+    "text": "Visualizando graficamente\n\npwc &lt;- pwc %&gt;% add_xy_position(x = \"tipo\")\ntest.label &lt;- create_test_label(\n  description = \"MANOVA\", statistic.text = quote(italic(\"F\")),\n  statistic = 15.13, p= \"&lt;0.0001\", parameter = \"8,1020\",\n  type = \"expression\", detailed = F\n)\nggboxplot(\n  dados, x = \"tipo\", y = c(\"x1\", \"x2\", \"x3\", \"x4\"), \n  merge = TRUE, palette = \"jco\"\n) + \n  stat_pvalue_manual(\n    pwc, hide.ns = TRUE, tip.length = 0, \n    step.increase = 0.1, step.group.by = \"variables\",\n    color = \"variables\"\n  ) +\n  labs(\n    subtitle = test.label,\n    caption = get_pwc_label(pwc, type = \"expression\")\n  )"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#visualizando-graficamente-1-output",
+    "href": "aulas/Manova/manova.html#visualizando-graficamente-1-output",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Visualizando graficamente",
+    "text": "Visualizando graficamente"
   }
 ]
