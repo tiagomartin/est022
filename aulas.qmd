@@ -6,7 +6,7 @@ title: "Aulas"
 
 - [Testes de Hipóteses sobre Matrizes de Covariâncias](/aulas/Inferencia_Covariancias/Teste_covariancias.html "Testes de Hipóteses sobre Matrizes de Covariâncias"){aria-label="Testes de Hipóteses sobre Matrizes de Covariâncias"}
 
-- Análise de Variância Multivariada
+- [Análise de Variância Multivariada](/aulas/Manova/manova.html "Manova"){aria-label="Manova"}
 
 - Análise de Regressão Multivariada
 
