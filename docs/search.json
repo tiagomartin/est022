@@ -224,6 +224,118 @@
     "text": "Modelo MANOVA a um fator\n\npacman::p_load(\n  tidyverse,\n  rstatix,\n  ggpubr\n)\n\n\ndados = read.table(\"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Exemplo_Manova.dat\", sep = ' ',header = TRUE) %&gt;% mutate(tipo = as.factor(tipo))\ndados %&gt;% str()\n\n'data.frame':   516 obs. of  5 variables:\n $ y1  : num  2.14 2.19 2.12 2.75 2.59 ...\n $ y2  : num  0.5 0.543 0.58 0.367 0.492 0.362 0.494 0.379 0.621 0.389 ...\n $ y3  : num  0.122 0.07 0.135 0.075 0.014 0.113 0.122 0.117 0.05 0.06 ...\n $ y4  : num  0.246 0.459 0.501 0.466 0.258 0.443 0.302 0.282 0.38 0.411 ...\n $ tipo: Factor w/ 3 levels \"1\",\"2\",\"3\": 1 1 1 1 1 1 1 1 1 1 ..."
   },
   {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-18",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-18",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\nCom fins ilustrativos assumiremos normalidade e igualdade de variâncias.\n\n# H0: mu1 = mu2 = mu3\n\nmodelo = manova(cbind(y1, y2, y3, y4) ~ tipo, data = dados)\n\n## Teste lambda de Wilks\nsummary(modelo, test = \"Wilks\")\n\n           Df   Wilks approx F num Df den Df    Pr(&gt;F)    \ntipo        2 0.79914   15.126      8   1020 &lt; 2.2e-16 ***\nResiduals 513                                             \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nH = summary(modelo)$SS$tipo\n\nE = summary(modelo)$SS$Residuals\n\nLam = det(E)/det(H+E)\nLam\n\n[1] 0.7991428"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-19",
+    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-19",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Modelo MANOVA a um fator",
+    "text": "Modelo MANOVA a um fator\n\n## Teste traço de Pillai \nsummary(modelo, test = \"Pillai\")\n\n           Df  Pillai approx F num Df den Df    Pr(&gt;F)    \ntipo        2 0.20726   14.769      8   1022 &lt; 2.2e-16 ***\nResiduals 513                                             \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n## Teste raiz máxima de Roy\nsummary(modelo,test=\"Roy\")\n\n           Df     Roy approx F num Df den Df    Pr(&gt;F)    \ntipo        2 0.20406   26.069      4    511 &lt; 2.2e-16 ***\nResiduals 513                                             \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n## Teste traço de Hotelling-Lawley\nsummary(modelo, test = \"Hotelling-Lawley\")\n\n           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    \ntipo        2          0.24333   15.482      8   1018 &lt; 2.2e-16 ***\nResiduals 513                                                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nQuando \\(H_0\\) é rejeitada, os efeitos que levaram à rejeição são de interesse.\n\nPara efeito de comparações pareadas, a abordagem de Bonferroni pode ser usada para construir intervalos simultâneos de confiança para os componentes dos vetores diferença \\(\\mathbf{\\tau}_j - \\mathbf{\\tau}_k\\).\n\n\nSeja \\(\\tau_{ji}\\) o i-ésimo componente de \\(\\mathbf{\\tau}_j\\). Como \\(\\mathbf{\\tau}_j\\) é estimado por \\(\\widehat{\\mathbf{\\tau}}_j = \\bar{\\mathbf{x}}_{j \\ldotp} - \\bar{\\mathbf{x}}_{\\ldotp \\ldotp}\\), temos que o i-ésimo componente de \\(\\mathbf{\\tau}_j\\) é estimado por \\(\\bar{{x}}_{ji} - \\bar{\\mathbf{x}}_{\\ldotp i}\\)."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-1",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-1",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nAssim, \\(\\tau_{ji} - \\tau_{ki}\\) é estimado por\n\\[\\widehat{\\tau}_{ji} - \\widehat{\\tau}_{ki} = \\bar{x}_{ji} - \\bar{x}_{ki}\\]\nque é uma diferença entre médias de duas amostras independentes.\n\nO teste t para duas amostras independentes é válido para um nível de significância apropriado."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-2",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-2",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nTemos ainda que,\n\\[\\text{Var}(\\widehat{\\tau}_{ji} - \\widehat{\\tau}_{ki}) = \\left(\\displaystyle{\\frac{1}{n_j}} + \\displaystyle{\\frac{1}{n_k}}\\right) \\sigma_{ii}\\]\ncom \\(\\sigma_{ii}\\) o i-ésimo elemento da diagonal de \\(\\Sigma\\). Como sugerido, \\(\\sigma_{ii}\\) é estimado pelo i-ésimo elemento da diagonal da matriz \\(\\mathbf{E}\\) dividido pelos respectivos graus de liberdade, a saber, \\(\\widehat{\\sigma}_{ii} = \\displaystyle{\\frac{1}{n - g}}e_{ii}\\)."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-3",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-3",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nResta identificar o número de intervalos. Como são \\(g\\) tratamentos para \\(p\\) medidas, segue que ao todo teremos \\(m = \\displaystyle{\\dfrac{pg(g-1)}{2}}\\) intervalos.\n\nLogo, com confiança de pelo menos \\((1 - \\alpha)\\), os intervalos de confiança simultâneos para \\(\\tau_{ji} - \\tau_{ki}\\) são dados por:\n\\[(\\bar{x}_{ji} - \\bar{x}_{ki}) \\pm t_{n-g} \\left(\\displaystyle{\\frac{\\alpha}{pg/(g - 1)}}\\right) \\sqrt{\\left(\\displaystyle{\\frac{1}{n_j}} +\n\\displaystyle{\\frac{1}{n_k}}\\right)\\displaystyle{\\frac{e_{ii}}{n - g}} }\\]\nem que \\(e_{ii}\\) é o i-ésimo elemento da diagonal da matriz \\(\\mathbf{E}\\)."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-4",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-4",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nExemplo - Análise dos dados de uma casa de repouso para idosos\n\nsummary.aov(modelo)\n\n Response y1 :\n             Df  Sum Sq Mean Sq F value    Pr(&gt;F)    \ntipo          2   7.473  3.7363  9.9001 6.044e-05 ***\nResiduals   513 193.608  0.3774                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n Response y2 :\n             Df Sum Sq Mean Sq F value    Pr(&gt;F)    \ntipo          2 1.0430 0.52149  33.268 2.601e-14 ***\nResiduals   513 8.0415 0.01568                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n Response y3 :\n             Df  Sum Sq  Mean Sq F value    Pr(&gt;F)    \ntipo          2 0.13858 0.069290   25.48 2.816e-11 ***\nResiduals   513 1.39502 0.002719                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n Response y4 :\n             Df Sum Sq  Mean Sq F value    Pr(&gt;F)    \ntipo          2 0.4048 0.202389  15.299 3.517e-07 ***\nResiduals   513 6.7863 0.013229                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-5",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-5",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\ndados %&gt;% emmeans_test(y1 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate     se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  y1    1      2               0   -0.172 0.0642   513   -0.298   -0.0458\n2 tipo  y1    1      3               0   -0.295 0.0701   513   -0.433   -0.157 \n3 tipo  y1    2      3               0   -0.123 0.0791   513   -0.279    0.0324\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;\n\ndados %&gt;% emmeans_test(y2 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate     se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  y2    1      2               0  -0.106  0.0131   513  -0.132    -0.0807\n2 tipo  y2    1      3               0  -0.0447 0.0143   513  -0.0728   -0.0167\n3 tipo  y2    2      3               0   0.0617 0.0161   513   0.0300    0.0934\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-6",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-6",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\ndados %&gt;% emmeans_test(y3 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate      se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  y3    1      2               0 -0.0287  0.00545   513  -0.0394  -0.0180 \n2 tipo  y3    1      3               0 -0.0370  0.00595   513  -0.0487  -0.0253 \n3 tipo  y3    2      3               0 -0.00835 0.00672   513  -0.0215   0.00484\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;\n\ndados %&gt;% emmeans_test(y4 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate     se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  y4    1      2               0  -0.0633 0.0120   513 -0.0869    -0.0397\n2 tipo  y4    1      3               0  -0.0426 0.0131   513 -0.0684    -0.0168\n3 tipo  y4    2      3               0   0.0207 0.0148   513 -0.00840    0.0498\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-7",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-7",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nIntervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 1 e 2\n\n\n\n\n\n\n\nGrupo\n\n\nvariáveis\n\n\ndif médias\n\n\nlim inf\n\n\nlim sup\n\n\n\n\n\n\n\n1\n\n\n-0,172\n\n\n-0,298\n\n\n-0,046\n\n\n\n\n1,2\n\n\n2\n\n\n-0,106\n\n\n-0,132\n\n\n-0,081\n\n\n\n\n\n\n3\n\n\n-0,029\n\n\n-0,049\n\n\n-0,025\n\n\n\n\n\n\n4\n\n\n-0,063\n\n\n-0,087\n\n\n-0,039"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-8",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-8",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nIntervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 1 e 3\n\n\n\n\n\n\n\nGrupo\n\n\nvariáveis\n\n\ndif médias\n\n\nlim inf\n\n\nlim sup\n\n\n\n\n\n\n\n1\n\n\n-0,295\n\n\n-0,433\n\n\n-0,157\n\n\n\n\n1,3\n\n\n2\n\n\n-0,045\n\n\n-0,073\n\n\n-0,017\n\n\n\n\n\n\n3\n\n\n-0,037\n\n\n-0,049\n\n\n-0,025\n\n\n\n\n\n\n4\n\n\n-0,043\n\n\n-0,068\n\n\n-0,017"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-9",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-9",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nIntervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 2 e 3\n\n\n\n\n\n\n\nGrupo\n\n\nvariáveis\n\n\ndif médias\n\n\nlim inf\n\n\nlim sup\n\n\n\n\n\n\n\n1\n\n\n-0,123\n\n\n-0,279\n\n\n0,032\n\n\n\n\n2,3\n\n\n2\n\n\n0,062\n\n\n0,030\n\n\n0,093\n\n\n\n\n\n\n3\n\n\n-0,008\n\n\n-0,021\n\n\n0,005\n\n\n\n\n\n\n4\n\n\n0,021\n\n\n-0,008\n\n\n0,049"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-10",
+    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-10",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
+    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nObservações\n\n\nCodificação: 1 - Estabelecimento privado; 2 - Estabelecimento sem fins lucrativos; 3 - Estabelecimento público\n\n\n\nForam destacados os intervalos que excluíram o zero.\n\n\n\n\nEm relação aos estabelecimentos privados, podemos notar que estes apresentam custos totais mais baixos em relação aos outros tipos de estabelecimento.\n\n\n\n\nConsiderando os estabelecimentos sem fins lucrativos e os públicos, notamos que não existem diferenças entre os custos, exceto para custos com nutricionistas, que parece ser maior em entidades sem fins lucrativos."
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#visualizando-graficamente",
+    "href": "aulas/Manova/manova.html#visualizando-graficamente",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Visualizando graficamente",
+    "text": "Visualizando graficamente\n\npwc &lt;- dados %&gt;%\n  gather(key = \"variables\", value = \"value\", y1, y2,y3,y4) %&gt;%\n  group_by(variables) %&gt;%\n  games_howell_test(value ~ tipo)\npwc\n\n# A tibble: 12 × 9\n   variables .y.   group1 group2 estimate conf.low conf.high    p.adj\n * &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 y1        value 1      2       0.172   -0.00643    0.351  6.2 e- 2\n 2 y1        value 1      3       0.295    0.161      0.429  1.39e- 6\n 3 y1        value 2      3       0.123   -0.0696     0.316  2.9 e- 1\n 4 y2        value 1      2       0.106    0.0711     0.142  6.30e-11\n 5 y2        value 1      3       0.0447   0.0124     0.0771 4   e- 3\n 6 y2        value 2      3      -0.0617  -0.105     -0.0187 2   e- 3\n 7 y3        value 1      2       0.0287   0.0136     0.0437 3.74e- 5\n 8 y3        value 1      3       0.0370   0.0218     0.0522 1.63e- 7\n 9 y3        value 2      3       0.00835 -0.0119     0.0286 5.96e- 1\n10 y4        value 1      2       0.0633   0.0325     0.0941 6.94e- 6\n11 y4        value 1      3       0.0426   0.0128     0.0724 3   e- 3\n12 y4        value 2      3      -0.0207  -0.0579     0.0165 3.89e- 1\n# ℹ 1 more variable: p.adj.signif &lt;chr&gt;"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#visualizando-graficamente-1",
+    "href": "aulas/Manova/manova.html#visualizando-graficamente-1",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Visualizando graficamente",
+    "text": "Visualizando graficamente\n\npwc &lt;- pwc %&gt;% add_xy_position(x = \"tipo\")\ntest.label &lt;- create_test_label(\n  description = \"MANOVA\", statistic.text = quote(italic(\"F\")),\n  statistic = 15.13, p= \"&lt;0.0001\", parameter = \"8,1020\",\n  type = \"expression\", detailed = F\n)\nggboxplot(\n  dados, x = \"tipo\", y = c(\"y1\", \"y2\", \"y3\", \"y4\"), \n  merge = TRUE, palette = \"jco\"\n) + \n  stat_pvalue_manual(\n    pwc, hide.ns = TRUE, tip.length = 0, \n    step.increase = 0.1, step.group.by = \"variables\",\n    color = \"variables\"\n  ) +\n  labs(\n    subtitle = test.label,\n    caption = get_pwc_label(pwc, type = \"expression\")\n  )"
+  },
+  {
+    "objectID": "aulas/Manova/manova.html#visualizando-graficamente-1-output",
+    "href": "aulas/Manova/manova.html#visualizando-graficamente-1-output",
+    "title": "Análise de Variância Multivariada (MANOVA)",
+    "section": "Visualizando graficamente",
+    "text": "Visualizando graficamente"
+  },
+  {
     "objectID": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados",
     "href": "aulas/Inferencias_Medias/Teste_medias.html#testes-multivariados-versus-univariados",
     "title": "Inferências sobre Vetores de Médias",
@@ -862,180 +974,5 @@
     "crumbs": [
       "Aulas"
     ]
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-18",
-    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-18",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Modelo MANOVA a um fator",
-    "text": "Modelo MANOVA a um fator\nCom fins ilustrativos assumiremos normalidade e igualdade de variâncias.\n\n# H0: mu1 = mu2 = mu3\n\nmodelo = manova(cbind(y1, y2, y3, y4) ~ tipo, data = dados)\n\n## Teste lambda de Wilks\nsummary(modelo, test = \"Wilks\")\n\n           Df   Wilks approx F num Df den Df    Pr(&gt;F)    \ntipo        2 0.79914   15.126      8   1020 &lt; 2.2e-16 ***\nResiduals 513                                             \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nH = summary(modelo)$SS$tipo\n\nE = summary(modelo)$SS$Residuals\n\nLam = det(E)/det(H+E)\nLam\n\n[1] 0.7991428"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-19",
-    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-19",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Modelo MANOVA a um fator",
-    "text": "Modelo MANOVA a um fator\n\n## Teste traço de Pillai \nsummary(modelo, test = \"Pillai\")\n\n           Df  Pillai approx F num Df den Df    Pr(&gt;F)    \ntipo        2 0.20726   14.769      8   1022 &lt; 2.2e-16 ***\nResiduals 513                                             \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n## Teste raiz máxima de Roy\nsummary(modelo,test=\"Roy\")\n\n           Df     Roy approx F num Df den Df    Pr(&gt;F)    \ntipo        2 0.20406   26.069      4    511 &lt; 2.2e-16 ***\nResiduals 513                                             \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n## Teste traço de Hotelling-Lawley\nsummary(modelo, test = \"Hotelling-Lawley\")\n\n           Df Hotelling-Lawley approx F num Df den Df    Pr(&gt;F)    \ntipo        2          0.24333   15.482      8   1018 &lt; 2.2e-16 ***\nResiduals 513                                                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-20",
-    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-20",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Modelo MANOVA a um fator",
-    "text": "Modelo MANOVA a um fator\n\ndados %&gt;%\n  group_by(tipo) %&gt;%\n  identify_outliers(x2)\n\n# A tibble: 11 × 7\n   tipo     x1    x2     x3    x4 is.outlier is.extreme\n   &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;      &lt;lgl&gt;     \n 1 1      2.62 0.184  0.1   0.265 TRUE       FALSE     \n 2 1      2.33 0.73   0.127 0.488 TRUE       FALSE     \n 3 1      2.06 0.162  0.066 0.22  TRUE       FALSE     \n 4 1      1.55 0.724  0.106 0.365 TRUE       FALSE     \n 5 1      2.96 0.234  0.056 0.222 TRUE       FALSE     \n 6 1      2.00 0.77  -0.012 0.534 TRUE       FALSE     \n 7 1      2.1  0.226  0.115 0.212 TRUE       FALSE     \n 8 1      2.24 0.205  0.078 0.177 TRUE       FALSE     \n 9 3      1.64 0.184  0.062 0.22  TRUE       FALSE     \n10 3      1.50 0.217  0.138 0.234 TRUE       FALSE     \n11 3      2.68 0.876  0.195 0.35  TRUE       FALSE"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-21",
-    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-21",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Modelo MANOVA a um fator",
-    "text": "Modelo MANOVA a um fator\n\ndados %&gt;%\n  group_by(tipo) %&gt;%\n  identify_outliers(x3)\n\n# A tibble: 12 × 7\n   tipo     x1    x2     x3    x4 is.outlier is.extreme\n   &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;      &lt;lgl&gt;     \n 1 1     0.978 0.439  0.004 0.4   TRUE       FALSE     \n 2 1     1.41  0.508 -0.003 0.448 TRUE       FALSE     \n 3 1     2.56  0.503  0.173 0.351 TRUE       FALSE     \n 4 1     2.00  0.77  -0.012 0.534 TRUE       FALSE     \n 5 2     1.92  0.777  0.279 0.604 TRUE       FALSE     \n 6 2     1.14  0.722  0.279 0.194 TRUE       FALSE     \n 7 2     2.95  0.568  0.307 0.427 TRUE       FALSE     \n 8 2     1.72  0.434 -0.097 0.332 TRUE       FALSE     \n 9 2     3.11  0.768  0.276 0.563 TRUE       FALSE     \n10 2     3.39  0.718  0.291 0.61  TRUE       FALSE     \n11 3     3.05  0.437  0.312 0.455 TRUE       FALSE     \n12 3     1.86  0.504  0.301 0.44  TRUE       FALSE"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-22",
-    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-22",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Modelo MANOVA a um fator",
-    "text": "Modelo MANOVA a um fator\n\ndados %&gt;%\n  group_by(tipo) %&gt;%\n  identify_outliers(x4)\n\n# A tibble: 1 × 7\n  tipo     x1    x2    x3    x4 is.outlier is.extreme\n  &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;      &lt;lgl&gt;     \n1 1      2.49 0.548 0.106 0.679 TRUE       FALSE"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-23",
-    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-23",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Modelo MANOVA a um fator",
-    "text": "Modelo MANOVA a um fator\n\ndados %&gt;%\n group_by(tipo) %&gt;%\n mahalanobis_distance() %&gt;%\n filter(is.outlier == TRUE) %&gt;%\n  as.data.frame()\n\n      x1    x2     x3    x4 mahal.dist is.outlier\n1  1.138 0.722  0.279 0.194     20.441       TRUE\n2  4.344 0.714 -0.057 0.631     28.227       TRUE\n3 -0.606 0.871  0.162 0.158     33.401       TRUE\n4  3.048 0.437  0.312 0.455     19.451       TRUE"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-24",
-    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-24",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Modelo MANOVA a um fator",
-    "text": "Modelo MANOVA a um fator\n\ndados %&gt;%\n  dplyr::select(-c(tipo)) %&gt;% \n  mshapiro_test()\n\n# A tibble: 1 × 2\n  statistic    p.value\n      &lt;dbl&gt;      &lt;dbl&gt;\n1     0.979 0.00000103\n\n\n\nresults &lt;- dados %&gt;%\n  group_by(tipo) %&gt;%\n  doo(~ggpairs(.) + theme_bw(), result = \"plots\")\nresults\n\n# A tibble: 3 × 2\n  tipo  plots \n  &lt;fct&gt; &lt;list&gt;\n1 1     &lt;gg&gt;  \n2 2     &lt;gg&gt;  \n3 3     &lt;gg&gt;"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-25",
-    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-25",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Modelo MANOVA a um fator",
-    "text": "Modelo MANOVA a um fator\n\n# Show the plots\nresults$plots[[1]]"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-26",
-    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-26",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Modelo MANOVA a um fator",
-    "text": "Modelo MANOVA a um fator\n\n# Show the plots\nresults$plots[[2]]"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-27",
-    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-27",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Modelo MANOVA a um fator",
-    "text": "Modelo MANOVA a um fator\n\n# Show the plots\nresults$plots[[3]]"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#modelo-manova-a-um-fator-28",
-    "href": "aulas/Manova/manova.html#modelo-manova-a-um-fator-28",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Modelo MANOVA a um fator",
-    "text": "Modelo MANOVA a um fator\n\nresultado = BoxM(dados %&gt;% dplyr::select(-c(tipo)), as.integer(unlist(dados %&gt;% dplyr::select(tipo))))\n\nsummary(resultado)\n\n       Box's M Test \n\nChi-Squared Value = 247.9963 , df = 20  and p-value: &lt;2e-16"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento",
-    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
-    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nQuando \\(H_0\\) é rejeitada, os efeitos que levaram à rejeição são de interesse.\n\nPara efeito de comparações pareadas, a abordagem de Bonferroni pode ser usada para construir intervalos simultâneos de confiança para os componentes dos vetores diferença \\(\\mathbf{\\tau}_j - \\mathbf{\\tau}_k\\).\n\n\nSeja \\(\\tau_{ji}\\) o i-ésimo componente de \\(\\mathbf{\\tau}_j\\). Como \\(\\mathbf{\\tau}_j\\) é estimado por \\(\\widehat{\\mathbf{\\tau}}_j = \\bar{\\mathbf{x}}_{j \\ldotp} - \\bar{\\mathbf{x}}_{\\ldotp \\ldotp}\\), temos que o i-ésimo componente de \\(\\mathbf{\\tau}_j\\) é estimado por \\(\\bar{{x}}_{ji} - \\bar{\\mathbf{x}}_{\\ldotp i}\\)."
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-1",
-    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-1",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
-    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nAssim, \\(\\tau_{ji} - \\tau_{ki}\\) é estimado por\n\\[\\widehat{\\tau}_{ji} - \\widehat{\\tau}_{ki} = \\bar{x}_{ji} - \\bar{x}_{ki}\\]\nque é uma diferença entre médias de duas amostras independentes.\n\nO teste t para duas amostras independentes é válido para um nível de significância apropriado."
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-2",
-    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-2",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
-    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nTemos ainda que,\n\\[\\text{Var}(\\widehat{\\tau}_{ji} - \\widehat{\\tau}_{ki}) = \\left(\\displaystyle{\\frac{1}{n_j}} + \\displaystyle{\\frac{1}{n_k}}\\right) \\sigma_{ii}\\]\ncom \\(\\sigma_{ii}\\) o i-ésimo elemento da diagonal de \\(\\Sigma\\). Como sugerido, \\(\\sigma_{ii}\\) é estimado pelo i-ésimo elemento da diagonal da matriz \\(\\mathbf{E}\\) dividido pelos respectivos graus de liberdade, a saber, \\(\\widehat{\\sigma}_{ii} = \\displaystyle{\\frac{1}{n - g}}e_{ii}\\)."
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-3",
-    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-3",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
-    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nResta identificar o número de intervalos. Como são \\(g\\) tratamentos para \\(p\\) medidas, segue que ao todo teremos \\(m = \\displaystyle{\\dfrac{pg(g-1)}{2}}\\) intervalos.\n\nLogo, com confiança de pelo menos \\((1 - \\alpha)\\), os intervalos de confiança simultâneos para \\(\\tau_{ji} - \\tau_{ki}\\) são dados por:\n\\[(\\bar{x}_{ji} - \\bar{x}_{ki}) \\pm t_{n-g} \\left(\\displaystyle{\\frac{\\alpha}{pg/(g - 1)}}\\right) \\sqrt{\\left(\\displaystyle{\\frac{1}{n_j}} +\n\\displaystyle{\\frac{1}{n_k}}\\right)\\displaystyle{\\frac{e_{ii}}{n - g}} }\\]\nem que \\(e_{ii}\\) é o i-ésimo elemento da diagonal da matriz \\(\\mathbf{E}\\)."
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-4",
-    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-4",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
-    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\nExemplo - Análise dos dados de uma casa de repouso para idosos\n\nsummary.aov(modelo)\n\n Response y1 :\n             Df  Sum Sq Mean Sq F value    Pr(&gt;F)    \ntipo          2   7.473  3.7363  9.9001 6.044e-05 ***\nResiduals   513 193.608  0.3774                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n Response y2 :\n             Df Sum Sq Mean Sq F value    Pr(&gt;F)    \ntipo          2 1.0430 0.52149  33.268 2.601e-14 ***\nResiduals   513 8.0415 0.01568                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n Response y3 :\n             Df  Sum Sq  Mean Sq F value    Pr(&gt;F)    \ntipo          2 0.13858 0.069290   25.48 2.816e-11 ***\nResiduals   513 1.39502 0.002719                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n Response y4 :\n             Df Sum Sq  Mean Sq F value    Pr(&gt;F)    \ntipo          2 0.4048 0.202389  15.299 3.517e-07 ***\nResiduals   513 6.7863 0.013229                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-5",
-    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-5",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
-    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\ndados %&gt;% emmeans_test(y1 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate     se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  y1    1      2               0   -0.172 0.0642   513   -0.298   -0.0458\n2 tipo  y1    1      3               0   -0.295 0.0701   513   -0.433   -0.157 \n3 tipo  y1    2      3               0   -0.123 0.0791   513   -0.279    0.0324\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;\n\ndados %&gt;% emmeans_test(y2 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate     se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  y2    1      2               0  -0.106  0.0131   513  -0.132    -0.0807\n2 tipo  y2    1      3               0  -0.0447 0.0143   513  -0.0728   -0.0167\n3 tipo  y2    2      3               0   0.0617 0.0161   513   0.0300    0.0934\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-6",
-    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-6",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
-    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\ndados %&gt;% emmeans_test(y3 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate      se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  y3    1      2               0 -0.0287  0.00545   513  -0.0394  -0.0180 \n2 tipo  y3    1      3               0 -0.0370  0.00595   513  -0.0487  -0.0253 \n3 tipo  y3    2      3               0 -0.00835 0.00672   513  -0.0215   0.00484\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;\n\ndados %&gt;% emmeans_test(y4 ~ tipo, p.adjust.method = \"bonferroni\", detailed = TRUE)\n\n# A tibble: 3 × 14\n  term  .y.   group1 group2 null.value estimate     se    df conf.low conf.high\n* &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 tipo  y4    1      2               0  -0.0633 0.0120   513 -0.0869    -0.0397\n2 tipo  y4    1      3               0  -0.0426 0.0131   513 -0.0684    -0.0168\n3 tipo  y4    2      3               0   0.0207 0.0148   513 -0.00840    0.0498\n# ℹ 4 more variables: statistic &lt;dbl&gt;, p &lt;dbl&gt;, p.adj &lt;dbl&gt;, p.adj.signif &lt;chr&gt;"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-7",
-    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-7",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
-    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nIntervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 1 e 2\n\n\n\n\n\n\n\nGrupo\n\n\nvariáveis\n\n\ndif médias\n\n\nlim inf\n\n\nlim sup\n\n\n\n\n\n\n\n1\n\n\n-0,172\n\n\n-0,298\n\n\n-0,046\n\n\n\n\n1,2\n\n\n2\n\n\n-0,106\n\n\n-0,132\n\n\n-0,081\n\n\n\n\n\n\n3\n\n\n-0,029\n\n\n-0,049\n\n\n-0,025\n\n\n\n\n\n\n4\n\n\n-0,063\n\n\n-0,087\n\n\n-0,039"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-8",
-    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-8",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
-    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nIntervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 1 e 3\n\n\n\n\n\n\n\nGrupo\n\n\nvariáveis\n\n\ndif médias\n\n\nlim inf\n\n\nlim sup\n\n\n\n\n\n\n\n1\n\n\n-0,295\n\n\n-0,433\n\n\n-0,157\n\n\n\n\n1,3\n\n\n2\n\n\n-0,045\n\n\n-0,073\n\n\n-0,017\n\n\n\n\n\n\n3\n\n\n-0,037\n\n\n-0,049\n\n\n-0,025\n\n\n\n\n\n\n4\n\n\n-0,043\n\n\n-0,068\n\n\n-0,017"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-9",
-    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-9",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
-    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nIntervalos de confiança simultâneos com correção de bonferroni de 95% para os grupos 2 e 3\n\n\n\n\n\n\n\nGrupo\n\n\nvariáveis\n\n\ndif médias\n\n\nlim inf\n\n\nlim sup\n\n\n\n\n\n\n\n1\n\n\n-0,123\n\n\n-0,279\n\n\n0,032\n\n\n\n\n2,3\n\n\n2\n\n\n0,062\n\n\n0,030\n\n\n0,093\n\n\n\n\n\n\n3\n\n\n-0,008\n\n\n-0,021\n\n\n0,005\n\n\n\n\n\n\n4\n\n\n0,021\n\n\n-0,008\n\n\n0,049"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-10",
-    "href": "aulas/Manova/manova.html#intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento-10",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Intervalos simultâneos de confiança para efeitos de tratamento",
-    "text": "Intervalos simultâneos de confiança para efeitos de tratamento\n\nObservações\n\n\nCodificação: 1 - Estabelecimento privado; 2 - Estabelecimento sem fins lucrativos; 3 - Estabelecimento público\n\n\n\nForam destacados os intervalos que excluíram o zero.\n\n\n\n\nEm relação aos estabelecimentos privados, podemos notar que estes apresentam custos totais mais baixos em relação aos outros tipos de estabelecimento.\n\n\n\n\nConsiderando os estabelecimentos sem fins lucrativos e os públicos, notamos que não existem diferenças entre os custos, exceto para custos com nutricionistas, que parece ser maior em entidades sem fins lucrativos."
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#visualizando-graficamente",
-    "href": "aulas/Manova/manova.html#visualizando-graficamente",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Visualizando graficamente",
-    "text": "Visualizando graficamente\n\npwc &lt;- dados %&gt;%\n  gather(key = \"variables\", value = \"value\", y1, y2,y3,y4) %&gt;%\n  group_by(variables) %&gt;%\n  games_howell_test(value ~ tipo)\npwc\n\n# A tibble: 12 × 9\n   variables .y.   group1 group2 estimate conf.low conf.high    p.adj\n * &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 y1        value 1      2       0.172   -0.00643    0.351  6.2 e- 2\n 2 y1        value 1      3       0.295    0.161      0.429  1.39e- 6\n 3 y1        value 2      3       0.123   -0.0696     0.316  2.9 e- 1\n 4 y2        value 1      2       0.106    0.0711     0.142  6.30e-11\n 5 y2        value 1      3       0.0447   0.0124     0.0771 4   e- 3\n 6 y2        value 2      3      -0.0617  -0.105     -0.0187 2   e- 3\n 7 y3        value 1      2       0.0287   0.0136     0.0437 3.74e- 5\n 8 y3        value 1      3       0.0370   0.0218     0.0522 1.63e- 7\n 9 y3        value 2      3       0.00835 -0.0119     0.0286 5.96e- 1\n10 y4        value 1      2       0.0633   0.0325     0.0941 6.94e- 6\n11 y4        value 1      3       0.0426   0.0128     0.0724 3   e- 3\n12 y4        value 2      3      -0.0207  -0.0579     0.0165 3.89e- 1\n# ℹ 1 more variable: p.adj.signif &lt;chr&gt;"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#visualizando-graficamente-1",
-    "href": "aulas/Manova/manova.html#visualizando-graficamente-1",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Visualizando graficamente",
-    "text": "Visualizando graficamente\n\npwc &lt;- pwc %&gt;% add_xy_position(x = \"tipo\")\ntest.label &lt;- create_test_label(\n  description = \"MANOVA\", statistic.text = quote(italic(\"F\")),\n  statistic = 15.13, p= \"&lt;0.0001\", parameter = \"8,1020\",\n  type = \"expression\", detailed = F\n)\nggboxplot(\n  dados, x = \"tipo\", y = c(\"y1\", \"y2\", \"y3\", \"y4\"), \n  merge = TRUE, palette = \"jco\"\n) + \n  stat_pvalue_manual(\n    pwc, hide.ns = TRUE, tip.length = 0, \n    step.increase = 0.1, step.group.by = \"variables\",\n    color = \"variables\"\n  ) +\n  labs(\n    subtitle = test.label,\n    caption = get_pwc_label(pwc, type = \"expression\")\n  )"
-  },
-  {
-    "objectID": "aulas/Manova/manova.html#visualizando-graficamente-1-output",
-    "href": "aulas/Manova/manova.html#visualizando-graficamente-1-output",
-    "title": "Análise de Variância Multivariada (MANOVA)",
-    "section": "Visualizando graficamente",
-    "text": "Visualizando graficamente"
   }
 ]

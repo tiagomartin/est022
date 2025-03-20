@@ -258,8 +258,8 @@ Um estimador não viciado para $\sigma^2$ é dado por $\widehat{\sigma}^2 = \dis
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:40px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top;font-family:"Montserrat", sans-serif !default;font-size:40px;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top;font-family:"Montserrat", sans-serif !default;font-size:40px;}
 </style>
 <table class="tg"><thead>
   <tr>
@@ -812,16 +812,16 @@ As casas de repouso podem ser classificadas com relação à propriedade: privad
 O objetivo foi verificar os efeitos de propriedade e certificação (ou ambos) sobre os custos. Quatro custos, calculados por paciente/dia, medidos em horas/paciente, foram usados:
 
 
-- $X_1$: Custo de mão de obra de enfermagem;
+- $Y_1$: Custo de mão de obra de enfermagem;
 
 
-- $X_2$: Custo de nutricionista;
+- $Y_2$: Custo de nutricionista;
 
 
-- $X_3$: Custo de trabalho de manutenção e funcionamento;
+- $Y_3$: Custo de trabalho de manutenção e funcionamento;
 
 
-- $X_4$: Custo de limpeza e lavanderia.
+- $Y_4$: Custo de limpeza e lavanderia.
 
 
 Um total de $N = 516$ observações sobre os $p = 4$ custos foram separadas pelo tipo de propriedade e estão disponíveis no arquivo **Exemplo Manova.dat**.
@@ -854,7 +854,7 @@ Com fins ilustrativos assumiremos normalidade e igualdade de variâncias.
 ```{r}
 # H0: mu1 = mu2 = mu3
 
-modelo = manova(cbind(x1, x2, x3, x4) ~ tipo, data = dados)
+modelo = manova(cbind(y1, y2, y3, y4) ~ tipo, data = dados)
 
 ## Teste lambda de Wilks
 summary(modelo, test = "Wilks")
@@ -962,17 +962,17 @@ summary.aov(modelo)
 ## Intervalos simultâneos de confiança para efeitos de tratamento
 
 ```{r}
-dados %>% emmeans_test(x1 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
+dados %>% emmeans_test(y1 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
 
-dados %>% emmeans_test(x2 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
+dados %>% emmeans_test(y2 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
 ```
 
 ## Intervalos simultâneos de confiança para efeitos de tratamento
 
 ```{r}
-dados %>% emmeans_test(x3 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
+dados %>% emmeans_test(y3 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
 
-dados %>% emmeans_test(x4 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
+dados %>% emmeans_test(y4 ~ tipo, p.adjust.method = "bonferroni", detailed = TRUE)
 ```
 ## Intervalos simultâneos de confiança para efeitos de tratamento
 
@@ -1187,7 +1187,7 @@ custos com nutricionistas, que parece ser maior em entidades sem fins lucrativos
 
 ```{r}
 pwc <- dados %>%
-  gather(key = "variables", value = "value", x1, x2,x3,x4) %>%
+  gather(key = "variables", value = "value", y1, y2,y3,y4) %>%
   group_by(variables) %>%
   games_howell_test(value ~ tipo)
 pwc
@@ -1209,7 +1209,7 @@ test.label <- create_test_label(
   type = "expression", detailed = F
 )
 ggboxplot(
-  dados, x = "tipo", y = c("x1", "x2", "x3", "x4"), 
+  dados, x = "tipo", y = c("y1", "y2", "y3", "y4"), 
   merge = TRUE, palette = "jco"
 ) + 
   stat_pvalue_manual(
