@@ -64,7 +64,7 @@ Ele quer investigar a relação entre as **três medidas de saúde** e hábitos 
 
 <br>
 
-Sejam $X_1, X_2, \cdots, X_p$ $p$ variáveis independentes relacionadas à uma variável resposta $Y$.
+Sejam $X_1, X_2, \cdots, X_r$ $r$ variáveis independentes relacionadas à uma variável resposta $Y$.
 
 \vspace{0.3cm}
 
@@ -72,7 +72,7 @@ Sejam $X_1, X_2, \cdots, X_p$ $p$ variáveis independentes relacionadas à uma v
 
 \vspace{0.3cm}
 
-$$\underbrace{Y}_{\text{resposta}} = \underbrace{\beta_0 + \beta_1X_1 + \cdots + \beta_rX_p}_{\text{média; parte estrutural}} + 
+$$\underbrace{Y}_{\text{resposta}} = \underbrace{\beta_0 + \beta_1X_1 + \cdots + \beta_rX_r}_{\text{média; parte estrutural}} + 
 \underbrace{\epsilon}_{\text{erro; parte aleatória}}$$
 
 
@@ -81,7 +81,7 @@ $$\underbrace{Y}_{\text{resposta}} = \underbrace{\beta_0 + \beta_1X_1 + \cdots +
 <br>
 
 
-- O modelo é dito linear, pois a parte estrutural é linear nos parâmetros $\beta_j$, $j = 1, \cdots, p$.
+- O modelo é dito linear, pois a parte estrutural é linear nos parâmetros $\beta_j$, $j = 1, \cdots, r$.
 
 \vspace{0.3cm}
 
@@ -89,7 +89,7 @@ $$\underbrace{Y}_{\text{resposta}} = \underbrace{\beta_0 + \beta_1X_1 + \cdots +
 
 \vspace{0.3cm}
 
-$$Y_{i} = \beta_0 + \beta_1X_{1i} + \cdots + \beta_pX_{pi} + \epsilon_i, \hspace{0.2cm} i = 1, \cdots, n$$
+$$Y_{i} = \beta_0 + \beta_1X_{1i} + \cdots + \beta_rX_{ri} + \epsilon_i, \hspace{0.2cm} i = 1, \cdots, n$$
 
 ## Modelo de regressão linear múltiplo univariado
 
@@ -121,7 +121,7 @@ Em notação matricial, temos:
 
 \vspace{0.3cm}
 
-$$\underbrace{\mathbf{y}}_{n \times 1} = \underbrace{\mathbf{X}}_{n \times (p + 1)} \underbrace{\mathbf{\beta}}_{(p + 1) \times 1} 
+$$\underbrace{\mathbf{y}}_{n \times 1} = \underbrace{\mathbf{X}}_{n \times (r + 1)} \underbrace{\mathbf{\beta}}_{(r + 1) \times 1} 
 + \underbrace{\mathbf{\epsilon}}_{n \times 1} $$
 
 
@@ -144,12 +144,12 @@ $$\underbrace{\mathbf{y}}_{n \times 1} = \underbrace{\mathbf{X}}_{n \times (p + 
 <br>
 
 $$
- \mathbf{y} = \left[ \begin{matrix}  y_1 \\  y_2 \\ \vdots \\ y_n \end{matrix} \right] \hspace{1cm} \mathbf{X} = \left[ \begin{matrix}  1 & X_{11} & X_{12} & \cdots & X_{1p} \\  
-1 & X_{21} & X_{22} & \cdots & X_{2p} \\ \vdots & \vdots & \ddots & \vdots \\ 1 & X_{n1} & X_{n2} & \cdots & X_{np} \end{matrix} \right]
+ \mathbf{y} = \left[ \begin{matrix}  y_1 \\  y_2 \\ \vdots \\ y_n \end{matrix} \right] \hspace{1cm} \mathbf{X} = \left[ \begin{matrix}  1 & X_{11} & X_{12} & \cdots & X_{1r} \\  
+1 & X_{21} & X_{22} & \cdots & X_{2r} \\ \vdots & \vdots & \ddots & \vdots \\ 1 & X_{n1} & X_{n2} & \cdots & X_{nr} \end{matrix} \right]
 $$
 
 $$
- \mathbf{\beta} = \left[ \begin{matrix}  \beta_0 \\  \beta_1 \\ \vdots \\ \beta_p \end{matrix} \right] \hspace{1cm} 
+ \mathbf{\beta} = \left[ \begin{matrix}  \beta_0 \\  \beta_1 \\ \vdots \\ \beta_r \end{matrix} \right] \hspace{1cm} 
  \mathbf{\epsilon} = \left[ \begin{matrix}  \epsilon_1 \\  \epsilon_2 \\ \vdots \\ \epsilon_n \end{matrix} \right]
 $$
 
@@ -304,6 +304,8 @@ $$R^2 = 1 - \dfrac{\text{SQ Res}}{\text{SQ Total}} = 1 - \dfrac{\mathbf{y}^t\mat
 
 ## Exemplo: Ajuste de modelo de regressão para dados imobiliários
 
+<br>
+
 Os dados do arquivo **Exemplo_regressao_01.dat** referem-se à avaliação imobiliária de 20 casas de determinado bairro em 
 uma cidade. As variáveis envolvidas são:
 
@@ -314,4 +316,390 @@ uma cidade. As variáveis envolvidas são:
 - $X_2$: Valor da avaliação (em milhares de reais) 
 - $Y$: Valor da venda (em milhares de reais)
 
+
+
+## Exemplo: Ajuste de modelo de regressão para dados imobiliários
+
+
+```{r, eval=TRUE}
+library(pacman)
+pacman::p_load(
+  tidyverse,
+  ggResidpanel
+)
+```
+
+```{r}
+dados = read.table("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Exemplo_regressao_01.dat", header = TRUE) 
+dados %>% str()
+```
+
+
+
+## Exemplo: Ajuste de modelo de regressão para dados imobiliários
+
+
+```{r}
+attach(dados)
+
+n = length(X1)
+n
+
+X0 = rep(1,n)
+X0
+
+## matriz X
+
+X = cbind(X0,X1,X2)
+X %>% head()
+```
+
+## Exemplo: Ajuste de modelo de regressão para dados imobiliários
+
+
+```{r}
+
+## estimando o vetor beta
+
+betaCh = solve(t(X)%*%X)%*%t(X)%*%Y
+betaCh
+
+
+## valores estimados de Y
+
+YCh = X%*%betaCh
+YCh %>% head()
+```
+
+## Exemplo: Ajuste de modelo de regressão para dados imobiliários
+
+
+```{r}
+#| output-location: column
+## residuo
+
+resCh = Y - YCh
+resCh %>% head()
+```
+
+```{r}
+#| output-location: column
+plot(resCh)
+abline(h=0, col = "red", lty = 3,lwd = 5)
+```
+
+## Exemplo: Ajuste de modelo de regressão para dados imobiliários
+
+
+```{r}
+t(X)%*%resCh
+
+t(YCh)%*%resCh
+
+## Soma de quadrados do residuo
+
+SQRes = t(Y)%*%Y - t(Y)%*%X%*%betaCh
+SQRes
+```
+
+## Exemplo: Ajuste de modelo de regressão para dados imobiliários
+
+```{r}
+## Soma de quadrados total
+
+SQTot = t(YCh)%*%YCh - (n * (mean(YCh)^2)) + t(resCh)%*%resCh
+SQTot
+
+## Coeficiente de determinacao R2
+
+R2 = 1 - (SQRes/SQTot)
+R2
+detach(dados)
+```
+
+
+## Exemplo: Ajuste de modelo de regressão para dados imobiliários
+
+```{r}
+model = lm(Y~X1+X2, data = dados)
+summary(model)
+```
+
+## Exemplo: Ajuste de modelo de regressão para dados imobiliários
+
+```{r}
+resid_panel(model)
+```
+
+
+
+# Generalizando
+
+## Modelos de Regressão Linear Multivariada
+
+<br>
+
+Suponha agora, que a variável resposta é p-variada $\mathbf{Y}$ e que $X_1, X_2, \cdots, X_r$ representam as variáveis 
+independentes:
+
+$$Y_1 = \beta_{01} + \beta_{11}X_1 + \cdots + \beta_{r1}X_r + \epsilon_1$$
+
+$$Y_2 = \beta_{02} + \beta_{12}X_1 + \cdots + \beta_{r2}X_r + \epsilon_2$$
+
+$$\vdots \hspace{4cm} \vdots \hspace{4cm} \vdots$$
+
+$$Y_p = \beta_{0p} + \beta_{1p}X_1 + \cdots + \beta_{rp}X_r + \epsilon_p$$
+
+
+## Modelos de Regressão Linear Multivariada
+
+<br>
+
+
+- $\mathbf{\epsilon} = [\epsilon_1, \epsilon_2, \cdots, \epsilon_p]^t$ com $E(\mathbf{\epsilon}) = \mathbf{0}$ e $\text{Var}(\mathbf{\epsilon}) = \mathbf{\Sigma}$
+
+\vspace{0.3cm}
+
+&#x1F449; Portanto, os erros associados a diferentes componentes do vetor resposta podem ser correlacionados. 
+
+
+
+. . .
+
+
+
+<p align="center">
+**Notação Matricial**
+</p>
+
+
+ \vspace{0.3cm}
+
+$$\underbrace{\mathbf{Y}}_{n \times p} = \underbrace{\mathbf{X}}_{n \times (r + 1)} \underbrace{\mathcal{B}}_{(r + 1) \times p} 
++ \underbrace{\mathbf{\epsilon}}_{n \times p} $$
+
+
+## Modelos de Regressão Linear Multivariada
+
+
+
+$$
+ \mathbf{Y} = \left[ \begin{matrix}  Y_{11} & Y_{12} & \cdots & Y_{1p} \\  Y_{21} & Y_{22} & \cdots & Y_{2p} \\ \vdots & \vdots & \ddots & \vdots
+ \\ Y_{n1} & Y_{n2} & \cdots & Y_{np} \end{matrix} \right] = \left[\mathbf{Y}_{(1)} | \mathbf{Y}_{(2)} | \cdots | \mathbf{Y}_{(p)} \right]
+$$
+
+$$
+ \mathbf{X}_{n \times (r + 1)} = \left[ \begin{matrix}  1 & X_{11} & X_{12} & \cdots & X_{1r} \\  
+1 & X_{21} & X_{22} & \cdots & X_{2r} \\ \vdots & \vdots & \ddots & \vdots \\ 1 & X_{n1} & X_{n2} & \cdots & X_{nr} \end{matrix} \right]
+$$
+
+
+## Modelos de Regressão Linear Multivariada
+
+
+
+$$
+\mathcal{B}_{(r + 1) \times p}= \left[ \begin{matrix}  \beta_{01} & \beta_{02} & \cdots &\beta_{0p} \\  \beta_{11} & \beta_{12} & \cdots & \beta_{1p} \\ 
+\vdots & \vdots & \ddots & \vdots \\ \beta_{r1} & \beta_{r2} & \cdots & \beta_{rp} \end{matrix} \right] =  \left[\mathbf{\beta}_{(1)} | 
+\mathbf{\beta}_{(2)} | \cdots | \mathbf{\beta}_{(p)} \right] 
+$$
+
+$$
+  \mathbf{\epsilon} = \left[ \begin{matrix}  \epsilon_{11} & \epsilon_{12} & \cdots & \epsilon_{1p} \\  \epsilon_{21} & \epsilon_{22}
+& \cdots & \epsilon_{2p} \\ \vdots & \vdots & \ddots & \vdots \\ \epsilon_{n1} & \epsilon_{n2} & \cdots & \epsilon_{np} \end{matrix} 
+\right] = \left[\mathbf{\epsilon}_{(1)} | \mathbf{\epsilon}_{(2)} | \cdots | \mathbf{\epsilon}_{(p)} \right]
+$$
+
+
+
+## Modelos de Regressão Linear Multivariada
+
+
+<br>
+
+- **Suposições do modelo:** $\underbrace{\mathbf{Y}}_{n \times p} = \underbrace{\mathbf{X}}_{n \times (r + 1)} \underbrace{\mathcal{B}}_{(r + 1) \times p} + \underbrace{\mathbf{\epsilon}}_{n \times p}$
+
+\vspace{0.3cm}
+
+$$E(\mathbf{\epsilon}_{(i)}) = \mathbf{0}, \text{Cov}(\mathbf{\epsilon}_{(i)}, \mathbf{\epsilon}_{(k)}) = \sigma_{ik} \mathbf{I}_n \hspace{0.5cm} i,k = 1, 2, \cdots, p$$
+
+\vspace{1.8cm}
+
+- As *p* medidas sobre a *i*-ésima observação têm matriz de covariâncias dada por $\mathbf{\Sigma} = (\sigma_{ik})$, mas medidas provenientes
+de observações diferentes são não correlacionadas.
+
+
+
+## Modelos de Regressão Linear Multivariada
+
+
+:::: {.columns}
+
+::: {.column width="10%"}
+<span style='font-size:100px;'>&#129300;</span> 
+:::
+
+::: {.column width="90%"}
+<p align="center" class="texto-personalizado">
+$\mathcal{B}$ e $\mathbf{\Sigma}$ são desconhecidos...
+</p>
+:::
+
+::::
+
+Observe que a *i*-ésima coluna da matriz resposta segue o modelo linear univariado dado por:
+
+\vspace{0.3cm}
+
+$$\mathbf{Y}_{(i)} = \mathbf{X} \mathbf{\beta}_{(i)} + \mathbf{\epsilon}_{(i)}, \hspace{0.5cm} i = 1, 2, \cdots, p$$
+
+
+
+com $\text{Cov}(\mathbf{\epsilon}_{(i)}) = \sigma_{ii} \mathbf{I}_n$.
+
+
+
+## Estimação de Mínimos Quadrados
+
+
+De acordo com o caso univariado, o estimador de mínimos quadrados para o vetor $\mathbf{\beta}$:
+
+
+$$\widehat{\mathbf{\beta}}_{(i)} = (\mathbf{X}^t \mathbf{X})^{-1}\mathbf{X}^t \mathbf{Y}_{(i)}, \hspace{0.5cm} i = 1, 2, \cdots, p$$
+
+
+. . .
+
+
+Uma vez que $\mathcal{B} = \left[\mathbf{\beta}_{(1)} | \mathbf{\beta}_{(2)} | \cdots | \mathbf{\beta}_{(p)} \right]$, temos
+
+\vspace{0.3cm}
+
+$$\widehat{\mathcal{B}} = \left[\widehat{\mathbf{\beta}}_{(1)} | \widehat{\mathbf{\beta}}_{(2)} | \cdots | \widehat{\mathbf{\beta}}_{(p)} \right] 
+= (\mathbf{X}^t \mathbf{X})^{-1} \mathbf{X}^t \left[\mathbf{Y}_{(1)} | \mathbf{Y}_{(2)} | \cdots | \mathbf{Y}_{(p)} \right]$$
+
+ou,
+
+\vspace{0.3cm}
+
+
+$$\widehat{\mathcal{B}} = (\mathbf{X}^t \mathbf{X})^{-1} \mathbf{X}^t \mathbf{Y}$$
+
+é o estimador de mínimos quadrados da matriz $\mathcal{B}$
+
+
+
+## Estimação de Mínimos Quadrados
+
+
+- Matriz de soma de quadrados e produtos cruzados do erros:
+
+$$\text{SQP Res} = \mathbf{\epsilon}^t\mathbf{\epsilon} = (\mathbf{Y} - \mathbf{X} \widehat{\mathcal{B}})^t(\mathbf{Y} - \mathbf{X} \widehat{\mathcal{B}})$$
+
+
+. . .
+
+
+- Valores ajustados:
+
+$$\widehat{\mathbf{Y}} = \mathbf{X} \widehat{\mathcal{B}} = \mathbf{X}(\mathbf{X}^t \mathbf{X})^{-1} \mathbf{X}^t \mathbf{Y}$$
+
+
+
+. . .
+
+
+
+- Resíduos:
+
+$$\widehat{\mathbf{\epsilon}} = (\mathbf{Y} - \widehat{\mathbf{Y}}) =  (\mathbf{Y} - \mathbf{X}\widehat{\mathcal{B}}) = [\mathbf{I} - \mathbf{X}( \mathbf{X}^t \mathbf{X})^{-1} \mathbf{X}^t] \mathbf{Y}$$
+ 
+ 
+## Propriedades
+
+<br>
+
+Condições de ortogonalidade...
+
+$$\mathbf{X}^t \widehat{\mathbf{\epsilon}} = \mathbf{X}^t[\mathbf{I} - \mathbf{X}(\mathbf{X}^t\mathbf{X})^{-1}\mathbf{X}^t] \mathbf{Y} =  \mathbf{0}$$
+
+$$ \widehat{\mathbf{Y}}^t \widehat{\mathbf{\epsilon}} = \widehat{\mathcal{B}}^t  \mathbf{X}^t[\mathbf{I} - \mathbf{X}(\mathbf{X}^t\mathbf{X})^{-1}\mathbf{X}^t] \mathbf{Y} = \mathbf{0}$$
+
+. . .
+
+
+Uma vez que $\mathbf{Y} = \widehat{\mathbf{Y}} + \widehat{\mathbf{\epsilon}}$,
+
+$$\mathbf{Y}^t\mathbf{Y} = (\widehat{\mathbf{Y}} + \widehat{\mathbf{\epsilon}})^t(\widehat{\mathbf{Y}} + \widehat{\mathbf{\epsilon}}) = 
+\widehat{\mathbf{Y}}^t\widehat{\mathbf{Y}} + \widehat{\mathbf{\epsilon}}^t\widehat{\mathbf{\epsilon}}^t + \mathbf{0} + \mathbf{0}^t$$
+
+
+
+## Propriedades
+
+<br>
+
+ou,
+
+$$\underbrace{{\mathbf{Y}}^t{\mathbf{Y}}}_{\text{SQP total}} = \underbrace{\widehat{\mathbf{Y}}^t\widehat{\mathbf{Y}}}_{\text{SQP regressão}} + \underbrace{\widehat{\mathbf{\epsilon}}^t\widehat{\mathbf{\epsilon}}^t}_{\text{SQP Res}}$$
+
+. . .
+
+
+De forma que, a soma de quadrados e produtos cruzados dos resíduos pode ser reescrita como:
+
+
+$$\widehat{\mathbf{\epsilon}}^t\widehat{\mathbf{\epsilon}}^t = \mathbf{Y}^t\mathbf{Y} - \widehat{\mathbf{Y}}^t\widehat{\mathbf{Y}} = 
+\mathbf{Y}^t\mathbf{Y} - \widehat{\mathcal{B}}^t \mathbf{X}^t\mathbf{X}\widehat{\mathcal{B}}$$
+
+
+
+## Propriedades do estimador $\widehat{\mathcal{B}}$
+
+
+Para o estimador de mínimos quadrados $\widehat{\mathcal{B}}$ com a matriz $\mathbf{X}$ de posto completo, tem-se:
+
+$$
+\begin{eqnarray*}
+ E(\widehat{\mathcal{B}}) &=& E[(\mathbf{X}^t\mathbf{X})^{-1}\mathbf{X}^t\mathbf{Y}] = (\mathbf{X}^t\mathbf{X})^{-1}\mathbf{X}^tE(\mathbf{Y}) = \\ &=& (\mathbf{X}^t\mathbf{X})^{-1}\mathbf{X}^t\mathbf{X}\mathcal{B} = \mathbf{I}\mathcal{B} = \mathcal{B}
+\end{eqnarray*}
+$$
+
+. . .
+
+
+Além disso,
+
+$$\text{Cov}(\widehat{\mathbf{\beta}}_{(i)},\widehat{\mathbf{\beta}}_{(k)}) = \sigma_{ik}(\mathbf{X}^t\mathbf{X})^{-1}, \hspace{0.5cm} 
+E(\widehat{\mathbf{\epsilon}}) = \mathbf{0}, \hspace{0.5cm} E \left(\displaystyle{\dfrac{\widehat{\mathbf{\epsilon}}^t 
+\widehat{\mathbf{\epsilon}}}{n - r - 1 }} \right) = \mathbf{\Sigma} $$
+
+
+## Propriedades do estimador $\widehat{\mathcal{B}}$
+
+<br>
+
+
+- $\widehat{\mathcal{B}}$ e $\widehat{\mathbf{\epsilon}}$ são não correlacionados.
+
+. . .
+
+- Estimador não viciado para $\mathbf{\Sigma}$:
+
+$$\widehat{\mathbf{\Sigma}} = \mathbf{S} = \displaystyle{\dfrac{\widehat{\mathbf{\epsilon}}^t\widehat{\mathbf{\epsilon}}}{n - r - 1}} = 
+\displaystyle{\dfrac{(\mathbf{Y} - \mathbf{X} \widehat{\mathcal{B}})^t(\mathbf{Y} - \mathbf{X} \widehat{\mathcal{B}})}{n - r - 1}} = 
+\displaystyle{\dfrac{\mathbf {Y}^t\mathbf{Y} - \widehat{\mathcal{B}}^t \mathcal{X}^t\mathbf{X}\widehat{\mathcal{B}}}{n - r - 1}}$$
+
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento}
+
+
+<br>
+
+Os dados do arquivo **Exemplo_regressao_02.dat** referem-se à medidas antropométricas, sócio-econômicas e variáveis relacionadas
+ao nível de estresse de 50 gestantes de um determinado município, mensuradas no último trimestre de gestação. 
+
+O estresse materno foi avaliado através de quatro variáveis distintas: resultado do teste de Estado de Ansiedade (EA), resultado
+do teste de Traço de Ansiedade (TA), resultado do Questionário Geral de Saúde (QGS) e Escala de Percepção de Estresse (EPE).
 

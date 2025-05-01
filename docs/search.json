@@ -994,42 +994,42 @@
     "href": "aulas/Regressao_Multivariada/regressao.html#introdução-2",
     "title": "Análise de Regressão Multivariada",
     "section": "Introdução",
-    "text": "Introdução\n\n\nRegressão Linear Simples: Temos uma variável dependente \\(Y\\) e uma variável independente \\(X\\).\n\n\nRegressão Linear Múltipla: Temos uma variável dependente \\(Y\\) e várias variáveis independentes \\(X_1, X_2, \\cdots, X_r\\).\n\n\nRegressão Linear Múltipla Multivariada: Temos várias variáveis dependentes \\(Y_1, Y_2, \\cdots, Y_p\\) e várias variáveis independentes \\(X_1, X_2, \\cdots, X_r\\). Nesse caso, cada variável \\(Y\\) e relacionada com todas as variáveis \\(X\\)."
+    "text": "Introdução\n\n\n\nRegressão Linear Simples: Temos uma variável dependente \\(Y\\) e uma variável independente \\(X\\).\n\n\n\nRegressão Linear Múltipla: Temos uma variável dependente \\(Y\\) e várias variáveis independentes \\(X_1, X_2, \\cdots, X_r\\).\n\n\n\nRegressão Linear Múltipla Multivariada: Temos várias variáveis dependentes \\(Y_1, Y_2, \\cdots, Y_p\\) e várias variáveis independentes \\(X_1, X_2, \\cdots, X_r\\). Nesse caso, cada variável \\(Y\\) e relacionada com todas as variáveis \\(X\\)."
   },
   {
     "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado",
     "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado",
     "title": "Análise de Regressão Multivariada",
     "section": "Modelo de regressão linear múltiplo univariado",
-    "text": "Modelo de regressão linear múltiplo univariado\n\nSejam \\(X_1, X_2, \\cdots, X_p\\) \\(p\\) variáveis independentes relacionadas à uma variável resposta \\(Y\\).\nO modelo de regressão linear múltipla univariado é dado pela seguinte expressão:\n\\[\\underbrace{Y}_{\\text{resposta}} = \\underbrace{\\beta_0 + \\beta_1X_1 + \\cdots + \\beta_rX_p}_{\\text{média; parte estrutural}} +\n\\underbrace{\\epsilon}_{\\text{erro; parte aleatória}}\\]"
+    "text": "Modelo de regressão linear múltiplo univariado\n\nSejam \\(X_1, X_2, \\cdots, X_r\\) \\(r\\) variáveis independentes relacionadas à uma variável resposta \\(Y\\).\nO modelo de regressão linear múltipla univariado é dado pela seguinte expressão:\n\\[\\underbrace{Y}_{\\text{resposta}} = \\underbrace{\\beta_0 + \\beta_1X_1 + \\cdots + \\beta_rX_r}_{\\text{média; parte estrutural}} +\n\\underbrace{\\epsilon}_{\\text{erro; parte aleatória}}\\]"
   },
   {
     "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-1",
     "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-1",
     "title": "Análise de Regressão Multivariada",
     "section": "Modelo de regressão linear múltiplo univariado",
-    "text": "Modelo de regressão linear múltiplo univariado\n\n\nO modelo é dito linear, pois a parte estrutural é linear nos parâmetros \\(\\beta_j\\), \\(j = 1, \\cdots, p\\).\n\n\nSe dispomos de \\(n\\) observações independentes:\n\n\\[Y_{i} = \\beta_0 + \\beta_1X_{1i} + \\cdots + \\beta_pX_{pi} + \\epsilon_i, \\hspace{0.2cm} i = 1, \\cdots, n\\]"
+    "text": "Modelo de regressão linear múltiplo univariado\n\n\nO modelo é dito linear, pois a parte estrutural é linear nos parâmetros \\(\\beta_j\\), \\(j = 1, \\cdots, r\\).\n\n\nSe dispomos de \\(n\\) observações independentes:\n\n\\[Y_{i} = \\beta_0 + \\beta_1X_{1i} + \\cdots + \\beta_rX_{ri} + \\epsilon_i, \\hspace{0.2cm} i = 1, \\cdots, n\\]"
   },
   {
     "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-2",
     "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-2",
     "title": "Análise de Regressão Multivariada",
     "section": "Modelo de regressão linear múltiplo univariado",
-    "text": "Modelo de regressão linear múltiplo univariado\n\n\nSuposições\n\n\n\\(E(\\epsilon_i) = 0\\), \\(\\forall i = 1, 2, \\cdots, n\\)\n\n\n\\(\\text{Var}(\\epsilon_i) = \\sigma^2\\), \\(\\forall i = 1, 2, \\cdots, n\\) (homocedasticidade)\n\n\n\\(\\text{Cov}(\\epsilon_i, \\epsilon_k) = 0\\), \\(\\forall i \\neq k, \\hspace{0.3cm} i,k \\in \\{1, 2, \\cdots, n\\}\\)"
+    "text": "Modelo de regressão linear múltiplo univariado\n\n\nSuposições\n\n\n\n\\(E(\\epsilon_i) = 0\\), \\(\\forall i = 1, 2, \\cdots, n\\)\n\n\n\n\n\\(\\text{Var}(\\epsilon_i) = \\sigma^2\\), \\(\\forall i = 1, 2, \\cdots, n\\) (homocedasticidade)\n\n\n\n\\(\\text{Cov}(\\epsilon_i, \\epsilon_k) = 0\\), \\(\\forall i \\neq k, \\hspace{0.3cm} i,k \\in \\{1, 2, \\cdots, n\\}\\)"
   },
   {
     "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-3",
     "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-3",
     "title": "Análise de Regressão Multivariada",
     "section": "Modelo de regressão linear múltiplo univariado",
-    "text": "Modelo de regressão linear múltiplo univariado\n\nEm notação matricial, temos:\n\\[\\underbrace{\\mathbf{y}}_{n \\times 1} = \\underbrace{\\mathbf{X}}_{n \\times (p + 1)} \\underbrace{\\mathbf{\\beta}}_{(p + 1) \\times 1}\n+ \\underbrace{\\mathbf{\\epsilon}}_{n \\times 1} \\]\n\nSuposições\n\n\n\\(E(\\mathbf{\\epsilon}) = \\mathbf{0}\\)\n\\(\\text{Var}(\\mathbf{\\epsilon}) = \\sigma^2 \\mathbf{I}_n\\)"
+    "text": "Modelo de regressão linear múltiplo univariado\n\nEm notação matricial, temos:\n\\[\\underbrace{\\mathbf{y}}_{n \\times 1} = \\underbrace{\\mathbf{X}}_{n \\times (r + 1)} \\underbrace{\\mathbf{\\beta}}_{(r + 1) \\times 1}\n+ \\underbrace{\\mathbf{\\epsilon}}_{n \\times 1} \\]\n\nSuposições\n\n\n\\(E(\\mathbf{\\epsilon}) = \\mathbf{0}\\)\n\\(\\text{Var}(\\mathbf{\\epsilon}) = \\sigma^2 \\mathbf{I}_n\\)"
   },
   {
     "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-4",
     "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-4",
     "title": "Análise de Regressão Multivariada",
     "section": "Modelo de regressão linear múltiplo univariado",
-    "text": "Modelo de regressão linear múltiplo univariado\n\n\\[\n\\mathbf{y} = \\left[ \\begin{matrix}  y_1 \\\\  y_2 \\\\ \\vdots \\\\ y_n \\end{matrix} \\right] \\hspace{1cm} \\mathbf{X} = \\left[ \\begin{matrix}  1 & X_{11} & X_{12} & \\cdots & X_{1p} \\\\  \n1 & X_{21} & X_{22} & \\cdots & X_{2p} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ 1 & X_{n1} & X_{n2} & \\cdots & X_{np} \\end{matrix} \\right]\n\\]\n\\[\n\\mathbf{\\beta} = \\left[ \\begin{matrix}  \\beta_0 \\\\  \\beta_1 \\\\ \\vdots \\\\ \\beta_p \\end{matrix} \\right] \\hspace{1cm}\n\\mathbf{\\epsilon} = \\left[ \\begin{matrix}  \\epsilon_1 \\\\  \\epsilon_2 \\\\ \\vdots \\\\ \\epsilon_n \\end{matrix} \\right]\n\\]"
+    "text": "Modelo de regressão linear múltiplo univariado\n\n\\[\n\\mathbf{y} = \\left[ \\begin{matrix}  y_1 \\\\  y_2 \\\\ \\vdots \\\\ y_n \\end{matrix} \\right] \\hspace{1cm} \\mathbf{X} = \\left[ \\begin{matrix}  1 & X_{11} & X_{12} & \\cdots & X_{1r} \\\\  \n1 & X_{21} & X_{22} & \\cdots & X_{2r} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ 1 & X_{n1} & X_{n2} & \\cdots & X_{nr} \\end{matrix} \\right]\n\\]\n\\[\n\\mathbf{\\beta} = \\left[ \\begin{matrix}  \\beta_0 \\\\  \\beta_1 \\\\ \\vdots \\\\ \\beta_r \\end{matrix} \\right] \\hspace{1cm}\n\\mathbf{\\epsilon} = \\left[ \\begin{matrix}  \\epsilon_1 \\\\  \\epsilon_2 \\\\ \\vdots \\\\ \\epsilon_n \\end{matrix} \\right]\n\\]"
   },
   {
     "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-5",
@@ -1071,7 +1071,7 @@
     "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-7",
     "title": "Análise de Regressão Multivariada",
     "section": "Modelo de regressão linear múltiplo univariado",
-    "text": "Modelo de regressão linear múltiplo univariado\n\nObservação: Temos que \\(\\mathbf{H}\\) e \\(\\mathbf{P}\\) são matrizes idempotentes (\\(\\mathbf{H} = \\mathbf{H}\\mathbf{H}\\) e \\(\\mathbf{H} = \\mathbf{H}^t\\)).\n\n\nA soma de quadrados de resíduos é\n\\[\\text{SQ Res} = \\displaystyle{\\sum_{i=1}^n}(y_i - \\widehat{y}_i)^2 = \\widehat{\\mathbf{\\epsilon}}^t\\widehat{\\mathbf{\\epsilon}} = \\mathbf{y}^t(\\mathbf{I} - \\mathbf{H})\\mathbf{y} = \\mathbf{y}^t\\mathbf{y} - \\mathbf{y}^t \\mathbf{X} \\widehat{\\mathbf{\\beta}}\\]\n\n\nObserve que…\n\\[\\displaystyle{\\sum_{i=1}^n} y_i^2 = \\mathbf{y}^t \\mathbf{y} = (\\mathbf{y} - \\widehat{\\mathbf{y}} + \\widehat{\\mathbf{y}})^t\n(\\mathbf{y} - \\widehat{\\mathbf{y}} + \\widehat{\\mathbf{y}}) = \\widehat{\\mathbf{y}}^t\\widehat{\\mathbf{y}} +\n\\widehat{\\mathbf{\\epsilon}}^t \\widehat{\\mathbf{\\epsilon}}\\]"
+    "text": "Modelo de regressão linear múltiplo univariado\n\n\nObservação: Temos que \\(\\mathbf{H}\\) e \\(\\mathbf{P}\\) são matrizes idempotentes (\\(\\mathbf{H} = \\mathbf{H}\\mathbf{H}\\) e \\(\\mathbf{H} = \\mathbf{H}^t\\)).\n\n\nA soma de quadrados de resíduos é\n\\[\\text{SQ Res} = \\displaystyle{\\sum_{i=1}^n}(y_i - \\widehat{y}_i)^2 = \\widehat{\\mathbf{\\epsilon}}^t\\widehat{\\mathbf{\\epsilon}} = \\mathbf{y}^t(\\mathbf{I} - \\mathbf{H})\\mathbf{y} = \\mathbf{y}^t\\mathbf{y} - \\mathbf{y}^t \\mathbf{X} \\widehat{\\mathbf{\\beta}}\\]\n\n\nObserve que…\n\\[\\displaystyle{\\sum_{i=1}^n} y_i^2 = \\mathbf{y}^t \\mathbf{y} = (\\mathbf{y} - \\widehat{\\mathbf{y}} + \\widehat{\\mathbf{y}})^t\n(\\mathbf{y} - \\widehat{\\mathbf{y}} + \\widehat{\\mathbf{y}}) = \\widehat{\\mathbf{y}}^t\\widehat{\\mathbf{y}} +\n\\widehat{\\mathbf{\\epsilon}}^t \\widehat{\\mathbf{\\epsilon}}\\]"
   },
   {
     "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-8",
@@ -1085,13 +1085,160 @@
     "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-9",
     "title": "Análise de Regressão Multivariada",
     "section": "Modelo de regressão linear múltiplo univariado",
-    "text": "Modelo de regressão linear múltiplo univariado\n\nDe forma que, o coeficiente de determinação \\(R^2\\) é dado por:\n\\[R^2 = 1 - \\dfrac{\\text{SQ Res}}{\\text{SQ Total}} = 1 - \\dfrac{\\mathbf{y}^t\\mathbf{y} -\n\\mathbf{y}^t \\mathbf{X} \\widehat{\\mathbf{\\beta}}}{\\widehat{\\mathbf{y}}^t\\widehat{\\mathbf{y}} -  n\\bar{\\widehat{y}}^2 +\n\\widehat{\\mathbf{\\epsilon}}^t \\widehat{\\mathbf{\\epsilon}}}\\]\n\nObservação: \\(R^2\\) fornece a proporção da variação total dos \\(Y_i's\\) que é “explicada” pelas variáveis independentes."
+    "text": "Modelo de regressão linear múltiplo univariado\n\nDe forma que, o coeficiente de determinação \\(R^2\\) é dado por:\n\\[R^2 = 1 - \\dfrac{\\text{SQ Res}}{\\text{SQ Total}} = 1 - \\dfrac{\\mathbf{y}^t\\mathbf{y} -\n\\mathbf{y}^t \\mathbf{X} \\widehat{\\mathbf{\\beta}}}{\\widehat{\\mathbf{y}}^t\\widehat{\\mathbf{y}} -  n\\bar{\\widehat{y}}^2 +\n\\widehat{\\mathbf{\\epsilon}}^t \\widehat{\\mathbf{\\epsilon}}}\\]\n\n\nObservação: \\(R^2\\) fornece a proporção da variação total dos \\(Y_i's\\) que é “explicada” pelas variáveis independentes."
   },
   {
     "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários",
     "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários",
     "title": "Análise de Regressão Multivariada",
     "section": "Exemplo: Ajuste de modelo de regressão para dados imobiliários",
-    "text": "Exemplo: Ajuste de modelo de regressão para dados imobiliários\nOs dados do arquivo Exemplo_regressao_01.dat referem-se à avaliação imobiliária de 20 casas de determinado bairro em uma cidade. As variáveis envolvidas são:\n\n\\(X_1\\): Tamanho total da habitação (em milhares de metros quadrados)\n\\(X_2\\): Valor da avaliação (em milhares de reais)\n\\(Y\\): Valor da venda (em milhares de reais)"
+    "text": "Exemplo: Ajuste de modelo de regressão para dados imobiliários\n\nOs dados do arquivo Exemplo_regressao_01.dat referem-se à avaliação imobiliária de 20 casas de determinado bairro em uma cidade. As variáveis envolvidas são:\n\n\n\\(X_1\\): Tamanho total da habitação (em milhares de metros quadrados)\n\n\\(X_2\\): Valor da avaliação (em milhares de reais)\n\n\\(Y\\): Valor da venda (em milhares de reais)"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-1",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-1",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: Ajuste de modelo de regressão para dados imobiliários",
+    "text": "Exemplo: Ajuste de modelo de regressão para dados imobiliários\n\nlibrary(pacman)\npacman::p_load(\n  tidyverse,\n  ggResidpanel\n)\n\n\ndados = read.table(\"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Exemplo_regressao_01.dat\", header = TRUE) \ndados %&gt;% str()\n\n'data.frame':   20 obs. of  3 variables:\n $ X1: num  15.3 15.2 16.2 14.3 14.6 ...\n $ X2: num  57.3 63.8 65.4 57 63.8 63.2 60.2 57.7 56.4 55.6 ...\n $ Y : num  74.8 74 72.9 70 74.9 76 72 73.5 74.5 73.5 ..."
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-2",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-2",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: Ajuste de modelo de regressão para dados imobiliários",
+    "text": "Exemplo: Ajuste de modelo de regressão para dados imobiliários\n\nattach(dados)\n\nn = length(X1)\nn\n\n[1] 20\n\nX0 = rep(1,n)\nX0\n\n [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n\n## matriz X\n\nX = cbind(X0,X1,X2)\nX %&gt;% head()\n\n     X0    X1   X2\n[1,]  1 15.31 57.3\n[2,]  1 15.20 63.8\n[3,]  1 16.25 65.4\n[4,]  1 14.33 57.0\n[5,]  1 14.57 63.8\n[6,]  1 17.33 63.2"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-3",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-3",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: Ajuste de modelo de regressão para dados imobiliários",
+    "text": "Exemplo: Ajuste de modelo de regressão para dados imobiliários\n\n## estimando o vetor beta\n\nbetaCh = solve(t(X)%*%X)%*%t(X)%*%Y\nbetaCh\n\n          [,1]\nX0 30.96656634\nX1  2.63439962\nX2  0.04518386\n\n## valores estimados de Y\n\nYCh = X%*%betaCh\nYCh %&gt;% head()\n\n         [,1]\n[1,] 73.88826\n[2,] 73.89217\n[3,] 76.73058\n[4,] 71.29299\n[5,] 72.23250\n[6,] 79.47633"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-4",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-4",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: Ajuste de modelo de regressão para dados imobiliários",
+    "text": "Exemplo: Ajuste de modelo de regressão para dados imobiliários\n\n\n## residuo\n\nresCh = Y - YCh\nresCh %&gt;% head()\n\n\n           [,1]\n[1,]  0.9117402\n[2,]  0.1078291\n[3,] -3.8305847\n[4,] -1.2929930\n[5,]  2.6675008\n[6,] -3.4763318\n\n\n\n\nplot(resCh)\nabline(h=0, col = \"red\", lty = 3,lwd = 5)"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-5",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-5",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: Ajuste de modelo de regressão para dados imobiliários",
+    "text": "Exemplo: Ajuste de modelo de regressão para dados imobiliários\n\nt(X)%*%resCh\n\n            [,1]\nX0 -3.255707e-11\nX1 -5.105427e-10\nX2 -2.024407e-09\n\nt(YCh)%*%resCh\n\n              [,1]\n[1,] -2.444921e-09\n\n## Soma de quadrados do residuo\n\nSQRes = t(Y)%*%Y - t(Y)%*%X%*%betaCh\nSQRes\n\n         [,1]\n[1,] 204.9949"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-6",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-6",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: Ajuste de modelo de regressão para dados imobiliários",
+    "text": "Exemplo: Ajuste de modelo de regressão para dados imobiliários\n\n## Soma de quadrados total\n\nSQTot = t(YCh)%*%YCh - (n * (mean(YCh)^2)) + t(resCh)%*%resCh\nSQTot\n\n        [,1]\n[1,] 1237.87\n\n## Coeficiente de determinacao R2\n\nR2 = 1 - (SQRes/SQTot)\nR2\n\n         [,1]\n[1,] 0.834397\n\ndetach(dados)"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-7",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-7",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: Ajuste de modelo de regressão para dados imobiliários",
+    "text": "Exemplo: Ajuste de modelo de regressão para dados imobiliários\n\nmodel = lm(Y~X1+X2, data = dados)\nsummary(model)\n\n\nCall:\nlm(formula = Y ~ X1 + X2, data = dados)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-5.5894 -1.5411 -0.0718  1.3507  6.4605 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)   \n(Intercept) 30.96657    7.88221   3.929  0.00108 **\nX1           2.63440    0.78560   3.353  0.00377 **\nX2           0.04518    0.28518   0.158  0.87598   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.473 on 17 degrees of freedom\nMultiple R-squared:  0.8344,    Adjusted R-squared:  0.8149 \nF-statistic: 42.83 on 2 and 17 DF,  p-value: 2.302e-07"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-8",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários-8",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: Ajuste de modelo de regressão para dados imobiliários",
+    "text": "Exemplo: Ajuste de modelo de regressão para dados imobiliários\n\nresid_panel(model)"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelos de Regressão Linear Multivariada",
+    "text": "Modelos de Regressão Linear Multivariada\n\nSuponha agora, que a variável resposta é p-variada \\(\\mathbf{Y}\\) e que \\(X_1, X_2, \\cdots, X_r\\) representam as variáveis independentes:\n\\[Y_1 = \\beta_{01} + \\beta_{11}X_1 + \\cdots + \\beta_{r1}X_r + \\epsilon_1\\]\n\\[Y_2 = \\beta_{02} + \\beta_{12}X_1 + \\cdots + \\beta_{r2}X_r + \\epsilon_2\\]\n\\[\\vdots \\hspace{4cm} \\vdots \\hspace{4cm} \\vdots\\]\n\\[Y_p = \\beta_{0p} + \\beta_{1p}X_1 + \\cdots + \\beta_{rp}X_r + \\epsilon_p\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada-1",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada-1",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelos de Regressão Linear Multivariada",
+    "text": "Modelos de Regressão Linear Multivariada\n\n\n\n\\(\\mathbf{\\epsilon} = [\\epsilon_1, \\epsilon_2, \\cdots, \\epsilon_p]^t\\) com \\(E(\\mathbf{\\epsilon}) = \\mathbf{0}\\) e \\(\\text{Var}(\\mathbf{\\epsilon}) = \\mathbf{\\Sigma}\\)\n\n\n👉 Portanto, os erros associados a diferentes componentes do vetor resposta podem ser correlacionados.\n\n\nNotação Matricial\n\n\n\\[\\underbrace{\\mathbf{Y}}_{n \\times p} = \\underbrace{\\mathbf{X}}_{n \\times (r + 1)} \\underbrace{\\mathcal{B}}_{(r + 1) \\times p}\n+ \\underbrace{\\mathbf{\\epsilon}}_{n \\times p} \\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada-2",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada-2",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelos de Regressão Linear Multivariada",
+    "text": "Modelos de Regressão Linear Multivariada\n\\[\n\\mathbf{Y} = \\left[ \\begin{matrix}  Y_{11} & Y_{12} & \\cdots & Y_{1p} \\\\  Y_{21} & Y_{22} & \\cdots & Y_{2p} \\\\ \\vdots & \\vdots & \\ddots & \\vdots\n\\\\ Y_{n1} & Y_{n2} & \\cdots & Y_{np} \\end{matrix} \\right] = \\left[\\mathbf{Y}_{(1)} | \\mathbf{Y}_{(2)} | \\cdots | \\mathbf{Y}_{(p)} \\right]\n\\]\n\\[\n\\mathbf{X}_{n \\times (r + 1)} = \\left[ \\begin{matrix}  1 & X_{11} & X_{12} & \\cdots & X_{1r} \\\\  \n1 & X_{21} & X_{22} & \\cdots & X_{2r} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ 1 & X_{n1} & X_{n2} & \\cdots & X_{nr} \\end{matrix} \\right]\n\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada-3",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada-3",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelos de Regressão Linear Multivariada",
+    "text": "Modelos de Regressão Linear Multivariada\n\\[\n\\mathcal{B}_{(r + 1) \\times p}= \\left[ \\begin{matrix}  \\beta_{01} & \\beta_{02} & \\cdots &\\beta_{0p} \\\\  \\beta_{11} & \\beta_{12} & \\cdots & \\beta_{1p} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\ \\beta_{r1} & \\beta_{r2} & \\cdots & \\beta_{rp} \\end{matrix} \\right] =  \\left[\\mathbf{\\beta}_{(1)} |\n\\mathbf{\\beta}_{(2)} | \\cdots | \\mathbf{\\beta}_{(p)} \\right]\n\\]\n\\[\n  \\mathbf{\\epsilon} = \\left[ \\begin{matrix}  \\epsilon_{11} & \\epsilon_{12} & \\cdots & \\epsilon_{1p} \\\\  \\epsilon_{21} & \\epsilon_{22}\n& \\cdots & \\epsilon_{2p} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ \\epsilon_{n1} & \\epsilon_{n2} & \\cdots & \\epsilon_{np} \\end{matrix}\n\\right] = \\left[\\mathbf{\\epsilon}_{(1)} | \\mathbf{\\epsilon}_{(2)} | \\cdots | \\mathbf{\\epsilon}_{(p)} \\right]\n\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada-4",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada-4",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelos de Regressão Linear Multivariada",
+    "text": "Modelos de Regressão Linear Multivariada\n\n\n\nSuposições do modelo: \\(\\underbrace{\\mathbf{Y}}_{n \\times p} = \\underbrace{\\mathbf{X}}_{n \\times (r + 1)} \\underbrace{\\mathcal{B}}_{(r + 1) \\times p} + \\underbrace{\\mathbf{\\epsilon}}_{n \\times p}\\)\n\n\n\\[E(\\mathbf{\\epsilon}_{(i)}) = \\mathbf{0}, \\text{Cov}(\\mathbf{\\epsilon}_{(i)}, \\mathbf{\\epsilon}_{(k)}) = \\sigma_{ik} \\mathbf{I}_n \\hspace{0.5cm} i,k = 1, 2, \\cdots, p\\]\n\nAs p medidas sobre a i-ésima observação têm matriz de covariâncias dada por \\(\\mathbf{\\Sigma} = (\\sigma_{ik})\\), mas medidas provenientes de observações diferentes são não correlacionadas."
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada-5",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelos-de-regressão-linear-multivariada-5",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelos de Regressão Linear Multivariada",
+    "text": "Modelos de Regressão Linear Multivariada\n\n\n🤔\n\n\n\\(\\mathcal{B}\\) e \\(\\mathbf{\\Sigma}\\) são desconhecidos…\n\n\nObserve que a i-ésima coluna da matriz resposta segue o modelo linear univariado dado por:\n\\[\\mathbf{Y}_{(i)} = \\mathbf{X} \\mathbf{\\beta}_{(i)} + \\mathbf{\\epsilon}_{(i)}, \\hspace{0.5cm} i = 1, 2, \\cdots, p\\]\ncom \\(\\text{Cov}(\\mathbf{\\epsilon}_{(i)}) = \\sigma_{ii} \\mathbf{I}_n\\)."
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#estimação-de-mínimos-quadrados",
+    "href": "aulas/Regressao_Multivariada/regressao.html#estimação-de-mínimos-quadrados",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Estimação de Mínimos Quadrados",
+    "text": "Estimação de Mínimos Quadrados\nDe acordo com o caso univariado, o estimador de mínimos quadrados para o vetor \\(\\mathbf{\\beta}\\):\n\\[\\widehat{\\mathbf{\\beta}}_{(i)} = (\\mathbf{X}^t \\mathbf{X})^{-1}\\mathbf{X}^t \\mathbf{Y}_{(i)}, \\hspace{0.5cm} i = 1, 2, \\cdots, p\\]\n\nUma vez que \\(\\mathcal{B} = \\left[\\mathbf{\\beta}_{(1)} | \\mathbf{\\beta}_{(2)} | \\cdots | \\mathbf{\\beta}_{(p)} \\right]\\), temos\n\\[\\widehat{\\mathcal{B}} = \\left[\\widehat{\\mathbf{\\beta}}_{(1)} | \\widehat{\\mathbf{\\beta}}_{(2)} | \\cdots | \\widehat{\\mathbf{\\beta}}_{(p)} \\right]\n= (\\mathbf{X}^t \\mathbf{X})^{-1} \\mathbf{X}^t \\left[\\mathbf{Y}_{(1)} | \\mathbf{Y}_{(2)} | \\cdots | \\mathbf{Y}_{(p)} \\right]\\]\nou,\n\\[\\widehat{\\mathcal{B}} = (\\mathbf{X}^t \\mathbf{X})^{-1} \\mathbf{X}^t \\mathbf{Y}\\]\né o estimador de mínimos quadrados da matriz \\(\\mathcal{B}\\)"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#estimação-de-mínimos-quadrados-1",
+    "href": "aulas/Regressao_Multivariada/regressao.html#estimação-de-mínimos-quadrados-1",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Estimação de Mínimos Quadrados",
+    "text": "Estimação de Mínimos Quadrados\n\nMatriz de soma de quadrados e produtos cruzados do erros:\n\n\\[\\text{SQP Res} = \\mathbf{\\epsilon}^t\\mathbf{\\epsilon} = (\\mathbf{Y} - \\mathbf{X} \\widehat{\\mathcal{B}})^t(\\mathbf{Y} - \\mathbf{X} \\widehat{\\mathcal{B}})\\]\n\n\nValores ajustados:\n\n\\[\\widehat{\\mathbf{Y}} = \\mathbf{X} \\widehat{\\mathcal{B}} = \\mathbf{X}(\\mathbf{X}^t \\mathbf{X})^{-1} \\mathbf{X}^t \\mathbf{Y}\\]\n\n\n\nResíduos:\n\n\\[\\widehat{\\mathbf{\\epsilon}} = (\\mathbf{Y} - \\widehat{\\mathbf{Y}}) =  (\\mathbf{Y} - \\mathbf{X}\\widehat{\\mathcal{B}}) = [\\mathbf{I} - \\mathbf{X}( \\mathbf{X}^t \\mathbf{X})^{-1} \\mathbf{X}^t] \\mathbf{Y}\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#propriedades",
+    "href": "aulas/Regressao_Multivariada/regressao.html#propriedades",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Propriedades",
+    "text": "Propriedades\n\nCondições de ortogonalidade…\n\\[\\mathbf{X}^t \\widehat{\\mathbf{\\epsilon}} = \\mathbf{X}^t[\\mathbf{I} - \\mathbf{X}(\\mathbf{X}^t\\mathbf{X})^{-1}\\mathbf{X}^t] \\mathbf{Y} =  \\mathbf{0}\\]\n\\[ \\widehat{\\mathbf{Y}}^t \\widehat{\\mathbf{\\epsilon}} = \\widehat{\\mathcal{B}}^t  \\mathbf{X}^t[\\mathbf{I} - \\mathbf{X}(\\mathbf{X}^t\\mathbf{X})^{-1}\\mathbf{X}^t] \\mathbf{Y} = \\mathbf{0}\\]\n\nUma vez que \\(\\mathbf{Y} = \\widehat{\\mathbf{Y}} + \\widehat{\\mathbf{\\epsilon}}\\),\n\\[\\mathbf{Y}^t\\mathbf{Y} = (\\widehat{\\mathbf{Y}} + \\widehat{\\mathbf{\\epsilon}})^t(\\widehat{\\mathbf{Y}} + \\widehat{\\mathbf{\\epsilon}}) =\n\\widehat{\\mathbf{Y}}^t\\widehat{\\mathbf{Y}} + \\widehat{\\mathbf{\\epsilon}}^t\\widehat{\\mathbf{\\epsilon}}^t + \\mathbf{0} + \\mathbf{0}^t\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#propriedades-1",
+    "href": "aulas/Regressao_Multivariada/regressao.html#propriedades-1",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Propriedades",
+    "text": "Propriedades\n\nou,\n\\[\\underbrace{{\\mathbf{Y}}^t{\\mathbf{Y}}}_{\\text{SQP total}} = \\underbrace{\\widehat{\\mathbf{Y}}^t\\widehat{\\mathbf{Y}}}_{\\text{SQP regressão}} + \\underbrace{\\widehat{\\mathbf{\\epsilon}}^t\\widehat{\\mathbf{\\epsilon}}^t}_{\\text{SQP Res}}\\]\n\nDe forma que, a soma de quadrados e produtos cruzados dos resíduos pode ser reescrita como:\n\\[\\widehat{\\mathbf{\\epsilon}}^t\\widehat{\\mathbf{\\epsilon}}^t = \\mathbf{Y}^t\\mathbf{Y} - \\widehat{\\mathbf{Y}}^t\\widehat{\\mathbf{Y}} =\n\\mathbf{Y}^t\\mathbf{Y} - \\widehat{\\mathcal{B}}^t \\mathbf{X}^t\\mathbf{X}\\widehat{\\mathcal{B}}\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#propriedades-do-estimador-widehatmathcalb",
+    "href": "aulas/Regressao_Multivariada/regressao.html#propriedades-do-estimador-widehatmathcalb",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Propriedades do estimador \\(\\widehat{\\mathcal{B}}\\)\n",
+    "text": "Propriedades do estimador \\(\\widehat{\\mathcal{B}}\\)\n\nPara o estimador de mínimos quadrados \\(\\widehat{\\mathcal{B}}\\) com a matriz \\(\\mathbf{X}\\) de posto completo, tem-se:\n\\[\n\\begin{eqnarray*}\nE(\\widehat{\\mathcal{B}}) &=& E[(\\mathbf{X}^t\\mathbf{X})^{-1}\\mathbf{X}^t\\mathbf{Y}] = (\\mathbf{X}^t\\mathbf{X})^{-1}\\mathbf{X}^tE(\\mathbf{Y}) = \\\\ &=& (\\mathbf{X}^t\\mathbf{X})^{-1}\\mathbf{X}^t\\mathbf{X}\\mathcal{B} = \\mathbf{I}\\mathcal{B} = \\mathcal{B}\n\\end{eqnarray*}\n\\]\n\nAlém disso,\n\\[\\text{Cov}(\\widehat{\\mathbf{\\beta}}_{(i)},\\widehat{\\mathbf{\\beta}}_{(k)}) = \\sigma_{ik}(\\mathbf{X}^t\\mathbf{X})^{-1}, \\hspace{0.5cm}\nE(\\widehat{\\mathbf{\\epsilon}}) = \\mathbf{0}, \\hspace{0.5cm} E \\left(\\displaystyle{\\dfrac{\\widehat{\\mathbf{\\epsilon}}^t\n\\widehat{\\mathbf{\\epsilon}}}{n - r - 1 }} \\right) = \\mathbf{\\Sigma} \\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#propriedades-do-estimador-widehatmathcalb-1",
+    "href": "aulas/Regressao_Multivariada/regressao.html#propriedades-do-estimador-widehatmathcalb-1",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Propriedades do estimador \\(\\widehat{\\mathcal{B}}\\)\n",
+    "text": "Propriedades do estimador \\(\\widehat{\\mathcal{B}}\\)\n\n\n\n\n\\(\\widehat{\\mathcal{B}}\\) e \\(\\widehat{\\mathbf{\\epsilon}}\\) são não correlacionados.\n\n\n\nEstimador não viciado para \\(\\mathbf{\\Sigma}\\):\n\n\\[\\widehat{\\mathbf{\\Sigma}} = \\mathbf{S} = \\displaystyle{\\dfrac{\\widehat{\\mathbf{\\epsilon}}^t\\widehat{\\mathbf{\\epsilon}}}{n - r - 1}} =\n\\displaystyle{\\dfrac{(\\mathbf{Y} - \\mathbf{X} \\widehat{\\mathcal{B}})^t(\\mathbf{Y} - \\mathbf{X} \\widehat{\\mathcal{B}})}{n - r - 1}} =\n\\displaystyle{\\dfrac{\\mathbf {Y}^t\\mathbf{Y} - \\widehat{\\mathcal{B}}^t \\mathcal{X}^t\\mathbf{X}\\widehat{\\mathcal{B}}}{n - r - 1}}\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento}",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento}\n\nOs dados do arquivo Exemplo_regressao_02.dat referem-se à medidas antropométricas, sócio-econômicas e variáveis relacionadas ao nível de estresse de 50 gestantes de um determinado município, mensuradas no último trimestre de gestação.\nO estresse materno foi avaliado através de quatro variáveis distintas: resultado do teste de Estado de Ansiedade (EA), resultado do teste de Traço de Ansiedade (TA), resultado do Questionário Geral de Saúde (QGS) e Escala de Percepção de Estresse (EPE)."
   }
 ]
