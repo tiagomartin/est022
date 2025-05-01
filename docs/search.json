@@ -974,5 +974,124 @@
     "crumbs": [
       "Aulas"
     ]
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#introdução",
+    "href": "aulas/Regressao_Multivariada/regressao.html#introdução",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Introdução",
+    "text": "Introdução\n\nUm pesquisador coletou dados sobre três variáveis psicológicas, quatro variáveis acadêmicas (resultados de testes padronizados), e o tipo de programa educacional do aluno em 600 estudantes do ensino médio.\nEle está interessado em descobrir como o conjunto de variáveis psicológicas está relacionado com as variáveis acadêmicas e o tipo de programa que o aluno está inserido."
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#introdução-1",
+    "href": "aulas/Regressao_Multivariada/regressao.html#introdução-1",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Introdução",
+    "text": "Introdução\n\nUm médico coletou dados sobre o nível de colesterol, pressão arterial e peso. Ele também coletou dados sobre os hábitos alimentares dos pacientes (por exemplo, o quanto de carne vermelha, peixe, produtos lácteos e chocolate são consumidos por semana).\nEle quer investigar a relação entre as três medidas de saúde e hábitos alimentares de seus pacientes."
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#introdução-2",
+    "href": "aulas/Regressao_Multivariada/regressao.html#introdução-2",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Introdução",
+    "text": "Introdução\n\n\nRegressão Linear Simples: Temos uma variável dependente \\(Y\\) e uma variável independente \\(X\\).\n\n\nRegressão Linear Múltipla: Temos uma variável dependente \\(Y\\) e várias variáveis independentes \\(X_1, X_2, \\cdots, X_r\\).\n\n\nRegressão Linear Múltipla Multivariada: Temos várias variáveis dependentes \\(Y_1, Y_2, \\cdots, Y_p\\) e várias variáveis independentes \\(X_1, X_2, \\cdots, X_r\\). Nesse caso, cada variável \\(Y\\) e relacionada com todas as variáveis \\(X\\)."
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelo de regressão linear múltiplo univariado",
+    "text": "Modelo de regressão linear múltiplo univariado\n\nSejam \\(X_1, X_2, \\cdots, X_p\\) \\(p\\) variáveis independentes relacionadas à uma variável resposta \\(Y\\).\nO modelo de regressão linear múltipla univariado é dado pela seguinte expressão:\n\\[\\underbrace{Y}_{\\text{resposta}} = \\underbrace{\\beta_0 + \\beta_1X_1 + \\cdots + \\beta_rX_p}_{\\text{média; parte estrutural}} +\n\\underbrace{\\epsilon}_{\\text{erro; parte aleatória}}\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-1",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-1",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelo de regressão linear múltiplo univariado",
+    "text": "Modelo de regressão linear múltiplo univariado\n\n\nO modelo é dito linear, pois a parte estrutural é linear nos parâmetros \\(\\beta_j\\), \\(j = 1, \\cdots, p\\).\n\n\nSe dispomos de \\(n\\) observações independentes:\n\n\\[Y_{i} = \\beta_0 + \\beta_1X_{1i} + \\cdots + \\beta_pX_{pi} + \\epsilon_i, \\hspace{0.2cm} i = 1, \\cdots, n\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-2",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-2",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelo de regressão linear múltiplo univariado",
+    "text": "Modelo de regressão linear múltiplo univariado\n\n\nSuposições\n\n\n\\(E(\\epsilon_i) = 0\\), \\(\\forall i = 1, 2, \\cdots, n\\)\n\n\n\\(\\text{Var}(\\epsilon_i) = \\sigma^2\\), \\(\\forall i = 1, 2, \\cdots, n\\) (homocedasticidade)\n\n\n\\(\\text{Cov}(\\epsilon_i, \\epsilon_k) = 0\\), \\(\\forall i \\neq k, \\hspace{0.3cm} i,k \\in \\{1, 2, \\cdots, n\\}\\)"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-3",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-3",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelo de regressão linear múltiplo univariado",
+    "text": "Modelo de regressão linear múltiplo univariado\n\nEm notação matricial, temos:\n\\[\\underbrace{\\mathbf{y}}_{n \\times 1} = \\underbrace{\\mathbf{X}}_{n \\times (p + 1)} \\underbrace{\\mathbf{\\beta}}_{(p + 1) \\times 1}\n+ \\underbrace{\\mathbf{\\epsilon}}_{n \\times 1} \\]\n\nSuposições\n\n\n\\(E(\\mathbf{\\epsilon}) = \\mathbf{0}\\)\n\\(\\text{Var}(\\mathbf{\\epsilon}) = \\sigma^2 \\mathbf{I}_n\\)"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-4",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-4",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelo de regressão linear múltiplo univariado",
+    "text": "Modelo de regressão linear múltiplo univariado\n\n\\[\n\\mathbf{y} = \\left[ \\begin{matrix}  y_1 \\\\  y_2 \\\\ \\vdots \\\\ y_n \\end{matrix} \\right] \\hspace{1cm} \\mathbf{X} = \\left[ \\begin{matrix}  1 & X_{11} & X_{12} & \\cdots & X_{1p} \\\\  \n1 & X_{21} & X_{22} & \\cdots & X_{2p} \\\\ \\vdots & \\vdots & \\ddots & \\vdots \\\\ 1 & X_{n1} & X_{n2} & \\cdots & X_{np} \\end{matrix} \\right]\n\\]\n\\[\n\\mathbf{\\beta} = \\left[ \\begin{matrix}  \\beta_0 \\\\  \\beta_1 \\\\ \\vdots \\\\ \\beta_p \\end{matrix} \\right] \\hspace{1cm}\n\\mathbf{\\epsilon} = \\left[ \\begin{matrix}  \\epsilon_1 \\\\  \\epsilon_2 \\\\ \\vdots \\\\ \\epsilon_n \\end{matrix} \\right]\n\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-5",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-5",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelo de regressão linear múltiplo univariado",
+    "text": "Modelo de regressão linear múltiplo univariado\n\n\n\n\n🤔\n\n\nObserve que ainda não fizemos nenhuma suposição a cerca da distribuição dos erros…\n\n\n\n\n\nPara efeito de obter os estimadores de mínimos quadrados, de fato, não é necessária nenhuma suposição sobre a distribuição da parte aleatória\n\n\n\n\nPara fins de inferência, essa suposição será necessária…"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#estimadores-de-mínimos-quadrados",
+    "href": "aulas/Regressao_Multivariada/regressao.html#estimadores-de-mínimos-quadrados",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Estimadores de mínimos quadrados",
+    "text": "Estimadores de mínimos quadrados\n\nSuponha que a matriz \\(\\mathbf{X}\\) seja de posto-completo tal que suas colunas formam um conjunto L.I.\n\nNeste caso, a matriz \\(\\mathbf{X}^t \\mathbf{X}\\) é não singular e o estimador de mínimos quadrados do vetor \\(\\mathbf{\\beta}\\) é dado por\n\n\n\\[\\widehat{\\mathbf{\\beta}} = (\\mathbf{X}^t \\mathbf{X})^{-1}\\mathbf{X}^t\\mathbf{y}\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#estimadores-de-mínimos-quadrados-1",
+    "href": "aulas/Regressao_Multivariada/regressao.html#estimadores-de-mínimos-quadrados-1",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Estimadores de mínimos quadrados",
+    "text": "Estimadores de mínimos quadrados\nOs valores ajustados são, então, dados por:\n\\[\\widehat{\\mathbf{y}} = \\mathbf{X}\\widehat{\\mathbf{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^t \\mathbf{X})^{-1}\\mathbf{X}^t}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H} \\mathbf{y}\\]\n\ne os resíduos\n\\[\\widehat{\\mathbf{\\epsilon}} = \\mathbf{y} - \\widehat{\\mathbf{y}} = (\\underbrace{\\mathbf{I} - \\mathbf{H}}_{\\mathbf{P}} ]\\mathbf{y}\\]\nsatisfazem (somente quando houver a constante \\(\\beta_0\\) no modelo)\n\\[\\mathbf{X}^t\\widehat{\\mathbf{\\epsilon}} = {\\mathbf{0}}  \\hspace{0.5cm} e \\hspace{0.5cm} \\widehat{\\mathbf{y}}^t\\widehat{\\mathbf{\\epsilon}} = 0 \\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#estimadores-de-mínimos-quadrados-2",
+    "href": "aulas/Regressao_Multivariada/regressao.html#estimadores-de-mínimos-quadrados-2",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Estimadores de mínimos quadrados",
+    "text": "Estimadores de mínimos quadrados\n\nObservação: Temos que \\(\\mathbf{H}\\) e \\(\\mathbf{P}\\) são matrizes idempotentes (\\(\\mathbf{H} = \\mathbf{H}\\mathbf{H}\\) e \\(\\mathbf{H} = \\mathbf{H}^t\\)).\n\n\nA soma de quadrados de resíduos é\n\\[\\text{SQ Res} = \\displaystyle{\\sum_{i=1}^n}(y_i - \\widehat{y}_i)^2 = \\widehat{\\mathbf{\\epsilon}}^t\\widehat{\\mathbf{\\epsilon}} = \\mathbf{y}^t(\\mathbf{I} - \\mathbf{H})\\mathbf{y} = \\mathbf{y}^t\\mathbf{y} - \\mathbf{y}^t \\mathbf{X} \\widehat{\\mathbf{\\beta}}\\]\n\n\nObserve que…\n\\[\\displaystyle{\\sum_{i=1}^n} y_i^2 = \\mathbf{y}^t \\mathbf{y} = (\\mathbf{y} - \\widehat{\\mathbf{y}} + \\widehat{\\mathbf{y}})^t\n(\\mathbf{y} - \\widehat{\\mathbf{y}} + \\widehat{\\mathbf{y}}) = \\widehat{\\mathbf{y}}^t\\widehat{\\mathbf{y}} +\n\\widehat{\\mathbf{\\epsilon}}^t \\widehat{\\mathbf{\\epsilon}}\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-6",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-6",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelo de regressão linear múltiplo univariado",
+    "text": "Modelo de regressão linear múltiplo univariado\nOs valores ajustados são, então, dados por:\n\\[\\widehat{\\mathbf{y}} = \\mathbf{X}\\widehat{\\mathbf{\\beta}} = \\underbrace{\\mathbf{X}(\\mathbf{X}^t \\mathbf{X})^{-1}\\mathbf{X}^t}_{\\mathbf{H}}\\mathbf{y} = \\mathbf{H} \\mathbf{y}\\]\n\ne os resíduos\n\\[\\widehat{\\mathbf{\\epsilon}} = \\mathbf{y} - \\widehat{\\mathbf{y}} = (\\underbrace{\\mathbf{I} - \\mathbf{H}}_{\\mathbf{P}} ]\\mathbf{y}\\]\nsatisfazem (somente quando houver a constante \\(\\beta_0\\) no modelo)\n\\[\\mathbf{X}^t\\widehat{\\mathbf{\\epsilon}} = {\\mathbf{0}}  \\hspace{0.5cm} e \\hspace{0.5cm} \\widehat{\\mathbf{y}}^t\\widehat{\\mathbf{\\epsilon}} = 0 \\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-7",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-7",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelo de regressão linear múltiplo univariado",
+    "text": "Modelo de regressão linear múltiplo univariado\n\nObservação: Temos que \\(\\mathbf{H}\\) e \\(\\mathbf{P}\\) são matrizes idempotentes (\\(\\mathbf{H} = \\mathbf{H}\\mathbf{H}\\) e \\(\\mathbf{H} = \\mathbf{H}^t\\)).\n\n\nA soma de quadrados de resíduos é\n\\[\\text{SQ Res} = \\displaystyle{\\sum_{i=1}^n}(y_i - \\widehat{y}_i)^2 = \\widehat{\\mathbf{\\epsilon}}^t\\widehat{\\mathbf{\\epsilon}} = \\mathbf{y}^t(\\mathbf{I} - \\mathbf{H})\\mathbf{y} = \\mathbf{y}^t\\mathbf{y} - \\mathbf{y}^t \\mathbf{X} \\widehat{\\mathbf{\\beta}}\\]\n\n\nObserve que…\n\\[\\displaystyle{\\sum_{i=1}^n} y_i^2 = \\mathbf{y}^t \\mathbf{y} = (\\mathbf{y} - \\widehat{\\mathbf{y}} + \\widehat{\\mathbf{y}})^t\n(\\mathbf{y} - \\widehat{\\mathbf{y}} + \\widehat{\\mathbf{y}}) = \\widehat{\\mathbf{y}}^t\\widehat{\\mathbf{y}} +\n\\widehat{\\mathbf{\\epsilon}}^t \\widehat{\\mathbf{\\epsilon}}\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-8",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-8",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelo de regressão linear múltiplo univariado",
+    "text": "Modelo de regressão linear múltiplo univariado\n\nUma vez que a primeira coluna de \\(\\mathbf{X}\\) é \\(\\mathbf{1}\\), a condição \\(\\mathbf{X}^t\\widehat{\\mathbf{\\epsilon}} = {\\mathbf{0}}\\) inclui a exigência \\(0 = \\mathbf{1}^t\\widehat{\\mathbf{\\epsilon}} = \\displaystyle{\\sum_{j=1}^n} \\widehat{\\mathbf{\\epsilon}}_j =\n\\displaystyle{\\sum_{j=1}^n} y_j - \\displaystyle{\\sum_{j=1}^n} \\widehat{y}_j\\) ou \\(\\bar{y} = \\bar{\\widehat{y}}\\). Subtraindo \\(n\\bar{y}^2 = n\\bar{\\widehat{y}}^2\\) de ambos os lados, temos a decomposição básica da soma de quadrados total:\n\\[\\text{SQ Total} = \\mathbf{y}^t \\mathbf{y} - n\\bar{y}^2 = \\widehat{\\mathbf{y}}^t\\widehat{\\mathbf{y}} -  n\\bar{\\widehat{y}}^2 +\n\\widehat{\\mathbf{\\epsilon}}^t \\widehat{\\mathbf{\\epsilon}}\\]"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-9",
+    "href": "aulas/Regressao_Multivariada/regressao.html#modelo-de-regressão-linear-múltiplo-univariado-9",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Modelo de regressão linear múltiplo univariado",
+    "text": "Modelo de regressão linear múltiplo univariado\n\nDe forma que, o coeficiente de determinação \\(R^2\\) é dado por:\n\\[R^2 = 1 - \\dfrac{\\text{SQ Res}}{\\text{SQ Total}} = 1 - \\dfrac{\\mathbf{y}^t\\mathbf{y} -\n\\mathbf{y}^t \\mathbf{X} \\widehat{\\mathbf{\\beta}}}{\\widehat{\\mathbf{y}}^t\\widehat{\\mathbf{y}} -  n\\bar{\\widehat{y}}^2 +\n\\widehat{\\mathbf{\\epsilon}}^t \\widehat{\\mathbf{\\epsilon}}}\\]\n\nObservação: \\(R^2\\) fornece a proporção da variação total dos \\(Y_i's\\) que é “explicada” pelas variáveis independentes."
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-ajuste-de-modelo-de-regressão-para-dados-imobiliários",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: Ajuste de modelo de regressão para dados imobiliários",
+    "text": "Exemplo: Ajuste de modelo de regressão para dados imobiliários\nOs dados do arquivo Exemplo_regressao_01.dat referem-se à avaliação imobiliária de 20 casas de determinado bairro em uma cidade. As variáveis envolvidas são:\n\n\\(X_1\\): Tamanho total da habitação (em milhares de metros quadrados)\n\\(X_2\\): Valor da avaliação (em milhares de reais)\n\\(Y\\): Valor da venda (em milhares de reais)"
   }
 ]

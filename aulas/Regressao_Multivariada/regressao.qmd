@@ -1,0 +1,317 @@
+---
+title: "Análise de Regressão Multivariada"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    footer: ""
+    theme: quartomonothemer.scss
+    slide-number: c/t
+    show-slide-number: all
+    preview-links: auto
+    self-contained: true
+incremental: false
+code-link: true
+bibliography: references.bib
+title-slide-attributes:
+    data-background-image: /images/back.jpeg
+    data-background-size: cover
+    data-background-opacity: "0.3"
+execute:
+  echo: true
+---
+
+## Introdução
+
+<br>
+
+Um pesquisador coletou dados sobre **três variáveis** psicológicas, quatro variáveis acadêmicas (resultados de testes padronizados), 
+e o tipo de programa educacional do aluno em 600 estudantes do ensino médio. 
+
+
+Ele está interessado em descobrir como o **conjunto de variáveis psicológicas** está relacionado com as variáveis acadêmicas e o tipo de programa que o aluno está inserido.
+
+
+## Introdução
+
+<br>
+
+Um médico coletou dados sobre o nível de colesterol, pressão arterial e peso. Ele também coletou dados sobre os hábitos alimentares
+dos pacientes (por exemplo, o quanto de carne vermelha, peixe, produtos lácteos e chocolate são consumidos por semana). 
+
+Ele quer investigar a relação entre as **três medidas de saúde** e hábitos alimentares de seus pacientes.
+
+
+## Introdução
+
+<br>
+
+- **Regressão Linear Simples:** Temos **uma variável dependente** $Y$ e **uma variável independente** $X$.
+
+\vspace{0.4cm}
+ 
+- **Regressão Linear Múltipla:** Temos **uma variável dependente** $Y$ e **várias variáveis independentes** $X_1, X_2, \cdots, X_r$.
+
+\vspace{0.4cm}
+ 
+- **Regressão Linear Múltipla Multivariada:** Temos **várias variáveis dependentes** $Y_1, Y_2, \cdots, Y_p$ e 
+**várias variáveis independentes** $X_1, X_2, \cdots, X_r$. Nesse caso, cada variável $Y$ e relacionada com todas as variáveis $X$.
+
+
+# O caso univariado
+
+## Modelo de regressão linear múltiplo univariado
+
+<br>
+
+Sejam $X_1, X_2, \cdots, X_p$ $p$ variáveis independentes relacionadas à uma variável resposta $Y$.
+
+\vspace{0.3cm}
+
+\item O **modelo de regressão linear múltipla univariado** é dado pela seguinte expressão:
+
+\vspace{0.3cm}
+
+$$\underbrace{Y}_{\text{resposta}} = \underbrace{\beta_0 + \beta_1X_1 + \cdots + \beta_rX_p}_{\text{média; parte estrutural}} + 
+\underbrace{\epsilon}_{\text{erro; parte aleatória}}$$
+
+
+## Modelo de regressão linear múltiplo univariado
+
+<br>
+
+
+- O modelo é dito linear, pois a parte estrutural é linear nos parâmetros $\beta_j$, $j = 1, \cdots, p$.
+
+\vspace{0.3cm}
+
+- Se dispomos de $n$ observações independentes:
+
+\vspace{0.3cm}
+
+$$Y_{i} = \beta_0 + \beta_1X_{1i} + \cdots + \beta_pX_{pi} + \epsilon_i, \hspace{0.2cm} i = 1, \cdots, n$$
+
+## Modelo de regressão linear múltiplo univariado
+
+<br>
+
+<p align="center"> 
+**Suposições**
+</p>
+
+
+- $E(\epsilon_i) = 0$, $\forall i = 1, 2, \cdots, n$
+
+\vspace{0.3cm}
+
+- $\text{Var}(\epsilon_i) = \sigma^2$, $\forall i = 1, 2, \cdots, n$  (homocedasticidade)
+
+\vspace{0.3cm}
+
+- $\text{Cov}(\epsilon_i, \epsilon_k) = 0$, $\forall i \neq k, \hspace{0.3cm} i,k \in \{1, 2, \cdots, n\}$ 
+
+
+
+## Modelo de regressão linear múltiplo univariado
+
+<br>
+
+
+Em notação matricial, temos:
+
+\vspace{0.3cm}
+
+$$\underbrace{\mathbf{y}}_{n \times 1} = \underbrace{\mathbf{X}}_{n \times (p + 1)} \underbrace{\mathbf{\beta}}_{(p + 1) \times 1} 
++ \underbrace{\mathbf{\epsilon}}_{n \times 1} $$
+
+
+\vspace{0.3cm}
+
+<p align="center"> 
+**Suposições**
+</p>
+
+
+- $E(\mathbf{\epsilon}) = \mathbf{0}$
+
+
+
+- $\text{Var}(\mathbf{\epsilon}) = \sigma^2 \mathbf{I}_n$
+
+
+## Modelo de regressão linear múltiplo univariado
+
+<br>
+
+$$
+ \mathbf{y} = \left[ \begin{matrix}  y_1 \\  y_2 \\ \vdots \\ y_n \end{matrix} \right] \hspace{1cm} \mathbf{X} = \left[ \begin{matrix}  1 & X_{11} & X_{12} & \cdots & X_{1p} \\  
+1 & X_{21} & X_{22} & \cdots & X_{2p} \\ \vdots & \vdots & \ddots & \vdots \\ 1 & X_{n1} & X_{n2} & \cdots & X_{np} \end{matrix} \right]
+$$
+
+$$
+ \mathbf{\beta} = \left[ \begin{matrix}  \beta_0 \\  \beta_1 \\ \vdots \\ \beta_p \end{matrix} \right] \hspace{1cm} 
+ \mathbf{\epsilon} = \left[ \begin{matrix}  \epsilon_1 \\  \epsilon_2 \\ \vdots \\ \epsilon_n \end{matrix} \right]
+$$
+
+## Modelo de regressão linear múltiplo univariado
+
+<br>
+
+
+<style>
+.texto-personalizado {
+    color: red;
+    font-size: 60px;
+    font-weight: bold;
+}
+</style>
+
+
+
+
+:::: {.columns}
+
+::: {.column width="10%"}
+<span style='font-size:150px;'>&#129300;</span> 
+:::
+
+::: {.column width="90%"}
+<p align="center" class="texto-personalizado">
+Observe que ainda não fizemos nenhuma suposição a cerca da distribuição dos erros...
+</p>
+:::
+
+::::
+
+
+. . .
+
+<br>
+
+- Para efeito de obter os estimadores de mínimos quadrados, de fato, não é necessária nenhuma suposição sobre a distribuição
+da parte aleatória
+
+. . .
+
+- Para fins de **inferência**, essa suposição será necessária...
+
+
+
+## Estimadores de mínimos quadrados
+
+
+<br>
+
+Suponha que a matriz $\mathbf{X}$ seja de posto-completo tal que suas colunas formam um conjunto L.I.
+
+
+. . .
+
+
+
+Neste caso, a matriz $\mathbf{X}^t \mathbf{X}$ é não singular e o estimador de mínimos quadrados do vetor $\mathbf{\beta}$ é dado por
+
+
+. . .
+
+
+$$\widehat{\mathbf{\beta}} = (\mathbf{X}^t \mathbf{X})^{-1}\mathbf{X}^t\mathbf{y}$$
+
+
+
+## Modelo de regressão linear múltiplo univariado
+
+
+Os valores ajustados são, então, dados por:
+
+\vspace{0.3cm}
+
+$$\widehat{\mathbf{y}} = \mathbf{X}\widehat{\mathbf{\beta}} = \underbrace{\mathbf{X}(\mathbf{X}^t \mathbf{X})^{-1}\mathbf{X}^t}_{\mathbf{H}}\mathbf{y} = \mathbf{H} \mathbf{y}$$
+
+. . .
+
+
+e os resíduos
+
+
+$$\widehat{\mathbf{\epsilon}} = \mathbf{y} - \widehat{\mathbf{y}} = (\underbrace{\mathbf{I} - \mathbf{H}}_{\mathbf{P}} ]\mathbf{y}$$
+
+satisfazem (somente quando houver a constante $\beta_0$ no modelo)
+
+
+
+$$\mathbf{X}^t\widehat{\mathbf{\epsilon}} = {\mathbf{0}}  \hspace{0.5cm} e \hspace{0.5cm} \widehat{\mathbf{y}}^t\widehat{\mathbf{\epsilon}} = 0 $$
+
+## Modelo de regressão linear múltiplo univariado
+
+- **Observação:**  Temos que $\mathbf{H}$ e $\mathbf{P}$ são matrizes idempotentes ($\mathbf{H} = \mathbf{H}\mathbf{H}$ e $\mathbf{H} = \mathbf{H}^t$).
+
+
+. . .
+
+
+ A soma de quadrados de resíduos é
+
+\vspace{0.3cm}
+
+$$\text{SQ Res} = \displaystyle{\sum_{i=1}^n}(y_i - \widehat{y}_i)^2 = \widehat{\mathbf{\epsilon}}^t\widehat{\mathbf{\epsilon}} = \mathbf{y}^t(\mathbf{I} - \mathbf{H})\mathbf{y} = \mathbf{y}^t\mathbf{y} - \mathbf{y}^t \mathbf{X} \widehat{\mathbf{\beta}}$$
+
+. . .
+
+
+Observe que...
+
+
+$$\displaystyle{\sum_{i=1}^n} y_i^2 = \mathbf{y}^t \mathbf{y} = (\mathbf{y} - \widehat{\mathbf{y}} + \widehat{\mathbf{y}})^t
+(\mathbf{y} - \widehat{\mathbf{y}} + \widehat{\mathbf{y}}) = \widehat{\mathbf{y}}^t\widehat{\mathbf{y}} +
+\widehat{\mathbf{\epsilon}}^t \widehat{\mathbf{\epsilon}}$$
+
+
+
+
+## Modelo de regressão linear múltiplo univariado
+
+<br>
+
+Uma vez que a primeira coluna de $\mathbf{X}$ é $\mathbf{1}$, a condição $\mathbf{X}^t\widehat{\mathbf{\epsilon}} = {\mathbf{0}}$ inclui
+a exigência $0 = \mathbf{1}^t\widehat{\mathbf{\epsilon}} = \displaystyle{\sum_{j=1}^n} \widehat{\mathbf{\epsilon}}_j = 
+\displaystyle{\sum_{j=1}^n} y_j - \displaystyle{\sum_{j=1}^n} \widehat{y}_j$ ou $\bar{y} = \bar{\widehat{y}}$. Subtraindo 
+$n\bar{y}^2 = n\bar{\widehat{y}}^2$ de ambos os lados, temos a decomposição básica da soma de quadrados total:
+
+\vspace{0.3cm}
+
+$$\text{SQ Total} = \mathbf{y}^t \mathbf{y} - n\bar{y}^2 = \widehat{\mathbf{y}}^t\widehat{\mathbf{y}} -  n\bar{\widehat{y}}^2 +
+\widehat{\mathbf{\epsilon}}^t \widehat{\mathbf{\epsilon}}$$
+
+
+## Modelo de regressão linear múltiplo univariado
+
+<br>
+
+
+De forma que, o coeficiente de determinação $R^2$ é dado por:
+
+\vspace{0.3cm}
+
+$$R^2 = 1 - \dfrac{\text{SQ Res}}{\text{SQ Total}} = 1 - \dfrac{\mathbf{y}^t\mathbf{y} -
+\mathbf{y}^t \mathbf{X} \widehat{\mathbf{\beta}}}{\widehat{\mathbf{y}}^t\widehat{\mathbf{y}} -  n\bar{\widehat{y}}^2 +
+\widehat{\mathbf{\epsilon}}^t \widehat{\mathbf{\epsilon}}}$$
+
+\vspace{0.3cm}
+
+- **Observação:** $R^2$ fornece a proporção da variação total dos $Y_i's$ que é "explicada" pelas variáveis independentes.
+
+
+## Exemplo: Ajuste de modelo de regressão para dados imobiliários
+
+Os dados do arquivo **Exemplo_regressao_01.dat** referem-se à avaliação imobiliária de 20 casas de determinado bairro em 
+uma cidade. As variáveis envolvidas são:
+
+\vspace{0.5cm}
+
+
+- $X_1$: Tamanho total da habitação (em milhares de metros quadrados) 
+- $X_2$: Valor da avaliação (em milhares de reais) 
+- $Y$: Valor da venda (em milhares de reais)
+
+
