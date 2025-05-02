@@ -4,11 +4,11 @@ project:
 
 website:
   page-navigation: true
-  title: "EST125 - Introdução à Mineração de Dados"
-  description: "Homepage da disciplina EST125 - Introdução à Mineração de Dados, 2025/1."
-  site-url: "http://professortp.com.br/est125/"
+  title: "EST022 - Estatística Multivariada II"
+  description: "Homepage da disciplina EST022 - Estatística Multivariada II, 2025/1."
+  site-url: "http://professortp.com.br/est022/"
 
-  repo-url: "https://github.com/tiagomartin/est125"
+  repo-url: "https://github.com/tiagomartin/est022"
   repo-actions: [edit, issue]
 
   open-graph: true
@@ -22,7 +22,7 @@ website:
     tools: 
     - icon: github
       text: github
-      href: https://github.com/tiagomartin/est125
+      href: https://github.com/tiagomartin/est022
     background: "#F2F2F2"
     logo: "images/logo.png"
     pinned: true
