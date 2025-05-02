@@ -46,7 +46,7 @@ Inferências sobre Vetores de Médias. Testes de Hipóteses sobre Matrizes de Co
 
 # Horário de Aulas
 
-Neste semestre, as aulas da disciplina serão ministradas no LABEST III.
+Neste semestre, as aulas da disciplina serão ministradas no LABEST II.
 
 | Dia           | Horário         | Local        |
 |---------------|-----------------|--------------|
