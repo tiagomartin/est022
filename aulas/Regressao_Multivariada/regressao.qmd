@@ -692,7 +692,7 @@ $$\widehat{\mathbf{\Sigma}} = \mathbf{S} = \displaystyle{\dfrac{\widehat{\mathbf
 
 
 
-## Exemplo: O impacto do estresse materno no baixo peso ao nascimento}
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
 
 
 <br>
@@ -703,3 +703,226 @@ ao nível de estresse de 50 gestantes de um determinado município, mensuradas n
 O estresse materno foi avaliado através de quatro variáveis distintas: resultado do teste de Estado de Ansiedade (EA), resultado
 do teste de Traço de Ansiedade (TA), resultado do Questionário Geral de Saúde (QGS) e Escala de Percepção de Estresse (EPE).
 
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+<br>
+
+
+- Como **variáveis resposta**, foram avaliados: peso da criança ao nascer (PESO), medido em gramas e a idade gestacional do recém-nascido,
+(IG), medida em semanas. 
+
+
+
+- As **variáveis explicativas ou independentes** foram: peso materno (PESOM), em kg, altura materna (ALTURAM), em metros, idade (IDADEM), em
+anos, renda *per capta* (RENDA), além dos resultados dos testes de ansiedade. 
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+
+```{r, eval=TRUE}
+library(pacman)
+pacman::p_load(
+  tidyverse,
+  ggResidpanel
+)
+```
+
+```{r}
+dados = read.table("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Exemplo_regressao_02.dat", header = TRUE) 
+dados %>% str()
+```
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+
+```{r}
+#| output-location: column
+attach(dados)
+
+n <- length(PESO)
+n
+```
+
+
+```{r}
+#| output-location: column
+
+## Matriz Y
+Y = cbind(PESO,IG)
+Y %>% head()
+dim(Y)
+```
+
+
+
+
+```{r}
+#| output-location: column
+
+## Matriz X
+X0 <- rep(1,n)
+X = cbind(X0,PESOM,ALTURAM,IDADEM,RENDA,EA,TA,QGS,EPE)
+X %>% head()
+dim(X)
+```
+
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+<br>
+
+```{r}
+#| output-location: column
+## Estimando a matriz B atraves do metodo de minimos quadrados
+
+XLX <- t(X)%*%X
+XLY <- t(X)%*%Y
+
+B <- solve(XLX)%*%XLY
+B
+```
+
+
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+<br>
+
+```{r}
+#| output-location: column
+## Matriz de soma de quadrados e produtos do residuo
+
+SQPRes = t(Y - X%*%B)%*%(Y - X%*%B)
+SQPRes
+```
+
+```{r}
+#| output-location: column
+## Valores ajustados
+
+Ych = X%*%B
+Ych %>% head()
+```
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+<br>
+
+```{r}
+#| output-location: column
+## Residuos
+
+res = Y - Ych
+res %>% head()
+```
+
+
+```{r}
+#| output-location: column
+## Residuos
+
+plot(res)
+abline(h=0, col = "red", lty = 3,lwd = 5)
+```
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+<br>
+
+
+```{r}
+#| output-location: column
+## Condicoes de ortogonalidade
+
+t(X)%*%res
+```
+
+```{r}
+#| output-location: column
+t(Ych)%*%res
+```
+
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+<br>
+
+```{r}
+#| output-location: column
+## Soma de quadrados e produtos total
+
+SQPTot = t(Y)%*%Y
+SQPTot
+```
+
+```{r}
+#| output-location: column
+## Soma de quadrados e produtos da regressao
+
+SQPReg = t(Ych)%*%Ych
+SQPReg
+```
+
+
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+<br>
+
+```{r}
+#| output-location: column
+## Soma de quadrados e produtos da regressao
+Y = cbind(PESO,IG)
+X = cbind(PESOM,ALTURAM,IDADEM,RENDA,EA,TA,QGS,EPE)
+
+model = lm(Y~X)
+summary(model)
+```
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+```{r}
+model01 = lm(PESO ~ PESOM+ALTURAM+IDADEM+RENDA+EA+TA+QGS+EPE)
+summary(model01)
+```
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+```{r}
+model02 = lm(IG ~ PESOM+ALTURAM+IDADEM+RENDA+EA+TA+QGS+EPE)
+summary(model02)
+```
+
+```{r}
+detach(dados)
+```
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+
+
+```{r}
+resid_panel(model01)
+```
+
+
+
+## Exemplo: O impacto do estresse materno no baixo peso ao nascimento
+
+
+
+```{r}
+resid_panel(model02)
+```

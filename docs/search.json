@@ -1238,7 +1238,98 @@
     "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento",
     "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento",
     "title": "Análise de Regressão Multivariada",
-    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento}",
-    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento}\n\nOs dados do arquivo Exemplo_regressao_02.dat referem-se à medidas antropométricas, sócio-econômicas e variáveis relacionadas ao nível de estresse de 50 gestantes de um determinado município, mensuradas no último trimestre de gestação.\nO estresse materno foi avaliado através de quatro variáveis distintas: resultado do teste de Estado de Ansiedade (EA), resultado do teste de Traço de Ansiedade (TA), resultado do Questionário Geral de Saúde (QGS) e Escala de Percepção de Estresse (EPE)."
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\nOs dados do arquivo Exemplo_regressao_02.dat referem-se à medidas antropométricas, sócio-econômicas e variáveis relacionadas ao nível de estresse de 50 gestantes de um determinado município, mensuradas no último trimestre de gestação.\nO estresse materno foi avaliado através de quatro variáveis distintas: resultado do teste de Estado de Ansiedade (EA), resultado do teste de Traço de Ansiedade (TA), resultado do Questionário Geral de Saúde (QGS) e Escala de Percepção de Estresse (EPE)."
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-1",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-1",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\n\nComo variáveis resposta, foram avaliados: peso da criança ao nascer (PESO), medido em gramas e a idade gestacional do recém-nascido, (IG), medida em semanas.\nAs variáveis explicativas ou independentes foram: peso materno (PESOM), em kg, altura materna (ALTURAM), em metros, idade (IDADEM), em anos, renda per capta (RENDA), além dos resultados dos testes de ansiedade."
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-2",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-2",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\nlibrary(pacman)\npacman::p_load(\n  tidyverse,\n  ggResidpanel\n)\n\n\ndados = read.table(\"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/Exemplo_regressao_02.dat\", header = TRUE) \ndados %&gt;% str()\n\n'data.frame':   50 obs. of  11 variables:\n $ n      : int  1 2 3 4 5 6 7 8 9 10 ...\n $ PESOM  : num  64.3 124.9 76.3 57.7 68.3 ...\n $ ALTURAM: num  1.56 1.56 1.61 1.61 1.63 ...\n $ IDADEM : num  34.1 27 31 22.1 20 ...\n $ RENDA  : num  1.39 11.02 1.71 5.51 3.67 ...\n $ EA     : int  32 40 47 30 35 35 40 30 40 30 ...\n $ TA     : int  28 41 61 51 29 43 44 29 33 27 ...\n $ QGS    : int  3 2 7 2 2 2 1 1 0 0 ...\n $ EPE    : int  12 31 28 31 17 26 22 12 26 13 ...\n $ PESO   : num  1772 2105 1744 1468 1793 ...\n $ IG     : num  38.6 37.6 37.5 37.9 39.5 ..."
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-3",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-3",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\n\nattach(dados)\n\nn &lt;- length(PESO)\nn\n\n\n[1] 50\n\n\n\n\n## Matriz Y\nY = cbind(PESO,IG)\nY %&gt;% head()\n\n\n        PESO    IG\n[1,] 1772.38 38.62\n[2,] 2104.66 37.64\n[3,] 1744.21 37.48\n[4,] 1468.35 37.92\n[5,] 1793.47 39.48\n[6,] 1574.18 39.17\n\ndim(Y)\n\n[1] 50  2\n\n\n\n\n## Matriz X\nX0 &lt;- rep(1,n)\nX = cbind(X0,PESOM,ALTURAM,IDADEM,RENDA,EA,TA,QGS,EPE)\nX %&gt;% head()\n\n\n     X0 PESOM ALTURAM IDADEM RENDA EA TA QGS EPE\n[1,]  1  64.3   1.558  34.11  1.39 32 28   3  12\n[2,]  1 124.9   1.564  27.04 11.02 40 41   2  31\n[3,]  1  76.3   1.609  31.04  1.71 47 61   7  28\n[4,]  1  57.7   1.611  22.11  5.51 30 51   2  31\n[5,]  1  68.3   1.630  20.00  3.67 35 29   2  17\n[6,]  1  56.5   1.675  18.00  0.55 35 43   2  26\n\ndim(X)\n\n[1] 50  9"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-4",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-4",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\n\n\n## Estimando a matriz B atraves do metodo de minimos quadrados\n\nXLX &lt;- t(X)%*%X\nXLY &lt;- t(X)%*%Y\n\nB &lt;- solve(XLX)%*%XLY\nB\n\n\n                PESO            IG\nX0      1212.5343987 24.1758205307\nPESOM      6.9887534  0.0001887668\nALTURAM    7.2061375 10.6537733437\nIDADEM     0.3215295 -0.0197249682\nRENDA      0.4737547 -0.0016100344\nEA         9.6597919 -0.0002019132\nTA        -7.3673052 -0.0301912231\nQGS        9.8990680 -0.0192292986\nEPE       -3.5053898 -0.0447611974"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-5",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-5",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\n\n\n## Matriz de soma de quadrados e produtos do residuo\n\nSQPRes = t(Y - X%*%B)%*%(Y - X%*%B)\nSQPRes\n\n\n            PESO          IG\nPESO 70.08242236 0.029858920\nIG    0.02985892 0.002944886\n\n\n\n\n## Valores ajustados\n\nYch = X%*%B\nYch %&gt;% head()\n\n\n         PESO       IG\n[1,] 1775.226 38.66484\n[2,] 2106.078 37.63882\n[3,] 1743.909 37.47806\n[4,] 1462.306 37.93309\n[5,] 1794.429 39.47194\n[6,] 1575.474 39.16808"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-6",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-6",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\n\n\n## Residuos\n\nres = Y - Ych\nres %&gt;% head()\n\n\n           PESO           IG\n[1,] -2.8456187 -0.044842760\n[2,] -1.4182509  0.001179097\n[3,]  0.3014800  0.001944569\n[4,]  6.0437917 -0.013085406\n[5,] -0.9589071  0.008055721\n[6,] -1.2939375  0.001918025\n\n\n\n\n## Residuos\n\nplot(res)\nabline(h=0, col = \"red\", lty = 3,lwd = 5)"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-7",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-7",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\n\n\n## Condicoes de ortogonalidade\n\nt(X)%*%res\n\n\n                 PESO            IG\nX0      -3.000787e-08 -5.468692e-10\nPESOM   -2.097499e-06 -3.819249e-08\nALTURAM -4.783158e-08 -8.712632e-10\nIDADEM  -7.367790e-07 -1.340978e-08\nRENDA   -6.381405e-08 -1.157973e-09\nEA      -1.145607e-06 -2.084996e-08\nTA      -1.212015e-06 -2.213215e-08\nQGS     -8.288634e-08 -1.511218e-09\nEPE     -6.691682e-07 -1.220575e-08\n\n\n\n\nt(Ych)%*%res\n\n\n              PESO            IG\nPESO -5.226812e-05 -9.516800e-07\nIG   -1.152442e-06 -2.099628e-08"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-8",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-8",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\n\n\n## Soma de quadrados e produtos total\n\nSQPTot = t(Y)%*%Y\nSQPTot\n\n\n          PESO         IG\nPESO 152262853 3340853.60\nIG     3340854   73669.64\n\n\n\n\n## Soma de quadrados e produtos da regressao\n\nSQPReg = t(Ych)%*%Ych\nSQPReg\n\n\n          PESO         IG\nPESO 152262783 3340853.57\nIG     3340854   73669.64"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-9",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-9",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\n\n\n## Soma de quadrados e produtos da regressao\nY = cbind(PESO,IG)\nX = cbind(PESOM,ALTURAM,IDADEM,RENDA,EA,TA,QGS,EPE)\n\nmodel = lm(Y~X)\nsummary(model)\n\n\nResponse PESO :\n\nCall:\nlm(formula = PESO ~ X)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.8456 -0.4815  0.0194  0.5147  6.0438 \n\nCoefficients:\n              Estimate Std. Error  t value Pr(&gt;|t|)    \n(Intercept) 1212.53440    5.42474  223.519  &lt; 2e-16 ***\nXPESOM         6.98875    0.02018  346.247  &lt; 2e-16 ***\nXALTURAM       7.20614    3.70926    1.943  0.05894 .  \nXIDADEM        0.32153    0.03269    9.836 2.38e-12 ***\nXRENDA         0.47375    0.15148    3.127  0.00324 ** \nXEA            9.65979    0.03237  298.405  &lt; 2e-16 ***\nXTA           -7.36731    0.02412 -305.405  &lt; 2e-16 ***\nXQGS           9.89907    0.09466  104.574  &lt; 2e-16 ***\nXEPE          -3.50539    0.03830  -91.523  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.307 on 41 degrees of freedom\nMultiple R-squared:  0.9999,    Adjusted R-squared:  0.9999 \nF-statistic: 6.698e+04 on 8 and 41 DF,  p-value: &lt; 2.2e-16\n\n\nResponse IG :\n\nCall:\nlm(formula = IG ~ X)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.044843 -0.001417  0.000802  0.003455  0.009661 \n\nCoefficients:\n              Estimate Std. Error  t value Pr(&gt;|t|)    \n(Intercept) 24.1758205  0.0351649  687.499   &lt;2e-16 ***\nXPESOM       0.0001888  0.0001308    1.443    0.157    \nXALTURAM    10.6537733  0.0240446  443.084   &lt;2e-16 ***\nXIDADEM     -0.0197250  0.0002119  -93.081   &lt;2e-16 ***\nXRENDA      -0.0016100  0.0009819   -1.640    0.109    \nXEA         -0.0002019  0.0002098   -0.962    0.342    \nXTA         -0.0301912  0.0001564 -193.072   &lt;2e-16 ***\nXQGS        -0.0192293  0.0006136  -31.337   &lt;2e-16 ***\nXEPE        -0.0447612  0.0002483 -180.289   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.008475 on 41 degrees of freedom\nMultiple R-squared:  0.9999,    Adjusted R-squared:  0.9999 \nF-statistic: 6.545e+04 on 8 and 41 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-10",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-10",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\nmodel01 = lm(PESO ~ PESOM+ALTURAM+IDADEM+RENDA+EA+TA+QGS+EPE)\nsummary(model01)\n\n\nCall:\nlm(formula = PESO ~ PESOM + ALTURAM + IDADEM + RENDA + EA + TA + \n    QGS + EPE)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.8456 -0.4815  0.0194  0.5147  6.0438 \n\nCoefficients:\n              Estimate Std. Error  t value Pr(&gt;|t|)    \n(Intercept) 1212.53440    5.42474  223.519  &lt; 2e-16 ***\nPESOM          6.98875    0.02018  346.247  &lt; 2e-16 ***\nALTURAM        7.20614    3.70926    1.943  0.05894 .  \nIDADEM         0.32153    0.03269    9.836 2.38e-12 ***\nRENDA          0.47375    0.15148    3.127  0.00324 ** \nEA             9.65979    0.03237  298.405  &lt; 2e-16 ***\nTA            -7.36731    0.02412 -305.405  &lt; 2e-16 ***\nQGS            9.89907    0.09466  104.574  &lt; 2e-16 ***\nEPE           -3.50539    0.03830  -91.523  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.307 on 41 degrees of freedom\nMultiple R-squared:  0.9999,    Adjusted R-squared:  0.9999 \nF-statistic: 6.698e+04 on 8 and 41 DF,  p-value: &lt; 2.2e-16"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-11",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-11",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\nmodel02 = lm(IG ~ PESOM+ALTURAM+IDADEM+RENDA+EA+TA+QGS+EPE)\nsummary(model02)\n\n\nCall:\nlm(formula = IG ~ PESOM + ALTURAM + IDADEM + RENDA + EA + TA + \n    QGS + EPE)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.044843 -0.001417  0.000802  0.003455  0.009661 \n\nCoefficients:\n              Estimate Std. Error  t value Pr(&gt;|t|)    \n(Intercept) 24.1758205  0.0351649  687.499   &lt;2e-16 ***\nPESOM        0.0001888  0.0001308    1.443    0.157    \nALTURAM     10.6537733  0.0240446  443.084   &lt;2e-16 ***\nIDADEM      -0.0197250  0.0002119  -93.081   &lt;2e-16 ***\nRENDA       -0.0016100  0.0009819   -1.640    0.109    \nEA          -0.0002019  0.0002098   -0.962    0.342    \nTA          -0.0301912  0.0001564 -193.072   &lt;2e-16 ***\nQGS         -0.0192293  0.0006136  -31.337   &lt;2e-16 ***\nEPE         -0.0447612  0.0002483 -180.289   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.008475 on 41 degrees of freedom\nMultiple R-squared:  0.9999,    Adjusted R-squared:  0.9999 \nF-statistic: 6.545e+04 on 8 and 41 DF,  p-value: &lt; 2.2e-16\n\n\n\ndetach(dados)"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-12",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-12",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\nresid_panel(model01)"
+  },
+  {
+    "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-13",
+    "href": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento-13",
+    "title": "Análise de Regressão Multivariada",
+    "section": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento",
+    "text": "Exemplo: O impacto do estresse materno no baixo peso ao nascimento\n\nresid_panel(model02)"
   }
 ]
