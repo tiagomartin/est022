@@ -50,8 +50,8 @@ Neste semestre, as aulas da disciplina serão ministradas no LABEST II.
 
 | Dia           | Horário         | Local        |
 |---------------|-----------------|--------------|
-| Segunda-feira | 21:00 - 22:40   | LABEST II    |
-| Quarta-feira  | 19:00 - 20:40   | LABEST II    |
+| Sexta-feira   | 17:10 - 18:50   | LABEST III   |
+| Sexta-feira   | 19:00 - 20:40   | LABEST III   |
 
 
 # Referências Bibliográficas
