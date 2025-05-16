@@ -399,7 +399,7 @@
     "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-2",
     "title": "Inferências sobre Vetores de Médias",
     "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido",
-    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido\nConsidere agora uma amoostra aleatória \\(\\mathbf{x} = \\{X_1, X_2, \\cdots, X_n\\}\\) de uma população \\(N_p(\\mathbf{\\mu}, \\mathbf{\\Sigma})\\), com vetor de médias \\(\\mathbf{\\mu} = \\{\\mu_1, \\mu_2, \\cdots, \\mu_p\\}^t\\) e matriz de variâncias e covariâncias\n\\[\\mathbf{\\Sigma} = \\begin{bmatrix}\n\\sigma_{11} & \\sigma_{12} & \\cdots & \\sigma_{1p}\\\\\n\\sigma_{21} & \\sigma_{22} & \\cdots & \\sigma_{2p}\\\\\n\\vdots & \\vdots & \\ddots & \\vdots\\\\\n\\sigma_{p1} & \\sigma_{p2} & \\cdots & \\sigma_{pp}\n\\end{bmatrix}\\]"
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) conhecido\nConsidere agora uma amostra aleatória \\(\\mathbf{x} = \\{X_1, X_2, \\cdots, X_n\\}\\) de uma população \\(N_p(\\mathbf{\\mu}, \\mathbf{\\Sigma})\\), com vetor de médias \\(\\mathbf{\\mu} = \\{\\mu_1, \\mu_2, \\cdots, \\mu_p\\}^t\\) e matriz de variâncias e covariâncias\n\\[\\mathbf{\\Sigma} = \\begin{bmatrix}\n\\sigma_{11} & \\sigma_{12} & \\cdots & \\sigma_{1p}\\\\\n\\sigma_{21} & \\sigma_{22} & \\cdots & \\sigma_{2p}\\\\\n\\vdots & \\vdots & \\ddots & \\vdots\\\\\n\\sigma_{p1} & \\sigma_{p2} & \\cdots & \\sigma_{pp}\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-conhecido-3",
@@ -490,7 +490,7 @@
     "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-8",
     "title": "Inferências sobre Vetores de Médias",
     "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
-    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nExemplo 02: Suponha que a matriz de dados para uma amostra aleatória de tamanho \\(n = 3\\) de uma população normal bivariada seja dada por\n\\[\\mathbf{X} = \\begin{bmatrix}\n9 & 9 \\\\\n10 & 6\\\\\n8 & 6\n\\end{bmatrix}\\]\nAvalie o valor observado de \\(T^2\\) para \\(\\mathbf{\\mu}_0 = [9,5]^t\\). Qual a distribuição amostral de \\(T^2\\) neste caso?"
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\nExemplo 02: Suponha que a matriz de dados para uma amostra aleatória de tamanho \\(n = 3\\) de uma população normal bivariada seja dada por\n\\[\\mathbf{X} = \\begin{bmatrix}\n6 & 9 \\\\\n10 & 6\\\\\n8 & 3\n\\end{bmatrix}\\]\nAvalie o valor observado de \\(T^2\\) para \\(\\mathbf{\\mu}_0 = [9,5]^t\\). Qual a distribuição amostral de \\(T^2\\) neste caso?"
   },
   {
     "objectID": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-9",
@@ -539,14 +539,14 @@
     "href": "aulas/Inferencias_Medias/Teste_medias.html#teste-para-mathbfmu-com-mathbfsigma-desconhecido-15",
     "title": "Inferências sobre Vetores de Médias",
     "section": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido",
-    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\n\nmu0 = c(4,50,10)\n\nres = OneSampleHT2(dados, mu0=mu0, alpha = 0.10)\nsummary(res)\n\n       One Sample Hotelling T Square Test \n\nHotelling T Sqaure Statistic = 9.738773 \n F value = 2.905 , df1 = 3 , df2 = 17 , p-value: 0.0649 \n\n                  Descriptive Statistics\n\n          suor    sodio  potassio\nN     20.00000 20.00000 20.000000\nMeans  4.64000 45.40000  9.965000\nSd     1.69687 14.13465  1.904641\n\n\n                Detection important variable(s)\n\n             Lower     Upper Mu0 Important Variables?\nsuor      3.555292  5.724708   4                FALSE\nsodio    36.364555 54.435445  50                FALSE\npotassio  8.747476 11.182524  10                FALSE"
+    "text": "Teste para \\(\\mathbf{\\mu}\\) com \\(\\mathbf{\\Sigma}\\) desconhecido\n\nmu0 = c(4,50,10)\n\nres = OneSampleHT2(dados, mu0=mu0, alpha = 0.10)\nsummary(res)\n\n       One Sample Hotelling T Square Test \n\nHotelling T Sqaure Statistic = 9.738773 \n F value = 2.905 , df1 = 3 , df2 = 17 , p-value: 0.0649 \n\n                  Descriptive Statistics\n\n          suor    sodio  potassio\nN     20.00000 20.00000 20.000000\nMeans  4.64000 45.40000  9.965000\nSd     1.69687 14.13465  1.904641\n\n\n                Detection important variable(s)\n\n             Lower     Upper Mu0 Important Variables?\nsuor      3.555292  5.724708   4                FALSE\nsodio    36.364555 54.435445  50                FALSE\npotassio  8.747476 11.182524  10                FALSE\n\n\n\np-valor = 0,0649 &lt; 0,10 = \\(\\alpha\\) → \\(RH_0\\)"
   },
   {
     "objectID": "aulas/Inferencias_Medias/Teste_medias.html#propriedades-do-teste-t2-de-hotelling",
     "href": "aulas/Inferencias_Medias/Teste_medias.html#propriedades-do-teste-t2-de-hotelling",
     "title": "Inferências sobre Vetores de Médias",
     "section": "Propriedades do teste \\(T^2\\) de Hotelling",
-    "text": "Propriedades do teste \\(T^2\\) de Hotelling\n\n\nDevemos ter \\(n-1 &gt; p\\). Caso contrário, a matriz \\(\\mathbf{S}\\) é singular e a estatística \\(T^2\\) não pode ser calculada.\n\n\n\nOs graus de liberdade oara a estatística \\(T^2\\) são os mesmos que para o teste univariado, isto é, \\(n-1\\).\n\n\n\n\nA hipótese alternativa é bilateral. No espaço multidimensional, não consideramos hipóteses alternativas unilaterais. No entanto, a região crítica é unilateral (rejeitamos \\(H_0\\) para valores grandes de \\(T^2\\)). Isso é típico de muitos testes multivariados."
+    "text": "Propriedades do teste \\(T^2\\) de Hotelling\n\n\nDevemos ter \\(n-1 &gt; p\\). Caso contrário, a matriz \\(\\mathbf{S}\\) é singular e a estatística \\(T^2\\) não pode ser calculada.\n\n\n\nOs graus de liberdade para a estatística \\(T^2\\) são os mesmos que para o teste univariado, isto é, \\(n-1\\).\n\n\n\n\nA hipótese alternativa é bilateral. No espaço multidimensional, não consideramos hipóteses alternativas unilaterais. No entanto, a região crítica é unilateral (rejeitamos \\(H_0\\) para valores grandes de \\(T^2\\)). Isso é típico de muitos testes multivariados."
   },
   {
     "objectID": "aulas/Inferencias_Medias/Teste_medias.html#propriedades-do-teste-t2-de-hotelling-1",
@@ -1330,7 +1330,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nSeg, 05/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQua, 07/05\nInferência sobre vetores de médias",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nSeg, 05/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQua, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nSex, 16/05\nInferência sobre vetores de médias",
     "crumbs": [
       "Cronograma da disciplina"
     ]

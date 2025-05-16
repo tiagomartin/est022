@@ -139,7 +139,7 @@ Se $n$ for grande, o Teorema Central do Limite garante que $z$ é aproximadament
 
 ## Teste para $\mathbf{\mu}$ com $\mathbf{\Sigma}$ conhecido
 
-Considere agora uma amoostra aleatória $\mathbf{x} = \{X_1, X_2, \cdots, X_n\}$ de uma população $N_p(\mathbf{\mu}, \mathbf{\Sigma})$, com vetor de médias $\mathbf{\mu} = \{\mu_1, \mu_2, \cdots, \mu_p\}^t$ e matriz de variâncias e covariâncias 
+Considere agora uma amostra aleatória $\mathbf{x} = \{X_1, X_2, \cdots, X_n\}$ de uma população $N_p(\mathbf{\mu}, \mathbf{\Sigma})$, com vetor de médias $\mathbf{\mu} = \{\mu_1, \mu_2, \cdots, \mu_p\}^t$ e matriz de variâncias e covariâncias 
 
 $$\mathbf{\Sigma} = \begin{bmatrix}
 \sigma_{11} & \sigma_{12} & \cdots & \sigma_{1p}\\
@@ -353,9 +353,9 @@ de acordo com a proposição 01. $F_{p,n-p} (\alpha)$ denota o $100(1 − \alpha
 **Exemplo 02:** Suponha que a matriz de dados para uma amostra aleatória de tamanho $n = 3$ de uma população normal bivariada seja dada por
 
 $$\mathbf{X} = \begin{bmatrix}
-9 & 9 \\
+6 & 9 \\
 10 & 6\\
-8 & 6
+8 & 3
 \end{bmatrix}$$
 
 Avalie o valor observado de $T^2$ para $\mathbf{\mu}_0 = [9,5]^t$. Qual a distribuição amostral de $T^2$ neste caso?
@@ -453,6 +453,10 @@ res = OneSampleHT2(dados, mu0=mu0, alpha = 0.10)
 summary(res)
 ```
 
+<p align="center"> 
+**p-valor** = 0,0649 < 0,10 = $\alpha$ &#8594; $RH_0$
+</p>
+
 
 ## Propriedades do teste $T^2$ de Hotelling
 
@@ -463,7 +467,7 @@ summary(res)
 . . .
 
 
-2) Os graus de liberdade oara a estatística $T^2$ são os mesmos que para o teste univariado, isto é, $n-1$.
+2) Os graus de liberdade para a estatística $T^2$ são os mesmos que para o teste univariado, isto é, $n-1$.
 
 
 . . .
