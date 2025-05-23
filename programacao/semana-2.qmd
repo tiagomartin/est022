@@ -1,0 +1,8 @@
+---
+title: "Semana 02"
+---
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Inferência sobre vetores de médias](/aulas/Inferencias_Medias/Teste_medias.html "Inferência sobre vetores de médias"){aria-label="Inferência sobre vetores de médias"}

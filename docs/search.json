@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "programacao/semana-3.html",
+    "href": "programacao/semana-3.html",
+    "title": "Semana 03",
+    "section": "",
+    "text": "Inferência sobre vetores de médias"
+  },
+  {
+    "objectID": "programacao/semana-3.html#slides",
+    "href": "programacao/semana-3.html#slides",
+    "title": "Semana 03",
+    "section": "",
+    "text": "Inferência sobre vetores de médias"
+  },
+  {
     "objectID": "programacao/semana-1.html",
     "href": "programacao/semana-1.html",
     "title": "Semana 01",
@@ -1330,7 +1344,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nSeg, 05/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQua, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nSex, 16/05\nInferência sobre vetores de médias",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nSeg, 05/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQua, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nSex, 16/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n3\nSex, 23/05\nInferência sobre vetores de médias",
     "crumbs": [
       "Cronograma da disciplina"
     ]
@@ -1344,5 +1358,19 @@
     "crumbs": [
       "Plano de Ensino"
     ]
+  },
+  {
+    "objectID": "programacao/semana-2.html",
+    "href": "programacao/semana-2.html",
+    "title": "Semana 02",
+    "section": "",
+    "text": "Inferência sobre vetores de médias"
+  },
+  {
+    "objectID": "programacao/semana-2.html#slides",
+    "href": "programacao/semana-2.html#slides",
+    "title": "Semana 02",
+    "section": "",
+    "text": "Inferência sobre vetores de médias"
   }
 ]
