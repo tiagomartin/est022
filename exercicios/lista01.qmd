@@ -7,6 +7,7 @@ title: "Lista de exercícios 01: Testes para vetores de médias"
 </p>
 
 
+---
 
 1) Para testar a hipótese de que o vetor de médias $H_0: {\mathbf{\mu}_0} = [9 \hspace{0.2cm} 2]^t$ é um possível valor para representar
 a média de uma população supostamente normal, uma amostra de tamanho $n = 235$ foi extraída. As estimativas do vetor de médias e da matriz
@@ -21,6 +22,7 @@ b) Obtenha a região de $95\%$ de confiança para a verdadeira média populacion
 c) Determine os intervalos de confiança simultâneos para $\mu_1$ e $\mu_2$ utilizando a distribuição $T^2$ de Hotelling.
 d) Obtenha os intervalos simultâneos para $\mu_1$ e $\mu_2$ utilizando a distribuição $t$ univariada e a correção de Bonferroni. Compare os resultados com os intervalos $T^2$ de Hotelling.
 
+---
 
 2) Sejam as estimativas da média e da inversa da matriz de covariâncias, obtidas em uma amostra de tamanho $n = 50$, dadas por:
 
@@ -30,13 +32,15 @@ $$\mathbf{\bar{x}} = \left[ \begin{array}{r} 18,9 \\ 5,6 \end{array} \right]  \h
 Esboce a elipse de $95\%$ de confiança para o verdadeiro vetor de médias populacional, sabendo que as projeções dos limites da elipse
 de confiança no eixo correspondente à variável $X_1$ são $10,9$ e $26,9$ e no eixo da variável $X_2$, $2,0$ e $9,2$.
 
+---
 
 3) Testar a hipótese $\mathbf{\mu} = [6 \hspace{0.2cm} 11]^t$ usando os dados:
 
 $$\mathbf{X} = \left[ \begin{array}{rr} 3 & 10 \\ 6 & 12 \\ 5 & 14 \\ 10 & 9 \end{array} \right]$$
 
+---
 
-4) Para testarmos se as médias de **duas** populações são iguais, isto é, para testarmos as hipóteses,
+4) {{< fa brands r-project size=2xl >}} Para testarmos se as médias de **duas** populações são iguais, isto é, para testarmos as hipóteses,
 
 $$H_0: \mathbf{\mu}_1 = \mathbf{\mu}_2 \hspace{1cm} \textbf{vs} \hspace{1cm} 
 H_a: \mathbf{\mu}_1 \neq \mathbf{\mu}_2,$$
@@ -53,7 +57,7 @@ $$T^2 = \displaystyle \frac{n_1n_2}{n_1 + n_2}(\mathbf{\bar{x}}_1 - \mathbf{\bar
 for maior ou igual ao valor crítico $\displaystyle{\frac{(n_1 + n_2 - 2)p}{(n_1 + n_2 - 1 - p)}} F_{p,n_1 + n_2 - 1 - p}(\alpha)$.
 
 
-Seja então um experimento onde foram mensuradas quatro variáveis em duas espécies de besouros. Os [dados]() seguem abaixo:
+Seja então um experimento onde foram mensuradas quatro variáveis em duas espécies de besouros. Os [dados](https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/besouros.dat) seguem abaixo:
 
 - $X_1$: tamanho do sulco transversal da borda posterior do protórax ($\mu m$)  
 - $X_2$: comprimento dos élitros (em 0,01 mm)  

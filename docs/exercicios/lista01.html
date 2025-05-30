@@ -43,6 +43,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap-b09848b6287391c45069fed345a57cb2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-e9f3ba5fbee03b112b18b9666ab66a2c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b09848b6287391c45069fed345a57cb2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -363,6 +365,7 @@ window.Quarto = {
 <p align="center" style="font-size: 40px">
 <code>Data de entrega: 06 de junho de 2025</code>
 </p>
+<hr>
 <ol type="1">
 <li>Para testar a hipótese de que o vetor de médias <span class="math inline">\(H_0: {\mathbf{\mu}_0} = [9 \hspace{0.2cm} 2]^t\)</span> é um possível valor para representar a média de uma população supostamente normal, uma amostra de tamanho <span class="math inline">\(n = 235\)</span> foi extraída. As estimativas do vetor de médias e da matriz de covariâncias foram:</li>
 </ol>
@@ -374,18 +377,21 @@ window.Quarto = {
 <li>Determine os intervalos de confiança simultâneos para <span class="math inline">\(\mu_1\)</span> e <span class="math inline">\(\mu_2\)</span> utilizando a distribuição <span class="math inline">\(T^2\)</span> de Hotelling.</li>
 <li>Obtenha os intervalos simultâneos para <span class="math inline">\(\mu_1\)</span> e <span class="math inline">\(\mu_2\)</span> utilizando a distribuição <span class="math inline">\(t\)</span> univariada e a correção de Bonferroni. Compare os resultados com os intervalos <span class="math inline">\(T^2\)</span> de Hotelling.</li>
 </ol>
+<hr>
 <ol start="2" type="1">
 <li>Sejam as estimativas da média e da inversa da matriz de covariâncias, obtidas em uma amostra de tamanho <span class="math inline">\(n = 50\)</span>, dadas por:</li>
 </ol>
 <p><span class="math display">\[\mathbf{\bar{x}} = \left[ \begin{array}{r} 18,9 \\ 5,6 \end{array} \right]  \hspace{3cm} \mathbf{S}^{-1} = \left[ \begin{array}{rr} 4 &amp; 2
 \\ 2 &amp; 8 \end{array} \right]\]</span></p>
 <p>Esboce a elipse de <span class="math inline">\(95\%\)</span> de confiança para o verdadeiro vetor de médias populacional, sabendo que as projeções dos limites da elipse de confiança no eixo correspondente à variável <span class="math inline">\(X_1\)</span> são <span class="math inline">\(10,9\)</span> e <span class="math inline">\(26,9\)</span> e no eixo da variável <span class="math inline">\(X_2\)</span>, <span class="math inline">\(2,0\)</span> e <span class="math inline">\(9,2\)</span>.</p>
+<hr>
 <ol start="3" type="1">
 <li>Testar a hipótese <span class="math inline">\(\mathbf{\mu} = [6 \hspace{0.2cm} 11]^t\)</span> usando os dados:</li>
 </ol>
 <p><span class="math display">\[\mathbf{X} = \left[ \begin{array}{rr} 3 &amp; 10 \\ 6 &amp; 12 \\ 5 &amp; 14 \\ 10 &amp; 9 \end{array} \right]\]</span></p>
+<hr>
 <ol start="4" type="1">
-<li>Para testarmos se as médias de <strong>duas</strong> populações são iguais, isto é, para testarmos as hipóteses,</li>
+<li><i class="fa-brands fa-r-project fa-2xl" aria-label="r-project"></i> Para testarmos se as médias de <strong>duas</strong> populações são iguais, isto é, para testarmos as hipóteses,</li>
 </ol>
 <p><span class="math display">\[H_0: \mathbf{\mu}_1 = \mathbf{\mu}_2 \hspace{1cm} \textbf{vs} \hspace{1cm}
 H_a: \mathbf{\mu}_1 \neq \mathbf{\mu}_2,\]</span></p>
@@ -394,7 +400,7 @@ H_a: \mathbf{\mu}_1 \neq \mathbf{\mu}_2,\]</span></p>
 <p>Assim, devemos rejeitar <span class="math inline">\(H_0\)</span> se:</p>
 <p><span class="math display">\[T^2 = \displaystyle \frac{n_1n_2}{n_1 + n_2}(\mathbf{\bar{x}}_1 - \mathbf{\bar{x}}_2)^t \mathbf{S}_c^{-1}(\mathbf{\bar{x}}_1 - \mathbf{\bar{x}}_2)\]</span></p>
 <p>for maior ou igual ao valor crítico <span class="math inline">\(\displaystyle{\frac{(n_1 + n_2 - 2)p}{(n_1 + n_2 - 1 - p)}} F_{p,n_1 + n_2 - 1 - p}(\alpha)\)</span>.</p>
-<p>Seja então um experimento onde foram mensuradas quatro variáveis em duas espécies de besouros. Os <a href="">dados</a> seguem abaixo:</p>
+<p>Seja então um experimento onde foram mensuradas quatro variáveis em duas espécies de besouros. Os <a href="https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/besouros.dat">dados</a> seguem abaixo:</p>
 <ul>
 <li><span class="math inline">\(X_1\)</span>: tamanho do sulco transversal da borda posterior do protórax (<span class="math inline">\(\mu m\)</span>)<br>
 </li>

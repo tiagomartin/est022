@@ -1,0 +1,27 @@
+---
+title: "Semana 04"
+---
+
+## Entrega lista de exercícios 01
+
+::: callout-important
+
+## Fique Atento!
+
+{{< fa file-lines size=lg >}} [Lista de exercícios 01](/exercicios/lista01.html "Lista de exercícios 01"){aria-label="Lista de exercícios 01"} 
+
+Entrega via [Moodle](https://moodlepresencial.ufop.br/login/index.php)
+
+-   Data de entrega:
+    -   06 de junho de 2025
+:::
+
+
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Inferência sobre vetores de médias](/aulas/Inferencias_Medias/Teste_medias.html#/testes-para-duas-populações "Testes para duas populações"){aria-label="Testes para duas populações"}
+
+
+{{< fa file-powerpoint size=lg >}} [Inferência sobre matrizes de covariâncias](/aulas/Inferencia_Covariancias/Teste_covariancias.html "Testes para matrizes de covariâncias"){aria-label="Testes para matrizes de covariâncias"}

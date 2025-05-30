@@ -1032,7 +1032,7 @@ $$H_0: \mathbf{\mu}_1 = \mathbf{\mu}_2 \text{          vs.          } H_a: \math
 
 ## Teste para duas amostras independentes com $\mathbf{\Sigma}$ desconhecido
 
-Quandoo as matrizes de covariâncias populacionais são iguais, as hipóteses podem ser testadas utilizando a seguinte estatística,
+Quando as matrizes de covariâncias populacionais são iguais, as hipóteses podem ser testadas utilizando a seguinte estatística,
 
 $$T^2 = (\mathbf{\bar{x}}_1 - \mathbf{\bar{x}}_2)^t \left[ \left( \dfrac{1}{n_1} + \dfrac{1}{n_2} \right) \mathbf{S}_p \right]^{-1}(\mathbf{\bar{x}}_1 - \mathbf{\bar{x}}_2)$$
 

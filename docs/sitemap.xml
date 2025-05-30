@@ -1,59 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://professortp.com.br/est022/programacao/semana-3.html</loc>
-    <lastmod>2025-05-23T18:49:05.325Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est022/programacao/semana-1.html</loc>
-    <lastmod>2025-05-02T19:26:32.739Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est022/index.html</loc>
-    <lastmod>2025-05-16T15:56:13.758Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est022/aulas.html</loc>
-    <lastmod>2025-05-02T00:05:42.583Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est022/aulas/Manova/manova.html</loc>
-    <lastmod>2025-03-20T20:38:28.161Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est022/aulas/Inferencias_Medias/Teste_medias.html</loc>
-    <lastmod>2025-05-16T15:36:25.111Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est022/about.html</loc>
-    <lastmod>2025-05-02T19:57:56.677Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est022/aulas/Inferencia_Covariancias/Teste_covariancias.html</loc>
-    <lastmod>2025-03-15T13:54:52.090Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est022/aulas/Regressao_Multivariada/regressao.html</loc>
-    <lastmod>2025-05-02T00:03:13.743Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est022/cronograma.html</loc>
-    <lastmod>2025-05-30T13:48:30.792Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est022/plano.html</loc>
-    <lastmod>2025-05-02T19:25:07.353Z</lastmod>
+    <loc>http://professortp.com.br/est022/programacao/semana-4.html</loc>
+    <lastmod>2025-05-30T16:52:06.954Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est022/programacao/semana-2.html</loc>
     <lastmod>2025-05-23T18:48:47.746Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est022/exercicios/lista01.html</loc>
-    <lastmod>2025-05-30T16:20:37.737Z</lastmod>
+    <loc>http://professortp.com.br/est022/plano.html</loc>
+    <lastmod>2025-05-02T19:25:07.353Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est022/exercicios.html</loc>
     <lastmod>2025-05-30T14:08:41.173Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est022/cronograma.html</loc>
+    <lastmod>2025-05-30T16:35:49.394Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est022/aulas/Regressao_Multivariada/regressao.html</loc>
+    <lastmod>2025-05-02T00:03:13.743Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est022/aulas/Inferencia_Covariancias/Teste_covariancias.html</loc>
+    <lastmod>2025-05-30T16:45:26.157Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est022/about.html</loc>
+    <lastmod>2025-05-02T19:57:56.677Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est022/aulas/Inferencias_Medias/Teste_medias.html</loc>
+    <lastmod>2025-05-30T16:45:49.049Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est022/aulas/Manova/manova.html</loc>
+    <lastmod>2025-03-20T20:38:28.161Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est022/aulas.html</loc>
+    <lastmod>2025-05-02T00:05:42.583Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est022/exercicios/lista01.html</loc>
+    <lastmod>2025-05-30T16:29:47.264Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est022/index.html</loc>
+    <lastmod>2025-05-16T15:56:13.758Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est022/programacao/semana-1.html</loc>
+    <lastmod>2025-05-02T19:26:32.739Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est022/programacao/semana-3.html</loc>
+    <lastmod>2025-05-23T18:49:05.325Z</lastmod>
   </url>
 </urlset>

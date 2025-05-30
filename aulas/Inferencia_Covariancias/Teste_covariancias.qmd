@@ -409,7 +409,7 @@ dados %>% str()
 ```
 
 ```{r}
-## Teste da razão de veroossimilhança
+## Teste da razão de verossimilhança
 
 # H0: Sigma_S = Sigma_NS
 
