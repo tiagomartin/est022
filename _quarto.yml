@@ -33,7 +33,7 @@ website:
     contents:
       - aulas.qmd
       #- estudos.qmd
-      #- exercicios.qmd
+      - exercicios.qmd
      # - analises.qmd
       - plano.qmd
       - cronograma.qmd
