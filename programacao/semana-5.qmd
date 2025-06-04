@@ -1,0 +1,8 @@
+---
+title: "Semana 04"
+---
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Inferência sobre matrizes de covariâncias](/aulas/Inferencia_Covariancias/Teste_covariancias.html#/teste-para-uma-covariância-específica-4 "Testes para matrizes de covariâncias"){aria-label="Testes para matrizes de covariâncias"}

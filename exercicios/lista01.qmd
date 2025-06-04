@@ -3,7 +3,7 @@ title: "Lista de exercícios 01: Testes para vetores de médias"
 ---
 
 <p align="center" style="font-size: 40px"> 
-`Data de entrega: 06 de junho de 2025`
+`Data de entrega: 09 de junho de 2025`
 </p>
 
 
