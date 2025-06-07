@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.29">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lista de exercícios 02: Testes para matrizes de covariâncias – EST022 - Estatística Multivariada II</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b09848b6287391c45069fed345a57cb2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e9f3ba5fbee03b112b18b9666ab66a2c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b09848b6287391c45069fed345a57cb2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Lista de exercícios 02: Testes para matrizes de covariâncias – EST022 - Estatística Multivariada II">
+<meta property="og:description" content="Homepage da disciplina EST022 - Estatística Multivariada II, 2025/1.">
+<meta property="og:site_name" content="EST022 - Estatística Multivariada II">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Lista de exercícios 02: Testes para matrizes de covariâncias</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/tiagomartin/est022" title="github" class="quarto-navigation-tool px-1" aria-label="github"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aulas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../exercicios.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Listas de exercicios</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../plano.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plano de Ensino</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cronograma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cronograma da disciplina</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lista de exercícios 02: Testes para matrizes de covariâncias</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p align="center" style="font-size: 40px">
+<code>Data de entrega: 23 de junho de 2025</code>
+</p>
+<hr>
+<ol type="1">
+<li>Considere as seguintes matrizes de covariâncias amostrais, obtidas através de amostras de tamanho <span class="math inline">\(n_1 = n_2 = n_3 = 50\)</span>:</li>
+</ol>
+<p><span class="math display">\[\bf{S}_1 = \left[ \begin{array}{rrr} 13 &amp; 4 &amp; 8 \\ 4 &amp; 4 &amp; 4  \\ 8 &amp; 4 &amp; 10  \end{array} \right], \hspace{0,5cm}
+  \bf{S}_2 = \left[ \begin{array}{rrr} 6 &amp; 4 &amp; 1 \\ 4 &amp; 7 &amp; 0,6  \\ 1 &amp; 0,6 &amp; 1,5  \end{array} \right], \hspace{0,5cm}
+  \bf{S}_3 = \left[ \begin{array}{rrr} 19 &amp; 4 &amp; 14 \\ 4 &amp; 5 &amp; 3,5  \\ 14 &amp; 3,5 &amp; 15  \end{array} \right] \]</span></p>
+<ol type="a">
+<li>Teste a hipótese <span class="math inline">\(\mathbf{\Sigma}_1 = \mathbf{\Sigma}_2\)</span> ao nível de 5% de significância.</li>
+<li>Teste a hipótese <span class="math inline">\(\mathbf{\Sigma}_1 = \mathbf{\Sigma}_2 = \mathbf{\Sigma}_3\)</span> ao nível de 5% de significância.</li>
+</ol>
+<hr>
+<ol start="2" type="1">
+<li>Sejam as estimativas da média e da inversa da matriz de covariâncias, obtidas em uma amostra de tamanho <span class="math inline">\(n = 36\)</span>, dadas por:</li>
+</ol>
+<p><span class="math display">\[{\mathbf{\bar{x}}} = \left[ \begin{array}{r} 18,9 \\ 5,6 \end{array} \right]  \hspace{3cm} \mathbf{S}^{-1} = \left[ \begin{array}{rr} 4 &amp; 2
+\\ 2 &amp; 8 \end{array} \right]\]</span></p>
+<p>Teste a hipótese de que a matriz de covariâncias seja igual a <span class="math inline">\(\mathbf{\Sigma}_0 = \left[ \begin{array}{rr} 1 &amp; 1
+\\ 1 &amp; 5 \end{array} \right]\)</span>, considerando o nível de significância de 5%.</p>
+<hr>
+<ol start="3" type="1">
+<li><i class="fa-brands fa-r-project fa-2xl" aria-label="r-project"></i> Considere o experimento onde foram mensuradas quatro variáveis em duas espécies de besouros. Os <a href="https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/besouros.dat">dados</a> seguem abaixo:</li>
+</ol>
+<ul>
+<li><span class="math inline">\(X_1\)</span>: tamanho do sulco transversal da borda posterior do protórax (<span class="math inline">\(\mu m\)</span>)<br>
+</li>
+<li><span class="math inline">\(X_2\)</span>: comprimento dos élitros (em 0,01 mm)<br>
+</li>
+<li><span class="math inline">\(X_3\)</span>: comprimento do segundo segmento da antena (<span class="math inline">\(\mu m\)</span>)<br>
+</li>
+<li><span class="math inline">\(X_4\)</span>: comprimento do terceiro segmento da antena (<span class="math inline">\(\mu m\)</span>)</li>
+</ul>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-8bgf{border-color:inherit;font-style:italic;text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+<tr>
+<th class="tg-8bgf" colspan="5">
+Haltica oleracea
+</th>
+<th class="tg-c3ow">
+</th>
+<th class="tg-c3ow">
+</th>
+<th class="tg-8bgf" colspan="5">
+Haltica carduorum
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tg-c3ow">
+Amostra
+</td>
+<td class="tg-c3ow">
+<span class="math inline">\(X_1\)</span>
+</td>
+<td class="tg-c3ow">
+<span class="math inline">\(X_2\)</span>
+</td>
+<td class="tg-c3ow">
+<span class="math inline">\(X_3\)</span>
+</td>
+<td class="tg-c3ow">
+<span class="math inline">\(X_4\)</span>
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+Amostra
+</td>
+<td class="tg-c3ow">
+<span class="math inline">\(X_1\)</span>
+</td>
+<td class="tg-c3ow">
+<span class="math inline">\(X_2\)</span>
+</td>
+<td class="tg-c3ow">
+<span class="math inline">\(X_3\)</span>
+</td>
+<td class="tg-c3ow">
+<span class="math inline">\(X_4\)</span>
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+1
+</td>
+<td class="tg-c3ow">
+189
+</td>
+<td class="tg-c3ow">
+245
+</td>
+<td class="tg-c3ow">
+137
+</td>
+<td class="tg-c3ow">
+163
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+1
+</td>
+<td class="tg-c3ow">
+181
+</td>
+<td class="tg-c3ow">
+305
+</td>
+<td class="tg-c3ow">
+184
+</td>
+<td class="tg-c3ow">
+209
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+260
+</td>
+<td class="tg-c3ow">
+132
+</td>
+<td class="tg-c3ow">
+217
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+158
+</td>
+<td class="tg-c3ow">
+237
+</td>
+<td class="tg-c3ow">
+133
+</td>
+<td class="tg-c3ow">
+188
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+217
+</td>
+<td class="tg-c3ow">
+276
+</td>
+<td class="tg-c3ow">
+141
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+184
+</td>
+<td class="tg-c3ow">
+300
+</td>
+<td class="tg-c3ow">
+166
+</td>
+<td class="tg-c3ow">
+231
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+4
+</td>
+<td class="tg-c3ow">
+221
+</td>
+<td class="tg-c3ow">
+299
+</td>
+<td class="tg-c3ow">
+142
+</td>
+<td class="tg-c3ow">
+213
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+4
+</td>
+<td class="tg-c3ow">
+171
+</td>
+<td class="tg-c3ow">
+273
+</td>
+<td class="tg-c3ow">
+162
+</td>
+<td class="tg-c3ow">
+213
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+5
+</td>
+<td class="tg-c3ow">
+171
+</td>
+<td class="tg-c3ow">
+239
+</td>
+<td class="tg-c3ow">
+128
+</td>
+<td class="tg-c3ow">
+158
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+5
+</td>
+<td class="tg-c3ow">
+181
+</td>
+<td class="tg-c3ow">
+297
+</td>
+<td class="tg-c3ow">
+163
+</td>
+<td class="tg-c3ow">
+224
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+6
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+262
+</td>
+<td class="tg-c3ow">
+147
+</td>
+<td class="tg-c3ow">
+173
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+6
+</td>
+<td class="tg-c3ow">
+181
+</td>
+<td class="tg-c3ow">
+308
+</td>
+<td class="tg-c3ow">
+160
+</td>
+<td class="tg-c3ow">
+223
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+7
+</td>
+<td class="tg-c3ow">
+213
+</td>
+<td class="tg-c3ow">
+278
+</td>
+<td class="tg-c3ow">
+136
+</td>
+<td class="tg-c3ow">
+201
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+7
+</td>
+<td class="tg-c3ow">
+177
+</td>
+<td class="tg-c3ow">
+301
+</td>
+<td class="tg-c3ow">
+166
+</td>
+<td class="tg-c3ow">
+221
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+8
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+255
+</td>
+<td class="tg-c3ow">
+128
+</td>
+<td class="tg-c3ow">
+185
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+8
+</td>
+<td class="tg-c3ow">
+198
+</td>
+<td class="tg-c3ow">
+308
+</td>
+<td class="tg-c3ow">
+141
+</td>
+<td class="tg-c3ow">
+197
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+9
+</td>
+<td class="tg-c3ow">
+170
+</td>
+<td class="tg-c3ow">
+244
+</td>
+<td class="tg-c3ow">
+128
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+9
+</td>
+<td class="tg-c3ow">
+180
+</td>
+<td class="tg-c3ow">
+286
+</td>
+<td class="tg-c3ow">
+146
+</td>
+<td class="tg-c3ow">
+214
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+10
+</td>
+<td class="tg-c3ow">
+201
+</td>
+<td class="tg-c3ow">
+276
+</td>
+<td class="tg-c3ow">
+146
+</td>
+<td class="tg-c3ow">
+186
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+10
+</td>
+<td class="tg-c3ow">
+177
+</td>
+<td class="tg-c3ow">
+299
+</td>
+<td class="tg-c3ow">
+171
+</td>
+<td class="tg-c3ow">
+192
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+11
+</td>
+<td class="tg-c3ow">
+195
+</td>
+<td class="tg-c3ow">
+242
+</td>
+<td class="tg-c3ow">
+128
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+11
+</td>
+<td class="tg-c3ow">
+176
+</td>
+<td class="tg-c3ow">
+317
+</td>
+<td class="tg-c3ow">
+166
+</td>
+<td class="tg-c3ow">
+213
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+12
+</td>
+<td class="tg-c3ow">
+205
+</td>
+<td class="tg-c3ow">
+263
+</td>
+<td class="tg-c3ow">
+147
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+12
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+312
+</td>
+<td class="tg-c3ow">
+166
+</td>
+<td class="tg-c3ow">
+209
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+13
+</td>
+<td class="tg-c3ow">
+180
+</td>
+<td class="tg-c3ow">
+252
+</td>
+<td class="tg-c3ow">
+121
+</td>
+<td class="tg-c3ow">
+167
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+13
+</td>
+<td class="tg-c3ow">
+176
+</td>
+<td class="tg-c3ow">
+285
+</td>
+<td class="tg-c3ow">
+141
+</td>
+<td class="tg-c3ow">
+200
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+14
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+283
+</td>
+<td class="tg-c3ow">
+138
+</td>
+<td class="tg-c3ow">
+183
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+14
+</td>
+<td class="tg-c3ow">
+169
+</td>
+<td class="tg-c3ow">
+287
+</td>
+<td class="tg-c3ow">
+162
+</td>
+<td class="tg-c3ow">
+214
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+15
+</td>
+<td class="tg-c3ow">
+200
+</td>
+<td class="tg-c3ow">
+294
+</td>
+<td class="tg-c3ow">
+138
+</td>
+<td class="tg-c3ow">
+188
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+15
+</td>
+<td class="tg-c3ow">
+164
+</td>
+<td class="tg-c3ow">
+265
+</td>
+<td class="tg-c3ow">
+147
+</td>
+<td class="tg-c3ow">
+192
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+16
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+277
+</td>
+<td class="tg-c3ow">
+150
+</td>
+<td class="tg-c3ow">
+177
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+16
+</td>
+<td class="tg-c3ow">
+181
+</td>
+<td class="tg-c3ow">
+308
+</td>
+<td class="tg-c3ow">
+157
+</td>
+<td class="tg-c3ow">
+204
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+17
+</td>
+<td class="tg-c3ow">
+200
+</td>
+<td class="tg-c3ow">
+287
+</td>
+<td class="tg-c3ow">
+136
+</td>
+<td class="tg-c3ow">
+173
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+17
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+276
+</td>
+<td class="tg-c3ow">
+154
+</td>
+<td class="tg-c3ow">
+209
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+18
+</td>
+<td class="tg-c3ow">
+181
+</td>
+<td class="tg-c3ow">
+255
+</td>
+<td class="tg-c3ow">
+146
+</td>
+<td class="tg-c3ow">
+183
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+18
+</td>
+<td class="tg-c3ow">
+181
+</td>
+<td class="tg-c3ow">
+278
+</td>
+<td class="tg-c3ow">
+149
+</td>
+<td class="tg-c3ow">
+235
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+19
+</td>
+<td class="tg-c3ow">
+192
+</td>
+<td class="tg-c3ow">
+287
+</td>
+<td class="tg-c3ow">
+141
+</td>
+<td class="tg-c3ow">
+198
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+19
+</td>
+<td class="tg-c3ow">
+175
+</td>
+<td class="tg-c3ow">
+271
+</td>
+<td class="tg-c3ow">
+140
+</td>
+<td class="tg-c3ow">
+192
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+20
+</td>
+<td class="tg-c3ow">
+197
+</td>
+<td class="tg-c3ow">
+303
+</td>
+<td class="tg-c3ow">
+170
+</td>
+<td class="tg-c3ow">
+205
+</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Teste a hipótese de homogeneidade das matrizes de covariâncias, isto é, teste a hipótese <span class="math inline">\(H_0: \mathbf{\Sigma}_1 = \mathbf{\Sigma}_2\)</span>.</p>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("http:\/\/professortp\.com\.br\/est022\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, Tiago Pereira</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions"><ul><li><a href="https://github.com/tiagomartin/est022/edit/main/exercicios/lista02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est022/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Página construída usando <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

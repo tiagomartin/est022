@@ -1,0 +1,365 @@
+---
+title: "Lista de exercícios 02: Testes para matrizes de covariâncias"
+---
+
+<p align="center" style="font-size: 40px"> 
+`Data de entrega: 23 de junho de 2025`
+</p>
+
+
+---
+
+1) Considere as seguintes matrizes de covariâncias amostrais, obtidas através de amostras de tamanho $n_1 = n_2 = n_3 = 50$:
+
+$$\bf{S}_1 = \left[ \begin{array}{rrr} 13 & 4 & 8 \\ 4 & 4 & 4  \\ 8 & 4 & 10  \end{array} \right], \hspace{0,5cm}
+  \bf{S}_2 = \left[ \begin{array}{rrr} 6 & 4 & 1 \\ 4 & 7 & 0,6  \\ 1 & 0,6 & 1,5  \end{array} \right], \hspace{0,5cm}
+  \bf{S}_3 = \left[ \begin{array}{rrr} 19 & 4 & 14 \\ 4 & 5 & 3,5  \\ 14 & 3,5 & 15  \end{array} \right] $$
+  
+  
+
+a) Teste a hipótese $\mathbf{\Sigma}_1 = \mathbf{\Sigma}_2$ ao nível de 5% de significância.
+b) Teste a hipótese $\mathbf{\Sigma}_1 = \mathbf{\Sigma}_2 = \mathbf{\Sigma}_3$ ao nível de 5% de significância.
+
+
+---
+
+2) Sejam as estimativas da média e da inversa da matriz de covariâncias, obtidas em uma amostra de tamanho $n = 36$, dadas por:
+
+$${\mathbf{\bar{x}}} = \left[ \begin{array}{r} 18,9 \\ 5,6 \end{array} \right]  \hspace{3cm} \mathbf{S}^{-1} = \left[ \begin{array}{rr} 4 & 2
+\\ 2 & 8 \end{array} \right]$$
+
+
+Teste a hipótese de que a matriz de covariâncias seja igual a $\mathbf{\Sigma}_0 = \left[ \begin{array}{rr} 1 & 1
+\\ 1 & 5 \end{array} \right]$, considerando o nível de significância de 5\%.
+
+---
+
+
+
+3) {{< fa brands r-project size=2xl >}} Considere o experimento onde foram mensuradas quatro variáveis em duas espécies de besouros. Os [dados](https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/besouros.dat) seguem abaixo:
+
+- $X_1$: tamanho do sulco transversal da borda posterior do protórax ($\mu m$)  
+- $X_2$: comprimento dos élitros (em 0,01 mm)  
+- $X_3$: comprimento do segundo segmento da antena ($\mu m$)  
+- $X_4$: comprimento do terceiro segmento da antena ($\mu m$)  
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-8bgf{border-color:inherit;font-style:italic;text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-8bgf" colspan="5">Haltica oleracea</th>
+    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow"></th>
+    <th class="tg-8bgf" colspan="5">Haltica carduorum</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">Amostra</td>
+    <td class="tg-c3ow">$X_1$</td>
+    <td class="tg-c3ow">$X_2$</td>
+    <td class="tg-c3ow">$X_3$</td>
+    <td class="tg-c3ow">$X_4$</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">Amostra</td>
+    <td class="tg-c3ow">$X_1$</td>
+    <td class="tg-c3ow">$X_2$</td>
+    <td class="tg-c3ow">$X_3$</td>
+    <td class="tg-c3ow">$X_4$</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">189</td>
+    <td class="tg-c3ow">245</td>
+    <td class="tg-c3ow">137</td>
+    <td class="tg-c3ow">163</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">181</td>
+    <td class="tg-c3ow">305</td>
+    <td class="tg-c3ow">184</td>
+    <td class="tg-c3ow">209</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow">260</td>
+    <td class="tg-c3ow">132</td>
+    <td class="tg-c3ow">217</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">158</td>
+    <td class="tg-c3ow">237</td>
+    <td class="tg-c3ow">133</td>
+    <td class="tg-c3ow">188</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">217</td>
+    <td class="tg-c3ow">276</td>
+    <td class="tg-c3ow">141</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">184</td>
+    <td class="tg-c3ow">300</td>
+    <td class="tg-c3ow">166</td>
+    <td class="tg-c3ow">231</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">4</td>
+    <td class="tg-c3ow">221</td>
+    <td class="tg-c3ow">299</td>
+    <td class="tg-c3ow">142</td>
+    <td class="tg-c3ow">213</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">4</td>
+    <td class="tg-c3ow">171</td>
+    <td class="tg-c3ow">273</td>
+    <td class="tg-c3ow">162</td>
+    <td class="tg-c3ow">213</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">171</td>
+    <td class="tg-c3ow">239</td>
+    <td class="tg-c3ow">128</td>
+    <td class="tg-c3ow">158</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">181</td>
+    <td class="tg-c3ow">297</td>
+    <td class="tg-c3ow">163</td>
+    <td class="tg-c3ow">224</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">6</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow">262</td>
+    <td class="tg-c3ow">147</td>
+    <td class="tg-c3ow">173</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">6</td>
+    <td class="tg-c3ow">181</td>
+    <td class="tg-c3ow">308</td>
+    <td class="tg-c3ow">160</td>
+    <td class="tg-c3ow">223</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">7</td>
+    <td class="tg-c3ow">213</td>
+    <td class="tg-c3ow">278</td>
+    <td class="tg-c3ow">136</td>
+    <td class="tg-c3ow">201</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">7</td>
+    <td class="tg-c3ow">177</td>
+    <td class="tg-c3ow">301</td>
+    <td class="tg-c3ow">166</td>
+    <td class="tg-c3ow">221</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">8</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow">255</td>
+    <td class="tg-c3ow">128</td>
+    <td class="tg-c3ow">185</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">8</td>
+    <td class="tg-c3ow">198</td>
+    <td class="tg-c3ow">308</td>
+    <td class="tg-c3ow">141</td>
+    <td class="tg-c3ow">197</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">9</td>
+    <td class="tg-c3ow">170</td>
+    <td class="tg-c3ow">244</td>
+    <td class="tg-c3ow">128</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">9</td>
+    <td class="tg-c3ow">180</td>
+    <td class="tg-c3ow">286</td>
+    <td class="tg-c3ow">146</td>
+    <td class="tg-c3ow">214</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">201</td>
+    <td class="tg-c3ow">276</td>
+    <td class="tg-c3ow">146</td>
+    <td class="tg-c3ow">186</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">177</td>
+    <td class="tg-c3ow">299</td>
+    <td class="tg-c3ow">171</td>
+    <td class="tg-c3ow">192</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">11</td>
+    <td class="tg-c3ow">195</td>
+    <td class="tg-c3ow">242</td>
+    <td class="tg-c3ow">128</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">11</td>
+    <td class="tg-c3ow">176</td>
+    <td class="tg-c3ow">317</td>
+    <td class="tg-c3ow">166</td>
+    <td class="tg-c3ow">213</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">12</td>
+    <td class="tg-c3ow">205</td>
+    <td class="tg-c3ow">263</td>
+    <td class="tg-c3ow">147</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">12</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow">312</td>
+    <td class="tg-c3ow">166</td>
+    <td class="tg-c3ow">209</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">13</td>
+    <td class="tg-c3ow">180</td>
+    <td class="tg-c3ow">252</td>
+    <td class="tg-c3ow">121</td>
+    <td class="tg-c3ow">167</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">13</td>
+    <td class="tg-c3ow">176</td>
+    <td class="tg-c3ow">285</td>
+    <td class="tg-c3ow">141</td>
+    <td class="tg-c3ow">200</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">14</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow">283</td>
+    <td class="tg-c3ow">138</td>
+    <td class="tg-c3ow">183</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">14</td>
+    <td class="tg-c3ow">169</td>
+    <td class="tg-c3ow">287</td>
+    <td class="tg-c3ow">162</td>
+    <td class="tg-c3ow">214</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">15</td>
+    <td class="tg-c3ow">200</td>
+    <td class="tg-c3ow">294</td>
+    <td class="tg-c3ow">138</td>
+    <td class="tg-c3ow">188</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">15</td>
+    <td class="tg-c3ow">164</td>
+    <td class="tg-c3ow">265</td>
+    <td class="tg-c3ow">147</td>
+    <td class="tg-c3ow">192</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">16</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow">277</td>
+    <td class="tg-c3ow">150</td>
+    <td class="tg-c3ow">177</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">16</td>
+    <td class="tg-c3ow">181</td>
+    <td class="tg-c3ow">308</td>
+    <td class="tg-c3ow">157</td>
+    <td class="tg-c3ow">204</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">17</td>
+    <td class="tg-c3ow">200</td>
+    <td class="tg-c3ow">287</td>
+    <td class="tg-c3ow">136</td>
+    <td class="tg-c3ow">173</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">17</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow">276</td>
+    <td class="tg-c3ow">154</td>
+    <td class="tg-c3ow">209</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">18</td>
+    <td class="tg-c3ow">181</td>
+    <td class="tg-c3ow">255</td>
+    <td class="tg-c3ow">146</td>
+    <td class="tg-c3ow">183</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">18</td>
+    <td class="tg-c3ow">181</td>
+    <td class="tg-c3ow">278</td>
+    <td class="tg-c3ow">149</td>
+    <td class="tg-c3ow">235</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">19</td>
+    <td class="tg-c3ow">192</td>
+    <td class="tg-c3ow">287</td>
+    <td class="tg-c3ow">141</td>
+    <td class="tg-c3ow">198</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">19</td>
+    <td class="tg-c3ow">175</td>
+    <td class="tg-c3ow">271</td>
+    <td class="tg-c3ow">140</td>
+    <td class="tg-c3ow">192</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">20</td>
+    <td class="tg-c3ow">197</td>
+    <td class="tg-c3ow">303</td>
+    <td class="tg-c3ow">170</td>
+    <td class="tg-c3ow">205</td>
+  </tr>
+</tbody></table>
+
+
+
+<br>
+
+Teste a hipótese de homogeneidade das matrizes de covariâncias, isto é, teste a hipótese $H_0: \mathbf{\Sigma}_1 = \mathbf{\Sigma}_2$.
+
