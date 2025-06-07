@@ -1,0 +1,12 @@
+---
+title: "Material complementar"
+format: html
+---
+
+-   [Estimadores de máxima verossimilhança para vetores de médias e matrizes de covariâncias](material_complementar/dem_est_max_ver.pdf)
+
+-   [Teste para vetores de médias de uma população](material_complementar/teste_Uma_Media.pdf)
+
+-   [Teste para uma matriz de covariâncias específica](material_complementar/teste_cov_esp.pdf)
+
+-   [Teste para homogeneidade de matrizes de covariâncias](material_complementar/teste_homo_cov.pdf)

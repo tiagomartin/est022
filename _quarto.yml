@@ -37,7 +37,7 @@ website:
      # - analises.qmd
       - plano.qmd
       - cronograma.qmd
-      
+      - material.qmd
 
       
 format:

@@ -1431,5 +1431,15 @@
     "title": "Semana 04",
     "section": "Slides",
     "text": "Slides\n Inferência sobre vetores de médias\n Inferência sobre matrizes de covariâncias"
+  },
+  {
+    "objectID": "material.html",
+    "href": "material.html",
+    "title": "Material complementar",
+    "section": "",
+    "text": "Estimadores de máxima verossimilhança para vetores de médias e matrizes de covariâncias\nTeste para vetores de médias de uma população\nTeste para uma matriz de covariâncias específica\nTeste para homogeneidade de matrizes de covariâncias",
+    "crumbs": [
+      "Material complementar"
+    ]
   }
 ]
