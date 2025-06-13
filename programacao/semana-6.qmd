@@ -1,0 +1,24 @@
+---
+title: "Semana 06"
+---
+
+## Entrega lista de exercícios 02
+
+::: callout-important
+
+## Fique Atento!
+
+{{< fa file-lines size=lg >}} [Lista de exercícios 02](/exercicios/lista02.html "Lista de exercícios 02"){aria-label="Lista de exercícios 02"} 
+
+Entrega via [Moodle](https://moodlepresencial.ufop.br/login/index.php)
+
+-   Data de entrega:
+    -   23 de junho de 2025
+:::
+
+
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Análise de Variância multivariada - MANOVA](/aulas/Manova/manova.html#/manova-uma-generalização-da-anova "MANOVA"){aria-label="MANOVA"}

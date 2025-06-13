@@ -53,7 +53,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nSeg, 05/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQua, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nSex, 16/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n3\nSex, 23/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n4\nSex, 30/05\nInferência sobre vetores de médias\n\n\n\n️\n\n\n\n\n\n5\nSex, 06/06\nInferência sobre matrizes de covariâncias",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nSeg, 05/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQua, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nSex, 16/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n3\nSex, 23/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n4\nSex, 30/05\nInferência sobre vetores de médias\n\n\n\n️\n\n\n\n\n\n5\nSex, 06/06\nInferência sobre matrizes de covariâncias\n\n\n\n\n\n\n\n\n\n6\nSex, 13/06\nAnálise de variância multivariada - MANOVA",
     "crumbs": [
       "Cronograma da disciplina"
     ]
@@ -1441,5 +1441,26 @@
     "crumbs": [
       "Material complementar"
     ]
+  },
+  {
+    "objectID": "programacao/semana-6.html",
+    "href": "programacao/semana-6.html",
+    "title": "Semana 06",
+    "section": "",
+    "text": "Fique Atento!\n\n\n\n Lista de exercícios 02\nEntrega via Moodle\n\nData de entrega:\n\n23 de junho de 2025"
+  },
+  {
+    "objectID": "programacao/semana-6.html#entrega-lista-de-exercícios-02",
+    "href": "programacao/semana-6.html#entrega-lista-de-exercícios-02",
+    "title": "Semana 06",
+    "section": "",
+    "text": "Fique Atento!\n\n\n\n Lista de exercícios 02\nEntrega via Moodle\n\nData de entrega:\n\n23 de junho de 2025"
+  },
+  {
+    "objectID": "programacao/semana-6.html#slides",
+    "href": "programacao/semana-6.html#slides",
+    "title": "Semana 06",
+    "section": "Slides",
+    "text": "Slides\n Análise de Variância multivariada - MANOVA"
   }
 ]
