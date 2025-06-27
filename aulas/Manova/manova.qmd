@@ -896,7 +896,7 @@ Para efeito de comparações pareadas, a abordagem de Bonferroni pode ser usada 
 . . .
 
 
-Seja $\tau_{ji}$ o i-ésimo componente de $\mathbf{\tau}_j$. Como $\mathbf{\tau}_j$ é estimado por $\widehat{\mathbf{\tau}}_j = \bar{\mathbf{x}}_{j \ldotp} - \bar{\mathbf{x}}_{\ldotp \ldotp}$, temos que o i-ésimo componente de $\mathbf{\tau}_j$ é estimado por $\bar{{x}}_{ji} - \bar{\mathbf{x}}_{\ldotp i}$.
+Seja $\tau_{ji}$ o i-ésimo componente de $\mathbf{\tau}_j$. Como $\mathbf{\tau}_j$ é estimado por $\widehat{\mathbf{\tau}}_j = \bar{\mathbf{x}}_{j \ldotp} - \bar{\mathbf{x}}_{\ldotp \ldotp}$, temos que o i-ésimo componente de $\mathbf{\tau}_j$ é estimado por $\bar{{x}}_{ji} - \bar{{x}}_{\ldotp i}$.
 
 
 
@@ -942,7 +942,7 @@ Logo, com confiança de pelo menos $(1 - \alpha)$, os intervalos de confiança s
 
 
 
-$$(\bar{x}_{ji} - \bar{x}_{ki}) \pm t_{n-g} \left(\displaystyle{\frac{\alpha}{pg/(g - 1)}}\right) \sqrt{\left(\displaystyle{\frac{1}{n_j}} + 
+$$(\bar{x}_{ji} - \bar{x}_{ki}) \pm t_{n-g} \left(\displaystyle{\frac{\alpha}{pg(g - 1)}}\right) \sqrt{\left(\displaystyle{\frac{1}{n_j}} + 
 \displaystyle{\frac{1}{n_k}}\right)\displaystyle{\frac{e_{ii}}{n - g}} }$$
 
 

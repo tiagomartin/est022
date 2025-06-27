@@ -234,7 +234,7 @@ $$\widehat{\mathbf{y}} = \mathbf{X}\widehat{\mathbf{\beta}} = \underbrace{\mathb
 e os resíduos
 
 
-$$\widehat{\mathbf{\epsilon}} = \mathbf{y} - \widehat{\mathbf{y}} = (\underbrace{\mathbf{I} - \mathbf{H}}_{\mathbf{P}} ]\mathbf{y}$$
+$$\widehat{\mathbf{\epsilon}} = \mathbf{y} - \widehat{\mathbf{y}} = (\underbrace{\mathbf{I} - \mathbf{H}}_{\mathbf{P}} )\mathbf{y}$$
 
 satisfazem (somente quando houver a constante $\beta_0$ no modelo)
 
