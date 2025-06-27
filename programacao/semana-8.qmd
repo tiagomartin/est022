@@ -1,0 +1,25 @@
+---
+title: "Semana 08"
+---
+
+
+
+## Entrega lista de exercícios 02
+
+::: callout-important
+
+## Fique Atento!
+
+{{< fa file-lines size=lg >}} [Lista de exercícios 03](/exercicios/lista03.html "Lista de exercícios 03"){aria-label="Lista de exercícios 03"} 
+
+Entrega via [Moodle](https://moodlepresencial.ufop.br/login/index.php)
+
+-   Data de entrega:
+    -   14 de julho de 2025
+:::
+
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Análise de Variância multivariada - MANOVA](/aulas/Manova/manova.html#/intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento "Intervalo de confiança simultâneos"){aria-label="Intervalo de confiança simultâneos"}

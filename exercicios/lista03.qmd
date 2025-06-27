@@ -1,0 +1,55 @@
+---
+title: "Lista de exercícios 03: Análise de Variância Multivariada"
+---
+
+<p align="center" style="font-size: 40px"> 
+`Data de entrega: 14 de julho de 2025`
+</p>
+
+
+---
+
+1) Um pesquisador está estudando o impacto de diferentes tipos de dietas (vegetariana, onívora, vegana) na saúde de indivíduos. Ele coleta dados sobre o nível de colesterol, pressão arterial e peso. O pesquisador decide realizar três ANOVAs separadas (uma para cada variável dependente).
+    a) Quais são os riscos de ele fazer três ANOVAs separadas em vez de uma MANOVA neste cenário?
+    b) Qual seria sua recomendação para ele?
+
+---
+
+2) Imagine que pesquisadores estão investigando o efeito de três diferentes métodos de ensino (A, B, C) no desempenho dos alunos em duas disciplinas: Matemática e Português. Eles coletaram as notas dos alunos e realizaram uma MANOVA.
+
+    **Tabela de Saída MANOVA (Exemplo):**
+
+    | Teste                   | Valor | F-estatística | df1 | df2 | Sig. (p-valor) |
+    | :---------------------- | :---- | :------------ | :-- | :-- | :------------- |
+    | Traço de Wilks          | 0.65  | 4.20          | 4   | 190 | 0.003          |
+    | Traço de Pillai         | 0.38  | 3.95          | 4   | 192 | 0.005          |
+    | Traço de Hotelling-Lawley | 0.54  | 5.05          | 4   | 188 | 0.001          |
+    | Raiz Máxima de Roy      | 0.45  | 6.75          | 2   | 96  | 0.000          |
+
+    a) Com base na tabela acima, qual sua conclusão sobre o efeito geral do "Método de Ensino" nas notas de Matemática e Português? 
+    b) Se o resultado da MANOVA geral for significativo, qual seria o próximo passo para entender onde as diferenças ocorrem? 
+
+
+---
+
+3) {{< fa brands r-project size=2xl >}} Uma grande rede de academias deseja avaliar a eficácia de três programas de treinamento diferentes (Programa A, Programa B, Programa C) no aprimoramento físico de seus alunos. Eles estão interessados em como esses programas afetam duas métricas principais:
+
+- Gasto Calórico Médio por Treino (kcal): Uma medida da intensidade do treino.
+
+- Aumento Percentual de Força (APF): O ganho de força muscular ao longo de 8 semanas.
+
+Devido a restrições operacionais e à popularidade inicial dos programas, o número de participantes inscritos em cada um foi diferente:
+
+- Programa A: 15 alunos
+
+- Programa B: 10 alunos
+
+- Programa C: 12 alunos
+
+Os pesquisadores querem saber se há uma diferença significativa geral entre os três programas de treinamento considerando simultaneamente o gasto calórico e o aumento de força. Os dados estão disponíveis [aqui](https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/academia.csv).
+
+
+a) Com base nas estatísticas de testes vistos em aula e seus respectivos p-valores, qual é a conclusão geral sobre o efeito dos Programas de treinamento nas duas métricas de aprimoramento físico? Há diferença significativa entre os programas no geral?
+b) Se a MANOVA geral for significativa, realize ANOVAs univariadas separadas para `Gasto_Calorico` e `Aumento_Forca` para identificar qual métrica de desempenho é significativamente afetada pelos programas.
+c) Utilize a abordagem de intervalos de confiança simultâneos para determinar quais pares de grupos de `Programa` são significativamente diferentes para aquela métrica.
+d) Interprete detalhadamente os resultados dessas análises. 
