@@ -1531,7 +1531,7 @@
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-prático",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo prático",
-    "text": "Exemplo prático\nUma empresa de telefonia realizou uma pesquisa para avaliar como os clientes percebiam diferentes marcas concorrentes no mercado. Cada entrevistado avaliou o grau de similaridade entre as marcas, sem indicar explicitamente o motivo. Com esses dados, aplicou-se MDS para construir um mapa perceptual.\n\n\n\n\n\n\n\n\n\nClaro e Vivo estão próximas, sugerindo que os consumidores as percebem como similares.\nTIM e Oi também aparecem próximas, formando um outro grupo perceptual.\nNextel está mais distante das demais, indicando uma percepção diferenciada."
+    "text": "Exemplo prático\nUma empresa de telefonia realizou uma pesquisa para avaliar como os clientes percebiam diferentes marcas concorrentes no mercado. Cada entrevistado avaliou o grau de similaridade entre as marcas, sem indicar explicitamente o motivo. Com esses dados, aplicou-se MDS para construir um mapa perceptual.\n\n\n\n\n\n\n\n\nClaro e Vivo estão próximas, sugerindo que os consumidores as percebem como similares.\nTIM e Oi também aparecem próximas, formando um outro grupo perceptual.\nNextel está mais distante das demais, indicando uma percepção diferenciada."
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#o-que-é-mds",
@@ -1545,7 +1545,7 @@
     "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática",
     "title": "Escalonamento Multidimensional",
     "section": "Formulação matemática",
-    "text": "Formulação matemática\nDada uma matriz de distâncias \\(\\Delta = (\\delta_{ij})_{n \\times n}\\), o objetivo do escalonamento multidimensional é encontrar pontos \\(P_1, P_2, \\cdots, P_n\\), \\(k\\)-dimensionais tais que, se \\(d_{ij}\\) denota a distância euclidiana entre \\(P_i\\) e \\(P_j\\), então \\(D = (d_{ij})\\) é “próxima” a \\(\\Delta\\) em algum sentido.\n\n\nMétodos métricos: os pontos \\(P\\) são obtidos de tal forma que \\(D \\approx \\Delta\\)\n\nAssume distâncias reais, preservando as magnitudes.\n\n\n\n\n\nMétodos não métricos: baseados na ordenação das \\(\\displaystyle{\\frac{n(n-1)}{2}}\\) distâncias\n\nAssume apenas a ordem das distâncias."
+    "text": "Formulação matemática\nDada uma matriz de distâncias \\(\\Delta = (\\delta_{ij})_{n \\times n}\\), o objetivo do escalonamento multidimensional é encontrar pontos \\(P_1, P_2, \\cdots, P_n\\), \\(k\\)-dimensionais tais que, se \\(d_{ij}\\) denota a distância euclidiana entre \\(P_i\\) e \\(P_j\\), então \\(D = (d_{ij})\\) é “próxima” a \\(\\Delta\\) em algum sentido.\n\n\n\nMétodos métricos: os pontos \\(P\\) são obtidos de tal forma que \\(D \\approx \\Delta\\)\n\nAssume distâncias reais, preservando as magnitudes.\n\n\n\n\n\n\n\nMétodos não métricos: baseados na ordenação das \\(\\displaystyle{\\frac{n(n-1)}{2}}\\) distâncias\n\nAssume apenas a ordem das distâncias."
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico",
@@ -1559,7 +1559,7 @@
     "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-1",
     "title": "Escalonamento Multidimensional",
     "section": "Formulação matemática: MDS métrico",
-    "text": "Formulação matemática: MDS métrico\n\n\nPara encontrar os pontos \\(P_1, P_2, \\cdots, P_n\\):\n\nEncontrar uma matriz \\(A_n = (a_{ij})\\), onde \\(a_{ij} = -\\displaystyle{\\frac{1}{2}} \\delta_{ij}^2\\), sendo \\(\\delta_{ij}\\) o \\(ij\\)-ésimo elemento de \\(\\Delta\\)\nConstruir a matriz \\(B = (b_{ij})\\), onde \\(b_{ij} = a_{ij} - \\bar{a}_{i\\cdot} - \\bar{a}_{\\cdot j} + \\bar{a}_{\\cdot \\cdot}\\), em que\n\n\n\\[\\bar{a}_{i\\cdot} = \\displaystyle{\\frac{\\displaystyle{\\sum_{j = 1}^n} a_{ij}}{n}},  \\hspace{0.5cm}\n\\bar{a}_{\\cdot j} = \\displaystyle{\\frac{\\displaystyle{\\sum_{i = 1}^n} a_{ij}}{n}}  \\hspace{0.25cm} \\text{e} \\hspace{0.25cm}\n\\bar{a}_{\\cdot \\cdot} = \\displaystyle{\\frac{\\displaystyle{\\sum_{i = 1}^n} \\displaystyle{\\sum_{j = 1}^n} a_{ij}}{n}} \\]"
+    "text": "Formulação matemática: MDS métrico\n\n\nPara encontrar os pontos \\(P_1, P_2, \\cdots, P_n\\):\n\nEncontrar uma matriz \\(A_n = (a_{ij})\\), onde \\(a_{ij} = -\\displaystyle{\\frac{1}{2}} \\delta_{ij}^2\\), sendo \\(\\delta_{ij}\\) o \\(ij\\)-ésimo elemento de \\(\\Delta\\)\n\nConstruir a matriz \\(B = (b_{ij})\\), onde \\(b_{ij} = a_{ij} - \\bar{a}_{i\\cdot} - \\bar{a}_{\\cdot j} + \\bar{a}_{\\cdot \\cdot}\\), em que\n\n\n\n\\[\\bar{a}_{i\\cdot} = \\displaystyle{\\frac{\\displaystyle{\\sum_{j = 1}^n} a_{ij}}{n}},  \\hspace{0.5cm}\n\\bar{a}_{\\cdot j} = \\displaystyle{\\frac{\\displaystyle{\\sum_{i = 1}^n} a_{ij}}{n}}  \\hspace{0.25cm} \\text{e} \\hspace{0.25cm}\n\\bar{a}_{\\cdot \\cdot} = \\displaystyle{\\frac{\\displaystyle{\\sum_{i = 1}^n} \\displaystyle{\\sum_{j = 1}^n} a_{ij}}{n}} \\]"
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-2",
@@ -1573,7 +1573,7 @@
     "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-3",
     "title": "Escalonamento Multidimensional",
     "section": "Formulação matemática: MDS métrico",
-    "text": "Formulação matemática: MDS métrico\n\nObservação: Se \\(B\\) é positiva semidefinida de posto \\(q\\), então existem \\(q\\) autovalores positivos e os \\((n-q)\\) autovalores iguais a zero. Sejam \\(\\Lambda_{1} = \\text{diag}(\\lambda_{1},\\lambda_{2}, \\cdots, \\lambda_{q})\\) a matriz diagonal com os \\(q\\) autovalores positivos e \\(O_{1}=(\\mathbf{e}_{1},\\mathbf{e}_{2}, \\cdots, \\mathbf{e}_{q})\\) a matriz com os correspondente autovetores normalizados.\n\n\n\nAssim, podemos reescrever,\n\n\\[\\begin{eqnarray*}\nB &=& O_{1}\\Lambda_{1}O_{1}^{t} \\\\\n&=& O_{1}\\Lambda_{1}^{\\frac{1}{2}}\\Delta_{1}^{\\frac{1}{2}}O_{1}^{t} \\\\\n&=& ZZ^{t}\n\\end{eqnarray*} \\]"
+    "text": "Formulação matemática: MDS métrico\n\n\nObservação: Se \\(B\\) é positiva semidefinida de posto \\(q\\), então existem \\(q\\) autovalores positivos e os \\((n-q)\\) autovalores iguais a zero. Sejam \\(\\Lambda_{1} = \\text{diag}(\\lambda_{1},\\lambda_{2}, \\cdots, \\lambda_{q})\\) a matriz diagonal com os \\(q\\) autovalores positivos e \\(O_{1}=(\\mathbf{e}_{1},\\mathbf{e}_{2}, \\cdots, \\mathbf{e}_{q})\\) a matriz com os correspondente autovetores normalizados.\n\n\n\nAssim, podemos reescrever,\n\n\\[\\begin{eqnarray*}\nB &=& O_{1}\\Lambda_{1}O_{1}^{t} \\\\\n&=& O_{1}\\Lambda_{1}^{\\frac{1}{2}}\\Delta_{1}^{\\frac{1}{2}}O_{1}^{t} \\\\\n&=& ZZ^{t}\n\\end{eqnarray*} \\]"
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-4",
@@ -1602,5 +1602,124 @@
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 01: Distâncias entre capitais brasileiras",
     "text": "Exemplo 01: Distâncias entre capitais brasileiras\n\nOs dados referem-se à matriz de distâncias empíricas entre algumas capitais brasileiras. O objetivo é encontrar uma representação gráfica dessas capitais baseada apenas nessas distâncias."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-entre-capitais-brasileiras-1",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-entre-capitais-brasileiras-1",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 01: Distâncias entre capitais brasileiras",
+    "text": "Exemplo 01: Distâncias entre capitais brasileiras\n\nD = read.table(\"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/distancias_capitais.dat\", header=T)\nD\n\n               ARACAJÚ BELÉM BELO_HORIZONTE BOA_VISTA BRASÍLIA CAMPO_GRANDE\nARACAJÚ              0  2079           1578      6000     1652         2765\nBELÉM             2079     0           2824      6083     2120         2942\nBELO_HORIZONTE    1578  2824              0      4736      716         1453\nBOA_VISTA         6000  6083           4736         0     4275         3836\nBRASÍLIA          1650  2140            741      4275        0         1134\nCAMPO_GRANDE      2764  2942           1453      3836     1134            0\nCUIABÁ            2773  2941           1594      3142     1133          694\nCURITIBA          2595  3193           1004      4821     1366          991\nFLORIANÓPOLIS     2892  3500           1301      5128     1673         1298\nFORTALEZA         1183  1611           2528      6548     2208         3407\nGOIÂNIA           1849  2017            906      4076      209          935\nJOÃO_PESSOA        611  2161           2171      6539     2245         3357\nMACEIÓ             294  2173           1854      6276     1928         3040\nMANAUS            5215  5298           3951       785     3490         3051\nNATAL              788  2108           2348      6770     2422         3537\nPORTO_ALEGRE      3296  3854           1712      5348     2027         1518\nPORTO_VELHO       4229  4397           3050      1686     2589         2150\nRECIFE             501  2074           2061      6483     2135         3247\nRIO_BRANCO        4763  4931           3584      2230     3123         2684\nRIO_DE_JANEIRO    1855  3250            434      5159     1148         1444\nSALVADOR           356  2100           1372      5749     1446         2568\nSÃO_LUÍS          1578   806           2738      6120     2157         2979\nSÃO_PAULO         2188  2933            586      4756     1015         1014\nTERESINA          1142   947           2302      6052     1789         2911\nVITÓRIA           1408  3108            524      5261     1238         1892\n               CUIABÁ CURITIBA FLORIANÓPOLIS FORTALEZA GOIÂNIA JOÃO_PESSOA\nARACAJÚ          2775     2595          2892      1183    1848         611\nBELÉM            2941     3193          3500      1610    2017        2161\nBELO_HORIZONTE   1594     1004          1301      2528     906        2171\nBOA_VISTA        3142     4821          5128      6548    4076        6593\nBRASÍLIA         1133     1366          1673      2200     209        2245\nCAMPO_GRANDE      694      991          1298      3407     935        3357\nCUIABÁ              0     1679          1986      3406     934        3366\nCURITIBA         1679        0           300      3541    1186        3188\nFLORIANÓPOLIS    1986      300             0      3838    1493        3485\nFORTALEZA        3406     3541          3838         0    2482         688\nGOIÂNIA           934     1186          1493      2482       0        2442\nJOÃO_PESSOA      3366     3188          3485       688    2442           0\nMACEIÓ           3049     2871          3168      1075    2105         395\nMANAUS           2357     4036          4343      5763    3291        5808\nNATAL            3543     3365          3662       537    2619         185\nPORTO_ALEGRE     2206      711           476      4242    1847        3889\nPORTO_VELHO      1456     3135          3442      4865    2390        4822\nRECIFE           3256     3078          3375       800    2332         120\nRIO_BRANCO       1990     3669          3976      5396    2924        5356\nRIO_DE_JANEIRO   2017      852          1144      2805    1338        2448\nSALVADOR         2567     2385          2682      1389    1643         949\nSÃO_LUÍS         2978     3230          3537      1070    2054        1660\nSÃO_PAULO        1614      408           705      3127     926        2770\nTERESINA         2910     3143          3450       634    1986        1224\nVITÓRIA          2119     1300          1597      2397    1428        2001\n               MACEIÓ MANAUS NATAL PORTO_ALEGRE PORTO_VELHO RECIFE RIO_BRANCO\nARACAJÚ           294   5215   788         3296        4230    501       4763\nBELÉM            2173   5298  2108         3852        4397   2074       4931\nBELO_HORIZONTE   1854   3951  2348         1712        3050   2061       3584\nBOA_VISTA        6279    785  6770         5348        1686   6483       2230\nBRASÍLIA         1930   3490  2422         2027        2589   2135       3123\nCAMPO_GRANDE     3040   3051  3534         1518        2150   3247       2684\nCUIABÁ           3049   2357  3543         2206        1456   3255       1990\nCURITIBA         2871   4036  3365          711        3135   3078       3669\nFLORIANÓPOLIS    3168   4443  3662          476        3442   3375       3976\nFORTALEZA        1075   5763   537         4242        4862    800       5396\nGOIÂNIA          2125   3291  2618         1847        2390   2332       2924\nJOÃO_PESSOA       395   5808   185         3889        4822    120       5356\nMACEIÓ              0   5491   572         3572        4505    285       5039\nMANAUS           5491      0  5985         4563         901   5698       1445\nNATAL             572   5985     0         4066        4998    297       5533\nPORTO_ALEGRE     3572   4563  4066            0        3662   3779       4196\nPORTO_VELHO      4505    901  4999         3662           0   4712        544\nRECIFE            285   5698   297         3779        4712      0       5243\nRIO_BRANCO       5039   1445  5533         4196         544   5243          0\nRIO_DE_JANEIRO   2131   4374  2625         1553        3473   2338       4007\nSALVADOR          632   5009  1126         3090        4023    839       4457\nSÃO_LUÍS         1672   5335  1607         3891        4434   1573       4968\nSÃO_PAULO        2453   3971  2947         1109        3070   2660       3604\nTERESINA         1236   5267  1171         3804        4366   1137       4900\nVITÓRIA          1684   4476  2178         2001        3575   1891       4109\n               RIO_DE_JANEIRO SALVADOR SÃO_LUÍS SÃO_PAULO TERESINA VITÓRIA\nARACAJÚ                  1855      356     1578      2187     1142    1408\nBELÉM                    3250     2100      806      2933      947    3108\nBELO_HORIZONTE            434     1372     2738       586     2302     524\nBOA_VISTA                5159     5794     6120      4756     6052    5261\nBRASÍLIA                 1148     1446     2157      1015     1789    1239\nCAMPO_GRANDE             1444     2568     2979      1014     2911    1892\nCUIABÁ                   2017     2566     2978      1614     2910    2119\nCURITIBA                  852     2385     3230       408     3143    1300\nFLORIANÓPOLIS            1144     2682     3537       705     3450    1597\nFORTALEZA                2805     1389     1070      3127      634    2397\nGOIÂNIA                  1338     1643     2054       926     1986    1428\nJOÃO_PESSOA              2448      949     1660      2770     1224    2001\nMACEIÓ                   2131      632     1672      2453     1236    1684\nMANAUS                   4374     5009     5335      3971     5267    4476\nNATAL                    2625     1126     1607      2947     1171    2178\nPORTO_ALEGRE             1553     3090     3891      1109     3804    2001\nPORTO_VELHO              3473     4023     4434      3070     4366    3575\nRECIFE                   2338      839     1573      2660     1137    1891\nRIO_BRANCO               4007     4457     4968      3604     4900    4109\nRIO_DE_JANEIRO              0     1649     3015       429     2579     521\nSALVADOR                 1649        0     1599      1962     1163    1202\nSÃO_LUÍS                 3015     1599        0      2970      446    2607\nSÃO_PAULO                 429     1962     2970         0     2792     882\nTERESINA                 2579     1163      446      2792        0    2171\nVITÓRIA                   521     1202     2607       882     2171       0"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-entre-capitais-brasileiras-2",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-entre-capitais-brasileiras-2",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 01: Distâncias entre capitais brasileiras",
+    "text": "Exemplo 01: Distâncias entre capitais brasileiras\n\nmds = cmdscale(D,eig=TRUE, k=2) \nmds\n\n$points\n                      [,1]        [,2]\nARACAJÚ        -1489.71038  -206.50885\nBELÉM          -1378.92596 -1017.29104\nBELO_HORIZONTE   -42.42899   619.29681\nBOA_VISTA       4403.39543 -1181.06950\nBRASÍLIA         173.96490   -58.30587\nCAMPO_GRANDE    1004.42381   521.33931\nCUIABÁ          1297.70873  -169.08193\nCURITIBA         403.74389  1432.03861\nFLORIANÓPOLIS    384.03703  1865.12027\nFORTALEZA      -2119.27691  -995.58173\nGOIÂNIA          362.73174   -50.55496\nJOÃO_PESSOA    -2089.80893  -429.79392\nMACEIÓ         -1766.20299  -276.05425\nMANAUS          3659.02851  -928.98333\nNATAL          -2301.72481  -500.35375\nPORTO_ALEGRE     502.06069  2283.64992\nPORTO_VELHO     2741.98907  -684.14251\nRECIFE         -1996.58876  -385.61246\nRIO_BRANCO      3129.01526  -741.44784\nRIO_DE_JANEIRO  -199.76400  1165.87617\nSALVADOR       -1235.72476  -152.62678\nSÃO_LUÍS       -1571.42447 -1059.70496\nSÃO_PAULO        214.92972  1091.33706\nTERESINA       -1593.53303  -947.35549\nVITÓRIA         -483.64182   801.13582\n\n$eig\n [1] 85745567.8818 22674607.4659  6856079.6368  2004411.7789   829527.5423\n [6]   632713.2852   300753.6064   245581.0571   167857.2165   100398.7226\n[11]    55436.4480    48667.5310    17578.1877     -192.9317    -9102.9571\n[16]   -36187.0820   -73569.7125  -113678.3575  -138805.9278  -267617.4884\n[21]  -317000.6964  -472494.8886  -654735.5974 -1226523.8848 -3284784.7760\n\n$x\nNULL\n\n$ac\n[1] 0\n\n$GOF\n[1] 0.8586113 0.9059234"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-entre-capitais-brasileiras-3",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-entre-capitais-brasileiras-3",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 01: Distâncias entre capitais brasileiras",
+    "text": "Exemplo 01: Distâncias entre capitais brasileiras\n\nplot(mds$points, type = \"n\", main = \"MDS - Capitais\")\ntext(mds$points, labels = rownames(D), cex = 0.7)"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-entre-capitais-brasileiras-4",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-entre-capitais-brasileiras-4",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 01: Distâncias entre capitais brasileiras",
+    "text": "Exemplo 01: Distâncias entre capitais brasileiras\n\n# Refletindo a solução\nmds_refletida = mds$points\nmds_refletida[, 1] = -mds_refletida[, 1]\nmds_refletida[, 2] = -mds_refletida[, 2]\n\nplot(mds_refletida, type = \"n\", main = \"MDS - Capitais\")\ntext(mds_refletida, labels = rownames(D), cex = 0.7)"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)",
+    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\nSuponha que uma empresa de pesquisa de mercado realizou entrevistas com consumidores, solicitando que avaliassem o quão similares eles acham diferentes marcas de refrigerantes. O resultado foi uma matriz de dissimilaridades baseada na percepção subjetiva dos participantes.\n\n\n\n\n                   Coca-Cola Pepsi Guaraná Antarctica Fanta Sprite\nCoca-Cola                  0     2                  2     3      3\nPepsi                      2     0                  3     2      3\nGuaraná Antarctica         2     3                  0     3      2\nFanta                      3     2                  3     0      1\nSprite                     3     3                  2     1      0"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-1",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-1",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)",
+    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\n\nmds = cmdscale(D,eig=TRUE, k=2) \nplot(mds$points, type = \"n\", main = \"MDS - Marcas de refrigerante\")\ntext(mds$points, labels = rownames(D), cex = 0.7)"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-2",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-2",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)",
+    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\n\nCoca-Cola e Pepsi:\n\n\nEstão no mesmo quadrante esquerdo inferior, próximas entre si.\nIsso reflete percepção de marcas similares (provavelmente por serem líderes globais com sabores próximos).\n\n\n\nFanta e Sprite:\n\n\nEstão no lado direito, relativamente próximas, mas um pouco mais afastadas verticalmente.\nPercebidas como um subgrupo de sabores alternativos (laranja e limão)."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-02-possíveis-interpretações-práticas",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-02-possíveis-interpretações-práticas",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 02: Possíveis interpretações práticas",
+    "text": "Exemplo 02: Possíveis interpretações práticas\n\n\nPosicionamento de mercado:\n\nCoca-Cola e Pepsi disputam o mesmo espaço perceptual → alta competição direta.\nGuaraná Antarctica pode ser usada para diversificar portfólio ou explorar nichos de mercado.\n\n\n\n\n\nCampanhas publicitárias:\n\nMarcas próximas podem precisar de estratégias de diferenciação.\nMarcas distantes podem explorar essa singularidade como ponto forte."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#observações",
+    "href": "aulas/Escalonamento/escalonamento.html#observações",
+    "title": "Escalonamento Multidimensional",
+    "section": "Observações",
+    "text": "Observações\n\n\nO MDS não atribui significado direto aos eixos (Dimensão 1 e 2), mas permite interpretar relações de proximidade.\n\n\n\nO importante é a distância relativa entre os pontos (marcas)."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-3",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-3",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)",
+    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\n\n\nGuaraná Antarctica:\n\n\nEstá isolada na parte superior.\nIndica diferenciação clara em relação às demais — percebida como uma categoria à parte (sabor único, identidade brasileira)."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-não-métrico",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-não-métrico",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática: MDS Não-métrico",
+    "text": "Formulação matemática: MDS Não-métrico\n\n\n\\(\\Delta = (\\delta_{ij})\\) é considerada uma matriz de dissimilaridade geral (não precisa ser de distâncias euclidianas)\n\n\n\nOs elementos de \\(\\Delta\\) podem ser ordenados\n\n\\[\\delta_{ij}^{(1)} \\leqslant \\delta_{ij}^{(2)} \\leqslant \\cdots \\leqslant \\delta_{ij}^{(m)}, \\hspace{0.5cm} m = \\displaystyle{\\frac{n(n-1)}{2}}\\]\n\n\n\nSeja \\(D = (d_{ij})\\), tal que os elementos \\(d_{ij}\\) estão monotonicamente relacionados com os elementos \\(\\delta_{ij}\\)\n\n\n\\[\\delta_{ij} &lt; \\delta_{rs} \\Longrightarrow d_{ij} &lt; d_{rs};  \\hspace{0.5cm} i &lt; j, r &lt; s\\]"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-não-métrico-1",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-não-métrico-1",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática: MDS Não-métrico",
+    "text": "Formulação matemática: MDS Não-métrico\n\nSeja \\(Z\\) uma configuração \\(k\\)-dimensional com distâncias \\(d_{ij}\\). \\(Z\\) é ótima no sentido de minimizar a seguinte medida:\n\n\\[\n\\begin{equation} S^2(Z) = \\displaystyle{\\frac{\\displaystyle{\\sum_{i &lt; j}} (\\delta_{ij} - d_{ij})^2}\n{\\displaystyle{\\sum_{i &lt; j} \\delta_{ij}^2}}}\n\\end{equation}\n\\]\n\n\nO valor mínimo de \\(S^2\\) para uma dada dimensão \\(k\\) é chamado de STRESS (STandard REsiduals Sum of Squares). O STRESS mede o quanto da variância das dissimilaridades NÃO é explicada pelas \\(k\\) coordenadas principais."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-não-métrico-2",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-não-métrico-2",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática: MDS Não-métrico",
+    "text": "Formulação matemática: MDS Não-métrico\nPassos para encontrar o STRESS\n\nRanquear as \\(m=\\frac{n(n-1)}{2}\\) distâncias ou dissimilaridades \\(\\delta_{ij}\\).\n\n\n\nEscolha um valor de \\(k\\) e a configuração inicial dos pontos em \\(k\\) dimensões. A escolha de \\(k\\) pode seguir a seguinte regra prática:\n\n\n\n\n\nDimensões\n\n\nIndivíduos\n\n\n\n\n\nk = 1\n\n\npelo menos 5\n\n\n\n\nk = 2\n\n\npelo menos 9\n\n\n\n\nk = 3\n\n\npelo menos 13\n\n\n\n\n\nA configuração inicial dos pontos nas \\(k\\) dimensões pode ser tomada como a solução do MDS métrico."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-não-métrico-3",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-não-métrico-3",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática: MDS Não-métrico",
+    "text": "Formulação matemática: MDS Não-métrico\n\n\nPara a configuração inicial dos pontos, encontre a distância \\(\\delta_{ij}\\) entre eles. Encontre os valores de \\(d_{ij}\\) que minimizem a função \\(S^2(Z)\\).\n\n\n\nEscolha a nova configuração de pontos cujas distâncias \\(d_{ij}\\) minimizam \\(S^{2}\\).\n\n\n\n\nEncontre novos valores de \\(d_{ij}\\) para os valores de \\(\\delta_{ij}\\) encontrados no passo d. Encontre os novos valores da função STRESS.\n\n\n\n\nRepita os passos d e e até o STRESS convergir para um valor mínimo sobre todas as possíveis \\(k\\)-dimensionais configurações dos pontos."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-não-métrico-4",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-não-métrico-4",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática: MDS Não-métrico",
+    "text": "Formulação matemática: MDS Não-métrico\nRegra prática: Como avaliar os valores de STRESS?\n\n\n\n\n\nStress\n\n\nAjuste\n\n\n\n\n\nmaior que 0,20\n\n\nRuim\n\n\n\n\nentre 0,10 e 0,20\n\n\nRegular\n\n\n\n\nentre 0,05 e 0,10\n\n\nBom\n\n\n\n\nmenor que 0,05\n\n\nExcelente"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#o-gráfico-shepard",
+    "href": "aulas/Escalonamento/escalonamento.html#o-gráfico-shepard",
+    "title": "Escalonamento Multidimensional",
+    "section": "O gráfico Shepard",
+    "text": "O gráfico Shepard\n\n\nCompara as distâncias ajustadas pelo modelo e as disparidades originais, permitindo uma análise de diagnóstico da qualidade do ajuste do modelo.\n\n\n\nÉ um gráfico de dispersão, no qual se espera como resultado que os pontos não se afastem muito de uma reta, indicando que cada dissimilaridade original, dada pela disparidade, é bem representada pela distância ajustada pelo modelo."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 03: Posicionamento de Marcas de Cerveja",
+    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\nOs dados referem-se à uma pesquisa sobre o posicionamento de algumas marcas nacionais de cerveja comercializadas nos restaurantes, bares e mercados brasileiros.\n\n\n\nPara o experimento, foram selecionadas 10 marcas dentre as principais cervejas favricadas e comercializadas no Brasil.\n\n\n\n\n20 apreciadores classificaram as marcas aos pares, atribuindo o escore 0 (caso pertençam a um mesmo grupo) ou o escore 1 (caso contrário)\n\n\n\n\nOs escores foram agrupados. Quanto menor o escore total, mais similares são as marcas."
   }
 ]

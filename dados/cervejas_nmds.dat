@@ -1,0 +1,12 @@
+	Bohemia	Brahma_Extra	Skol	Brahma	Antartica	Kaiser	Nova_Schin	Cintra	Itaipava	Serra_Malte
+Bohemia		0	4	7	11	14	16	17	18	18	7
+Brahma_Extra	4	0	6	9	13	16	16	17	16	6
+Skol		7	6	0	4	5	9	11	14	14	10
+Brahma		11	9	4	0	5	7	8	15	14	11
+Antartica	14	13	5	5	0	4	6	12	13	15
+Kaiser		16	16	9	7	4	0	3	4	4	15
+Nova_Schin	17	16	11	8	6	3	0	7	5	17
+Cintra		18	17	14	15	12	4	7	0	3	18
+Itaipava	18	16	14	14	13	4	5	3	0	18
+Serra_Malte	7	6	10	11	15	15	17	18	18	0
+

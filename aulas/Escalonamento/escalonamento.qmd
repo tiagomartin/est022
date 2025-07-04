@@ -196,3 +196,284 @@ construção das matrizes $O_{1}$ e $\Lambda_{1}$.
 
 Os dados referem-se à matriz de distâncias empíricas entre algumas capitais brasileiras. O objetivo é encontrar uma representação
 gráfica dessas capitais baseada apenas nessas distâncias.
+
+
+## Exemplo 01: Distâncias entre capitais brasileiras
+
+```{r}
+D = read.table("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/distancias_capitais.dat", header=T)
+D
+```
+
+
+
+## Exemplo 01: Distâncias entre capitais brasileiras
+
+```{r}
+mds = cmdscale(D,eig=TRUE, k=2) 
+mds
+```
+
+## Exemplo 01: Distâncias entre capitais brasileiras
+
+```{r}
+plot(mds$points, type = "n", main = "MDS - Capitais")
+text(mds$points, labels = rownames(D), cex = 0.7)
+```
+
+## Exemplo 01: Distâncias entre capitais brasileiras
+
+```{r}
+# Refletindo a solução
+mds_refletida = mds$points
+mds_refletida[, 1] = -mds_refletida[, 1]
+mds_refletida[, 2] = -mds_refletida[, 2]
+
+plot(mds_refletida, type = "n", main = "MDS - Capitais")
+text(mds_refletida, labels = rownames(D), cex = 0.7)
+```
+
+
+## Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)
+
+Suponha que uma empresa de pesquisa de mercado realizou entrevistas com consumidores, solicitando que avaliassem o quão similares eles acham diferentes marcas de refrigerantes. O resultado foi uma matriz de dissimilaridades baseada na percepção subjetiva dos participantes.
+
+<p align="center"> 
+```{r}
+#| echo: false
+brands <- c("Coca-Cola", "Pepsi", "Guaraná Antarctica", "Fanta", "Sprite")
+D <- matrix(c(
+  0, 2, 2, 3, 3,
+  2, 0, 3, 2, 3,
+  2, 3, 0, 3, 2,
+  3, 2, 3, 0, 1,
+  3, 3, 2, 1, 0
+), nrow = 5, byrow = TRUE)
+dimnames(D) <- list(brands, brands)
+D
+```
+</p>
+
+## Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)
+
+```{r}
+mds = cmdscale(D,eig=TRUE, k=2) 
+plot(mds$points, type = "n", main = "MDS - Marcas de refrigerante")
+text(mds$points, labels = rownames(D), cex = 0.7)
+```
+
+
+## Exemplo 02: Percepção de Marcas (Pesquisa de Marketing) 
+
+1. Coca-Cola e Pepsi:
+  - Estão no mesmo quadrante esquerdo inferior, próximas entre si.
+  - Isso reflete percepção de marcas similares (provavelmente por serem líderes globais com sabores próximos).
+
+. . .
+
+
+2. Fanta e Sprite:
+  - Estão no lado direito, relativamente próximas, mas um pouco mais afastadas verticalmente.
+  - Percebidas como um subgrupo de sabores alternativos (laranja e limão).
+
+
+## Exemplo 02: Percepção de Marcas (Pesquisa de Marketing) 
+
+<br>
+
+3. Guaraná Antarctica:
+  - Está isolada na parte superior.
+  - Indica diferenciação clara em relação às demais — percebida como uma categoria à parte (sabor único, identidade brasileira).
+
+## Exemplo 02: Possíveis interpretações práticas
+
+<br>
+
+- Posicionamento de mercado:
+    - Coca-Cola e Pepsi disputam o mesmo espaço perceptual → alta competição direta.
+    - Guaraná Antarctica pode ser usada para diversificar portfólio ou explorar nichos de mercado.
+
+. . .
+
+
+- Campanhas publicitárias:
+    - Marcas próximas podem precisar de estratégias de diferenciação.
+    - Marcas distantes podem explorar essa singularidade como ponto forte.
+
+## Observações
+
+<br>
+
+- O MDS não atribui significado direto aos eixos (Dimensão 1 e 2), mas permite interpretar relações de proximidade.
+
+. . .
+
+- O importante é a distância relativa entre os pontos (marcas).
+
+
+## Formulação matemática: MDS Não-métrico
+
+-  $\Delta = (\delta_{ij})$ é considerada uma matriz de dissimilaridade geral (não precisa ser de distâncias euclidianas)
+
+. . .
+
+- Os elementos de $\Delta$ podem ser ordenados
+
+$$\delta_{ij}^{(1)} \leqslant \delta_{ij}^{(2)} \leqslant \cdots \leqslant \delta_{ij}^{(m)}, \hspace{0.5cm} m = \displaystyle{\frac{n(n-1)}{2}}$$
+
+
+. . .
+
+- Seja $D = (d_{ij})$, tal que os elementos $d_{ij}$ estão monotonicamente relacionados com os elementos $\delta_{ij}$
+
+$$\delta_{ij} < \delta_{rs} \Longrightarrow d_{ij} < d_{rs};  \hspace{0.5cm} i < j, r < s$$
+
+
+## Formulação matemática: MDS Não-métrico
+
+- Seja $Z$ uma configuração $k$-dimensional com distâncias $d_{ij}$. $Z$ é ótima no sentido de minimizar a seguinte medida:
+
+$$
+\begin{equation} S^2(Z) = \displaystyle{\frac{\displaystyle{\sum_{i < j}} (\delta_{ij} - d_{ij})^2}
+ {\displaystyle{\sum_{i < j} \delta_{ij}^2}}} 
+\end{equation}
+$$
+
+. . .
+
+- O valor mínimo de $S^2$ para uma dada dimensão $k$ é chamado de STRESS (STandard REsiduals Sum of Squares). O STRESS mede o quanto
+da variância das dissimilaridades NÃO é explicada pelas $k$ coordenadas principais.
+
+
+
+## Formulação matemática: MDS Não-métrico
+
+**Passos para encontrar o STRESS**
+
+a) Ranquear as $m=\frac{n(n-1)}{2}$ distâncias ou dissimilaridades $\delta_{ij}$.
+
+. . .
+
+b)  Escolha um valor de $k$ e a configuração inicial dos pontos em $k$ dimensões. A escolha de $k$ pode seguir a seguinte regra 
+prática:
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:38px;
+  overflow:hidden;padding:20px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:38px;
+  font-weight:normal;overflow:hidden;padding:20px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow">Dimensões</th>
+    <th class="tg-c3ow">Indivíduos</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">k = 1</td>
+    <td class="tg-c3ow">pelo menos 5</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">k = 2</td>
+    <td class="tg-c3ow">pelo menos 9</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">k = 3</td>
+    <td class="tg-c3ow">pelo menos 13</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
+
+A configuração inicial dos pontos nas $k$ dimensões pode ser tomada como a solução do MDS métrico.
+
+## Formulação matemática: MDS Não-métrico
+
+<br>
+
+c) Para a configuração inicial dos pontos, encontre a distância $\delta_{ij}$ entre eles. Encontre os valores de $d_{ij}$ que minimizem a função $S^2(Z)$.
+
+. . .
+
+d) Escolha a nova configuração de pontos cujas distâncias $d_{ij}$ minimizam $S^{2}$.
+
+. . .
+
+e) Encontre novos valores de $d_{ij}$ para os valores de $\delta_{ij}$ encontrados no passo `d`. Encontre os novos valores da função STRESS.
+
+. . .
+
+f) Repita os passos `d` e `e` até o STRESS convergir para um valor mínimo sobre todas as possíveis $k$-dimensionais configurações dos pontos.
+
+
+## Formulação matemática: MDS Não-métrico
+
+**Regra prática:** Como avaliar os valores de STRESS?
+
+<br>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:38px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:38px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-0pky">Stress</th>
+    <th class="tg-0pky">Ajuste</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">maior que 0,20</td>
+    <td class="tg-0pky">Ruim</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">entre 0,10 e 0,20</td>
+    <td class="tg-0pky">Regular</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">entre 0,05 e 0,10</td>
+    <td class="tg-0pky">Bom</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">menor que 0,05</td>
+    <td class="tg-0pky">Excelente</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
+
+
+## O gráfico Shepard
+
+<br>
+
+- Compara as distâncias ajustadas pelo modelo e as disparidades originais, permitindo uma análise de diagnóstico  da qualidade do 
+ajuste do modelo.
+
+. . .
+
+- É um gráfico de dispersão, no qual se espera como resultado que os pontos não se afastem muito de uma reta, indicando que cada 
+dissimilaridade original, dada pela disparidade, é bem representada pela distância ajustada pelo modelo.
+
+
+## Exemplo 03: Posicionamento de Marcas de Cerveja
+
+- Os dados referem-se à uma pesquisa sobre o posicionamento de algumas marcas nacionais de cerveja comercializadas nos restaurantes, bares e mercados brasileiros. 
+
+. . .
+
+- Para o experimento, foram selecionadas 10 marcas dentre as principais cervejas favricadas e comercializadas no Brasil.
+
+. . .
+
+- 20 apreciadores classificaram as marcas aos pares, atribuindo o escore 0 (caso pertençam a um mesmo grupo) ou o escore 1 (caso contrário) 
+
+. . .
+
+- Os escores foram agrupados. Quanto menor o escore total, mais similares são as marcas.
