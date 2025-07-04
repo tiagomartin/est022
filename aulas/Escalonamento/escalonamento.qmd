@@ -477,3 +477,69 @@ dissimilaridade original, dada pela disparidade, é bem representada pela distâ
 . . .
 
 - Os escores foram agrupados. Quanto menor o escore total, mais similares são as marcas.
+
+
+## Exemplo 03: Posicionamento de Marcas de Cerveja
+
+```{r}
+D = read.table("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/cervejas_nmds.dat", header=T)
+D = as.matrix(D)
+D
+```
+
+
+## Exemplo 03: Posicionamento de Marcas de Cerveja
+
+```{r}
+library(MASS)
+Nmds <- isoMDS(D,y=cmdscale(D,2))
+```
+
+```{r}
+#| output-location: slide
+plot(Nmds$points, type = "n", main = "Mapa NMDS - Cervejas")
+text(Nmds$points, labels = row.names(D), cex=.7) 
+```
+
+
+## Exemplo 03: Posicionamento de Marcas de Cerveja
+
+- **Grupo 1: Bohemia, Brahma Extra, Serra Malte**
+    - Estão no lado esquerdo, relativamente próximos.
+    - Provavelmente são percebidas como cervejas premium ou especiais.
+    - Serra Malte é mais afastada verticalmente, sugerindo que é percebida como mais diferenciada, mas ainda próxima desse grupo de cervejas artesanais ou encorpadas.
+
+. . .
+
+- **Grupo 2: Skol, Brahma**
+    - Estão próximos no centro do mapa.
+    - São cervejas populares, leves, comerciais: percebidas como similares entre si e intermediárias entre os grupos.
+    
+    
+## Exemplo 03: Posicionamento de Marcas de Cerveja
+
+<br>
+
+- **Grupo 3: Nova Schin, Kaiser, Itaipava, Cintra**
+    - Estão no lado direito, com Nova Schin e Kaiser próximos.
+    - Cervejas econômicas ou consideradas mais leves, talvez associadas a preço competitivo ou menor diferenciação de sabor.
+    
+. . .
+
+- **Antarctica**
+    - Isolada no canto superior direito.
+    - Pode indicar percepção de sabor distinto ou perfil tradicional, com diferenciação tanto dos grupos populares quanto dos especiais.
+
+## Exemplo 03:  Aplicações práticas
+
+<br>
+
+- **Posicionamento de Marca:** empresas podem identificar o espaço ocupado por suas marcas e posicioná-las estrategicamente.
+
+. . .
+
+- **Lançamento de produto:** um novo rótulo pode ser idealizado para ocupar um “espaço vazio” no mapa.
+
+. . .
+
+- **Segmentação de mercado:** os clusters refletem perfis de consumidores distintos.
