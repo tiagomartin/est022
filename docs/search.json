@@ -1319,7 +1319,7 @@
     "href": "aulas/Regressao_Multivariada/regressao.html#propriedades-do-estimador-widehatmathcalb-1",
     "title": "Análise de Regressão Multivariada",
     "section": "Propriedades do estimador \\(\\widehat{\\mathcal{B}}\\)\n",
-    "text": "Propriedades do estimador \\(\\widehat{\\mathcal{B}}\\)\n\n\n\n\n\\(\\widehat{\\mathcal{B}}\\) e \\(\\widehat{\\mathbf{\\epsilon}}\\) são não correlacionados.\n\n\n\nEstimador não viciado para \\(\\mathbf{\\Sigma}\\):\n\n\\[\\widehat{\\mathbf{\\Sigma}} = \\mathbf{S} = \\displaystyle{\\dfrac{\\widehat{\\mathbf{\\epsilon}}^t\\widehat{\\mathbf{\\epsilon}}}{n - r - 1}} =\n\\displaystyle{\\dfrac{(\\mathbf{Y} - \\mathbf{X} \\widehat{\\mathcal{B}})^t(\\mathbf{Y} - \\mathbf{X} \\widehat{\\mathcal{B}})}{n - r - 1}} =\n\\displaystyle{\\dfrac{\\mathbf {Y}^t\\mathbf{Y} - \\widehat{\\mathcal{B}}^t \\mathcal{X}^t\\mathbf{X}\\widehat{\\mathcal{B}}}{n - r - 1}}\\]"
+    "text": "Propriedades do estimador \\(\\widehat{\\mathcal{B}}\\)\n\n\n\n\n\\(\\widehat{\\mathcal{B}}\\) e \\(\\widehat{\\mathbf{\\epsilon}}\\) são não correlacionados.\n\n\n\nEstimador não viciado para \\(\\mathbf{\\Sigma}\\):\n\n\\[\\widehat{\\mathbf{\\Sigma}} = \\mathbf{S} = \\displaystyle{\\dfrac{\\widehat{\\mathbf{\\epsilon}}^t\\widehat{\\mathbf{\\epsilon}}}{n - r - 1}} =\n\\displaystyle{\\dfrac{(\\mathbf{Y} - \\mathbf{X} \\widehat{\\mathcal{B}})^t(\\mathbf{Y} - \\mathbf{X} \\widehat{\\mathcal{B}})}{n - r - 1}} =\n\\displaystyle{\\dfrac{\\mathbf {Y}^t\\mathbf{Y} - \\widehat{\\mathcal{B}}^t \\mathbf{X}^t\\mathbf{X}\\widehat{\\mathcal{B}}}{n - r - 1}}\\]"
   },
   {
     "objectID": "aulas/Regressao_Multivariada/regressao.html#exemplo-o-impacto-do-estresse-materno-no-baixo-peso-ao-nascimento",
@@ -1424,7 +1424,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nSeg, 05/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQua, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nSex, 16/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n3\nSex, 23/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n4\nSex, 30/05\nInferência sobre vetores de médias\n\n\n\n️\n\n\n\n\n\n5\nSex, 06/06\nInferência sobre matrizes de covariâncias\n\n\n\n\n\n\n\n\n\n6\nSex, 13/06\nAnálise de variância multivariada - MANOVA\n\n\n\n\n\n\n\n\n\n7\nSex, 20/06\nNão haverá aula - recesso\n\n\n\n\n\n\n\n\n\n8\nSex, 27/06\nAnálise de variância multivariada - MANOVA",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nSeg, 05/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQua, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nSex, 16/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n3\nSex, 23/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n4\nSex, 30/05\nInferência sobre vetores de médias\n\n\n\n️\n\n\n\n\n\n5\nSex, 06/06\nInferência sobre matrizes de covariâncias\n\n\n\n\n\n\n\n\n\n6\nSex, 13/06\nAnálise de variância multivariada - MANOVA\n\n\n\n\n\n\n\n\n\n7\nSex, 20/06\nNão haverá aula - recesso\n\n\n\n\n\n\n\n\n\n8\nSex, 27/06\nAnálise de variância multivariada - MANOVA\n\n\n\n\n\n\n\n\n\n9\nSex, 04/07\nAnálise de regressão multivariada",
     "crumbs": [
       "Cronograma da disciplina"
     ]
@@ -1497,5 +1497,110 @@
     "title": "Semana 07",
     "section": "",
     "text": "Recesso Feriado Corpus Christi"
+  },
+  {
+    "objectID": "programacao/semana-9.html",
+    "href": "programacao/semana-9.html",
+    "title": "Semana 09",
+    "section": "",
+    "text": "Análise de Regressão Multivariada"
+  },
+  {
+    "objectID": "programacao/semana-9.html#slides",
+    "href": "programacao/semana-9.html#slides",
+    "title": "Semana 09",
+    "section": "",
+    "text": "Análise de Regressão Multivariada"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#motivação",
+    "href": "aulas/Escalonamento/escalonamento.html#motivação",
+    "title": "Escalonamento Multidimensional",
+    "section": "Motivação",
+    "text": "Motivação\n\n\n“Nem sempre conseguimos enxergar padrões com os olhos. Às vezes, precisamos de matemática para revelá-los.”\n\n\nImagine tentar entender as preferências de centenas de pessoas, ou visualizar a semelhança entre dezenas de produtos. Como representar isso de forma intuitiva?"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#motivação-1",
+    "href": "aulas/Escalonamento/escalonamento.html#motivação-1",
+    "title": "Escalonamento Multidimensional",
+    "section": "Motivação",
+    "text": "Motivação\nEm outras palavras, o MDS transforma uma matriz de dissimilaridades em coordenadas espaciais, permitindo visualizar relações de proximidade entre os elementos analisados.\n\n\nExemplo: se dois produtos são percebidos como muito semelhantes por consumidores, o MDS os colocará próximos no mapa gerado."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-prático",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-prático",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo prático",
+    "text": "Exemplo prático\nUma empresa de telefonia realizou uma pesquisa para avaliar como os clientes percebiam diferentes marcas concorrentes no mercado. Cada entrevistado avaliou o grau de similaridade entre as marcas, sem indicar explicitamente o motivo. Com esses dados, aplicou-se MDS para construir um mapa perceptual.\n\n\n\n\n\n\n\n\n\nClaro e Vivo estão próximas, sugerindo que os consumidores as percebem como similares.\nTIM e Oi também aparecem próximas, formando um outro grupo perceptual.\nNextel está mais distante das demais, indicando uma percepção diferenciada."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#o-que-é-mds",
+    "href": "aulas/Escalonamento/escalonamento.html#o-que-é-mds",
+    "title": "Escalonamento Multidimensional",
+    "section": "O que é MDS?",
+    "text": "O que é MDS?\nEscalonamento Multidimensional (MDS) é uma técnica exploratória de redução de dimensionalidade baseada em distâncias ou dissimilaridades.\n\nObjetivo: encontrar uma representação espacial dos objetos em k dimensões, preservando as distâncias originais tanto quanto possível.\n\n\n🤔 Diferente do PCA, que usa variância, o MDS parte de uma matriz de distâncias.\n\n\nMDS pode ser utilizado com ou sem os dados originais, desde que se conheça a matriz de distância."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática",
+    "text": "Formulação matemática\nDada uma matriz de distâncias \\(\\Delta = (\\delta_{ij})_{n \\times n}\\), o objetivo do escalonamento multidimensional é encontrar pontos \\(P_1, P_2, \\cdots, P_n\\), \\(k\\)-dimensionais tais que, se \\(d_{ij}\\) denota a distância euclidiana entre \\(P_i\\) e \\(P_j\\), então \\(D = (d_{ij})\\) é “próxima” a \\(\\Delta\\) em algum sentido.\n\n\nMétodos métricos: os pontos \\(P\\) são obtidos de tal forma que \\(D \\approx \\Delta\\)\n\nAssume distâncias reais, preservando as magnitudes.\n\n\n\n\n\nMétodos não métricos: baseados na ordenação das \\(\\displaystyle{\\frac{n(n-1)}{2}}\\) distâncias\n\nAssume apenas a ordem das distâncias."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática: MDS métrico",
+    "text": "Formulação matemática: MDS métrico\n\n\nConsidere a matriz \\(\\Delta = (\\delta_{ij})\\) das distâncias originais entre os \\(n\\) indivíduos.\n\n\n\nNosso objetivo é encontrar \\(n\\) pontos \\(k\\)-dimensionais de tal forma que a distância \\(d_{ij}\\) entre os indivíduos \\(i\\) e \\(j\\) em \\(k\\) dimensões seja aproximadamente igual ao valor de \\(\\delta_{ij}\\) em \\(\\Delta\\).\n\n\n\n\nGeralmente, temos \\(k=2\\) ou \\(k=3\\)."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-1",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-1",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática: MDS métrico",
+    "text": "Formulação matemática: MDS métrico\n\n\nPara encontrar os pontos \\(P_1, P_2, \\cdots, P_n\\):\n\nEncontrar uma matriz \\(A_n = (a_{ij})\\), onde \\(a_{ij} = -\\displaystyle{\\frac{1}{2}} \\delta_{ij}^2\\), sendo \\(\\delta_{ij}\\) o \\(ij\\)-ésimo elemento de \\(\\Delta\\)\nConstruir a matriz \\(B = (b_{ij})\\), onde \\(b_{ij} = a_{ij} - \\bar{a}_{i\\cdot} - \\bar{a}_{\\cdot j} + \\bar{a}_{\\cdot \\cdot}\\), em que\n\n\n\\[\\bar{a}_{i\\cdot} = \\displaystyle{\\frac{\\displaystyle{\\sum_{j = 1}^n} a_{ij}}{n}},  \\hspace{0.5cm}\n\\bar{a}_{\\cdot j} = \\displaystyle{\\frac{\\displaystyle{\\sum_{i = 1}^n} a_{ij}}{n}}  \\hspace{0.25cm} \\text{e} \\hspace{0.25cm}\n\\bar{a}_{\\cdot \\cdot} = \\displaystyle{\\frac{\\displaystyle{\\sum_{i = 1}^n} \\displaystyle{\\sum_{j = 1}^n} a_{ij}}{n}} \\]"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-2",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-2",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática: MDS métrico",
+    "text": "Formulação matemática: MDS métrico\nA matriz \\(B\\) pode ser escrita na forma matricial:\n\\[B = \\left ( \\mathrm{I}-\\frac{1}{n}\\mathrm{J}\\right )A\\left ( \\mathrm{I}-\\frac{1}{n}\\mathrm{J}\\right )\\]\n\nUma vez que \\(B\\) é simétrica, podemos encontrar a decomposição espectral da matriz \\(B\\):\n\n\\[B = O \\Lambda O^{t}\\]\nem que \\(O\\) é a matriz de autovetores normalizados e \\(\\Lambda\\) é a matriz diagonal dos autovalores de \\(B\\)."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-3",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-3",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática: MDS métrico",
+    "text": "Formulação matemática: MDS métrico\n\nObservação: Se \\(B\\) é positiva semidefinida de posto \\(q\\), então existem \\(q\\) autovalores positivos e os \\((n-q)\\) autovalores iguais a zero. Sejam \\(\\Lambda_{1} = \\text{diag}(\\lambda_{1},\\lambda_{2}, \\cdots, \\lambda_{q})\\) a matriz diagonal com os \\(q\\) autovalores positivos e \\(O_{1}=(\\mathbf{e}_{1},\\mathbf{e}_{2}, \\cdots, \\mathbf{e}_{q})\\) a matriz com os correspondente autovetores normalizados.\n\n\n\nAssim, podemos reescrever,\n\n\\[\\begin{eqnarray*}\nB &=& O_{1}\\Lambda_{1}O_{1}^{t} \\\\\n&=& O_{1}\\Lambda_{1}^{\\frac{1}{2}}\\Delta_{1}^{\\frac{1}{2}}O_{1}^{t} \\\\\n&=& ZZ^{t}\n\\end{eqnarray*} \\]"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-4",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-4",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática: MDS métrico",
+    "text": "Formulação matemática: MDS métrico\nem que\n\\[\n\\begin{eqnarray}\nZ=O_{1}\\Lambda_{1}^{\\frac{1}{2}}=(\\sqrt{\\lambda_{1}}\\mathbf{e}_{1}, \\sqrt{\\lambda_{2}}\\mathbf{e}_{2}, \\cdots, \\sqrt{\\lambda_{q}}\\mathbf{e}_{q})=\\begin{pmatrix}\n\\mathbf{Z}_{1}^{t}\\\\ \\mathbf{Z}_{2}^{t}\\\\ \\vdots\\\\ \\mathbf{Z}_{n}^{t}\\end{pmatrix}\n\\end{eqnarray}\n\\]"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-5",
+    "href": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-métrico-5",
+    "title": "Escalonamento Multidimensional",
+    "section": "Formulação matemática: MDS métrico",
+    "text": "Formulação matemática: MDS métrico\n\nAs linhas \\(\\mathbf{Z}_{1}^{t}, \\mathbf{Z}_{2}^{t}, \\cdots, \\mathbf{Z}_{n}^{t}\\) são os pontos cuja distância \\(d_{ij} = (\\mathbf{Z}_{i}-\\mathbf{Z}_{j})^{t}(\\mathbf{Z}_{i}-\\mathbf{Z}_{j})\\) corresponde às distâncias \\(\\delta_{ij}\\) da matriz de distâncias \\(\\Delta\\).\n\n\n\nSe usarmos os \\(q\\) autovalores positivos para construir a matriz \\(\\Lambda_{1}\\), teremos \\(d_{ij} = \\delta_{ij}\\). A ideia é utilizarmos um número \\(k &lt; q\\) (geralmente \\(k = 2\\) ou \\(k = 3\\)) de autovalores e autovetores correspondentes para encontrarmos \\(n\\) pontos cujas distâncias \\(d_{ij}\\) sejam aproximadamente iguais às correspondentes \\(\\delta_{ij}\\).\n\n\n\n\nSe \\(B\\) não é positiva semidefinida, porém os \\(k\\) primeiros autovalores são positivos, então estes podem ser usados para construção das matrizes \\(O_{1}\\) e \\(\\Lambda_{1}\\)."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-empíricas-entre-capitais-brasileiras",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-empíricas-entre-capitais-brasileiras",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 01: Distâncias empíricas entre capitais brasileiras",
+    "text": "Exemplo 01: Distâncias empíricas entre capitais brasileiras\n\nOs dados referem-se à matriz de distâncias empíricas entre algumas capitais brasileiras. O objetivo é encontrar uma representação gráfica dessas capitais baseada apenas nessas distâncias."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-entre-capitais-brasileiras",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-01-distâncias-entre-capitais-brasileiras",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 01: Distâncias entre capitais brasileiras",
+    "text": "Exemplo 01: Distâncias entre capitais brasileiras\n\nOs dados referem-se à matriz de distâncias empíricas entre algumas capitais brasileiras. O objetivo é encontrar uma representação gráfica dessas capitais baseada apenas nessas distâncias."
   }
 ]

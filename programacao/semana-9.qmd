@@ -1,0 +1,9 @@
+---
+title: "Semana 09"
+---
+
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Análise de Regressão Multivariada](/aulas/Regressao_Multivariada/regressao.html "Análise de regressão multivariada"){aria-label="Análise de regressão multivariada"}

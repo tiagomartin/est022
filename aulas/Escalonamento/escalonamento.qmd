@@ -1,0 +1,198 @@
+---
+title: "Escalonamento Multidimensional"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    footer: ""
+    theme: quartomonothemer.scss
+    slide-number: c/t
+    show-slide-number: all
+    preview-links: auto
+    self-contained: true
+incremental: false
+code-link: true
+bibliography: references.bib
+title-slide-attributes:
+    data-background-image: /images/back.jpeg
+    data-background-size: cover
+    data-background-opacity: "0.3"
+execute:
+  echo: true
+---
+
+
+## Motivação
+
+<br>
+
+> "Nem sempre conseguimos enxergar padrões com os olhos. Às vezes, precisamos de matemática para revelá-los."
+
+. . .
+
+Imagine tentar entender as preferências de centenas de pessoas, ou visualizar a semelhança entre dezenas de produtos. Como representar isso de forma intuitiva?
+
+
+
+
+
+
+
+
+
+
+## Exemplo prático
+
+Uma empresa de telefonia realizou uma pesquisa para avaliar como os clientes percebiam diferentes marcas concorrentes no mercado. Cada entrevistado avaliou o grau de similaridade entre as marcas, sem indicar explicitamente o motivo. Com esses dados, aplicou-se MDS para construir um mapa perceptual.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](/images/mds_telefonia.png){.nostretch fig-align="center" width="700px"}
+:::
+
+::: {.column width="50%" .fragment}
+
+- Claro e Vivo estão próximas, sugerindo que os consumidores as percebem como similares.
+
+- TIM e Oi também aparecem próximas, formando um outro grupo perceptual.
+
+- Nextel está mais distante das demais, indicando uma percepção diferenciada.
+
+:::
+
+::::
+
+
+## O que é MDS? 
+
+**Escalonamento Multidimensional (MDS)** é uma técnica exploratória de redução de dimensionalidade baseada em distâncias ou dissimilaridades.
+
+. . .
+
+
+**Objetivo:** encontrar uma representação espacial dos objetos em *k* dimensões, preservando as distâncias originais tanto quanto possível.
+
+
+. . .
+
+<span style='font-size:50px;'>&#129300;</span> Diferente do PCA, que usa variância, o MDS parte de uma **matriz de distâncias**.
+
+. . .
+
+MDS pode ser utilizado com ou sem os dados originais, desde que se conheça a matriz de distância.
+
+
+## Formulação matemática
+
+Dada uma matriz de distâncias $\Delta = (\delta_{ij})_{n \times n}$, o **objetivo do escalonamento multidimensional** é encontrar 
+pontos $P_1, P_2, \cdots, P_n$, $k$-dimensionais tais que, se $d_{ij}$ denota a distância euclidiana entre $P_i$ e $P_j$, então $D = (d_{ij})$ é "próxima"
+a $\Delta$ em algum sentido.
+
+. . .
+
+- **Métodos métricos:** os pontos $P$ são obtidos de tal forma que $D \approx \Delta$
+    - Assume distâncias reais, preservando as magnitudes.
+
+. . .
+
+
+- **Métodos não métricos:** baseados na ordenação das $\displaystyle{\frac{n(n-1)}{2}}$ distâncias
+    - Assume apenas a ordem das distâncias.
+
+
+## Formulação matemática: MDS métrico
+
+<br>
+
+- Considere a matriz $\Delta = (\delta_{ij})$ das distâncias originais entre os $n$ indivíduos.
+
+. . .
+
+- Nosso objetivo é encontrar $n$ pontos $k$-dimensionais de tal forma que a distância $d_{ij}$ entre os indivíduos $i$ e $j$ em 
+$k$ dimensões seja aproximadamente igual ao valor de $\delta_{ij}$ em $\Delta$. 
+
+. . .
+
+- Geralmente, temos $k=2$ ou $k=3$.
+
+
+
+## Formulação matemática: MDS métrico
+
+<br>
+
+- Para encontrar os pontos $P_1, P_2, \cdots, P_n$:
+  a) Encontrar uma matriz $A_n = (a_{ij})$, onde $a_{ij} = -\displaystyle{\frac{1}{2}} \delta_{ij}^2$, sendo $\delta_{ij}$ o $ij$-ésimo elemento de $\Delta$
+  b) Construir a matriz $B = (b_{ij})$, onde $b_{ij} = a_{ij} - \bar{a}_{i\cdot} - \bar{a}_{\cdot j} + \bar{a}_{\cdot \cdot}$, em que
+
+$$\bar{a}_{i\cdot} = \displaystyle{\frac{\displaystyle{\sum_{j = 1}^n} a_{ij}}{n}},  \hspace{0.5cm}
+\bar{a}_{\cdot j} = \displaystyle{\frac{\displaystyle{\sum_{i = 1}^n} a_{ij}}{n}}  \hspace{0.25cm} \text{e} \hspace{0.25cm}
+\bar{a}_{\cdot \cdot} = \displaystyle{\frac{\displaystyle{\sum_{i = 1}^n} \displaystyle{\sum_{j = 1}^n} a_{ij}}{n}} $$
+
+
+## Formulação matemática: MDS métrico
+
+
+A matriz $B$ pode ser escrita na forma matricial:
+
+$$B = \left ( \mathrm{I}-\frac{1}{n}\mathrm{J}\right )A\left ( \mathrm{I}-\frac{1}{n}\mathrm{J}\right )$$
+
+  c) Uma vez que $B$ é simétrica, podemos encontrar a decomposição espectral da matriz $B$:
+
+$$B = O \Lambda O^{t}$$
+
+em que $O$ é a matriz de autovetores normalizados e $\Lambda$ é a matriz diagonal dos autovalores de $B$.
+
+
+## Formulação matemática: MDS métrico
+
+- **Observação:** Se $B$ é positiva semidefinida de posto $q$, então existem $q$ autovalores positivos e os $(n-q)$ 
+autovalores iguais a zero. Sejam $\Lambda_{1} = \text{diag}(\lambda_{1},\lambda_{2}, \cdots, \lambda_{q})$ a matriz diagonal com os $q$ 
+autovalores positivos e $O_{1}=(\mathbf{e}_{1},\mathbf{e}_{2}, \cdots, \mathbf{e}_{q})$ a matriz com os correspondente autovetores 
+normalizados.
+
+. . .
+
+- Assim, podemos reescrever,
+
+$$\begin{eqnarray*}
+B &=& O_{1}\Lambda_{1}O_{1}^{t} \\
+&=& O_{1}\Lambda_{1}^{\frac{1}{2}}\Delta_{1}^{\frac{1}{2}}O_{1}^{t} \\
+&=& ZZ^{t}
+\end{eqnarray*} $$
+
+
+## Formulação matemática: MDS métrico
+
+em que
+
+$$
+\begin{eqnarray}
+Z=O_{1}\Lambda_{1}^{\frac{1}{2}}=(\sqrt{\lambda_{1}}\mathbf{e}_{1}, \sqrt{\lambda_{2}}\mathbf{e}_{2}, \cdots, \sqrt{\lambda_{q}}\mathbf{e}_{q})=\begin{pmatrix}
+\mathbf{Z}_{1}^{t}\\ \mathbf{Z}_{2}^{t}\\ \vdots\\ \mathbf{Z}_{n}^{t}\end{pmatrix}
+\end{eqnarray}
+$$
+
+## Formulação matemática: MDS métrico
+
+
+  d) As linhas $\mathbf{Z}_{1}^{t}, \mathbf{Z}_{2}^{t}, \cdots, \mathbf{Z}_{n}^{t}$ são os pontos cuja distância $d_{ij} = (\mathbf{Z}_{i}-\mathbf{Z}_{j})^{t}(\mathbf{Z}_{i}-\mathbf{Z}_{j})$ corresponde às distâncias $\delta_{ij}$ da matriz de distâncias $\Delta$.
+
+. . .
+
+  e) Se usarmos os $q$ autovalores positivos para construir a matriz $\Lambda_{1}$, teremos $d_{ij} = \delta_{ij}$. A ideia é utilizarmos um número $k < q$ (geralmente $k = 2$ ou $k = 3$) de autovalores e autovetores correspondentes para encontrarmos $n$ pontos cujas distâncias $d_{ij}$ sejam aproximadamente iguais às correspondentes $\delta_{ij}$.
+
+. . .
+
+  f) Se $B$ não é positiva semidefinida, porém os $k$ primeiros autovalores são positivos, então estes podem ser usados para 
+construção das matrizes $O_{1}$ e $\Lambda_{1}$.
+
+
+## Exemplo 01: Distâncias entre capitais brasileiras
+
+<br>
+
+Os dados referem-se à matriz de distâncias empíricas entre algumas capitais brasileiras. O objetivo é encontrar uma representação
+gráfica dessas capitais baseada apenas nessas distâncias.

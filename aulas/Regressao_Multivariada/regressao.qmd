@@ -688,7 +688,7 @@ E(\widehat{\mathbf{\epsilon}}) = \mathbf{0}, \hspace{0.5cm} E \left(\displaystyl
 
 $$\widehat{\mathbf{\Sigma}} = \mathbf{S} = \displaystyle{\dfrac{\widehat{\mathbf{\epsilon}}^t\widehat{\mathbf{\epsilon}}}{n - r - 1}} = 
 \displaystyle{\dfrac{(\mathbf{Y} - \mathbf{X} \widehat{\mathcal{B}})^t(\mathbf{Y} - \mathbf{X} \widehat{\mathcal{B}})}{n - r - 1}} = 
-\displaystyle{\dfrac{\mathbf {Y}^t\mathbf{Y} - \widehat{\mathcal{B}}^t \mathcal{X}^t\mathbf{X}\widehat{\mathcal{B}}}{n - r - 1}}$$
+\displaystyle{\dfrac{\mathbf {Y}^t\mathbf{Y} - \widehat{\mathcal{B}}^t \mathbf{X}^t\mathbf{X}\widehat{\mathcal{B}}}{n - r - 1}}$$
 
 
 
