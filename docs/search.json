@@ -1636,28 +1636,28 @@
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)",
-    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\nSuponha que uma empresa de pesquisa de mercado realizou entrevistas com consumidores, solicitando que avaliassem o quão similares eles acham diferentes marcas de refrigerantes. O resultado foi uma matriz de dissimilaridades baseada na percepção subjetiva dos participantes.\n\n\n\n\n                   Coca-Cola Pepsi Guaraná Antarctica Fanta Sprite\nCoca-Cola                  0     2                  2     3      3\nPepsi                      2     0                  3     2      3\nGuaraná Antarctica         2     3                  0     3      2\nFanta                      3     2                  3     0      1\nSprite                     3     3                  2     1      0"
+    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\nSuponha que uma empresa de pesquisa de mercado realizou entrevistas com consumidores, solicitando que avaliassem o quão similares eles acham diferentes marcas de refrigerantes. O resultado foi uma matriz de dissimilaridades baseada na percepção subjetiva dos participantes.\n\nC\n\n                   Coca-Cola Pepsi Guaraná Antarctica Fanta Sprite\nCoca-Cola                  5     4                  3     2      2\nPepsi                      4     5                  3     2      3\nGuaraná Antarctica         3     3                  5     4      4\nFanta                      2     2                  4     5      5\nSprite                     2     3                  4     5      5"
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-1",
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-1",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)",
-    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\n\nmds = cmdscale(D,eig=TRUE, k=2) \nplot(mds$points, type = \"n\", main = \"MDS - Marcas de refrigerante\")\ntext(mds$points, labels = rownames(D), cex = 0.7)"
+    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\n\ndiag_C = diag(C)\nD = outer(diag_C, rep(1, nrow(C))) + outer(rep(1, nrow(C)), diag_C) - 2 * C\ndimnames(D) = list(brands, brands)\nD\n\n                   Coca-Cola Pepsi Guaraná Antarctica Fanta Sprite\nCoca-Cola                  0     2                  4     6      6\nPepsi                      2     0                  4     6      4\nGuaraná Antarctica         4     4                  0     2      2\nFanta                      6     6                  2     0      0\nSprite                     6     4                  2     0      0"
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-2",
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-2",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)",
-    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\n\nCoca-Cola e Pepsi:\n\n\nEstão no mesmo quadrante esquerdo inferior, próximas entre si.\nIsso reflete percepção de marcas similares (provavelmente por serem líderes globais com sabores próximos).\n\n\n\nFanta e Sprite:\n\n\nEstão no lado direito, relativamente próximas, mas um pouco mais afastadas verticalmente.\nPercebidas como um subgrupo de sabores alternativos (laranja e limão)."
+    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\n\nmds = cmdscale(D,eig=TRUE, k=2) \nplot(mds$points, type = \"n\", main = \"MDS - Marcas de refrigerante\")\ntext(mds$points, labels = rownames(D), cex = 0.7)"
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-02-possíveis-interpretações-práticas",
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-02-possíveis-interpretações-práticas",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 02: Possíveis interpretações práticas",
-    "text": "Exemplo 02: Possíveis interpretações práticas\n\n\nPosicionamento de mercado:\n\nCoca-Cola e Pepsi disputam o mesmo espaço perceptual → alta competição direta.\nGuaraná Antarctica pode ser usada para diversificar portfólio ou explorar nichos de mercado.\n\n\n\n\n\nCampanhas publicitárias:\n\nMarcas próximas podem precisar de estratégias de diferenciação.\nMarcas distantes podem explorar essa singularidade como ponto forte."
+    "text": "Exemplo 02: Possíveis interpretações práticas\n\n\nSobreposição de mercado moderada entre Fanta e Sprite: embora não estejam sobrepostas, a proximidade sugere que competem por um mesmo nicho. Pode ser necessário reforçar seus atributos únicos.\n\n\n\nGuaraná Antarctica como “ponte perceptual” ou nicho isolado: sua posição intermediária pode representar uma oportunidade estratégica de reposicionamento como opção alternativa às categorias dominantes.\n\n\n\n\nColas claramente delimitadas: Coca-Cola e Pepsi formam um grupo distinto e bem consolidado na mente do consumidor, o que reforça a importância de manter campanhas focadas em fidelização, legado e diferenciação sutil."
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#observações",
@@ -1671,7 +1671,7 @@
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-3",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)",
-    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\n\n\nGuaraná Antarctica:\n\n\nEstá isolada na parte superior.\nIndica diferenciação clara em relação às demais — percebida como uma categoria à parte (sabor único, identidade brasileira)."
+    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\n\nCoca-Cola e Pepsi:\n\n\nAparecem próximas entre si e distantes das demais, especialmente no eixo horizontal. Isso sugere que os consumidores as percebem como marcas muito similares (o que é consistente com sua categoria de colas tradicionais).\n\n\n\nFanta e Sprite:\n\n\nEstão relativamente próximas, mas não sobrepostas. Ambas localizadas no lado direito do gráfico, são percebidas como similares entre si, o que pode ser explicado por características compartilhadas: Sabores cítricos, sensação de leveza, ausência de cafeína e associação a refrescância."
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#formulação-matemática-mds-não-métrico",
@@ -1713,7 +1713,7 @@
     "href": "aulas/Escalonamento/escalonamento.html#o-gráfico-shepard",
     "title": "Escalonamento Multidimensional",
     "section": "O gráfico Shepard",
-    "text": "O gráfico Shepard\n\n\nCompara as distâncias ajustadas pelo modelo e as disparidades originais, permitindo uma análise de diagnóstico da qualidade do ajuste do modelo.\n\n\n\nÉ um gráfico de dispersão, no qual se espera como resultado que os pontos não se afastem muito de uma reta, indicando que cada dissimilaridade original, dada pela disparidade, é bem representada pela distância ajustada pelo modelo."
+    "text": "O gráfico Shepard\n\nCompara as distâncias ajustadas pelo modelo e as disparidades originais, permitindo uma análise de diagnóstico da qualidade do ajuste do modelo.\n\n\n\nÉ um gráfico de dispersão, no qual se espera como resultado que os pontos não se afastem muito de uma linha crescente, indicando que cada dissimilaridade original, dada pela disparidade, é bem representada pela distância ajustada pelo modelo.\n\nSe os pontos estão próximos da linha → boa representação das dissimilaridades no espaço de menor dimensão.\nDispersão dos pontos longe da linha → indica stress maior e ajuste menos fiel."
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja",
@@ -1734,7 +1734,7 @@
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-2",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 03: Posicionamento de Marcas de Cerveja",
-    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\nlibrary(MASS)\nNmds &lt;- isoMDS(D,y=cmdscale(D,2))\n\ninitial  value 9.995637 \niter   5 value 4.068359\niter  10 value 3.567672\niter  15 value 3.324422\niter  20 value 3.246113\niter  20 value 3.244040\niter  20 value 3.244039\nfinal  value 3.244039 \nconverged\n\n\n\nplot(Nmds$points, type = \"n\", main = \"Mapa NMDS - Cervejas\")\ntext(Nmds$points, labels = row.names(D), cex=.7)"
+    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\nlibrary(MASS)\nNmds = isoMDS(D,y=cmdscale(D,2))\n\ninitial  value 9.995637 \niter   5 value 4.068359\niter  10 value 3.567672\niter  15 value 3.324422\niter  20 value 3.246113\niter  20 value 3.244040\niter  20 value 3.244039\nfinal  value 3.244039 \nconverged\n\n\n\nplot(Nmds$points, type = \"n\", main = \"Mapa NMDS - Cervejas\")\ntext(Nmds$points, labels = row.names(D), cex=.7)"
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-2-output",
@@ -1748,14 +1748,14 @@
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-3",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 03: Posicionamento de Marcas de Cerveja",
-    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\n\nGrupo 1: Bohemia, Brahma Extra, Serra Malte\n\nEstão no lado esquerdo, relativamente próximos.\nProvavelmente são percebidas como cervejas premium ou especiais.\nSerra Malte é mais afastada verticalmente, sugerindo que é percebida como mais diferenciada, mas ainda próxima desse grupo de cervejas artesanais ou encorpadas.\n\n\n\n\n\n\nGrupo 2: Skol, Brahma\n\nEstão próximos no centro do mapa.\nSão cervejas populares, leves, comerciais: percebidas como similares entre si e intermediárias entre os grupos."
+    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\n# Shepard Diagram\nshep = Shepard(as.dist(D), Nmds$points)\n\n# Plot usando base R\nplot(shep$x, shep$y, xlab = \"Dissimilaridade original\",\n     ylab = \"Distância Euclidiana no Mapa\",\n     main = \"Shepard Diagram (NMDS)\",\n     pch = 20)\nlines(shep$x, shep$yf, type = \"s\", col = \"blue\")"
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-4",
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-4",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 03: Posicionamento de Marcas de Cerveja",
-    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\n\n\nGrupo 3: Nova Schin, Kaiser, Itaipava, Cintra\n\nEstão no lado direito, com Nova Schin e Kaiser próximos.\nCervejas econômicas ou consideradas mais leves, talvez associadas a preço competitivo ou menor diferenciação de sabor.\n\n\n\n\n\n\nAntarctica\n\nIsolada no canto superior direito.\nPode indicar percepção de sabor distinto ou perfil tradicional, com diferenciação tanto dos grupos populares quanto dos especiais."
+    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\n\nHá boa aderência dos pontos à linha azul, o que sugere que o modelo NMDS capturou bem a estrutura perceptual dos dados.\n\n\n\nIsso valida o uso do mapa gerado para interpretações estratégicas como segmentação, diferenciação de marcas ou agrupamento perceptual."
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-03-aplicações-práticas",
@@ -1763,5 +1763,47 @@
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 03: Aplicações práticas",
     "text": "Exemplo 03: Aplicações práticas\n\n\n\nPosicionamento de Marca: empresas podem identificar o espaço ocupado por suas marcas e posicioná-las estrategicamente.\n\n\n\n\nLançamento de produto: um novo rótulo pode ser idealizado para ocupar um “espaço vazio” no mapa.\n\n\n\n\n\nSegmentação de mercado: os clusters refletem perfis de consumidores distintos."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#mds-métrico-para-matriz-de-similaridades",
+    "href": "aulas/Escalonamento/escalonamento.html#mds-métrico-para-matriz-de-similaridades",
+    "title": "Escalonamento Multidimensional",
+    "section": "MDS métrico para matriz de similaridades",
+    "text": "MDS métrico para matriz de similaridades\nComo obter as coordenadas principais \\(\\mathbf{Z}\\) a partir da matriz de similaridades?\n\n\nSeja \\(C = (c_{ij})\\) a matriz de similaridade entre os \\(n\\) objetos tal que,\n\n\\[c_{ij} = c_{ji}  \\hspace{1cm} c_{ij} \\leqslant c_{ii} \\hspace{0.3cm} i,j = 1, \\cdots, n\\]\n\n\n\nPodemos obter \\(\\Delta = (\\delta_{ij})\\) a partir de \\(C = (c_{ij})\\) de acordo com:\n\n\\[\\delta_{ij} = (c_{ii} + c_{jj} - 2c_{ij})^{1/2}\\]\n\n\n\n\n\\(\\Delta\\) é a matriz de distâncias euclidianas \\(\\Longrightarrow\\) obter \\(B\\) e sua decomposição"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#mds-métrico-para-matriz-de-similaridades-1",
+    "href": "aulas/Escalonamento/escalonamento.html#mds-métrico-para-matriz-de-similaridades-1",
+    "title": "Escalonamento Multidimensional",
+    "section": "MDS métrico para matriz de similaridades",
+    "text": "MDS métrico para matriz de similaridades\n\nAlternativamente…\n\n\\[B = \\left ( \\mathrm{I}-\\frac{1}{n}\\mathrm{J}\\right )C\\left ( \\mathrm{I}-\\frac{1}{n}\\mathrm{J}\\right )\\]\n\n\nEncontrar as coordenadas principais \\(\\mathbf{Z}\\) conforme visto anteriormente."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-4",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-02-percepção-de-marcas-pesquisa-de-marketing-4",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)",
+    "text": "Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)\n\nGuaraná Antarctica:\n\n\nEstá localizada numa posição intermediária entre colas (Coca-Cola e Pepsi) e os refrigerantes frutados (Fanta e Sprite). Isso indica que a percepção do Guaraná é distinta de ambos os grupos, sendo percebido como um produto com identidade própria, nem tão semelhante às colas, nem aos refrigerantes cítricos.\n\n\n\nDistância de Fanta/Sprite para Coca-Cola/Pepsi:\n\n\nReforça a ideia de que consumidores veem essas bebidas como categorias distintas, talvez associando colas a sabores mais fortes, tradição e energia, enquanto Sprite/Fanta a refrescância e informalidade."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#section",
+    "href": "aulas/Escalonamento/escalonamento.html#section",
+    "title": "Escalonamento Multidimensional",
+    "section": "",
+    "text": "# Shepard Diagram\nshep &lt;- Shepard(as.dist(D), Nmds$points)\n\n# Plot usando base R\nplot(shep$x, shep$y, xlab = \"Dissimilaridade original\",\n     ylab = \"Distância Euclidiana no Mapa\",\n     main = \"Shepard Diagram (NMDS)\",\n     pch = 20)\nlines(shep$x, shep$yf, type = \"s\", col = \"blue\")"
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-5",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-5",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 03: Posicionamento de Marcas de Cerveja",
+    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\n\nGrupo 1: Bohemia, Brahma Extra, Serra Malte\n\nEstão no lado esquerdo, relativamente próximos.\nProvavelmente são percebidas como cervejas premium ou especiais.\nSerra Malte é mais afastada verticalmente, sugerindo que é percebida como mais diferenciada, mas ainda próxima desse grupo de cervejas artesanais ou encorpadas.\n\n\n\n\n\n\nGrupo 2: Skol, Brahma\n\nEstão próximos no centro do mapa.\nSão cervejas populares, leves, comerciais: percebidas como similares entre si e intermediárias entre os grupos."
+  },
+  {
+    "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-6",
+    "href": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-6",
+    "title": "Escalonamento Multidimensional",
+    "section": "Exemplo 03: Posicionamento de Marcas de Cerveja",
+    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\n\n\nGrupo 3: Nova Schin, Kaiser, Itaipava, Cintra\n\nEstão no lado direito, com Nova Schin e Kaiser próximos.\nCervejas econômicas ou consideradas mais leves, talvez associadas a preço competitivo ou menor diferenciação de sabor.\n\n\n\n\n\n\nAntarctica\n\nIsolada no canto superior direito.\nPode indicar percepção de sabor distinto ou perfil tradicional, com diferenciação tanto dos grupos populares quanto dos especiais."
   }
 ]

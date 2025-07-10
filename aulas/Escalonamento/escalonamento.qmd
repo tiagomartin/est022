@@ -234,27 +234,79 @@ text(mds_refletida, labels = rownames(D), cex = 0.7)
 ```
 
 
+## MDS métrico para matriz de similaridades
+
+Como obter as coordenadas principais $\mathbf{Z}$ a partir da matriz de similaridades?
+
+. . .
+
+- Seja $C = (c_{ij})$ a matriz de similaridade entre os $n$ objetos tal que,
+
+$$c_{ij} = c_{ji}  \hspace{1cm} c_{ij} \leqslant c_{ii} \hspace{0.3cm} i,j = 1, \cdots, n$$
+
+. . .
+
+- Podemos obter $\Delta = (\delta_{ij})$ a partir de $C = (c_{ij})$ de acordo com:
+
+$$\delta_{ij} = (c_{ii} + c_{jj} - 2c_{ij})^{1/2}$$
+
+. . .
+
+- $\Delta$ é a matriz de distâncias euclidianas  $\Longrightarrow$ obter $B$ e sua decomposição
+
+
+## MDS métrico para matriz de similaridades
+
+<br>
+
+Alternativamente...
+
+. . .
+
+$$B = \left ( \mathrm{I}-\frac{1}{n}\mathrm{J}\right )C\left ( \mathrm{I}-\frac{1}{n}\mathrm{J}\right )$$
+
+
+. . .
+
+
+Encontrar as coordenadas principais $\mathbf{Z}$ conforme visto anteriormente.
+
+
 ## Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)
 
 Suponha que uma empresa de pesquisa de mercado realizou entrevistas com consumidores, solicitando que avaliassem o quão similares eles acham diferentes marcas de refrigerantes. O resultado foi uma matriz de dissimilaridades baseada na percepção subjetiva dos participantes.
 
-<p align="center"> 
+
 ```{r}
 #| echo: false
 brands <- c("Coca-Cola", "Pepsi", "Guaraná Antarctica", "Fanta", "Sprite")
-D <- matrix(c(
-  0, 2, 2, 3, 3,
-  2, 0, 3, 2, 3,
-  2, 3, 0, 3, 2,
-  3, 2, 3, 0, 1,
-  3, 3, 2, 1, 0
+C <- matrix(c(
+  5, 4, 3, 2, 2,
+  4, 5, 3, 2, 3,
+  3, 3, 5, 4, 4,
+  2, 2, 4, 5, 5,
+  2, 3, 4, 5, 5
 ), nrow = 5, byrow = TRUE)
-dimnames(D) <- list(brands, brands)
-D
+dimnames(C) <- list(brands, brands)
 ```
-</p>
+
+```{r}
+C
+```
+
 
 ## Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)
+
+```{r}
+diag_C = diag(C)
+D = outer(diag_C, rep(1, nrow(C))) + outer(rep(1, nrow(C)), diag_C) - 2 * C
+dimnames(D) = list(brands, brands)
+D
+```
+
+
+## Exemplo 02: Percepção de Marcas (Pesquisa de Marketing)
+
 
 ```{r}
 mds = cmdscale(D,eig=TRUE, k=2) 
@@ -266,39 +318,44 @@ text(mds$points, labels = rownames(D), cex = 0.7)
 ## Exemplo 02: Percepção de Marcas (Pesquisa de Marketing) 
 
 1. Coca-Cola e Pepsi:
-  - Estão no mesmo quadrante esquerdo inferior, próximas entre si.
-  - Isso reflete percepção de marcas similares (provavelmente por serem líderes globais com sabores próximos).
+  - Aparecem próximas entre si e distantes das demais, especialmente no eixo horizontal. Isso sugere que os consumidores as percebem como marcas muito similares (o que é consistente com sua categoria de colas tradicionais).
 
 . . .
 
 
 2. Fanta e Sprite:
-  - Estão no lado direito, relativamente próximas, mas um pouco mais afastadas verticalmente.
-  - Percebidas como um subgrupo de sabores alternativos (laranja e limão).
+  - Estão relativamente próximas, mas não sobrepostas. Ambas localizadas no lado direito do gráfico, são percebidas como similares entre si, o que pode ser explicado por características compartilhadas: Sabores cítricos, sensação de leveza, ausência de cafeína e associação a refrescância.
 
 
 ## Exemplo 02: Percepção de Marcas (Pesquisa de Marketing) 
 
-<br>
-
 3. Guaraná Antarctica:
-  - Está isolada na parte superior.
-  - Indica diferenciação clara em relação às demais — percebida como uma categoria à parte (sabor único, identidade brasileira).
+  - Está localizada numa posição intermediária entre colas (Coca-Cola e Pepsi) e os refrigerantes frutados (Fanta e Sprite). Isso indica que a percepção do Guaraná é distinta de ambos os grupos, sendo percebido como um produto com identidade própria, nem tão semelhante às colas, nem aos refrigerantes cítricos.
 
+. . .
+
+4. Distância de Fanta/Sprite para Coca-Cola/Pepsi: 
+  - Reforça a ideia de que consumidores veem essas bebidas como categorias distintas, talvez associando colas a sabores mais fortes, tradição e energia, enquanto Sprite/Fanta a refrescância e informalidade.
+  
+  
+  
 ## Exemplo 02: Possíveis interpretações práticas
 
 <br>
 
-- Posicionamento de mercado:
-    - Coca-Cola e Pepsi disputam o mesmo espaço perceptual → alta competição direta.
-    - Guaraná Antarctica pode ser usada para diversificar portfólio ou explorar nichos de mercado.
+- Sobreposição de mercado moderada entre Fanta e Sprite: embora não estejam sobrepostas, a proximidade sugere que competem por um mesmo nicho. Pode ser necessário reforçar seus atributos únicos.
 
 . . .
 
+- Guaraná Antarctica como “ponte perceptual” ou nicho isolado: sua posição intermediária pode representar uma oportunidade estratégica de reposicionamento como opção alternativa às categorias dominantes.
 
-- Campanhas publicitárias:
-    - Marcas próximas podem precisar de estratégias de diferenciação.
-    - Marcas distantes podem explorar essa singularidade como ponto forte.
+. . .
+
+- Colas claramente delimitadas: Coca-Cola e Pepsi formam um grupo distinto e bem consolidado na mente do consumidor, o que reforça a importância de manter campanhas focadas em fidelização, legado e diferenciação sutil.
+
+
+
+
 
 ## Observações
 
@@ -451,15 +508,15 @@ f) Repita os passos `d` e `e` até o STRESS convergir para um valor mínimo sobr
 
 ## O gráfico Shepard
 
-<br>
-
 - Compara as distâncias ajustadas pelo modelo e as disparidades originais, permitindo uma análise de diagnóstico  da qualidade do 
 ajuste do modelo.
 
 . . .
 
-- É um gráfico de dispersão, no qual se espera como resultado que os pontos não se afastem muito de uma reta, indicando que cada 
+- É um gráfico de dispersão, no qual se espera como resultado que os pontos não se afastem muito de uma linha crescente, indicando que cada 
 dissimilaridade original, dada pela disparidade, é bem representada pela distância ajustada pelo modelo.
+  - Se os pontos estão próximos da linha → **boa representação** das dissimilaridades no espaço de menor dimensão.
+  - Dispersão dos pontos longe da linha → indica **stress maior** e ajuste menos fiel.
 
 
 ## Exemplo 03: Posicionamento de Marcas de Cerveja
@@ -492,7 +549,7 @@ D
 
 ```{r}
 library(MASS)
-Nmds <- isoMDS(D,y=cmdscale(D,2))
+Nmds = isoMDS(D,y=cmdscale(D,2))
 ```
 
 ```{r}
@@ -500,6 +557,31 @@ Nmds <- isoMDS(D,y=cmdscale(D,2))
 plot(Nmds$points, type = "n", main = "Mapa NMDS - Cervejas")
 text(Nmds$points, labels = row.names(D), cex=.7) 
 ```
+
+## Exemplo 03: Posicionamento de Marcas de Cerveja
+
+```{r}
+# Shepard Diagram
+shep = Shepard(as.dist(D), Nmds$points)
+
+# Plot usando base R
+plot(shep$x, shep$y, xlab = "Dissimilaridade original",
+     ylab = "Distância Euclidiana no Mapa",
+     main = "Shepard Diagram (NMDS)",
+     pch = 20)
+lines(shep$x, shep$yf, type = "s", col = "blue")
+```
+
+## Exemplo 03: Posicionamento de Marcas de Cerveja
+
+
+<br>
+
+- Há boa aderência dos pontos à linha azul, o que sugere que o modelo NMDS capturou bem a estrutura perceptual dos dados.
+
+. . .
+
+- Isso valida o uso do mapa gerado para interpretações estratégicas como segmentação, diferenciação de marcas ou agrupamento perceptual.
 
 
 ## Exemplo 03: Posicionamento de Marcas de Cerveja
@@ -529,6 +611,7 @@ text(Nmds$points, labels = row.names(D), cex=.7)
 - **Antarctica**
     - Isolada no canto superior direito.
     - Pode indicar percepção de sabor distinto ou perfil tradicional, com diferenciação tanto dos grupos populares quanto dos especiais.
+
 
 ## Exemplo 03:  Aplicações práticas
 
