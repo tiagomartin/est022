@@ -1,0 +1,9 @@
+---
+title: "Semana 10"
+---
+
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Escalonamento Multidimensional](/aulas/Escalonamento/escalonamento.html "Escalonamento Multidimensional"){aria-label="Escalonamento Multidimensional"}
