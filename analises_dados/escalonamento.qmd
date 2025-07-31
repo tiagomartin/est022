@@ -236,7 +236,7 @@ ggplot(mds_coords, aes(x = Dimensao1, y = Dimensao2, label = Sabonete)) +
 
 - **Dimensão 1 (esquerda → direita):** Intensidade sensorial (fragrância/cores), onde esquerda = suave/minimalista; direita = intensa/vibrante.
 
-- **Dimensão 2 (baixo → alto):** Sofisticação/qualidade percebida, nde baixo = básico/econômico; alto = premium/cuidados da pele.
+- **Dimensão 2 (baixo → alto):** Sofisticação/qualidade percebida, onde baixo = básico/econômico; alto = premium/cuidados da pele.
 
 
 Baseados no mapa perceptual acima, podemos dizer:
