@@ -1,0 +1,92 @@
+---
+title: "Análise de Preferência de Consumidores por Sabonetes Artesanais"
+format: html
+execute:
+  cache: true
+---
+
+
+🧼 Imagine que você é o proprietário de uma pequena empresa de sabonetes artesanais e deseja lançar uma nova linha de produtos. Para isso, você precisa entender as preferências dos seus clientes em relação a diferentes atributos de sabonetes. Você realiza uma pesquisa com um grupo de 25 consumidores, pedindo que avaliem a similaridade entre pares de sabonetes hipotéticos. O objetivo é visualizar como esses sabonetes são percebidos pelos clientes em um mapa perceptual, identificando quais atributos são mais importantes para eles.
+
+
+## 🔍 Cenário da Pesquisa
+
+Você apresenta aos consumidores 5 tipos de sabonetes artesanais (Sabonete A, B, C, D, E), que variam em termos de fragrância (floral, cítrico, amadeirado), textura (cremoso, esfoliante), e cor (pastel, vibrante). Os participantes são solicitados a classificar a similaridade entre cada par de sabonetes em uma escala de 1 a 10, onde 1 significa "nada similar" e 10 significa "extremamente similar". A Tabela a seguir apresenta as respostas de cada um dos 25 consumidores para todos os 10 pares de sabonetes.
+
+
+| Consumidor | A-B | A-C | A-D | A-E | B-C | B-D | B-E | C-D | C-E | D-E |
+|:----------:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|      1     |  8  |  2  |  1  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|      2     |  7  |  3  |  2  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|      3     |  6  |  4  |  2  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|      4     |  7  |  3  |  1  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|      5     |  8  |  2  |  2  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|      6     |  7  |  3  |  1  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|      7     |  9  |  2  |  2  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|      8     |  8  |  3  |  1  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|      9     |  7  |  4  |  2  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|     10     |  6  |  3  |  1  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|     11     |  8  |  3  |  1  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|     12     |  7  |  2  |  2  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|     13     |  6  |  3  |  2  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|     14     |  7  |  2  |  1  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|     15     |  8  |  3  |  2  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|     16     |  7  |  2  |  1  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|     17     |  9  |  3  |  2  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|     18     |  8  |  2  |  1  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|     19     |  7  |  4  |  2  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|     20     |  6  |  3  |  1  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|     21     |  8  |  3  |  1  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|     22     |  7  |  2  |  2  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|     23     |  6  |  3  |  2  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+|     24     |  7  |  2  |  1  |  6  |  6  |  5  |  8  |  7  |  5  |  6  |
+|     25     |  8  |  3  |  2  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
+
+
+### Preparação da Matriz de Dissimilaridade Média
+
+
+Para a análise de MDS, o primeiro passo é calcular a média das similaridades para cada par de sabonetes a partir das respostas dos 25 consumidores e, em seguida, converter para dissimilaridade (10 - média).
+
+| Par   | Soma das Similaridades | Média Similaridade | Dissimilaridade (10 - Média) |
+|-------|------------------------|--------------------|------------------------------|
+| A x B | 181                    | 7.24               | 2.76                         |
+| A x C | 73                     | 2.92               | 7.08                         |
+| A x D | 38                     | 1.52               | 8.48                         |
+| A x E | 138                    | 5.52               | 4.48                         |
+| B x C | 163                    | 6.52               | 3.48                         |
+| B x D | 113                    | 4.52               | 5.48                         |
+| B x E | 213                    | 8.52               | 1.48                         |
+| C x D | 188                    | 7.52               | 2.48                         |
+| C x E | 113                    | 4.52               | 5.48                         |
+| D x E | 138                    | 5.52               | 4.48                         |
+
+
+Com esses valores, construímos a matriz de dissimilaridade simétrica completa para a análise MDS:
+
+
+| Sabonete | A     | B    | C     | D    | E    |
+|----------|-------|------|-------|------|------|
+| A        | 0.00  | 2.76 | 07.08 | 8.48 | 4.48 |
+| B        | 2.76  | 0.00 | 3.48  | 5.48 | 1.48 |
+| C        | 07.08 | 3.48 | 0.00  | 2.48 | 5.48 |
+| D        | 8.48  | 5.48 | 2.48  | 0.00 | 4.48 |
+| E        | 4.48  | 1.48 | 5.48  | 4.48 | 0.00 |
+
+
+## Por que o MDS é a Escolha Certa?
+
+
+O Escalonamento Multidimensional (MDS) é ideal para esta situação porque:
+
+1. **Visualização de Relações Complexas:** Ele permite transformar as percepções de similaridade (ou dissimilaridade) em um mapa visual de pontos (os sabonetes) em um espaço de baixa dimensão (geralmente 2 ou 3 dimensões).
+
+2. **Identificação de Dimensões Subjacentes:** Ao observar a proximidade dos pontos no mapa, você pode inferir quais dimensões ou atributos ocultos são mais relevantes para os consumidores na hora de avaliar os sabonetes. Por exemplo, se os sabonetes florais e cremosos se agrupam, e os amadeirados e esfoliantes se agrupam em outro local, isso sugere que "fragrância" e "textura" são dimensões importantes.
+
+3. **Posicionamento Competitivo:** Você pode usar o mapa para entender como seus produtos se posicionam uns em relação aos outros e em relação aos sabonetes ideais percebidos pelos clientes.
+
+
+## Análise no Software R
+
+O que temos são os dados no formato "longo", onde cada linha é uma resposta de um consumidor para um par específico de sabonetes. Para o MDS, precisamos de uma matriz quadrada e simétrica onde cada célula `(i, j)` contém a dissimilaridade média entre o sabonete `i` e o sabonete `j`.
+

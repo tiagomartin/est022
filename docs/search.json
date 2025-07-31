@@ -1424,7 +1424,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nSeg, 05/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQua, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nSex, 16/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n3\nSex, 23/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n4\nSex, 30/05\nInferência sobre vetores de médias\n\n\n\n️\n\n\n\n\n\n5\nSex, 06/06\nInferência sobre matrizes de covariâncias\n\n\n\n\n\n\n\n\n\n6\nSex, 13/06\nAnálise de variância multivariada - MANOVA\n\n\n\n\n\n\n\n\n\n7\nSex, 20/06\nNão haverá aula - recesso\n\n\n\n\n\n\n\n\n\n8\nSex, 27/06\nAnálise de variância multivariada - MANOVA\n\n\n\n\n\n\n\n\n\n9\nSex, 04/07\nAnálise de regressão multivariada\n\n\n\n\n\n\n\n\n\n10\nSex, 11/07\nEscalonamento Multidimensional",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nSeg, 05/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQua, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nSex, 16/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n3\nSex, 23/05\nInferência sobre vetores de médias\n\n\n\n\n\n\n\n\n\n4\nSex, 30/05\nInferência sobre vetores de médias\n\n\n\n️\n\n\n\n\n\n5\nSex, 06/06\nInferência sobre matrizes de covariâncias\n\n\n\n\n\n\n\n\n\n6\nSex, 13/06\nAnálise de variância multivariada - MANOVA\n\n\n\n\n\n\n\n\n\n7\nSex, 20/06\nNão haverá aula - recesso\n\n\n\n\n\n\n\n\n\n8\nSex, 27/06\nAnálise de variância multivariada - MANOVA\n\n\n\n\n\n\n\n\n\n9\nSex, 04/07\nAnálise de regressão multivariada\n\n\n\n\n\n\n\n\n\n10\nSex, 11/07\nEscalonamento Multidimensional\n\n\n\n\n\n\n\n\n\n11\nSex, 18/07\nNão haverá aula!\n\n\n\n\n\n\n\n\n\n12\nSex, 25/07\nRecesso Acadêmico!\n\n\n\n\n\n\n\n\n\n13\nSex, 01/08\nEscalonamento Multidimensional",
     "crumbs": [
       "Cronograma da disciplina"
     ]
@@ -1819,5 +1819,61 @@
     "title": "Semana 10",
     "section": "",
     "text": "Escalonamento Multidimensional"
+  },
+  {
+    "objectID": "programacao/semana-13.html",
+    "href": "programacao/semana-13.html",
+    "title": "Semana 13",
+    "section": "",
+    "text": "Escalonamento Multidimensional"
+  },
+  {
+    "objectID": "programacao/semana-13.html#slides",
+    "href": "programacao/semana-13.html#slides",
+    "title": "Semana 13",
+    "section": "",
+    "text": "Escalonamento Multidimensional"
+  },
+  {
+    "objectID": "programacao/semana-12.html",
+    "href": "programacao/semana-12.html",
+    "title": "Semana 12",
+    "section": "",
+    "text": "Recesso Acadêmico!"
+  },
+  {
+    "objectID": "programacao/semana-11.html",
+    "href": "programacao/semana-11.html",
+    "title": "Semana 11",
+    "section": "",
+    "text": "Não haverá aula!"
+  },
+  {
+    "objectID": "analises_dados/escalonamento.html",
+    "href": "analises_dados/escalonamento.html",
+    "title": "Análise de Preferência de Consumidores por Sabonetes Artesanais",
+    "section": "",
+    "text": "🧼 Imagine que você é o proprietário de uma pequena empresa de sabonetes artesanais e deseja lançar uma nova linha de produtos. Para isso, você precisa entender as preferências dos seus clientes em relação a diferentes atributos de sabonetes. Você realiza uma pesquisa com um grupo de 25 consumidores, pedindo que avaliem a similaridade entre pares de sabonetes hipotéticos. O objetivo é visualizar como esses sabonetes são percebidos pelos clientes em um mapa perceptual, identificando quais atributos são mais importantes para eles."
+  },
+  {
+    "objectID": "analises_dados/escalonamento.html#cenário-da-pesquisa",
+    "href": "analises_dados/escalonamento.html#cenário-da-pesquisa",
+    "title": "Análise de Preferência de Consumidores por Sabonetes Artesanais",
+    "section": "🔍 Cenário da Pesquisa",
+    "text": "🔍 Cenário da Pesquisa\nVocê apresenta aos consumidores 5 tipos de sabonetes artesanais (Sabonete A, B, C, D, E), que variam em termos de fragrância (floral, cítrico, amadeirado), textura (cremoso, esfoliante), e cor (pastel, vibrante). Os participantes são solicitados a classificar a similaridade entre cada par de sabonetes em uma escala de 1 a 10, onde 1 significa “nada similar” e 10 significa “extremamente similar”. A Tabela a seguir apresenta as respostas de cada um dos 25 consumidores para todos os 10 pares de sabonetes.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nConsumidor\nA-B\nA-C\nA-D\nA-E\nB-C\nB-D\nB-E\nC-D\nC-E\nD-E\n\n\n\n\n1\n8\n2\n1\n5\n7\n4\n9\n8\n4\n5\n\n\n2\n7\n3\n2\n6\n6\n5\n8\n7\n5\n6\n\n\n3\n6\n4\n2\n5\n7\n4\n9\n8\n4\n5\n\n\n4\n7\n3\n1\n6\n6\n5\n8\n7\n5\n6\n\n\n5\n8\n2\n2\n5\n7\n4\n9\n8\n4\n5\n\n\n6\n7\n3\n1\n6\n6\n5\n8\n7\n5\n6\n\n\n7\n9\n2\n2\n5\n7\n4\n9\n8\n4\n5\n\n\n8\n8\n3\n1\n6\n6\n5\n8\n7\n5\n6\n\n\n9\n7\n4\n2\n5\n7\n4\n9\n8\n4\n5\n\n\n10\n6\n3\n1\n6\n6\n5\n8\n7\n5\n6\n\n\n11\n8\n3\n1\n5\n7\n4\n9\n8\n4\n5\n\n\n12\n7\n2\n2\n6\n6\n5\n8\n7\n5\n6\n\n\n13\n6\n3\n2\n5\n7\n4\n9\n8\n4\n5\n\n\n14\n7\n2\n1\n6\n6\n5\n8\n7\n5\n6\n\n\n15\n8\n3\n2\n5\n7\n4\n9\n8\n4\n5\n\n\n16\n7\n2\n1\n6\n6\n5\n8\n7\n5\n6\n\n\n17\n9\n3\n2\n5\n7\n4\n9\n8\n4\n5\n\n\n18\n8\n2\n1\n6\n6\n5\n8\n7\n5\n6\n\n\n19\n7\n4\n2\n5\n7\n4\n9\n8\n4\n5\n\n\n20\n6\n3\n1\n6\n6\n5\n8\n7\n5\n6\n\n\n21\n8\n3\n1\n5\n7\n4\n9\n8\n4\n5\n\n\n22\n7\n2\n2\n6\n6\n5\n8\n7\n5\n6\n\n\n23\n6\n3\n2\n5\n7\n4\n9\n8\n4\n5\n\n\n24\n7\n2\n1\n6\n6\n5\n8\n7\n5\n6\n\n\n25\n8\n3\n2\n5\n7\n4\n9\n8\n4\n5\n\n\n\n\nPreparação da Matriz de Dissimilaridade Média\nPara a análise de MDS, o primeiro passo é calcular a média das similaridades para cada par de sabonetes a partir das respostas dos 25 consumidores e, em seguida, converter para dissimilaridade (10 - média).\n\n\n\n\n\n\n\n\n\nPar\nSoma das Similaridades\nMédia Similaridade\nDissimilaridade (10 - Média)\n\n\n\n\nA x B\n181\n7.24\n2.76\n\n\nA x C\n73\n2.92\n7.08\n\n\nA x D\n38\n1.52\n8.48\n\n\nA x E\n138\n5.52\n4.48\n\n\nB x C\n163\n6.52\n3.48\n\n\nB x D\n113\n4.52\n5.48\n\n\nB x E\n213\n8.52\n1.48\n\n\nC x D\n188\n7.52\n2.48\n\n\nC x E\n113\n4.52\n5.48\n\n\nD x E\n138\n5.52\n4.48\n\n\n\nCom esses valores, construímos a matriz de dissimilaridade simétrica completa para a análise MDS:\n\n\n\nSabonete\nA\nB\nC\nD\nE\n\n\n\n\nA\n0.00\n2.76\n07.08\n8.48\n4.48\n\n\nB\n2.76\n0.00\n3.48\n5.48\n1.48\n\n\nC\n07.08\n3.48\n0.00\n2.48\n5.48\n\n\nD\n8.48\n5.48\n2.48\n0.00\n4.48\n\n\nE\n4.48\n1.48\n5.48\n4.48\n0.00"
+  },
+  {
+    "objectID": "analises_dados/escalonamento.html#por-que-o-mds-é-a-escolha-certa",
+    "href": "analises_dados/escalonamento.html#por-que-o-mds-é-a-escolha-certa",
+    "title": "Análise de Preferência de Consumidores por Sabonetes Artesanais",
+    "section": "Por que o MDS é a Escolha Certa?",
+    "text": "Por que o MDS é a Escolha Certa?\nO Escalonamento Multidimensional (MDS) é ideal para esta situação porque:\n\nVisualização de Relações Complexas: Ele permite transformar as percepções de similaridade (ou dissimilaridade) em um mapa visual de pontos (os sabonetes) em um espaço de baixa dimensão (geralmente 2 ou 3 dimensões).\nIdentificação de Dimensões Subjacentes: Ao observar a proximidade dos pontos no mapa, você pode inferir quais dimensões ou atributos ocultos são mais relevantes para os consumidores na hora de avaliar os sabonetes. Por exemplo, se os sabonetes florais e cremosos se agrupam, e os amadeirados e esfoliantes se agrupam em outro local, isso sugere que “fragrância” e “textura” são dimensões importantes.\nPosicionamento Competitivo: Você pode usar o mapa para entender como seus produtos se posicionam uns em relação aos outros e em relação aos sabonetes ideais percebidos pelos clientes."
+  },
+  {
+    "objectID": "analises_dados/escalonamento.html#análise-no-software-r",
+    "href": "analises_dados/escalonamento.html#análise-no-software-r",
+    "title": "Análise de Preferência de Consumidores por Sabonetes Artesanais",
+    "section": " Análise no Software R",
+    "text": "Análise no Software R"
   }
 ]

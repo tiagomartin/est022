@@ -1,0 +1,9 @@
+---
+title: "Semana 13"
+---
+
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Escalonamento Multidimensional](/aulas/Escalonamento/escalonamento.html#/mds-métrico-para-matriz-de-similaridades "MDS métrico para matriz de similaridades"){aria-label="MDS métrico para matriz de similaridades"}

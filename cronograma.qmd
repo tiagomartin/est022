@@ -32,6 +32,9 @@ Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semest
 |  [8](programacao/semana-8.html)  | Sex, 27/06 | Análise de variância multivariada - MANOVA  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Manova/manova.html#/intervalos-simultâneos-de-confiança-para-efeitos-de-tratamento "Intervalo de confiança simultâneos"){aria-label="Intervalo de confiança simultâneos"} | |[{{< fa file-lines size=2xl >}}](/exercicios/lista03.html "Lista de Exercícios 03"){aria-label="Lista de Exercícios 03"} | | | |
 |  [9](programacao/semana-9.html)  | Sex, 04/07 | Análise de regressão multivariada  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Regressao_Multivariada/regressao.html#/generalizando "Análise de regressão multivariada"){aria-label="Análise de regressão multivariada"} | | | | | |
 |  [10](programacao/semana-10.html)  | Sex, 11/07 | Escalonamento Multidimensional  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Escalonamento/escalonamento.html "Escalonamento Multidimensional"){aria-label="Escalonamento Multidimensional"} | | | | | |
+|  [11](programacao/semana-11.html)  | Sex, 18/07 | Não haverá aula!  | |  | | | | | |
+|  [12](programacao/semana-12.html)  | Sex, 25/07 | Recesso Acadêmico!  | |  | | | | | |
+|  [13](programacao/semana-13.html)  | Sex, 01/08 | Escalonamento Multidimensional  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Escalonamento/escalonamento.html#/mds-métrico-para-matriz-de-similaridades "MDS métrico para matriz de similaridades"){aria-label="MDS métrico para matriz de similaridades"} | | | | | |
 :::
 
 ```{r echo = FALSE}
