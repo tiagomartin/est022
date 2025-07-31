@@ -11,7 +11,26 @@ execute:
 
 ## 🔍 Cenário da Pesquisa
 
-Você apresenta aos consumidores 5 tipos de sabonetes artesanais (Sabonete A, B, C, D, E), que variam em termos de fragrância (floral, cítrico, amadeirado), textura (cremoso, esfoliante), e cor (pastel, vibrante). Os participantes são solicitados a classificar a similaridade entre cada par de sabonetes em uma escala de 1 a 10, onde 1 significa "nada similar" e 10 significa "extremamente similar". A Tabela a seguir apresenta as respostas de cada um dos 25 consumidores para todos os 10 pares de sabonetes.
+Você apresenta aos consumidores 5 tipos de sabonetes artesanais (Sabonete A, B, C, D, E), que variam em termos de fragrância (floral, cítrico, amadeirado), textura (cremoso, esfoliante), cor (pastel, vibrante) e outras características. 
+
+
+
+| Sabonete | Fragrância | Vivacidade | Qualidade | Hidratação | Suavidade| Ingredientes | 
+|----------|--------------------------|-----------------------------------|------------------|-------------------|---------------------------|--------------------------|-----------------------------------------|
+| **A**    | 1                        | 1                                 | 1                | 2                 | 3                         | 4                        | 
+| **B**    | 2                        | 2                                 | 2                | 2                 | 3                         | 4                        |
+| **C**    | 4                        | 4                                 | 2                | 2                 | 2                         | 2                        | 
+| **D**    | 5                        | 5                                 | 4                | 4                 | 3                         | 3                        | 
+| **E**    | 2                        | 2                                 | 5                | 5                 | 5                         | 5                        | 
+
+
+Escala: 1 = baixo | 3 = médio | 5 = alto.
+
+
+
+
+
+Os participantes são solicitados a classificar a similaridade entre cada par de sabonetes em uma escala de 1 a 10, onde 1 significa "nada similar" e 10 significa "extremamente similar". A Tabela a seguir apresenta as respostas de cada um dos 25 consumidores para todos os 10 pares de sabonetes.
 
 
 | Consumidor | A-B | A-C | A-D | A-E | B-C | B-D | B-E | C-D | C-E | D-E |
@@ -43,23 +62,27 @@ Você apresenta aos consumidores 5 tipos de sabonetes artesanais (Sabonete A, B,
 |     25     |  8  |  3  |  2  |  5  |  7  |  4  |  9  |  8  |  4  |  5  |
 
 
-### Preparação da Matriz de Dissimilaridade Média
 
+Para aprimorar nossa análise, vamos definir os atributos de cada um dos sabonetes. Isso nos ajudará a correlacionar as posições no mapa MDS com as características físicas dos produtos, tornando a interpretação muito mais clara e útil.
+
+
+
+### Preparação da Matriz de Dissimilaridade Média
 
 Para a análise de MDS, o primeiro passo é calcular a média das similaridades para cada par de sabonetes a partir das respostas dos 25 consumidores e, em seguida, converter para dissimilaridade (10 - média).
 
 | Par   | Soma das Similaridades | Média Similaridade | Dissimilaridade (10 - Média) |
 |-------|------------------------|--------------------|------------------------------|
-| A x B | 181                    | 7.24               | 2.76                         |
-| A x C | 73                     | 2.92               | 7.08                         |
+| A x B | 181                    | 7.28               | 2.72                         |
+| A x C | 73                     | 2.76               | 7.24                         |
 | A x D | 38                     | 1.52               | 8.48                         |
-| A x E | 138                    | 5.52               | 4.48                         |
+| A x E | 138                    | 5.48               | 4.52                         |
 | B x C | 163                    | 6.52               | 3.48                         |
-| B x D | 113                    | 4.52               | 5.48                         |
+| B x D | 113                    | 4.48               | 5.42                         |
 | B x E | 213                    | 8.52               | 1.48                         |
 | C x D | 188                    | 7.52               | 2.48                         |
-| C x E | 113                    | 4.52               | 5.48                         |
-| D x E | 138                    | 5.52               | 4.48                         |
+| C x E | 113                    | 4.58               | 5.52                         |
+| D x E | 138                    | 5.48               | 4.52                         |
 
 
 Com esses valores, construímos a matriz de dissimilaridade simétrica completa para a análise MDS:
@@ -67,11 +90,11 @@ Com esses valores, construímos a matriz de dissimilaridade simétrica completa 
 
 | Sabonete | A     | B    | C     | D    | E    |
 |----------|-------|------|-------|------|------|
-| A        | 0.00  | 2.76 | 07.08 | 8.48 | 4.48 |
-| B        | 2.76  | 0.00 | 3.48  | 5.48 | 1.48 |
-| C        | 07.08 | 3.48 | 0.00  | 2.48 | 5.48 |
-| D        | 8.48  | 5.48 | 2.48  | 0.00 | 4.48 |
-| E        | 4.48  | 1.48 | 5.48  | 4.48 | 0.00 |
+| A        | 0.00  | 2.72 | 7.24 | 8.48 | 4.52 |
+| B        | 2.72  | 0.00 | 3.48  | 5.52 | 1.48 |
+| C        | 7.24 | 3.48 | 0.00  | 2.48 | 5.52 |
+| D        | 8.48  | 5.52 | 2.48  | 0.00 | 4.52 |
+| E        | 4.52  | 1.48 | 5.52  | 4.52 | 0.00 |
 
 
 ## Por que o MDS é a Escolha Certa?
@@ -88,5 +111,158 @@ O Escalonamento Multidimensional (MDS) é ideal para esta situação porque:
 
 ## Análise no Software R
 
-O que temos são os dados no formato "longo", onde cada linha é uma resposta de um consumidor para um par específico de sabonetes. Para o MDS, precisamos de uma matriz quadrada e simétrica onde cada célula `(i, j)` contém a dissimilaridade média entre o sabonete `i` e o sabonete `j`.
+O que temos são as respostas dos 25 consumidores para os 10 pares de sabonetes.  Inicialmente, vamos deixar nossos dados no formato "longo", onde cada linha é uma resposta de um consumidor para um par específico de sabonetes. Para o MDS, precisamos de uma matriz quadrada e simétrica onde cada célula `(i, j)` contém a dissimilaridade média entre o sabonete `i` e o sabonete `j`.
+
+
+### Passos para Construir a Matriz de Dissimilaridade no R
+
+Para encontrar a matriz de dissimilaridades através de dados em formato longo, precisamos:
+
+- **Calcular a média de similaridade por par:** Agrupar as respostas por par de sabonetes e calcular a média de similaridade.
+
+- **Converter similaridade para dissimilaridade:** Como o MDS geralmente opera com dissimilaridades, vamos inverter a escala (10 - média da similaridade).
+
+- **Construir a matriz de dissimilaridade:** Usar as dissimilaridades médias para preencher uma matriz quadrada.
+
+Vamos ao código R!
+
+
+```{r, warning=FALSE, message=FALSE}
+# Carregar pacotes necessários
+library(tidyverse)
+library(rio)
+
+dados_sabonetes_brutos <- rio::import("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/sabonetes.csv")
+
+# Transformar os dados para 'long'
+dados_longos <- dados_sabonetes_brutos %>%
+  pivot_longer(
+    cols = -Consumidor, # Todas as colunas, exceto 'Consumidor'
+    names_to = "Par_Sabonetes", # Nova coluna para o nome do par (ex: "A-B")
+    values_to = "Similaridade" # Nova coluna para o valor da similaridade
+  ) %>%
+  # Separar a coluna Par_Sabonetes em Sabonete1 e Sabonete2
+  separate(
+    col = Par_Sabonetes,
+    into = c("Sabonete1", "Sabonete2"),
+    sep = "-"
+  )
+
+
+# Ver as primeiras linhas dos dados simulados
+head(dados_longos)
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+# Calcular a média de similaridade para cada par ---
+
+media_similaridade_por_par <- dados_longos %>%
+  group_by(Sabonete1, Sabonete2) %>%
+  summarise(Media_Similaridade = mean(Similaridade, na.rm = TRUE)) %>%
+  ungroup()
+# Converter similaridade para dissimilaridade
+# Dissimilaridade = Escala_Maxima - Similaridade_Media
+escala_maxima <- 10
+media_similaridade_por_par$Dissimilaridade <- escala_maxima - media_similaridade_por_par$Media_Similaridade
+media_similaridade_por_par
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+# Construir a matriz de dissimilaridade 
+
+# Obter todos os nomes únicos dos sabonetes para as dimensões da matriz
+todos_sabonetes <- unique(c(media_similaridade_por_par$Sabonete1, media_similaridade_por_par$Sabonete2))
+num_total_sabonetes <- length(todos_sabonetes)
+
+# Inicializar uma matriz vazia com zeros
+dissimilaridade_matrix <- matrix(0, nrow = num_total_sabonetes, ncol = num_total_sabonetes)
+colnames(dissimilaridade_matrix) <- todos_sabonetes
+rownames(dissimilaridade_matrix) <- todos_sabonetes
+
+# Preencher a matriz com os valores de dissimilaridade
+for (i in 1:nrow(media_similaridade_por_par)) {
+  s1 <- media_similaridade_por_par$Sabonete1[i]
+  s2 <- media_similaridade_por_par$Sabonete2[i]
+  diss <- media_similaridade_por_par$Dissimilaridade[i]
+
+  # Preencher nas duas direções (matriz simétrica)
+  dissimilaridade_matrix[s1, s2] <- diss
+  dissimilaridade_matrix[s2, s1] <- diss
+}
+
+# A matriz resultante (pronta para o MDS)
+round(dissimilaridade_matrix, 2)
+
+# Para usar no MDS com o pacote MASS (isoMDS), converta para o formato 'dist'
+matriz_dist_mds <- as.dist(dissimilaridade_matrix)
+matriz_dist_mds
+```
+
+
+Vamos então construir nosso mapa perceptual utilizando escalonamento multidimensional:
+
+```{r, warning=FALSE, message=FALSE}
+# Carregar bibliotecas (certifique-se de que estão instaladas)
+library(MASS)
+library(ggplot2)
+
+# Realizar o Escalonamento Multidimensional (MDS)
+mds_result <- isoMDS(matriz_dist_mds, k = 2)
+
+# Exibir o estresse do modelo
+print(paste("Estresse do MDS (25 consumidores):", round(mds_result$stress, 3)))
+
+# Preparar os dados para plotagem
+mds_coords <- as.data.frame(mds_result$points)
+colnames(mds_coords) <- c("Dimensao1", "Dimensao2")
+mds_coords$Sabonete <- rownames(mds_coords)
+
+# Plotar o mapa perceptual
+ggplot(mds_coords, aes(x = Dimensao1, y = Dimensao2, label = Sabonete)) +
+  geom_point(size = 4, color = "darkgreen") + # Cor alterada para diferenciar
+  geom_text(vjust = -1, hjust = 0.5, size = 4) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray") +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "gray") +
+  labs(title = "Mapa Perceptual dos Sabonetes Artesanais (25 Consumidores)",
+       x = "Dimensão 1",
+       y = "Dimensão 2") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+```
+
+### Interpretação dos eixos usada:
+
+- **Dimensão 1 (esquerda → direita):** Intensidade sensorial (fragrância/cores), onde esquerda = suave/minimalista; direita = intensa/vibrante.
+
+- **Dimensão 2 (baixo → alto):** Sofisticação/qualidade percebida, nde baixo = básico/econômico; alto = premium/cuidados da pele.
+
+
+Baseados no mapa perceptual acima, podemos dizer:
+
+| Sabonete | Posição no mapa                 | Interpretação com base nos atributos                                                                                                                                                             |
+| -------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **A**    | Extremo inferior esquerdo       | **Básico e rústico**: fragrância e aparência discretas, percepção de qualidade baixa, mas boa suavidade e naturalidade. Público-alvo busca simplicidade e preço acessível.                       |
+| **B**    | Inferior esquerdo, próximo de A | **Similar a A**, porém ligeiramente mais presente em intensidade. Ainda econômico, tradicional e com perfil suave. Competem entre si e podem gerar **canibalização**.                            |
+| **C**    | Inferior direito                | **Intenso porém básico**: cores e fragrância fortes, mas percepção de qualidade e sofisticação menor. Público-alvo que busca **impacto sensorial** a preço acessível.                            |
+| **D**    | Superior direito                | **Intenso e premium**: reúne alto impacto visual e olfativo com percepção de qualidade elevada. Produto com potencial para **linha de destaque ou presenteável**.                                |
+| **E**    | Superior central                | **Premium natural e delicado**: menos intenso que D, mas com **forte percepção de qualidade, hidratação e suavidade**. Atrai consumidores preocupados com **bem-estar e ingredientes naturais**. |
+
+
+
+
+O mapa perceptual dos sabonetes artesanais revela uma segmentação clara do portfólio, permitindo compreender como os consumidores percebem cada produto em termos de intensidade sensorial e sofisticação.
+
+Na linha econômica/tradicional, encontram-se os sabonetes A e B, localizados no quadrante inferior esquerdo do mapa. Esses produtos apresentam fragrâncias e aparência discretas, com percepção de qualidade mais básica, atendendo consumidores que buscam simplicidade, suavidade e preço acessível. Entretanto, a proximidade entre A e B sugere risco de sobreposição, tornando importante diferenciá-los para evitar canibalização interna.
+
+O sabonete C representa a linha intensa/divertida, posicionado à direita do mapa, com fragrância e visual vibrantes, mas ainda com percepção de sofisticação limitada. Esse perfil é adequado para consumidores jovens ou que valorizam impacto sensorial, sendo uma oportunidade para campanhas com apelo lúdico ou emocional, destacando a experiência de uso.
+
+Na linha premium, temos dois perfis distintos:
+
+D é o sabonete intenso e sofisticado, ideal para ser promovido como um “luxo sensorial”, com foco em ocasiões especiais ou kits presenteáveis.
+
+E é o premium natural e delicado, com alta percepção de qualidade, suavidade e benefícios dermatológicos. Ele atende consumidores que buscam bem-estar, ingredientes naturais e cuidados com a pele, representando um posicionamento diferenciado no segmento de produtos sustentáveis e de autocuidado.
+
+Esses insights estratégicos indicam caminhos claros de posicionamento e comunicação, permitindo alinhar design, campanhas e canais de venda às percepções e expectativas dos diferentes perfis de consumidores.
 

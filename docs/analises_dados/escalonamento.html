@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -74,7 +109,10 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Análise de Preferência de Consumidores por Sabonetes Artesanais – EST022 - Estatística Multivariada II">
 <meta property="og:description" content="Homepage da disciplina EST022 - Estatística Multivariada II, 2025/1.">
+<meta property="og:image" content="http://professortp.com.br/est022/analises_dados/escalonamento_files/figure-html/unnamed-chunk-4-1.png">
 <meta property="og:site_name" content="EST022 - Estatística Multivariada II">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
 </head>
 
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -327,7 +365,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#preparação-da-matriz-de-dissimilaridade-média" id="toc-preparação-da-matriz-de-dissimilaridade-média" class="nav-link" data-scroll-target="#preparação-da-matriz-de-dissimilaridade-média">Preparação da Matriz de Dissimilaridade Média</a></li>
   </ul></li>
   <li><a href="#por-que-o-mds-é-a-escolha-certa" id="toc-por-que-o-mds-é-a-escolha-certa" class="nav-link" data-scroll-target="#por-que-o-mds-é-a-escolha-certa">Por que o MDS é a Escolha Certa?</a></li>
-  <li><a href="#análise-no-software-r" id="toc-análise-no-software-r" class="nav-link" data-scroll-target="#análise-no-software-r"><i class="fab fa-r-project"></i> Análise no Software R</a></li>
+  <li><a href="#análise-no-software-r" id="toc-análise-no-software-r" class="nav-link" data-scroll-target="#análise-no-software-r">Análise no Software R</a>
+  <ul class="collapse">
+  <li><a href="#passos-para-construir-a-matriz-de-dissimilaridade-no-r" id="toc-passos-para-construir-a-matriz-de-dissimilaridade-no-r" class="nav-link" data-scroll-target="#passos-para-construir-a-matriz-de-dissimilaridade-no-r">Passos para Construir a Matriz de Dissimilaridade no R</a></li>
+  <li><a href="#interpretação-dos-eixos-usada" id="toc-interpretação-dos-eixos-usada" class="nav-link" data-scroll-target="#interpretação-dos-eixos-usada">Interpretação dos eixos usada:</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/tiagomartin/est022/edit/main/analises_dados/escalonamento.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est022/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -357,7 +399,85 @@ ul.task-list li input[type="checkbox"] {
 <p>🧼 Imagine que você é o proprietário de uma pequena empresa de sabonetes artesanais e deseja lançar uma nova linha de produtos. Para isso, você precisa entender as preferências dos seus clientes em relação a diferentes atributos de sabonetes. Você realiza uma pesquisa com um grupo de 25 consumidores, pedindo que avaliem a similaridade entre pares de sabonetes hipotéticos. O objetivo é visualizar como esses sabonetes são percebidos pelos clientes em um mapa perceptual, identificando quais atributos são mais importantes para eles.</p>
 <section id="cenário-da-pesquisa" class="level2">
 <h2 class="anchored" data-anchor-id="cenário-da-pesquisa">🔍 Cenário da Pesquisa</h2>
-<p>Você apresenta aos consumidores 5 tipos de sabonetes artesanais (Sabonete A, B, C, D, E), que variam em termos de fragrância (floral, cítrico, amadeirado), textura (cremoso, esfoliante), e cor (pastel, vibrante). Os participantes são solicitados a classificar a similaridade entre cada par de sabonetes em uma escala de 1 a 10, onde 1 significa “nada similar” e 10 significa “extremamente similar”. A Tabela a seguir apresenta as respostas de cada um dos 25 consumidores para todos os 10 pares de sabonetes.</p>
+<p>Você apresenta aos consumidores 5 tipos de sabonetes artesanais (Sabonete A, B, C, D, E), que variam em termos de fragrância (floral, cítrico, amadeirado), textura (cremoso, esfoliante), cor (pastel, vibrante) e outras características.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 8%">
+<col style="width: 9%">
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sabonete</th>
+<th>Fragrância</th>
+<th>Vivacidade</th>
+<th>Qualidade</th>
+<th>Hidratação</th>
+<th>Suavidade</th>
+<th>Ingredientes</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A</strong></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>B</strong></td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>C</strong></td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>D</strong></td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>E</strong></td>
+<td>2</td>
+<td>2</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Escala: 1 = baixo | 3 = médio | 5 = alto.</p>
+<p>Os participantes são solicitados a classificar a similaridade entre cada par de sabonetes em uma escala de 1 a 10, onde 1 significa “nada similar” e 10 significa “extremamente similar”. A Tabela a seguir apresenta as respostas de cada um dos 25 consumidores para todos os 10 pares de sabonetes.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 19%">
@@ -715,6 +835,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<p>Para aprimorar nossa análise, vamos definir os atributos de cada um dos sabonetes. Isso nos ajudará a correlacionar as posições no mapa MDS com as características físicas dos produtos, tornando a interpretação muito mais clara e útil.</p>
 <section id="preparação-da-matriz-de-dissimilaridade-média" class="level3">
 <h3 class="anchored" data-anchor-id="preparação-da-matriz-de-dissimilaridade-média">Preparação da Matriz de Dissimilaridade Média</h3>
 <p>Para a análise de MDS, o primeiro passo é calcular a média das similaridades para cada par de sabonetes a partir das respostas dos 25 consumidores e, em seguida, converter para dissimilaridade (10 - média).</p>
@@ -737,14 +858,14 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>A x B</td>
 <td>181</td>
-<td>7.24</td>
-<td>2.76</td>
+<td>7.28</td>
+<td>2.72</td>
 </tr>
 <tr class="even">
 <td>A x C</td>
 <td>73</td>
-<td>2.92</td>
-<td>7.08</td>
+<td>2.76</td>
+<td>7.24</td>
 </tr>
 <tr class="odd">
 <td>A x D</td>
@@ -755,8 +876,8 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td>A x E</td>
 <td>138</td>
-<td>5.52</td>
-<td>4.48</td>
+<td>5.48</td>
+<td>4.52</td>
 </tr>
 <tr class="odd">
 <td>B x C</td>
@@ -767,8 +888,8 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td>B x D</td>
 <td>113</td>
-<td>4.52</td>
-<td>5.48</td>
+<td>4.48</td>
+<td>5.42</td>
 </tr>
 <tr class="odd">
 <td>B x E</td>
@@ -785,14 +906,14 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>C x E</td>
 <td>113</td>
-<td>4.52</td>
-<td>5.48</td>
+<td>4.58</td>
+<td>5.52</td>
 </tr>
 <tr class="even">
 <td>D x E</td>
 <td>138</td>
-<td>5.52</td>
-<td>4.48</td>
+<td>5.48</td>
+<td>4.52</td>
 </tr>
 </tbody>
 </table>
@@ -812,41 +933,41 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td>A</td>
 <td>0.00</td>
-<td>2.76</td>
-<td>07.08</td>
+<td>2.72</td>
+<td>7.24</td>
 <td>8.48</td>
-<td>4.48</td>
+<td>4.52</td>
 </tr>
 <tr class="even">
 <td>B</td>
-<td>2.76</td>
+<td>2.72</td>
 <td>0.00</td>
 <td>3.48</td>
-<td>5.48</td>
+<td>5.52</td>
 <td>1.48</td>
 </tr>
 <tr class="odd">
 <td>C</td>
-<td>07.08</td>
+<td>7.24</td>
 <td>3.48</td>
 <td>0.00</td>
 <td>2.48</td>
-<td>5.48</td>
+<td>5.52</td>
 </tr>
 <tr class="even">
 <td>D</td>
 <td>8.48</td>
-<td>5.48</td>
+<td>5.52</td>
 <td>2.48</td>
 <td>0.00</td>
-<td>4.48</td>
+<td>4.52</td>
 </tr>
 <tr class="odd">
 <td>E</td>
-<td>4.48</td>
+<td>4.52</td>
 <td>1.48</td>
-<td>5.48</td>
-<td>4.48</td>
+<td>5.52</td>
+<td>4.52</td>
 <td>0.00</td>
 </tr>
 </tbody>
@@ -863,9 +984,226 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 </section>
 <section id="análise-no-software-r" class="level2">
-<h2 class="anchored" data-anchor-id="análise-no-software-r"><i class="fab fa-r-project"></i> Análise no Software R</h2>
+<h2 class="anchored" data-anchor-id="análise-no-software-r">Análise no Software R</h2>
+<p>O que temos são as respostas dos 25 consumidores para os 10 pares de sabonetes. Inicialmente, vamos deixar nossos dados no formato “longo”, onde cada linha é uma resposta de um consumidor para um par específico de sabonetes. Para o MDS, precisamos de uma matriz quadrada e simétrica onde cada célula <code>(i, j)</code> contém a dissimilaridade média entre o sabonete <code>i</code> e o sabonete <code>j</code>.</p>
+<section id="passos-para-construir-a-matriz-de-dissimilaridade-no-r" class="level3">
+<h3 class="anchored" data-anchor-id="passos-para-construir-a-matriz-de-dissimilaridade-no-r">Passos para Construir a Matriz de Dissimilaridade no R</h3>
+<p>Para encontrar a matriz de dissimilaridades através de dados em formato longo, precisamos:</p>
+<ul>
+<li><p><strong>Calcular a média de similaridade por par:</strong> Agrupar as respostas por par de sabonetes e calcular a média de similaridade.</p></li>
+<li><p><strong>Converter similaridade para dissimilaridade:</strong> Como o MDS geralmente opera com dissimilaridades, vamos inverter a escala (10 - média da similaridade).</p></li>
+<li><p><strong>Construir a matriz de dissimilaridade:</strong> Usar as dissimilaridades médias para preencher uma matriz quadrada.</p></li>
+</ul>
+<p>Vamos ao código R!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregar pacotes necessários</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dados_sabonetes_brutos <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="st">"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/sabonetes.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformar os dados para 'long'</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>dados_longos <span class="ot">&lt;-</span> dados_sabonetes_brutos <span class="sc">%&gt;%</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">-</span>Consumidor, <span class="co"># Todas as colunas, exceto 'Consumidor'</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"Par_Sabonetes"</span>, <span class="co"># Nova coluna para o nome do par (ex: "A-B")</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"Similaridade"</span> <span class="co"># Nova coluna para o valor da similaridade</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Separar a coluna Par_Sabonetes em Sabonete1 e Sabonete2</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> Par_Sabonetes,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"Sabonete1"</span>, <span class="st">"Sabonete2"</span>),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep =</span> <span class="st">"-"</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver as primeiras linhas dos dados simulados</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dados_longos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  Consumidor Sabonete1 Sabonete2 Similaridade
+       &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;            &lt;int&gt;
+1          1 A         B                    8
+2          1 A         C                    2
+3          1 A         D                    1
+4          1 A         E                    5
+5          1 B         C                    7
+6          1 B         D                    4</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular a média de similaridade para cada par ---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>media_similaridade_por_par <span class="ot">&lt;-</span> dados_longos <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Sabonete1, Sabonete2) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Media_Similaridade =</span> <span class="fu">mean</span>(Similaridade, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Converter similaridade para dissimilaridade</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Dissimilaridade = Escala_Maxima - Similaridade_Media</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>escala_maxima <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>media_similaridade_por_par<span class="sc">$</span>Dissimilaridade <span class="ot">&lt;-</span> escala_maxima <span class="sc">-</span> media_similaridade_por_par<span class="sc">$</span>Media_Similaridade</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>media_similaridade_por_par</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+   Sabonete1 Sabonete2 Media_Similaridade Dissimilaridade
+   &lt;chr&gt;     &lt;chr&gt;                  &lt;dbl&gt;           &lt;dbl&gt;
+ 1 A         B                       7.28            2.72
+ 2 A         C                       2.76            7.24
+ 3 A         D                       1.52            8.48
+ 4 A         E                       5.48            4.52
+ 5 B         C                       6.52            3.48
+ 6 B         D                       4.48            5.52
+ 7 B         E                       8.52            1.48
+ 8 C         D                       7.52            2.48
+ 9 C         E                       4.48            5.52
+10 D         E                       5.48            4.52</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Construir a matriz de dissimilaridade </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Obter todos os nomes únicos dos sabonetes para as dimensões da matriz</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>todos_sabonetes <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">c</span>(media_similaridade_por_par<span class="sc">$</span>Sabonete1, media_similaridade_por_par<span class="sc">$</span>Sabonete2))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>num_total_sabonetes <span class="ot">&lt;-</span> <span class="fu">length</span>(todos_sabonetes)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Inicializar uma matriz vazia com zeros</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>dissimilaridade_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> num_total_sabonetes, <span class="at">ncol =</span> num_total_sabonetes)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dissimilaridade_matrix) <span class="ot">&lt;-</span> todos_sabonetes</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(dissimilaridade_matrix) <span class="ot">&lt;-</span> todos_sabonetes</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Preencher a matriz com os valores de dissimilaridade</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(media_similaridade_por_par)) {</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  s1 <span class="ot">&lt;-</span> media_similaridade_por_par<span class="sc">$</span>Sabonete1[i]</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  s2 <span class="ot">&lt;-</span> media_similaridade_por_par<span class="sc">$</span>Sabonete2[i]</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  diss <span class="ot">&lt;-</span> media_similaridade_por_par<span class="sc">$</span>Dissimilaridade[i]</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Preencher nas duas direções (matriz simétrica)</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  dissimilaridade_matrix[s1, s2] <span class="ot">&lt;-</span> diss</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  dissimilaridade_matrix[s2, s1] <span class="ot">&lt;-</span> diss</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co"># A matriz resultante (pronta para o MDS)</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(dissimilaridade_matrix, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     A    B    C    D    E
+A 0.00 2.72 7.24 8.48 4.52
+B 2.72 0.00 3.48 5.52 1.48
+C 7.24 3.48 0.00 2.48 5.52
+D 8.48 5.52 2.48 0.00 4.52
+E 4.52 1.48 5.52 4.52 0.00</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para usar no MDS com o pacote MASS (isoMDS), converta para o formato 'dist'</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>matriz_dist_mds <span class="ot">&lt;-</span> <span class="fu">as.dist</span>(dissimilaridade_matrix)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>matriz_dist_mds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     A    B    C    D
+B 2.72               
+C 7.24 3.48          
+D 8.48 5.52 2.48     
+E 4.52 1.48 5.52 4.52</code></pre>
+</div>
+</div>
+<p>Vamos então construir nosso mapa perceptual utilizando escalonamento multidimensional:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregar bibliotecas (certifique-se de que estão instaladas)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Realizar o Escalonamento Multidimensional (MDS)</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>mds_result <span class="ot">&lt;-</span> <span class="fu">isoMDS</span>(matriz_dist_mds, <span class="at">k =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>initial  value 0.505707 
+final  value 0.000000 
+converged</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir o estresse do modelo</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Estresse do MDS (25 consumidores):"</span>, <span class="fu">round</span>(mds_result<span class="sc">$</span>stress, <span class="dv">3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Estresse do MDS (25 consumidores): 0"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Preparar os dados para plotagem</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>mds_coords <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(mds_result<span class="sc">$</span>points)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mds_coords) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Dimensao1"</span>, <span class="st">"Dimensao2"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>mds_coords<span class="sc">$</span>Sabonete <span class="ot">&lt;-</span> <span class="fu">rownames</span>(mds_coords)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotar o mapa perceptual</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mds_coords, <span class="fu">aes</span>(<span class="at">x =</span> Dimensao1, <span class="at">y =</span> Dimensao2, <span class="at">label =</span> Sabonete)) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span> <span class="co"># Cor alterada para diferenciar</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">vjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">+</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"gray"</span>) <span class="sc">+</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mapa Perceptual dos Sabonetes Artesanais (25 Consumidores)"</span>,</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Dimensão 1"</span>,</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Dimensão 2"</span>) <span class="sc">+</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">face =</span> <span class="st">"bold"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="escalonamento_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretação-dos-eixos-usada" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-dos-eixos-usada">Interpretação dos eixos usada:</h3>
+<ul>
+<li><p><strong>Dimensão 1 (esquerda → direita):</strong> Intensidade sensorial (fragrância/cores), onde esquerda = suave/minimalista; direita = intensa/vibrante.</p></li>
+<li><p><strong>Dimensão 2 (baixo → alto):</strong> Sofisticação/qualidade percebida, nde baixo = básico/econômico; alto = premium/cuidados da pele.</p></li>
+</ul>
+<p>Baseados no mapa perceptual acima, podemos dizer:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 3%">
+<col style="width: 13%">
+<col style="width: 83%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sabonete</th>
+<th>Posição no mapa</th>
+<th>Interpretação com base nos atributos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A</strong></td>
+<td>Extremo inferior esquerdo</td>
+<td><strong>Básico e rústico</strong>: fragrância e aparência discretas, percepção de qualidade baixa, mas boa suavidade e naturalidade. Público-alvo busca simplicidade e preço acessível.</td>
+</tr>
+<tr class="even">
+<td><strong>B</strong></td>
+<td>Inferior esquerdo, próximo de A</td>
+<td><strong>Similar a A</strong>, porém ligeiramente mais presente em intensidade. Ainda econômico, tradicional e com perfil suave. Competem entre si e podem gerar <strong>canibalização</strong>.</td>
+</tr>
+<tr class="odd">
+<td><strong>C</strong></td>
+<td>Inferior direito</td>
+<td><strong>Intenso porém básico</strong>: cores e fragrância fortes, mas percepção de qualidade e sofisticação menor. Público-alvo que busca <strong>impacto sensorial</strong> a preço acessível.</td>
+</tr>
+<tr class="even">
+<td><strong>D</strong></td>
+<td>Superior direito</td>
+<td><strong>Intenso e premium</strong>: reúne alto impacto visual e olfativo com percepção de qualidade elevada. Produto com potencial para <strong>linha de destaque ou presenteável</strong>.</td>
+</tr>
+<tr class="odd">
+<td><strong>E</strong></td>
+<td>Superior central</td>
+<td><strong>Premium natural e delicado</strong>: menos intenso que D, mas com <strong>forte percepção de qualidade, hidratação e suavidade</strong>. Atrai consumidores preocupados com <strong>bem-estar e ingredientes naturais</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p>O mapa perceptual dos sabonetes artesanais revela uma segmentação clara do portfólio, permitindo compreender como os consumidores percebem cada produto em termos de intensidade sensorial e sofisticação.</p>
+<p>Na linha econômica/tradicional, encontram-se os sabonetes A e B, localizados no quadrante inferior esquerdo do mapa. Esses produtos apresentam fragrâncias e aparência discretas, com percepção de qualidade mais básica, atendendo consumidores que buscam simplicidade, suavidade e preço acessível. Entretanto, a proximidade entre A e B sugere risco de sobreposição, tornando importante diferenciá-los para evitar canibalização interna.</p>
+<p>O sabonete C representa a linha intensa/divertida, posicionado à direita do mapa, com fragrância e visual vibrantes, mas ainda com percepção de sofisticação limitada. Esse perfil é adequado para consumidores jovens ou que valorizam impacto sensorial, sendo uma oportunidade para campanhas com apelo lúdico ou emocional, destacando a experiência de uso.</p>
+<p>Na linha premium, temos dois perfis distintos:</p>
+<p>D é o sabonete intenso e sofisticado, ideal para ser promovido como um “luxo sensorial”, com foco em ocasiões especiais ou kits presenteáveis.</p>
+<p>E é o premium natural e delicado, com alta percepção de qualidade, suavidade e benefícios dermatológicos. Ele atende consumidores que buscam bem-estar, ingredientes naturais e cuidados com a pele, representando um posicionamento diferenciado no segmento de produtos sustentáveis e de autocuidado.</p>
+<p>Esses insights estratégicos indicam caminhos claros de posicionamento e comunicação, permitindo alinhar design, campanhas e canais de venda às percepções e expectativas dos diferentes perfis de consumidores.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
