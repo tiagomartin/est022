@@ -832,7 +832,7 @@
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 03: Posicionamento de Marcas de Cerveja",
-    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\nOs dados referem-se à uma pesquisa sobre o posicionamento de algumas marcas nacionais de cerveja comercializadas nos restaurantes, bares e mercados brasileiros.\n\n\n\nPara o experimento, foram selecionadas 10 marcas dentre as principais cervejas favricadas e comercializadas no Brasil.\n\n\n\n\n20 apreciadores classificaram as marcas aos pares, atribuindo o escore 0 (caso pertençam a um mesmo grupo) ou o escore 1 (caso contrário)\n\n\n\n\nOs escores foram agrupados. Quanto menor o escore total, mais similares são as marcas."
+    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\nOs dados referem-se à uma pesquisa sobre o posicionamento de algumas marcas nacionais de cerveja comercializadas nos restaurantes, bares e mercados brasileiros.\n\n\n\nPara o experimento, foram selecionadas 10 marcas dentre as principais cervejas fabricadas e comercializadas no Brasil.\n\n\n\n\n20 apreciadores classificaram as marcas aos pares, atribuindo o escore 0 (caso pertençam a um mesmo grupo) ou o escore 1 (caso contrário)\n\n\n\n\nOs escores foram agrupados. Quanto menor o escore total, mais similares são as marcas."
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-1",
@@ -846,7 +846,7 @@
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-2",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 03: Posicionamento de Marcas de Cerveja",
-    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\nlibrary(MASS)\nNmds = isoMDS(D,y=cmdscale(D,2))\n\ninitial  value 9.995637 \niter   5 value 4.068359\niter  10 value 3.567672\niter  15 value 3.324422\niter  20 value 3.246113\niter  20 value 3.244040\niter  20 value 3.244039\nfinal  value 3.244039 \nconverged\n\n\n\nplot(Nmds$points, type = \"n\", main = \"Mapa NMDS - Cervejas\")\ntext(Nmds$points, labels = row.names(D), cex=.7)"
+    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\nlibrary(MASS)\nNmds = isoMDS(D,y=cmdscale(D,2))\n\ninitial  value 9.995637 \niter   5 value 4.068359\niter  10 value 3.567672\niter  15 value 3.324422\niter  20 value 3.246113\niter  20 value 3.244040\niter  20 value 3.244039\nfinal  value 3.244039 \nconverged\n\n\n\npar(mar = c(4, 4, 2, 1))  # margens inferiores, esquerdas, superiores, direitas\nplot(Nmds$points, type = \"n\", main = \"Mapa NMDS - Cervejas\", xlab=\"\", ylab=\"\")\ntext(Nmds$points, labels = row.names(D), cex=.7)"
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-2-output",
