@@ -525,7 +525,7 @@ dissimilaridade original, dada pela disparidade, é bem representada pela distâ
 
 . . .
 
-- Para o experimento, foram selecionadas 10 marcas dentre as principais cervejas favricadas e comercializadas no Brasil.
+- Para o experimento, foram selecionadas 10 marcas dentre as principais cervejas fabricadas e comercializadas no Brasil.
 
 . . .
 
@@ -554,7 +554,8 @@ Nmds = isoMDS(D,y=cmdscale(D,2))
 
 ```{r}
 #| output-location: slide
-plot(Nmds$points, type = "n", main = "Mapa NMDS - Cervejas")
+par(mar = c(4, 4, 2, 1))  
+plot(Nmds$points, type = "n", main = "Mapa NMDS - Cervejas", xlab="", ylab="")
 text(Nmds$points, labels = row.names(D), cex=.7) 
 ```
 
