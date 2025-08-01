@@ -846,7 +846,11 @@
     "href": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-2",
     "title": "Escalonamento Multidimensional",
     "section": "Exemplo 03: Posicionamento de Marcas de Cerveja",
+<<<<<<< HEAD
     "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\nlibrary(MASS)\nNmds = isoMDS(D,y=cmdscale(D,2))\n\ninitial  value 9.995637 \niter   5 value 4.068359\niter  10 value 3.567672\niter  15 value 3.324422\niter  20 value 3.246113\niter  20 value 3.244040\niter  20 value 3.244039\nfinal  value 3.244039 \nconverged\n\n\n\npar(mar = c(4, 4, 2, 1))  \nplot(Nmds$points, type = \"n\", main = \"Mapa NMDS - Cervejas\", xlab=\"\", ylab=\"\")\ntext(Nmds$points, labels = row.names(D), cex=.7)"
+=======
+    "text": "Exemplo 03: Posicionamento de Marcas de Cerveja\n\nlibrary(MASS)\nNmds = isoMDS(D,y=cmdscale(D,2))\n\ninitial  value 9.995637 \niter   5 value 4.068359\niter  10 value 3.567672\niter  15 value 3.324422\niter  20 value 3.246113\niter  20 value 3.244040\niter  20 value 3.244039\nfinal  value 3.244039 \nconverged\n\n\n\npar(mar = c(4, 4, 2, 1))  # margens inferiores, esquerdas, superiores, direitas\nplot(Nmds$points, type = \"n\", main = \"Mapa NMDS - Cervejas\", xlab=\"\", ylab=\"\")\ntext(Nmds$points, labels = row.names(D), cex=.7)"
+>>>>>>> a4c75c59e0626d2e54ed681bb1ed95d9b6628ae1
   },
   {
     "objectID": "aulas/Escalonamento/escalonamento.html#exemplo-03-posicionamento-de-marcas-de-cerveja-2-output",

@@ -554,7 +554,11 @@ Nmds = isoMDS(D,y=cmdscale(D,2))
 
 ```{r}
 #| output-location: slide
+<<<<<<< HEAD
 par(mar = c(4, 4, 2, 1))  
+=======
+par(mar = c(4, 4, 2, 1))  # margens inferiores, esquerdas, superiores, direitas
+>>>>>>> a4c75c59e0626d2e54ed681bb1ed95d9b6628ae1
 plot(Nmds$points, type = "n", main = "Mapa NMDS - Cervejas", xlab="", ylab="")
 text(Nmds$points, labels = row.names(D), cex=.7) 
 ```
