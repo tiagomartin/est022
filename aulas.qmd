@@ -12,6 +12,6 @@ title: "Aulas"
 
 - [Escalonamento Multidimensional (MDS)](/aulas/Escalonamento/escalonamento.html "Escalonamento Multidimensional"){aria-label="Escalonamento Multidimensional"}
 
-- Análise de Correlação Canônica
+- [Análise de Correlação Canônica](/aulas/Correlacao_Canonica/canonica.html "Análise de Correlação Canônica"){aria-label="Análise de Correlação Canônica"}
 
 - Análise de Correspondência
