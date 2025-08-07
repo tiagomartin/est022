@@ -1,0 +1,541 @@
+---
+title: "Análise de Correlação Canônica"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    footer: ""
+    theme: quartomonothemer.scss
+    slide-number: c/t
+    show-slide-number: all
+    preview-links: auto
+    self-contained: true
+incremental: false
+code-link: true
+bibliography: references.bib
+title-slide-attributes:
+    data-background-image: /images/back.jpeg
+    data-background-size: cover
+    data-background-opacity: "0.3"
+execute:
+  echo: true
+---
+
+
+## Introdução e Motivação
+
+<br>
+
+- Quando temos dois conjuntos de variáveis e queremos estudar a associação entre eles.
+
+. . .
+
+- Exemplo:
+    - **Conjunto X:** medidas fisiológicas (pressão, FC, IMC)
+    - **Conjunto Y:** medidas psicológicas (estresse, ansiedade, depressão)
+
+. . .
+
+- **Objetivo da ACC:** O objetivo principal da ACC é encontrar **combinações lineares** de variáveis de cada conjunto, chamadas **variáveis canônicas** ($U$ e $V$), de modo que a **correlação entre elas** seja **maximizada**. Essas correlações são conhecidas como **correlações canônicas**.
+
+
+## Fundamentos Teóricos
+
+<br>
+
+-  Suponha o primeiro grupo de variáveis aleatórias no vetor $\mathbf{x} = [X_1 \hspace{0.2cm} X_2 \hspace{0.2cm} \cdots \hspace{0.2cm} X_p]^t$
+de orde $p \times 1$ e o segundo grupo de variáveis aleatórias no vetor $\mathbf{y} = [Y_1 \hspace{0.2cm} Y_2 \hspace{0.2cm} \cdots \hspace{0.2cm} Y_q]^t$
+de ordem $q \times 1$, com $p \leqslant q$.
+
+. . .
+
+- Para estes vetores aleatórios, tem-se:
+
+$$E(\mathbf{x}) = \mathbf{\mu}_x \hspace{1cm} \text{Cov}(\mathbf{x}) = \mathbf{\Sigma}_{xx}$$
+
+$$E(\mathbf{y}) = \mathbf{\mu}_y \hspace{1cm} \text{Cov}(\mathbf{y}) = \mathbf{\Sigma}_{yy}$$
+
+$$ \text{Cov}(\mathbf{x}, \mathbf{y}) = \mathbf{\Sigma}_{xy} = \mathbf{\Sigma}_{yx}^t$$
+
+
+
+## Fundamentos Teóricos
+
+<br>
+
+- A principal tarefa da correlação canônica é resumir as associações entre $\mathbf{x}$ e $\mathbf{y}$ em termos de poucas
+covariâncias escolhidas, em vez de usar as $p \times q$ covariâncias em $\mathbf{\Sigma}_{xy}$.
+
+. . .
+
+- Sejam as combinações lineares:
+
+$$U = a_1X_1 + a_2X_2 + \cdots + a_pX_p = \mathbf{a}^t\mathbf{x}$$
+
+$$V = b_1Y_1 + b_2Y_2 + \cdots + b_qY_q = \mathbf{b}^t\mathbf{y}$$
+
+. . .
+
+<p align="center">  
+**$U$ e $V$: variáveis canônicas** 
+</p>
+
+
+## Fundamentos Teóricos
+
+<br>
+
+- Os coeficientes $\mathbf{a} = [a_1 \hspace{0.2cm} a_2 \hspace{0.2cm} \cdots \hspace{0.2cm} a_p]^t$ e $\mathbf{b} = [b_1 \hspace{0.2cm} b_2 \hspace{0.2cm} \cdots \hspace{0.2cm} b_q]^t$ são chamados **pesos canônicos**.
+
+
+. . .
+
+de forma que,
+
+$$\text{Var}(U) = \text{Var}(\mathbf{a}^t\mathbf{x}) = \mathbf{a}^t\text{Cov}(\mathbf{x})\mathbf{a} = 
+\mathbf{a}^t \mathbf{\Sigma}_{xx}\mathbf{a}$$
+
+$$\text{Var}(V) = \text{Var}(\mathbf{b}^t\mathbf{y}) = \mathbf{b}^t\text{Cov}(\mathbf{y})\mathbf{b} = 
+\mathbf{b}^t \mathbf{\Sigma}_{yy}\mathbf{b}$$
+
+$$\text{Cov}(U,V) = \mathbf{a}^t\text{Cov}(\mathbf{x}, \mathbf{y})\mathbf{b} = \mathbf{a}^t \mathbf{\Sigma}_{xy}\mathbf{b}$$
+
+
+## Fundamentos Teóricos
+
+<br>
+
+- O que a correlação canônica procura são pesos canônicos $\mathbf{a}$ e $\mathbf{b}$ de forma que a correlação entre $U$ e $V$,
+dada por
+
+$$\text{Cor}(U,V) = \displaystyle{\frac{\text{Cov}(U,V)}{\sqrt{\text{Var}(U)} \sqrt{\text{Var}(V)}}} = \displaystyle{\frac{\mathbf{a}^t \mathbf{\Sigma}_{xy}\mathbf{b}}
+{\sqrt{\mathbf{a}^t \mathbf{\Sigma}_{xx}\mathbf{a}} \sqrt{\mathbf{b}^t \mathbf{\Sigma}_{yy}\mathbf{b}}}}$$
+
+seja a maior possível.
+
+
+
+## Fundamentos Teóricos
+
+<br>
+
+- O **primeiro par de variáveis canônicas** é representado pelas variáveis $U_1 = \mathbf{a}_1^t\mathbf{x}$ e $V_1 = \mathbf{b}_1^t
+\mathbf{y}$, onde os pesos canônicos são "escolhidos" de forma que a correlação entre $U_1$ e $V_1$ seja máxima e $\text{Var}(U_1) = 
+\text{Var}(V_1) = 1$.
+
+. . .
+
+- O **segundo par de variáveis canônicas** é representado pelas variáveis $U_2 = \mathbf{a}_2^t\mathbf{x}$ e $V_2 = \mathbf{b}_2^t
+\mathbf{y}$, onde os pesos canônicos são "escolhidos" de forma que a correlação entre $U_2$ e $V_2$ seja máxima, $\text{Var}(U_2) = 
+\text{Var}(V_2) = 1$ e além disso, não seja correlacionado com o primeiro par canônico $(U_1,V_1)$.
+
+
+
+## Fundamentos Teóricos
+
+<br>
+
+-  De modo geral, o **$k$-ésimo par de variáveis canônicas** é representado pelas variáveis $U_k = \mathbf{a}_k^t\mathbf{x}$ e 
+$V_k = \mathbf{b}_k^t \mathbf{y}$, onde os pesos canônicos são "escolhidos" de forma que a correlação entre $U_k$ e $V_k$ seja 
+máxima e $\text{Var}(U_k) = \text{Var}(V_k) = 1$. Além disso, o k-ésimo par canônico não é correlacionado com os demais $k-1$ pares canônicos.
+
+
+. . .
+
+
+- A correlação entre as variáveis $U_k$ e $V_k$ é chamada de **correlação canônica**, $k = 1, 2, \cdots, \min(p,q)$.
+
+
+## Fundamentos Teóricos
+
+A análise de correlação canônica visa encontrar combinações lineares $U=\mathbf{a}^{t}\mathbf{x}$ e $V=\mathbf{b}^{t}
+\mathbf{y}$ de tal forma que 
+
+$$\rho= \displaystyle{\frac{\mathbf{a}^{t} \mathbf{\Sigma}_{xy}\mathbf{b}}{\sqrt{(\mathbf{a}^{t}\mathbf{\Sigma}_{xx}\mathbf{a})(\mathbf{b}^{t}
+\mathbf{\Sigma}_{yy}\mathbf{b})}}}$$
+
+ou de forma equivalente,
+
+$$\rho^{2}= \displaystyle{\frac{(\mathbf{a}^{t}\mathbf{\Sigma}_{xy}\mathbf{b})^{2}}{(\mathbf{a}^{t}\mathbf{\Sigma}_{xx}\mathbf{a})
+(\mathbf{b}^{t}\mathbf{\Sigma}_{yy}\mathbf{b})}}$$
+
+seja máxima.
+
+
+
+## Fundamentos Teóricos
+
+<br>
+
+
+Este problema pode ser resolvido encontrando-se a solução para o problema: 
+
+$$\max_{\mathbf{a},\mathbf{b}}(\mathbf{a}^{t}\mathbf{\Sigma}_{xy}\mathbf{b})^{2}$$
+
+
+<pre>                                                  s.a</pre>
+
+
+
+
+$$\mathbf{a}^{t}\mathbf{\Sigma}_{xx}\mathbf{a}=1$$
+$$\mathbf{b}^{t}\mathbf{\Sigma}_{yy}\mathbf{b}=1$$
+
+. . .
+
+<p align="center">  
+**Solução: Método dos Multiplicadores de Lagrange** 
+</p>
+
+
+
+## Fundamentos Teóricos
+
+
+
+- **Proposição:** Os vetores $\mathbf{a}_k$ e $\mathbf{b}_k$ que maximizam a correlação entre os pares canônicos $(U_k,V_k), \,\,\, k = 1, \cdots, \min(p,q)$, são soluções do seguinte sistema de equações:
+	
+	
+$$\left\{\begin{matrix}
+    (\mathbf{\Sigma}_{xx}^{-1}\mathbf{\Sigma}_{xy}\mathbf{\Sigma}_{yy}^{-1}\mathbf{\Sigma}_{yx}-\lambda_k \mathrm{I})\mathbf{a}_k = 0    \\ 
+	(\mathbf{\Sigma}_{yy}^{-1}\mathbf{\Sigma}_{yx}\mathbf{\Sigma}_{xx}^{-1}\mathbf{\Sigma}_{xy}-\lambda_k \mathrm{I}) \mathbf{b}_k = 0
+	\end{matrix}\right.$$
+	
+
+	
+em que $\lambda_k$ satisfaz as seguintes equações características:
+
+$$\left\{\begin{matrix}
+|\mathbf{\Sigma}_{xx}^{-1}\mathbf{\Sigma}_{xy}\mathbf{\Sigma}_{yx}^{-1}\mathbf{\Sigma}_{yx}-\lambda_k \mathrm{I}| = 0    \\ 
+|\mathbf{\Sigma}_{yy}^{-1}\mathbf{\Sigma}_{yx}\mathbf{\Sigma}_{xx}^{-1}\mathbf{\Sigma}_{xy}-\lambda_k \mathrm{I}| = 0
+\end{matrix}\right.$$
+
+
+
+## Fundamentos Teóricos
+
+<br>
+
+
+- $\lambda_k$ é o $k$-ésimo maior autovalor da matriz $\mathbf{\Sigma}_{xx}^{-1}\mathbf{\Sigma}_{xy}\mathbf{\Sigma}_{yx}^{-1}\mathbf{\Sigma}_{yx}$ ou equivalentemente, da matriz $\mathbf{\Sigma}_{yy}^{-1}\mathbf{\Sigma}_{yx}\mathbf{\Sigma}_{xx}^{-1}\mathbf{\Sigma}_{xy}$.
+		
+. . .
+		
+- O vetor $\mathbf{a}$ é o $k$-ésimo autovetor da matriz $\mathbf{\Sigma}_{xx}^{-1}\mathbf{\Sigma}_{xy}\mathbf{\Sigma}_{yx}^{-1}\mathbf{\Sigma}_{yx}$, associado ao autovalor $\lambda_k$, normalizado por $\mathbf{a}\mathbf{\Sigma}_{xx}\mathbf{a}=1$
+		
+. . .
+		
+- O vetor $\mathbf{b}$ é o $k$-ésimo autovetor da matriz $\mathbf{\Sigma}_{yy}^{-1}\mathbf{\Sigma}_{yx}\mathbf{\Sigma}_{xx}^{-1}\mathbf{\Sigma}_{xy}$, associado ao autovalor $\lambda_k$, normalizado por $\mathbf{b}\mathbf{\Sigma}_{yy}\mathbf{b}=1$
+		
+. . .
+		
+- A correlação canônica é a correlação em valor absoluto entre $U_k$ e $V_k$ e é igual a $\sqrt{\lambda_k}$
+
+
+
+
+## ACC para variáveis padronizadas
+
+<br>
+
+
+As variáveis canônicas também podem ser construídas para as variáveis padronizadas, isto é, através das matrizes de correlações das variáveis originais, ou seja, basta resolver:
+
+$$|\mathbf{P}^{-1}_{yy}\mathbf{P}_{yx}\mathbf{P}^{-1}_{xx}\mathbf{P}_{xy}-\lambda \mathrm{I}|=0\ \ \ \ \mathrm{e}\ \ \ \ [\mathbf{P}^{-1}_{yy}\mathbf{P}_{yx}\mathbf{P}^{-1}_{xx}\mathbf{P}_{xy}-\lambda \mathrm{I}]\mathbf{b}=0$$
+$$|\mathbf{P}^{-1}_{xx}\mathbf{P}_{xy}\mathbf{P}^{-1}_{yy}\mathbf{P}_{yx}-\lambda \mathrm{I}|=0\ \ \ \ \mathrm{e}\ \ \ \ [\mathbf{P}^{-1}_{xx}\mathbf{P}_{xy}\mathbf{P}^{-1}_{yy}\mathbf{P}_{yx}-\lambda \mathrm{I}]\mathbf{a}=0$$
+
+
+
+## Estimação das variáveis canônicas
+
+<br>
+
+Dada uma amostra aleatória de tamanho $n$ dos vetores $\mathbf{x}$ e $\mathbf{y}$, as matrizes $\mathbf{\Sigma}_{xx}$, $\mathbf{\Sigma}_{yy}$, 
+$\mathbf{\Sigma}_{xy}$ e $\mathbf{\Sigma}_{yx}$ são estimadas pelas respectivas matrizes de covariâncias amostrais $\mathbf{S}_{xx}$, $\mathbf{S}_{yy}$, $\mathbf{S}_{xy}$ e $\mathbf{S}_{yx}$. 
+
+
+. . .
+
+
+No caso da análise de correlações canônicas feita por matrizes de correlações, as matrizes teóricas $\mathbf{P}_{xx}$, $\mathbf{P}_{yy}$, $\mathbf{P}_{xy}$ 
+e $\mathbf{P}_{yx}$ são estimadas respectivamente pelas matrizes de correlações amostrais $\mathbf{R}_{xx}$, $\mathbf{R}_{yy}$, $\mathbf{R}_{xy}$ e $\mathbf{R}_{yx}$.
+
+
+
+## Interpretação das variáveis canônicas
+
+<br>
+
+- Variáveis canônicas são, em geral, artificiais. Ou melhor, elas não possuem significado físico.
+		
+. . .
+		
+
+-  É dada uma interpretação subjetiva para as variáveis canônicas de acordo com a magnitude das correlações das variáveis originais com as variáveis canônicas em foco.
+		
+. . .
+
+
+- Assim, correlações são medidas para interpretar e analisar a qualidades das variáveis canônicas.
+
+
+
+## Correlação entre as variáveis canônicas e as variáveis originais
+
+
+<br>
+
+As correlações das variáveis originais com as variáveis canônicas são chamadas de cargas canônicas (canonical loadings) e são dadas por:
+
+
+\begin{eqnarray*}
+\mathbf{R}^{\ast}_{U_{k}\mathbf{x}} &=& \mathbf{R}_{xx} \mathbf{a}_{k} \\
+\mathbf{R}^{\ast}_{V_{k}\mathbf{y}} &=& \mathbf{R}_{yy} \mathbf{b}_{k} \\
+\mathbf{R}^{\ast}_{U_{k}\mathbf{y}} &=& \mathbf{R}_{yx} \mathbf{a}_{k} \\
+\mathbf{R}^{\ast}_{V_{k}\mathbf{x}} &=& \mathbf{R}_{xy} \mathbf{b}_{k}
+\end{eqnarray*}
+
+
+
+## Variância total explicada pelas variáveis canônicas
+
+A proporção da variação total que é explicada pelas variáveis canônicas separadamente é dada por:
+
+
+$$PVT_{U_{k}}=\frac{\displaystyle{\sum_{i=1}^{p}}\mathrm{Cor}(U_{k},X_{i})^{2}}{p} \times 100$$
+
+
+e,
+
+
+$$PVT_{V_{k}}=\frac{\displaystyle{\sum_{i=1}^{q}}\mathrm{Cor}(V_{k},Y_{i})^{2}}{q} \times 100$$
+
+
+# Inferência sobre as correlações canônicas
+
+
+
+
+## Teste para a significância das correlações canônicas
+
+<br>
+
+### Objetivo dos testes
+- Verificar se os conjuntos $\mathbf{x}$ e $\mathbf{y}$ têm **associação linear significativa**.
+
+#### Hipóteses:
+- $H_0$: Todas as correlações $\rho_1 = \rho_2 = \cdots = \rho_k = 0$.
+- $H_1$: Pelo menos uma $\rho_k \ne 0$.
+
+
+
+## Teste para a significância das correlações canônicas
+
+<br>
+
+### 1. Wilks’ Lambda
+
+$$\Lambda = \prod_{i=1}^s (1 - \rho_i^2)$$
+
+- Mede a **variância não explicada**.
+- Menores valores indicam maior associação.
+- Transformada em estatística **F** (Rao).
+
+
+## Teste para a significância das correlações canônicas
+
+<br>
+
+### 2. Hotelling–Lawley Trace
+
+$$T = \sum_{i=1}^s \frac{\rho_i^2}{1 - \rho_i^2}$$
+
+- Sensível a efeitos grandes.
+
+
+## Teste para a significância das correlações canônicas
+
+<br>
+
+
+### 3. Pillai–Bartlett Trace
+
+$$V = \sum_{i=1}^s \frac{\rho_i^2}{1 + \rho_i^2}$$
+
+- Soma da variância explicada acumulada.
+- **Mais robusta** às violações de suposições.
+
+
+## Teste para a significância das correlações canônicas
+
+<br>
+
+### 4. Roy’s Largest Root
+$$R = \frac{\rho_1^2}{1 - \rho_1^2}$$
+
+
+- Considera **apenas o maior** componente.
+- Foca na **associação linear dominante**.
+
+
+
+
+## Comparação entre os Testes
+
+<br>
+
+| Estatística        | Sensível a         | Recomendação                            |
+|--------------------|--------------------|-----------------------------------------|
+| Wilks’ Lambda      | Vários efeitos     | Padrão clássico                         |
+| Hotelling–Lawley   | Efeitos grandes    | Útil quando há forte relação            |
+| Pillai–Bartlett    | Variância explicada| Mais robusta a violações de normalidade |
+| Roy’s Largest Root | 1ª dimensão        | Útil quando só a 1ª correlação importa  |
+
+
+
+
+
+## Considerações Teóricas
+
+<br>
+
+- Todos os testes derivam de **distribuições de matrizes (Wishart)**.
+- Assumem:
+  - **Normalidade multivariada**;
+  - **Independência entre observações**;
+  - **Amostras suficientemente grandes**.
+- Para pequenos \(n\), use **bootstrap** ou **permutação** como alternativa robusta.
+
+
+
+
+
+
+## Exemplo: LifeCycleSavings dataset
+
+Suponha que um economista deseja entender como aspectos econômicos (como **renda disponível** e **taxa de poupança**) se relacionam com características demográficas (**crescimento populaciona**l e **distribuição etária**) em diferentes países. 
+
+
+- **Conjunto X:** Indicadores Econômicos:
+    - `sr`: Taxa de poupança bruta (saving rate), média entre 1960 e 1970.
+    - `dpi`: Renda pessoal disponível per capita (disposable income).
+
+- **Conjunto Y:** Indicadores Demográficos:
+    - `ddpi`: Crescimento da renda pessoal disponível per capita (delta dpi).
+    - `pop15`: Proporção da população com menos de 15 anos.
+    - `pop75`: Proporção da população com 75 anos ou mais.
+
+
+## Exemplo: LifeCycleSavings dataset
+
+<br>
+
+- A análise busca identificar padrões multivariados que indiquem como o perfil econômico de um país pode estar associado à sua composição populacional. 
+
+. . .
+
+
+- Esse tipo de estudo é útil para elaborar políticas públicas que integrem planejamento econômico e social.
+
+
+    
+## Exemplo: LifeCycleSavings dataset
+
+<br>
+
+```{r}
+load <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+  if (length(new.pkg))
+    install.packages(new.pkg, dependencies = TRUE)
+  sapply(pkg, require, character.only = TRUE)
+} 
+
+## Pacotes utilizados nessa análise
+
+packages = c("tidyverse", 'CCP', 'tibble', "heplots", "yacca")
+load(packages)
+```
+
+
+
+## Exemplo: LifeCycleSavings dataset
+
+<br>
+
+```{r}
+# Dados do pacote heplots
+# X: indicadores de saúde
+# Y: indicadores socioeconômicos
+
+data("LifeCycleSavings")
+dados <- na.omit(LifeCycleSavings) %>% scale()
+
+dados %>% head()
+dados %>% dim()
+```
+
+
+
+## Exemplo: LifeCycleSavings dataset
+
+<br>
+
+```{r}
+# Conjunto X: indicadores econômicos
+X <- as.matrix(dados[, c("sr", "dpi")])  # taxa de poupança e renda disponível
+
+# Conjunto Y: demografia e crescimento populacional
+Y <- as.matrix(dados[, c("ddpi", "pop15", "pop75")])
+
+cca <- cca(X, Y)
+cca
+```
+
+
+
+## Exemplo: LifeCycleSavings dataset
+
+<br>
+
+```{r}
+# H_0: as correlações canônicas são nulas.
+
+p.asym(cca$corr, N = nrow(X), p = ncol(X), q = ncol(Y), tstat = "Wilks")
+
+# Ambos os pares canônicos são estatisticamente significativos. 
+# Isso justifica a interpretação dos dois primeiros componentes canônicos no exemplo apresentado.
+```
+
+
+
+## Exemplo: LifeCycleSavings dataset
+
+- **Interpretação:**
+    - Primeiro par de variáveis canônicas:
+        - $U_1$ = 0,255 `sr` + 0,912 `dpi`
+        - $V_1$ = -0,087 `ddpi`- 0,571 `pop15` + 0,451 `pop75`
+    - Segundo par de variáveis canônicas:
+        - $U_2$ = -0,992 `sr` + 0,468 `dpi`
+        - $V_2$ = -0,695 `ddpi`+ 1,603 `pop15` + 1,583 `pop75`
+    - Temos $k = \min(2,3) = 2$ correlações canônicas estatisticamente significativas
+
+
+## Exemplo: LifeCycleSavings dataset
+
+- **Interpretação:**
+    - A primeira correlação canônica (0,8248) é bastante forte, indicando associação significativa entre os indicadores econômicos (poupança e renda) e os demográficos (crescimento e estrutura etária).
+    - A segunda correlação (0,4960) ainda é moderada e pode conter informações úteis.
+    - Cargas Canônicas (correlação entre variáveis originais e os escores):
+        - Variáveis mais relevantes (X): `dpi` ($U_1$), `sr` ($U_2$)
+        - Variáveis mais relevantes (Y): `pop15` e `pop75` ($V_1$), `ddpi` ($V_2$).
+
+
+
+## Exemplo: LifeCycleSavings dataset
+
+- **Interpretação:**
+    - Países com maior renda disponível tendem a ter menos jovens e mais idosos, o que reflete o impacto econômico da transição demográfica.
+    - Países com menor poupança e maior proporção de jovens tendem a apresentar menor crescimento econômico.
+
+- A análise revela padrões estruturais multivariados que podem orientar políticas públicas integradas entre áreas sociais e econômicas.
