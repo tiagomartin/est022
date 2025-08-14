@@ -1,0 +1,1057 @@
+---
+title: "Análise de Correspondência"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    footer: ""
+    theme: quartomonothemer.scss
+    slide-number: c/t
+    show-slide-number: all
+    preview-links: auto
+    self-contained: true
+incremental: false
+code-link: true
+bibliography: references.bib
+title-slide-attributes:
+    data-background-image: /images/back.jpeg
+    data-background-size: cover
+    data-background-opacity: "0.3"
+execute:
+  echo: true
+---
+
+
+## Introdução
+
+Consideremos a seguinte situação:
+
+. . .
+
+-  Foram entrevistados 1320 consumidores de aparelhos de som.
+    - **Variáveis medidas:** marca adquirida e principal motivo da compra.
+
+
+. . .
+
+
+- **Objetivo:** verificar se existe associação entre marca e atributo em termos de aquisição por parte dos consumidores.
+
+
+
+:::: {.columns}
+
+::: {.column width="70%"}
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow" colspan="7">Atributo</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">Marca</td>
+    <td class="tg-c3ow">Qualidade</td>
+    <td class="tg-c3ow">Tecnologia</td>
+    <td class="tg-c3ow">Potência</td>
+    <td class="tg-c3ow">Recursos</td>
+    <td class="tg-c3ow">Preço</td>
+    <td class="tg-c3ow">Marca</td>
+    <td class="tg-c3ow">Total</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Sony</td>
+    <td class="tg-c3ow">135</td>
+    <td class="tg-c3ow">140</td>
+    <td class="tg-c3ow">95</td>
+    <td class="tg-c3ow">55</td>
+    <td class="tg-c3ow">40</td>
+    <td class="tg-c3ow">60</td>
+    <td class="tg-c3ow">525</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Aiwa</td>
+    <td class="tg-c3ow">50</td>
+    <td class="tg-c3ow">115</td>
+    <td class="tg-c3ow">40</td>
+    <td class="tg-c3ow">60</td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">15</td>
+    <td class="tg-c3ow">285</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Gradiente</td>
+    <td class="tg-c3ow">90</td>
+    <td class="tg-c3ow">55</td>
+    <td class="tg-c3ow">20</td>
+    <td class="tg-c3ow">35</td>
+    <td class="tg-c3ow">40</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">250</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Philips</td>
+    <td class="tg-c3ow">60</td>
+    <td class="tg-c3ow">25</td>
+    <td class="tg-c3ow">35</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">30</td>
+    <td class="tg-c3ow">165</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Sharp</td>
+    <td class="tg-c3ow">30</td>
+    <td class="tg-c3ow">20</td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">20</td>
+    <td class="tg-c3ow">95</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Total</td>
+    <td class="tg-c3ow">365</td>
+    <td class="tg-c3ow">355</td>
+    <td class="tg-c3ow">195</td>
+    <td class="tg-c3ow">170</td>
+    <td class="tg-c3ow">100</td>
+    <td class="tg-c3ow">135</td>
+    <td class="tg-c3ow">1320</td>
+  </tr>
+  <tr></tr>
+</tbody></table>
+
+:::
+
+::: {.column width="30%" .fragment}
+<p align="center" class="texto-personalizado">
+Que marca de aparelho de som é mais adquirida em função do preço?
+</p>
+:::
+
+::::
+
+
+
+## Introdução
+
+
+Consideremos a seguinte situação:
+
+. . .
+
+- Imagine que um pesquisador esteja interessado em investigar se existe ou não algum tipo de relação entre a origem de capital 
+(asiático, brasileiro, americano, europeu ou latino) e o nível de transparência das informações contábeis (alto, médio ou baixo) de 
+empresas pertencentes à uma amostra de tamanho 216.
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow" colspan="4">Grau de Disclosure</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">Controle Acionário</td>
+    <td class="tg-c3ow">Alto</td>
+    <td class="tg-c3ow">Médio</td>
+    <td class="tg-c3ow">Baixo</td>
+    <td class="tg-c3ow">Total</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Asiático</td>
+    <td class="tg-c3ow">8</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">13</td>
+    <td class="tg-c3ow">31</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Brasileiro</td>
+    <td class="tg-c3ow">34</td>
+    <td class="tg-c3ow">27</td>
+    <td class="tg-c3ow">14</td>
+    <td class="tg-c3ow">75</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Americano</td>
+    <td class="tg-c3ow">16</td>
+    <td class="tg-c3ow">19</td>
+    <td class="tg-c3ow">39</td>
+    <td class="tg-c3ow">74</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Europeu</td>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">6</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Latino</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">17</td>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">30</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Total</td>
+    <td class="tg-c3ow">71</td>
+    <td class="tg-c3ow">75</td>
+    <td class="tg-c3ow">70</td>
+    <td class="tg-c3ow">216</td>
+  </tr>
+  <tr></tr>
+</tbody></table>
+
+
+## Análise de correspondência
+
+<br>
+
+**Análise de Correspondências:** Técnica multiariada que visa medir o grau de associação de variáveis categorizadas dispostas em tabelas de 
+contingência.
+
+. . .
+
+- **Simples:** Avalia as relações existentes entre duas variáveis
+
+. . .
+
+- **Múltipla:** Avalia as relações existentes entre mais de duas variáveis
+
+
+## Análise de correspondência Simples
+
+
+**Tabela de contingência:** De modo geral, uma tabela de contingência $a \times b$ é do tipo:
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow" colspan="6">Variável Y</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">$\cdots$</td>
+    <td class="tg-c3ow">$b$</td>
+    <td class="tg-c3ow">Total</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">$n_{11}$</td>
+    <td class="tg-c3ow">$n_{12}$</td>
+    <td class="tg-c3ow">$\cdots$</td>
+    <td class="tg-c3ow">$n_{1b}$</td>
+    <td class="tg-c3ow">$n_{1 \cdot}$</td>
+  </tr>
+  <tr>
+    <th class="tg-c3ow">Variável X</th>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">$n_{21}$</td>
+    <td class="tg-c3ow">$n_{22}$</td>
+    <td class="tg-c3ow">$\cdots$</td>
+    <td class="tg-c3ow">$n_{2b}$</td>
+    <td class="tg-c3ow">$n_{2 \cdot}$</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">$\vdots$</td>
+    <td class="tg-c3ow">$\vdots$</td>
+    <td class="tg-c3ow">$\vdots$</td>
+    <td class="tg-c3ow">$\ddots$</td>
+    <td class="tg-c3ow">$\vdots$</td>
+    <td class="tg-c3ow">$\vdots$</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">$a$</td>
+    <td class="tg-c3ow">$n_{a1}$</td>
+    <td class="tg-c3ow">$n_{a2}$</td>
+    <td class="tg-c3ow">$\cdots$</td>
+    <td class="tg-c3ow">$n_{ab}$</td>
+    <td class="tg-c3ow">$n_{a \cdot}$</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Total</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">$n_{\cdot 1}$</td>
+    <td class="tg-c3ow">$n_{\cdot 2}$</td>
+    <td class="tg-c3ow">$\cdots$</td>
+    <td class="tg-c3ow">$n_{\cdot b}$</td>
+    <td class="tg-c3ow">$n_{\cdot \cdot} = n$</td>
+  </tr>
+  <tr></tr>
+</tbody></table>
+
+
+. . .
+
+<p align="center" class="texto-personalizado">
+ $n_{ij}$ representa o número de elementos que pertencem à categoria $i$ 
+da variável $X$ e à categoria $j$ da variável $Y$
+</p>
+
+
+
+
+## Análise de correspondência Simples
+
+
+**Matriz de correspondências:** A tabela de contingência acima pode ser convertida em uma matriz de correspondência $\mathbf{P}$:
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow" colspan="5">Variável Y</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">$\cdots$</td>
+    <td class="tg-c3ow">$b$</td>
+    <td class="tg-c3ow">Total</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">$p_{11}$</td>
+    <td class="tg-c3ow">$p_{12}$</td>
+    <td class="tg-c3ow">$\cdots$</td>
+    <td class="tg-c3ow">$p_{1b}$</td>
+    <td class="tg-c3ow">$p_{1 \cdot}$</td>
+  </tr>
+  <tr>
+    <th class="tg-c3ow">Variável X</th>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">$p_{21}$</td>
+    <td class="tg-c3ow">$p_{22}$</td>
+    <td class="tg-c3ow">$\cdots$</td>
+    <td class="tg-c3ow">$p_{2b}$</td>
+    <td class="tg-c3ow">$p_{2 \cdot}$</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">$\vdots$</td>
+    <td class="tg-c3ow">$\vdots$</td>
+    <td class="tg-c3ow">$\vdots$</td>
+    <td class="tg-c3ow">$\ddots$</td>
+    <td class="tg-c3ow">$\vdots$</td>
+    <td class="tg-c3ow">$\vdots$</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">$a$</td>
+    <td class="tg-c3ow">$p_{a1}$</td>
+    <td class="tg-c3ow">$p_{a2}$</td>
+    <td class="tg-c3ow">$\cdots$</td>
+    <td class="tg-c3ow">$p_{ab}$</td>
+    <td class="tg-c3ow">$p_{a \cdot}$</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Total</td>
+    <td class="tg-c3ow"></td>
+    <td class="tg-c3ow">$p_{\cdot 1}$</td>
+    <td class="tg-c3ow">$p_{\cdot 2}$</td>
+    <td class="tg-c3ow">$\cdots$</td>
+    <td class="tg-c3ow">$p_{\cdot b}$</td>
+    <td class="tg-c3ow">$p_{\cdot \cdot} = 1$</td>
+  </tr>
+  <tr></tr>
+</tbody></table>
+
+
+. . .
+
+$$\begin{equation}
+\mathbf{P} = (p_{ij})=\left(\frac{n_{ij}}{n}\right)
+\end{equation}$$
+
+
+## Análise de correspondência Simples
+
+A última coluna da Tabela acima contém as somas das linhas, isto é, $p_{i \cdot}=\displaystyle \sum_{j=1}^{b}p_{ij}$. Essa coluna pode ser 
+representada por um vetor, denotado por $\mathbf{r}$:
+
+
+. . .
+
+
+$$\mathbf{r} = \mathbf{P} \mathbf{j} = (p_{1 \cdot}, p_{2 \cdot}, \cdots, p_{a \cdot})^{t}=\left ( \frac{n_{1 \cdot}}{n}, \frac{n_{2 \cdot}}{n}, \cdots,  \frac{n_{a \cdot}}{n} \right )^{t}$$
+
+
+
+em que $\mathbf{j}$ é um vetor $1 \times b$ de $1$'s.
+
+
+## Análise de correspondência Simples
+
+<br>
+
+Analogamente, temos o vetor $\mathbf{c}$ com as somas das colunas:
+
+. . .
+
+
+$$\mathbf{c}=\mathbf{j}^{t}\mathbf{P}=(p_{\cdot 1}, p_{\cdot 2}, \cdots, p_{\cdot b})=\left ( \frac{n_{ \cdot 1}}{n}, \frac{n_{\cdot 2}}{n}, \cdots,  \frac{n_{\cdot b}}{n} \right )$$
+
+
+em que $p_{\cdot j}= \displaystyle \sum_{i=1}^{a}p_{ij}$.
+
+
+
+## Análise de correspondência Simples
+
+
+
+A matriz de correspondência e os totais marginais na tabela de correspondências podem ser expressos como:
+
+
+$$\begin{bmatrix}\mathbf{P} & \mathbf{r}\\ \mathbf{c}^{t} & 1 \end{bmatrix}=\begin{bmatrix}
+p_{11} & p_{12}  & \cdots & p_{1b} & p_{1\cdot} \\ 
+p_{21} & p_{22} & \cdots & p_{2b}  & p_{2\cdot} \\ 
+\vdots & \vdots & \ddots & \vdots & \vdots\\ 
+p_{a1} & p_{a2} & \cdots & p_{ab} & p_{a\cdot}\\ 
+p_{\cdot1} & p_{\cdot2} & \cdots & p_{\cdot b} & 1
+\end{bmatrix}$$
+
+
+
+## Análise de correspondência Simples
+
+
+### Perfis de linha e coluna da matriz $\mathbf{P}$
+
+
+ Podemos então definir as matrizes $\mathbf{D}_{r}$ e $\mathbf{D}_{c}$ como:
+ 
+ 
+$$\mathbf{D}_{r}=\begin{bmatrix}p_{1 \cdot} & 0 & \cdots & 0\\ 0 & p_{2 \cdot} & \cdots & 0\\ \vdots & \vdots & \ddots 
+& \vdots \\ 0 & 0 & \cdots & p_{a \cdot}\end{bmatrix}\ \ \ \mathrm{e} \ \ \ \mathbf{D}_{c}=\begin{bmatrix}p_{ \cdot 1} & 0 
+& \cdots & 0\\ 0 & p_{\cdot 2} & \cdots & 0\\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & p_{\cdot b}\end{bmatrix}$$
+
+
+
+
+
+
+
+## Análise de correspondência Simples
+
+
+### Decomposição em Coordenadas Principais
+
+
+Considere a matriz $\mathbf{Z}=\mathbf{D}_r^{-\frac{1}{2}}(\mathbf{P}-\mathbf{r}\mathbf{c}^{t})\mathbf{D}_c^{-\frac{1}{2}}$.
+
+
+Pode-se decompor a matriz $\mathbf{Z}$ através de sua decomposição em valores singulares (SVD), obtendo-se o resultado:
+
+
+$$\mathbf{Z}= \mathbf{U}\mathbf{\Lambda} \mathbf{V}^{t}$$ 
+
+
+em que $\mathbf{U}^t\mathbf{U} = \mathbf{V}^t\mathbf{V} = \mathbf{I}$
+
+
+
+
+## Análise de correspondência Simples
+
+
+### Decomposição em Coordenadas Principais
+
+
+em que
+
+
+- A matriz $\mathbf{U}$, ortonormal, contém os autovetores da matriz $\mathbf{Z}\mathbf{Z}^{t}$
+
+
+<p></p>
+
+
+
+- A matriz $\mathbf{V}$, ortonormal, contém os autovetores da matriz $\mathbf{Z}^{t}\mathbf{Z}$.
+
+
+
+<p></p>
+
+- $\mathbf{\Lambda}$ é a matriz de dimensão $k \times k$ contendo os valores singulares da matriz $\mathbf{Z}$ ordenados em ordem decrescente.
+
+
+
+
+
+## Análise de correspondência Simples
+
+
+### Decomposição em Coordenadas Principais
+
+
+ Considere ainda as matrizes:
+		
+
+
+- $\mathbf{A} = \mathbf{D}_{r}^{\frac{1}{2}}\mathbf{U}_{a \times k}$ é uma matriz de dimensão $a \times k$, na qual $k$ é o posto da matriz 
+			$\mathbf{Z}_{a \times b}$ dado por $k = \min(a-1, b-1)$
+			
+<p></p>
+			
+
+- $\mathbf{B} = \mathbf{D}_{c}^{\frac{1}{2}}V_{b \times k}$ é uma matriz de dimensão $b \times k$
+
+
+
+
+## Análise de correspondência Simples
+
+
+### Decomposição em Coordenadas Principais
+
+
+Assim, as **coordenadas principais das linhas** da matriz $\mathbf{Z}$ são dadas como:
+
+$$\mathbf{X}_{a \times k}=\mathbf{D}_{r}^{-1}\mathbf{A}_{a \times k}\mathbf{\Delta}_{k \times k}$$ 
+
+e as coordenadas principais das colunas da matriz $\mathbf{Z}$ são dadas por:
+
+$$\mathbf{Y}_{b \times k}=\mathbf{D}_{c}^{-1}\mathbf{B}_{b \times k}\mathbf{\Delta}_{k \times k}$$
+
+
+
+
+## Análise de correspondência Simples
+
+
+### Decomposição em Coordenadas Principais
+
+
+A **inércia total**, que é a variação total existente no sistema é dada por:
+
+
+$$\text{Inércia Total} = \displaystyle \sum_{i=1}^{k}\lambda_{i}^{2}$$
+
+
+em que $\lambda_{i}$ são  os valores singulares obtidos a partir da decomposição do valor singular de $\mathbf{Z}$, $i=1,\cdots, k$.
+
+
+
+
+
+## Análise de correspondência Simples
+
+
+### Decomposição em Coordenadas Principais
+
+
+A **proporção de explicação**, da i-ésima coordenada principal em relação à inércia total $(\pi)$ é dada por:
+
+$$\pi_i = \displaystyle \frac{\lambda_{i}^{2}}{ \displaystyle \sum_{i=1}^{k}\lambda_{i}^{2}}$$
+
+
+
+## Análise de correspondência Simples
+
+
+### Decomposição em Coordenadas Principais
+
+
+A **inércia total**, está relacionada com a estatística qui-quadrado da seguinte forma:
+
+
+$$\text{Inércia Total} = \displaystyle \sum_{i=1}^{k}\lambda_{i}^{2} = \displaystyle{\frac{\chi^2}{n}}$$
+
+
+
+
+
+- Teste Qui-quadrado para dependência entre linhas e colunas: Usar distribuição $\chi^2_{(a-1)(b-1)}$.
+
+
+
+## Exemplo Análise de correspondência Simples
+
+Os dados referem-se à uma pesquisa interessada em investigar se existe ou não algum tipo de relação entre a origem de capital 
+(asiático, brasileiro, americano, europeu ou latino) e o nível de transparência das informações contábeis (alto, médio ou baixo) de 
+empresas pertencentes à uma amostra de tamanho 216.
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow"></th>
+    <th class="tg-c3ow" colspan="4">Grau de Disclosure</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <th class="tg-c3ow">Controle Acionário</th>
+    <td class="tg-c3ow">Alto</td>
+    <td class="tg-c3ow">Médio</td>
+    <td class="tg-c3ow">Baixo</td>
+    <td class="tg-c3ow">Total</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Asiático</td>
+    <td class="tg-c3ow">8</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">13</td>
+    <td class="tg-c3ow">31</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Brasileiro</td>
+    <td class="tg-c3ow">34</td>
+    <td class="tg-c3ow">27</td>
+    <td class="tg-c3ow">14</td>
+    <td class="tg-c3ow">75</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Americano</td>
+    <td class="tg-c3ow">16</td>
+    <td class="tg-c3ow">19</td>
+    <td class="tg-c3ow">39</td>
+    <td class="tg-c3ow">74</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Europeu</td>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">6</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Latino</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">17</td>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">30</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Total</td>
+    <td class="tg-c3ow">71</td>
+    <td class="tg-c3ow">75</td>
+    <td class="tg-c3ow">70</td>
+    <td class="tg-c3ow">216</td>
+  </tr>
+  <tr></tr>
+</tbody></table>
+
+
+
+## Exemplo Análise de correspondência Simples
+
+```{r}
+library(FactoMineR)
+library(factoextra)
+```
+
+```{r}
+tc <- read.table("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/TC_disclosure.txt",header=TRUE)
+tc
+```
+
+```{r}
+#| echo: true
+res.ca <- CA(tc, graph = FALSE)
+eig.val <- get_eigenvalue(res.ca)
+eig.val
+```
+
+## Exemplo Análise de correspondência Simples
+
+### O Biplot da Análise de Correspondência
+
+Gráfico que projeta as categorias de linhas e colunas em um único plano. Permite uma interpretação visual imediata.
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+```{r}
+fviz_ca_biplot(res.ca, repel = TRUE, ggtheme = theme_minimal())
+```
+:::
+
+::: {.column width="40%" .fragment}
+<p align="center" class="texto-personalizado">
+- **Pontos azuis:** Categorias de origem do capital (Europeu, Brasileiro, Latino, Americano, Asiático)
+- **Triângulos vermelhos:** Categorias de nível de transparência (Alto, Médio, Baixo)
+</p>
+:::
+
+::::
+
+
+## Exemplo Análise de correspondência Simples
+
+- **Dimensão 1:** Este eixo horizontal representa a distinção mais significativa na amostra (88.4% da Inércia).
+    - **Lado Esquerdo do Eixo:** As empresas com origem de capital Europeu, Brasileiro e Latino estão fortemente associadas aos níveis de transparência Alto e Médio. Isso sugere que, na amostra, as empresas dessas origens tendem a apresentar maior transparência contábil. 
+    - **Lado Direito do Eixo:** As empresas com origem de capital Americano e Asiático estão associadas ao nível de transparência Baixo. A origem americana parece ter uma associação um pouco mais acentuada com esse nível de transparência do que a origem asiática.
+    
+    
+## Exemplo Análise de correspondência Simples
+
+- **Dimensão 2:** Este eixo vertical complementa a primeira dimensão, detalhando as relações (11.6% da Inércia).
+    - **Parte Superior do Eixo:** A categoria de transparência Alto está associada a empresas de capital Europeu e Brasileiro. Isso diferencia o perfil de transparência das empresas europeias e brasileiras do de origens latinas de capital no lado esquerdo do biplot.
+    - **Parte Inferior do Eixo:** A categoria de transparência Médio está associada a empresas de capital Latino. Isso distingue o perfil das empresas latinas das empresas europeias e brasileiras, que, embora ambas associadas a níveis mais altos de transparência, têm uma nuance diferente.
+    
+    
+## Exemplo Análise de correspondência Simples
+
+
+Contribuição (`contrib`): Qual categoria de origem do capital contribui mais para a formação da dimensão 1?
+
+```{r}
+#| echo: true
+fviz_contrib(res.ca, choice = "row", axes = 1)
+```
+
+
+## Exemplo Análise de correspondência Simples
+
+O gráfico nos mostra que a Dimensão 1 é predominantemente impulsionada pelas diferenças nas características das empresas de capital Americano, Brasileiro e Latino. As empresas de capital Asiático e Europeu contribuem muito menos para essa dimensão, sugerindo que a sua posição no gráfico é menos influente na definição do principal eixo de variação. Essa informação é crucial para entender a hierarquia de importância de cada categoria na sua análise.
+
+
+
+## Exemplo Análise de correspondência Simples
+
+
+Contribuição (`contrib`): Qual categoria de origem do capital contribui mais para a formação da dimensão 2?
+
+```{r}
+#| echo: true
+fviz_contrib(res.ca, choice = "row", axes = 2)
+```
+
+
+## Exemplo Análise de correspondência Simples
+
+
+O gráfico de contribuições para a Dimensão 2 esclarece que, embora o primeiro eixo (Dimensão 1) seja dominado pelas diferenças em relação à origem americana, a segunda dimensão é quase inteiramente impulsionada pelas empresas de capital latino e, em menor grau, brasileiro. Isso nos ajuda a entender a nuance nas associações que o biplot mostrou: a segunda dimensão separa claramente as empresas latinas e brasileiras das demais, complementando a distinção principal observada na primeira dimensão.
+
+
+## Exemplo Análise de correspondência Simples
+
+
+Contribuição (`contrib`): Qual categoria de níveis de transparência contribui mais para a formação de uma dimensão 1?
+
+```{r}
+#| echo: true
+fviz_contrib(res.ca, choice = "col", axes = 1)
+```
+
+
+## Exemplo Análise de correspondência Simples 
+
+
+O gráfico confirma que a Dimensão 1 é predominantemente impulsionada pela categoria de transparência Baixo. Essa categoria é o principal motor da variação no primeiro eixo, enquanto as categorias de transparência Alto e Médio desempenham um papel secundário.
+
+
+. . .
+ 
+ 
+Em conjunto com os gráficos de contribuição das linhas (origem do capital), este gráfico reforça a conclusão de que o principal contraste nos dados é entre a baixa transparência (associada a capital americano e asiático) e o restante da amostra.
+
+
+
+## Exemplo Análise de correspondência Simples
+
+
+Contribuição (`contrib`): Qual categoria de níveis de transparência contribui mais para a formação de uma dimensão 2?
+
+```{r}
+#| echo: true
+fviz_contrib(res.ca, choice = "col", axes = 2)
+```
+
+
+
+## Exemplo Análise de correspondência Simples
+
+O gráfico confirma que, enquanto a primeira dimensão é impulsionada pela distinção entre transparência Baixa e os demais níveis, a segunda dimensão é definida pela distinção entre as transparências Média e Alta. Isso explica o que vimos no biplot: a Dimensão 2 separa as empresas com transparência média (associadas ao capital latino) daquelas com transparência alta (associadas ao capital europeu).
+
+
+
+
+## Análise de Correspondência Múltipla
+
+A **análise de correspondência múltipla (ACM)** é uma extensão da ACS. Os objetivos dessa análise são:
+
+. . .
+
+
+- facilitar a construção de uma tipologia de indivíduos através das categorias das variáveis categóricas observadas;
+
+. . .
+
+- estudar a relação entre as variáveis observadas, bem como resumí-las;
+
+. . .
+
+- permitir a comparação de categorias das variáveis observadas.
+
+
+
+## Análise de Correspondência Múltipla
+
+
+A ACM é de emprego mais frequente que a ACS, uma vez que a maioria das tabelas de dados estatísticos costuma apresentar muitas variáveis categóricas, necessitando de uma análise simultânea de todas as características em um mapa de baixa dimensionalidade.
+
+. . .
+
+
+O tratamento matemático dado à ACM sofre apenas ligeiras adaptações em relação à ACS.
+
+
+
+## Análise de Correspondência Múltipla
+
+### Matriz Indicadora
+
+
+- **Tabela de códigos condensados:** tabela obtida através da codificação das categorias das variáveis.
+
+
+- **Matriz Indicadora:** A matriz indicadora provém da tabela de códigos condensados pelo desdobramento de cada coluna 
+relativa a uma característica em tantas colunas quantas forem suas categorias.
+
+
+
+- Para cada indivíduo, registra-se o valor 1 se determinada modalidade foi verificada, e, 0 caso contrário.
+
+
+
+
+
+## Análise de Correspondência Múltipla
+
+### Matriz Indicadora
+
+- Fixados um caso e uma característica, dado que uma e apenas uma modalidade se verifica, apenas um único valor 1 é registrado.
+
+\vspace{0.3cm}
+
+- Em decorrência disso, a soma das linhas na matriz indicadora é igual ao número de características.
+
+\vspace{0.3cm}
+
+- A matriz indicadora será representada por $\mathbf{X} = [X_1 | X_2 | \cdots | X_J]$, onde $J$ é o número de características, e 
+$X_1, X_2, \cdots, X_J$ referem-se às partições da matriz $\mathbf{X}$ para cada variável categórica nela existente.
+
+
+## Análise de Correspondência Múltipla
+
+### Obtenção das Coordenadas Principais
+
+
+
+Para efetuar a ACM, parte-se da matriz indicadora $\mathbf{X}$ de $I$ casos e $J$ características, realizam-se as mesmas operações de
+decomposição em valores singulares e cálculos de coordenadas realizados na ACS.
+
+
+
+
+## Exemplo Análise de correspondência Múltipla
+
+O estudo de caso refere-se aos dados estatísticos de uma operadora de créditos. As características em estudo encontram-se resumidas
+no Quadro abaixo:
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:28px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-7btt">Variável</th>
+    <th class="tg-7btt">Descrição</th>
+    <th class="tg-7btt">Categorias</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">Qualid</td>
+    <td class="tg-c3ow">Qualidade do cliente</td>
+    <td class="tg-c3ow">bom; mau</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Idade</td>
+    <td class="tg-c3ow">Idade do cliente</td>
+    <td class="tg-c3ow">menor que 25; entre 25 e 45; maior que 45</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">EstCiv</td>
+    <td class="tg-c3ow">Estado civil</td>
+    <td class="tg-c3ow">solteito; casado; separado; viúvo</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Poup</td>
+    <td class="tg-c3ow">Valor em poupança</td>
+    <td class="tg-c3ow">menos de 10mil; entre 10 e 100mil; mais que 100mil</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">CatProf</td>
+    <td class="tg-c3ow">Categoria da profissão</td>
+    <td class="tg-c3ow">executivo; profissional liberal; empregado; outro</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">SMB</td>
+    <td class="tg-c3ow">Saldo bancário</td>
+    <td class="tg-c3ow">menos de 5mil; entre 5 e 20 mil; mais que 20mil</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">Divida</td>
+    <td class="tg-c3ow">Montante da dívida</td>
+    <td class="tg-c3ow">menos de 10mil; entre 10 e 50mil; mais que 50 mil</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">BImovs</td>
+    <td class="tg-c3ow">Valor dos bens imóveis</td>
+    <td class="tg-c3ow">menos de 15mil; entre 15 e 100mil; mais que 100mil</td>
+  </tr>
+  <tr></tr>
+</tbody></table>
+
+
+
+## Exemplo Análise de correspondência Múltipla
+
+```{r}
+library(FactoMineR)
+library(factoextra)
+library(ggplot2)
+```
+
+```{r}
+tabela <- read.table("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/acm_dados_2.dat",header=TRUE)
+tabela
+
+dados_analise <- tabela[, -1] # Remove a coluna 'Caso'
+```
+
+
+## Exemplo Análise de correspondência Múltipla
+
+
+```{r}
+res.mca <- FactoMineR::MCA(dados_analise, graph = FALSE)
+```
+
+```{r}
+eig.val <- get_eigenvalue(res.mca)
+eig.val
+```
+
+
+## Exemplo Análise de correspondência Múltipla
+
+```{r}
+# Gerar o gráfico de "Scree"
+fviz_eig(res.mca, 
+         addlabels = TRUE, # Adiciona os rótulos de porcentagem nas barras
+         ylim = c(0, 50))  # Limita o eixo y para melhor visualização
+```
+
+
+
+## Exemplo Análise de correspondência Múltipla
+
+
+```{r}
+fviz_mca_var(res.mca,
+             col.var = "contrib", # Cores baseadas na contribuição para as dimensões (opcional)
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), # Paleta de cores para a contribuição (opcional)
+             repel = TRUE,       # Evita a sobreposição de rótulos
+             ggtheme = theme_minimal()) # Tema minimalista (opcional)
+```
+
+## Exemplo Análise de correspondência Múltipla
+
+O biplot revela dois perfis de cliente bem distintos, separados pelo eixo horizontal (`Dim1`).
+
+- **Lado Esquerdo (Perfil de Bom Crédito):** Este quadrante agrupa características associadas a um cliente "bom".
+    - A categoria `bom` está muito próxima de `executivo`, `poup>100mil` e `SMB>20mil`.
+    - O perfil de bom crédito se associa a indivíduos mais velhos (`idade>45` e `viuvo`), com alta poupança (`poup>100mil`), alta renda (`SMB>20mil`) e muitos bens (`bens>100mil`).
+    - A baixa dívida (`div<10mil`) também está localizada neste lado do gráfico.
+
+
+## Exemplo Análise de correspondência Múltipla
+
+
+- **Lado Direito (Perfil de Mau Crédito):** Este lado do gráfico contém as características de um cliente "mau".
+    - A categoria "mau" se associa a perfis mais jovens (`idade<25`), `solteiro`, `empregado` e com pouca poupança (`poup<10mil`).
+    - A alta dívida (`div>50mil` e `div10a50mil`) também está no lado direito, próxima do ponto `mau` e de categorias como `separado` e `outro`.
+    - A baixa renda (`SMB<5mil`) está fortemente associada a esse perfil.
+
+
+
+## Exemplo Análise de correspondência Múltipla
+
+
+A principal função da Dimensão 2 é contrastar dois perfis de cliente que, embora possam ter a mesma qualidade de crédito, se distinguem por outras características demográficas e financeiras.
+
+- **Parte Superior do Eixo (Valores positivos):** Este lado do eixo é dominado por um perfil de cliente jovem e de alto risco. Ele associa `idade<25` e `solteiro` com `empregado`, `SMB5a20mil` (saldo bancário médio), e poupança e bens baixos (`poup<10mil` e `bens<15mil`). Este perfil representa um tipo de risco de crédito mais ligado à fase da vida e à falta de estabilidade financeira inicial.
+
+
+## Exemplo Análise de correspondência Múltipla
+
+
+- Parte Inferior do Eixo (Valores negativos):** O contraste na parte inferior do eixo é mais complexo, pois inclui perfis de bom e mau crédito.
+    - No extremo negativo, temos o perfil `viuvo`, que se associa fortemente com bom crédito. Isso sugere que o perfil de viúvo é distinto dos outros perfis de bom crédito (como `executivo` e `idade>45`), que estão mais próximos do centro do eixo 2.
+    - Na parte inferior, mas no lado do mau crédito, encontramos o perfil `separado`, que se associa a categorias de alto risco como `SMB<5mil` (baixo saldo bancário) e `div>50mil` (alta dívida). Este é um tipo de perfil de mau crédito diferente do perfil jovem, possivelmente ligado a eventos de vida que afetaram a estabilidade financeira.
