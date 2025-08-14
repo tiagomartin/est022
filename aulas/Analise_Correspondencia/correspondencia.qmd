@@ -1052,6 +1052,6 @@ A principal função da Dimensão 2 é contrastar dois perfis de cliente que, em
 ## Exemplo Análise de correspondência Múltipla
 
 
-- Parte Inferior do Eixo (Valores negativos):** O contraste na parte inferior do eixo é mais complexo, pois inclui perfis de bom e mau crédito.
+- **Parte Inferior do Eixo (Valores negativos):** O contraste na parte inferior do eixo é mais complexo, pois inclui perfis de bom e mau crédito.
     - No extremo negativo, temos o perfil `viuvo`, que se associa fortemente com bom crédito. Isso sugere que o perfil de viúvo é distinto dos outros perfis de bom crédito (como `executivo` e `idade>45`), que estão mais próximos do centro do eixo 2.
     - Na parte inferior, mas no lado do mau crédito, encontramos o perfil `separado`, que se associa a categorias de alto risco como `SMB<5mil` (baixo saldo bancário) e `div>50mil` (alta dívida). Este é um tipo de perfil de mau crédito diferente do perfil jovem, possivelmente ligado a eventos de vida que afetaram a estabilidade financeira.

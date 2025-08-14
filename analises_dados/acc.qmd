@@ -1,0 +1,46 @@
+---
+title: "acc"
+format: html
+---
+
+Imagine uma empresa de e-commerce de moda que deseja entender a relação entre o comportamento dos clientes no site e seus hábitos de compra. O objetivo é identificar padrões que possam ser usados para criar campanhas de marketing mais eficazes.
+
+Para isso, a empresa coletou dados de 150 clientes. Esses dados foram divididos em dois conjuntos:
+
+- **Variáveis de Navegação no Site (Conjunto X):** Métricas que descrevem como o cliente interage com a plataforma.
+    - `Tempo_Sessao`: Tempo médio (em minutos) que o cliente passa no site por sessão.
+    - `Paginas_Visitadas`: Número médio de páginas visitadas por sessão.
+    - `Itens_Carrinho`: Número médio de itens adicionados ao carrinho por sessão.
+
+
+- **Variáveis de Compra (Conjunto Y):** Métricas que descrevem o histórico de compras do cliente.
+    - `Valor_Medio_Compra`: Valor médio (em reais) das compras realizadas.
+    - `Frequencia_Compra`: Número de compras realizadas no último mês.
+    - `Itens_Comprados`: Número total de itens comprados no último mês.
+
+
+
+A Análise de Correlação Canônica (CCA) é a técnica ideal para essa situação, pois ela nos permite investigar a correlação entre dois conjuntos de variáveis em vez de variáveis isoladas. A CCA irá criar novas variáveis (as variáveis canônicas) que são combinações lineares dos dados originais, maximizando a correlação entre os dois conjuntos.
+
+
+
+```{r, warning=FALSE, message=FALSE}
+# Carregar pacotes necessários
+library(tidyverse)
+library(rio)
+
+dados <- rio::import("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/dados_site.csv")
+dados %>% 
+  glimpse()
+```
+
+
+Com esses dados, a análise de correlação canônica ajudaria a empresa a responder perguntas como:
+
+ - Existe uma combinação de variáveis de navegação que se correlaciona fortemente com uma combinação de variáveis de compra?
+
+ - Clientes que passam mais tempo no site e visitam mais páginas tendem a ter um valor médio de compra mais alto e a comprar com mais frequência?
+
+ - Qual é a "contribuição" de cada variável original para as novas variáveis canônicas?
+
+A partir das respostas, a equipe de marketing poderia, por exemplo, focar em estratégias para aumentar o tempo de sessão e o número de páginas visitadas, sabendo que isso tem uma alta probabilidade de levar a um aumento nas vendas e na frequência de compras.

@@ -14,4 +14,4 @@ title: "Aulas"
 
 - [Análise de Correlação Canônica](/aulas/Correlacao_Canonica/canonica.html "Análise de Correlação Canônica"){aria-label="Análise de Correlação Canônica"}
 
-- Análise de Correspondência
+- [Análise de Correspondência](/aulas/Analise_Correspondencia/correspondencia.html "Análise de Correspondência"){aria-label="Análise de Correspondência"}

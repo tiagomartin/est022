@@ -36,6 +36,7 @@ Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semest
 |  [12](programacao/semana-12.html)  | Sex, 25/07 | Recesso Acadêmico!  | |  | | | | | |
 |  [13](programacao/semana-13.html)  | Sex, 01/08 | Escalonamento Multidimensional  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Escalonamento/escalonamento.html#/mds-métrico-para-matriz-de-similaridades "MDS métrico para matriz de similaridades"){aria-label="MDS métrico para matriz de similaridades"} | | | | | |
 |  [14](programacao/semana-14.html)  | Sex, 08/08 | Análise de Correlação Canônica  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Correlacao_Canonica/canonica.html "Análise de Correlação Canônica"){aria-label="Análise de Correlação Canônica"} | | | | | |
+|  [15](programacao/semana-15.html)  | Sex, 15/08 | Análise de Correspondência  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Analise_Correspondencia/correspondencia.html "Análise de Correspondência"){aria-label="Análise de Correspondência"} | | | | | |
 :::
 
 ```{r echo = FALSE}

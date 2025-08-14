@@ -1,0 +1,9 @@
+---
+title: "Semana 15"
+---
+
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Análise de Correspondência](/aulas/Analise_Correspondencia/correspondencia.html "Análise de Correspondência"){aria-label="Análise de Correspondência"}
