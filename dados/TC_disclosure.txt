@@ -1,0 +1,6 @@
+	    Alto	Medio	Baixo 	
+Asiatico	8	10	13	
+Brasileiro	34	27	14	
+Americano	16	19	39	
+Europeu		3	2	1		
+Latino		10	17	3	
