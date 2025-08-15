@@ -1,0 +1,197 @@
+---
+title: "Lista de exercícios 04: MDS, ACC e AC"
+---
+
+<p align="center" style="font-size: 40px"> 
+`Data de entrega: 31 de agosto de 2025`
+</p>
+
+
+---
+
+
+
+1) **Contexto:** Uma rede de fast-food realizou uma pesquisa para entender a associação entre diferentes itens do menu e a percepção de atributos de sabor. A tabela de contingência a seguir mostra a contagem de clientes que associaram um item a um atributo. 
+
+**Dados:**
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-c3ow">Menu</th>
+    <th class="tg-c3ow">Saboroso</th>
+    <th class="tg-c3ow">Crocante</th>
+    <th class="tg-c3ow">Leve</th>
+    <th class="tg-c3ow">Picante</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Hamburguer</td>
+    <td class="tg-c3ow">120</td>
+    <td class="tg-c3ow">50</td>
+    <td class="tg-c3ow">20</td>
+    <td class="tg-c3ow">10</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Batata Frita</td>
+    <td class="tg-c3ow">80</td>
+    <td class="tg-c3ow">150</td>
+    <td class="tg-c3ow">30</td>
+    <td class="tg-c3ow">5</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Salada</td>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">20</td>
+    <td class="tg-c3ow">180</td>
+    <td class="tg-c3ow">2</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Asa de Frango</td>
+    <td class="tg-c3ow">90</td>
+    <td class="tg-c3ow">40</td>
+    <td class="tg-c3ow">15</td>
+    <td class="tg-c3ow">110</td>
+  </tr>
+</tbody>
+</table>
+
+
+**Questões:**
+
+a) Qual item do menu está mais fortemente associado ao atributo Picante?
+
+b) Descreva a relação entre Hambúrguer e Batata Frita. Eles têm perfis de sabor similares ou opostos?
+
+c) Interprete a posição do atributo Leve no gráfico. Qual item do menu é o seu oposto?
+
+---
+
+
+2) **Contexto:** Uma empresa de turismo quer entender como os clientes percebem a similaridade entre cinco destinos de férias. A pesquisa foi feita pedindo aos clientes que classificassem a distância percebida (dissimilaridade) entre cada par de destinos em uma escala de 1 (muito similar) a 10 (muito diferente). 
+
+**Dados (Matriz de Dissimilaridade):**
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-0lax"></th>
+    <th class="tg-0lax">Paris</th>
+    <th class="tg-0lax">Roma</th>
+    <th class="tg-0lax">Tóquio</th>
+    <th class="tg-0lax">Rio de Janeiro</th>
+    <th class="tg-0lax">Nova Iorque</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax">Paris</td>
+    <td class="tg-baqh">0</td>
+    <td class="tg-baqh">2.5</td>
+    <td class="tg-baqh">8.5</td>
+    <td class="tg-baqh">7.0</td>
+    <td class="tg-baqh">5.5</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Roma</td>
+    <td class="tg-baqh">2.5</td>
+    <td class="tg-baqh">0</td>
+    <td class="tg-baqh">9.0</td>
+    <td class="tg-baqh">8.0</td>
+    <td class="tg-baqh">6.0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Tóquio</td>
+    <td class="tg-baqh">8.5</td>
+    <td class="tg-baqh">9.0</td>
+    <td class="tg-baqh">0</td>
+    <td class="tg-baqh">6.5</td>
+    <td class="tg-baqh">7.5</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Rio de Janeiro</td>
+    <td class="tg-baqh">7.0</td>
+    <td class="tg-baqh">8.0</td>
+    <td class="tg-baqh">6.5</td>
+    <td class="tg-baqh">0</td>
+    <td class="tg-baqh">3.0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Nova Iorque</td>
+    <td class="tg-baqh">5.5</td>
+    <td class="tg-baqh">6.0</td>
+    <td class="tg-baqh">7.5</td>
+    <td class="tg-baqh">3.0</td>
+    <td class="tg-baqh">0</td>
+  </tr>
+</tbody></table>
+
+
+**Questões:**
+
+a) Com base na sua análise, quais são os dois destinos mais similares na percepção dos clientes? Justifique sua resposta.
+
+b) Quais destinos formam um grupo na percepção dos clientes, e qual destino é percebido como um "outlier" (distante dos demais)?
+
+c) Tente interpretar o significado dos eixos (`Dim1` e `Dim2`) com base na posição dos destinos. O que cada dimensão parece representar?
+
+
+---
+
+
+3) **Contexto:** Uma startup de tecnologia coletou dados de seus clientes, divididos em dois grupos de variáveis: Características do Cliente (idade, renda, escolaridade) e Padrões de Uso do Produto (tempo diário de uso, número de funcionalidades utilizadas, frequência de login). O objetivo é encontrar a correlação máxima entre um conjunto de variáveis e o outro. Ao realizar essa análise utilizando a função `cca()` do pacote `yacca` do R, a seguinte saída foi produzida:
+
+```{r, warning=FALSE, message=FALSE}
+#| echo: false
+
+library(yacca)
+
+# 1. Gerar os dados para a ACC
+set.seed(42) # Para reprodutibilidade
+
+# Conjunto 1: Variáveis de Cliente
+dados_cliente <- data.frame(
+  idade = runif(50, 20, 60),
+  renda = runif(50, 30, 150),
+  escolaridade = sample(1:3, 50, replace = TRUE)
+)
+
+# Conjunto 2: Variáveis de Uso
+# As correlações são criadas intencionalmente para fins de exemplo
+dados_uso <- data.frame(
+  tempo_uso = 2 * dados_cliente$renda + rnorm(50, 0, 10),
+  num_funcionalidades = 1.5 * dados_cliente$escolaridade + rnorm(50, 0, 1),
+  frequencia_login = 0.8 * dados_cliente$idade + rnorm(50, 0, 1)
+)
+
+# 2. Realizar a Análise de Correlações Canônicas
+# A função 'cc()' espera duas matrizes
+cca_model <- cca(dados_cliente, dados_uso)
+summary(cca_model)
+```
+
+
+**Questões:**
+
+a) A análise encontrou uma relação estatisticamente significativa entre as características do cliente e os padrões de uso do produto? Se sim, qual é a principal relação, e quais variáveis de cada conjunto estão mais fortemente associadas a ela?
+
+b) Descreva o perfil dos clientes associados às três variáveis canônicas (`CV 1`, `CV 2` e `CV 3`) com base nas variáveis originais de cada conjunto.
+
+
+c) Quanta variação total de um conjunto de variáveis pode ser explicada pelas variáveis canônicas do outro conjunto? Qual variável, em particular, contribui mais para a primeira correlação canônica?
