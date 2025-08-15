@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Análise de Dados – EST022 - Estatística Multivariada II</title>
+<title>Análise da Percepção de Sabores de Café – EST022 - Estatística Multivariada II</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,31 +20,64 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./plano.html" rel="next">
-<link href="./exercicios.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b09848b6287391c45069fed345a57cb2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e9f3ba5fbee03b112b18b9666ab66a2c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-b09848b6287391c45069fed345a57cb2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b09848b6287391c45069fed345a57cb2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e9f3ba5fbee03b112b18b9666ab66a2c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b09848b6287391c45069fed345a57cb2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -74,8 +107,12 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Análise de Dados – EST022 - Estatística Multivariada II">
+<meta property="og:title" content="Análise da Percepção de Sabores de Café – EST022 - Estatística Multivariada II">
+<meta property="og:description" content="Homepage da disciplina EST022 - Estatística Multivariada II, 2025/1.">
+<meta property="og:image" content="http://professortp.com.br/est022/analises_dados/acs_files/figure-html/unnamed-chunk-4-1.png">
 <meta property="og:site_name" content="EST022 - Estatística Multivariada II">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
 </head>
 
 <body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -248,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./analises.html">Análise de Dados</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Análise da Percepção de Sabores de Café</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -262,8 +299,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main">
     <a href="https://github.com/tiagomartin/est022" title="github" class="quarto-navigation-tool px-1" aria-label="github"><i class="bi bi-github"></i></a>
@@ -279,37 +316,37 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./aulas.html" class="sidebar-item-text sidebar-link">
+  <a href="../aulas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Aulas</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercicios.html" class="sidebar-item-text sidebar-link">
+  <a href="../exercicios.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Listas de exercicios</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./analises.html" class="sidebar-item-text sidebar-link active">
+  <a href="../analises.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Análise de Dados</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./plano.html" class="sidebar-item-text sidebar-link">
+  <a href="../plano.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Plano de Ensino</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./cronograma.html" class="sidebar-item-text sidebar-link">
+  <a href="../cronograma.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cronograma da disciplina</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./material.html" class="sidebar-item-text sidebar-link">
+  <a href="../material.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Material complementar</span></a>
   </div>
 </li>
@@ -318,8 +355,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dados-para-análise" id="toc-dados-para-análise" class="nav-link active" data-scroll-target="#dados-para-análise">Dados para Análise</a></li>
+  <li><a href="#análise-de-correspondências-no-r" id="toc-análise-de-correspondências-no-r" class="nav-link" data-scroll-target="#análise-de-correspondências-no-r">Análise de correspondências no R</a></li>
+  <li><a href="#interpretação-do-gráfico-de-análise-de-correspondência" id="toc-interpretação-do-gráfico-de-análise-de-correspondência" class="nav-link" data-scroll-target="#interpretação-do-gráfico-de-análise-de-correspondência">Interpretação do Gráfico de Análise de Correspondência</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tiagomartin/est022/edit/main/analises_dados/acs.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est022/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -327,7 +372,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Análise de Dados</h1>
+<h1 class="title">Análise da Percepção de Sabores de Café</h1>
 </div>
 
 
@@ -344,13 +389,210 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Uma cafeteria gourmet deseja otimizar seu cardápio de cafés especiais para agradar a diferentes perfis de clientes. Eles realizaram uma pesquisa de mercado com 100 clientes, pedindo que avaliassem cinco tipos de café em relação à percepção de quatro atributos de sabor. A empresa quer identificar se existe uma associação entre os tipos de café e os atributos de sabor percebidos pelos clientes.</p>
 <ul>
-<li><p><a href=".\analises_dados/escalonamento.html" aria-label="Análise de dados" title="Análise de dados">Análise de Preferência de Consumidores por Sabonetes Artesanais</a></p></li>
-<li><p><a href=".\analises_dados/acc.html" aria-label="Análise de dados" title="Análise de dados">Análise da Relação entre Navegação e Vendas no E-commerce</a></p></li>
-<li><p><a href=".\analises_dados/acs.html" aria-label="Análise de dados" title="Análise de dados">Análise da Percepção de Sabores de Café</a></p></li>
+<li>Tipos de Café Avaliados:
+<ul>
+<li>C1: Café A</li>
+<li>C2: Café B</li>
+<li>C3: Café C</li>
+<li>C4: Café D</li>
+<li>C5: Café E</li>
+</ul></li>
+<li>Atributos de Sabor:
+<ul>
+<li>S1: Frutado</li>
+<li>S2: Amadeirado</li>
+<li>S3: Floral</li>
+<li>S4: Doce</li>
+</ul></li>
 </ul>
+<blockquote class="blockquote">
+<p>A pergunta central é: A percepção de sabores frutados está mais associada a um tipo de café específico? E o que acontece com os outros sabores?</p>
+</blockquote>
+<p>A Análise de Correspondência é a ferramenta ideal para responder a essa pergunta, pois ela analisa a associação entre duas variáveis categóricas (neste caso, “Tipos de Café” e “Atributos de Sabor”) e visualiza essa relação em um gráfico bidimensional.</p>
+<section id="dados-para-análise" class="level2">
+<h2 class="anchored" data-anchor-id="dados-para-análise">Dados para Análise</h2>
+<p>Os dados são apresentados em uma tabela de contingência, onde as linhas representam os tipos de café e as colunas representam os atributos de sabor. Cada célula mostra a contagem de clientes que associaram um determinado tipo de café a um atributo de sabor.</p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+<tr>
+<th class="tg-0pky">
+</th>
+<th class="tg-c3ow" colspan="4">
+Sabor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tg-c3ow">
+Tipos de Café
+</td>
+<td class="tg-c3ow">
+Frutado
+</td>
+<td class="tg-c3ow">
+Amadeirado
+</td>
+<td class="tg-c3ow">
+Floral
+</td>
+<td class="tg-c3ow">
+Doce
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+Café A
+</td>
+<td class="tg-c3ow">
+20
+</td>
+<td class="tg-c3ow">
+5
+</td>
+<td class="tg-c3ow">
+8
+</td>
+<td class="tg-c3ow">
+15
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+Café B
+</td>
+<td class="tg-c3ow">
+10
+</td>
+<td class="tg-c3ow">
+25
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+10
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+Café C
+</td>
+<td class="tg-c3ow">
+15
+</td>
+<td class="tg-c3ow">
+8
+</td>
+<td class="tg-c3ow">
+20
+</td>
+<td class="tg-c3ow">
+5
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+Café D
+</td>
+<td class="tg-c3ow">
+5
+</td>
+<td class="tg-c3ow">
+12
+</td>
+<td class="tg-c3ow">
+15
+</td>
+<td class="tg-c3ow">
+18
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+Café E
+</td>
+<td class="tg-c3ow">
+8
+</td>
+<td class="tg-c3ow">
+10
+</td>
+<td class="tg-c3ow">
+12
+</td>
+<td class="tg-c3ow">
+14
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="análise-de-correspondências-no-r" class="level2">
+<h2 class="anchored" data-anchor-id="análise-de-correspondências-no-r">Análise de correspondências no R</h2>
+<p>O script abaixo utiliza os pacotes <code>FactoMineR</code> e <code>factoextra</code> para realizar a análise e gerar um gráfico de alta qualidade, facilitando a interpretação dos resultados.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(FactoMineR)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(factoextra)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tab_cafe <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/cafes.csv"</span>, <span class="at">encoding =</span> <span class="st">"latin1"</span>, <span class="at">row.names =</span> <span class="dv">1</span>) </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tab_cafe</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Frutado Amadeirado Floral Doce
+Café A      20          5      8   15
+Café B      10         25      2   10
+Café C      15          8     20    5
+Café D       5         12     15   18
+Café E       8         10     12   14</code></pre>
+</div>
+</div>
+<p>Com os dados já preparados na matriz de contingência <code>tab_cafe</code>, o próximo passo é realizar a Análise de Correspondência (AC). Para isso, utilizaremos a função <code>CA()</code> do pacote <code>FactoMineR</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A função 'CA' do pacote FactoMineR realiza a análise</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>res.ca <span class="ot">&lt;-</span> <span class="fu">CA</span>(tab_cafe, <span class="at">graph =</span> <span class="cn">FALSE</span>) <span class="co"># graph = FALSE para não gerar o gráfico automaticamente</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Com os resultados da Análise de Correspondência (AC) armazenados na variável <code>res.ca</code>, o próximo passo é visualizar essas associações. A melhor forma de fazer isso é com um biplot, que plota as linhas (Tipos de Café) e as colunas (Atributos de Sabor) no mesmo gráfico.</p>
+<p>Para criar um gráfico claro e de alta qualidade, utilizaremos a função <code>fviz_ca_biplot()</code> do pacote <code>factoextra</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_ca_biplot</span>(res.ca, <span class="at">repel =</span> <span class="cn">TRUE</span>, <span class="at">title =</span> <span class="st">"Análise de Correspondência: Tipos de Café vs. Sabores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="acs_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretação-do-gráfico-de-análise-de-correspondência" class="level2">
+<h2 class="anchored" data-anchor-id="interpretação-do-gráfico-de-análise-de-correspondência">Interpretação do Gráfico de Análise de Correspondência</h2>
+<p>O gráfico acima é um biplot de Análise de Correspondência, que mostra a associação entre dois conjuntos de variáveis categóricas: <code>Tipos de Café</code> (pontos azuis) e <code>Atributos de Sabor</code> (triângulos vermelhos).</p>
+<p>A interpretação é baseada na proximidade dos pontos. Quanto mais próximos dois pontos estão, mais forte é a associação entre eles. A distância de um ponto até a origem (o centro, onde se cruzam as linhas pontilhadas) indica a sua contribuição para a inércia total, ou seja, quão distinta é sua associação.</p>
+<p>Vamos analisar o gráfico por quadrantes:</p>
+<ul>
+<li><p><strong>Quadrante Superior Direito:</strong> O “Café A” está muito próximo do atributo “Frutado”. Isso significa que a percepção de sabor mais forte e distinta para o Café A é o sabor frutado. Ele é o café que mais se associa a esse atributo.</p></li>
+<li><p><strong>Quadrante Inferior Direito:</strong> O “Café C” e o atributo “Floral” estão no mesmo quadrante (café C no limite do quadrante), indicando uma forte associação. A maioria dos clientes que provaram o Café C o associou principalmente ao sabor floral. Está muito distante da origem, indicando que sua associação com o sabor Floral é extremamente forte e marcante. Ele tem um perfil de sabor muito distinto. Já o Café D está relativamente próximo da origem, sugerindo que suas associações com Doce e Floral não são tão fortes ou unânimes. Seu perfil de sabor é mais neutro ou menos “polarizado” na percepção dos clientes.</p></li>
+<li><p><strong>Quadrante Superior Esquerdo:</strong> O “Café B” e o atributo “Amadeirado” estão muito próximos. O Café B é o café com a percepção mais acentuada de sabor amadeirado. Essa é a característica que o distingue dos demais.</p></li>
+<li><p><strong>Quadrante Inferior Esquerdo:</strong> O “Café E” está próximo do atributo “Doce” e também do ponto de origem, mas no mesmo quadrante do Floral. O Café D tem um perfil de sabor que pode ser considerado uma mistura entre Doce e Floral.</p></li>
+</ul>
+<p>Resumindo, o gráfico revela que os cafés A, B e C têm perfis de sabor bem definidos e distintos, que são consistentemente percebidos pelos clientes como frutado, amadeirado e floral, respectivamente. Já os cafés D e E, junto com o sabor “Doce”, têm associações mais fracas ou mais distribuídas, sugerindo que suas características são menos polarizadas ou mais comuns.</p>
+<p>Essa interpretação pode ser usada pela cafeteria para criar estratégias de marketing mais eficazes, como, por exemplo, recomendar o “Café A” para clientes que preferem sabores frutados.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -765,18 +1007,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./exercicios.html" class="pagination-link" aria-label="Listas de exercicios">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Listas de exercicios</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./plano.html" class="pagination-link" aria-label="Plano de Ensino">
-        <span class="nav-page-text">Plano de Ensino</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -785,7 +1015,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/tiagomartin/est022/edit/main/analises.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est022/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tiagomartin/est022/edit/main/analises_dados/acs.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est022/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Página construída usando <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

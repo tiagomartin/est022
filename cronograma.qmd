@@ -34,9 +34,9 @@ Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semest
 |  [10](programacao/semana-10.html)  | Sex, 11/07 | Escalonamento Multidimensional  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Escalonamento/escalonamento.html "Escalonamento Multidimensional"){aria-label="Escalonamento Multidimensional"} | | | | | |
 |  [11](programacao/semana-11.html)  | Sex, 18/07 | Não haverá aula!  | |  | | | | | |
 |  [12](programacao/semana-12.html)  | Sex, 25/07 | Recesso Acadêmico!  | |  | | | | | |
-|  [13](programacao/semana-13.html)  | Sex, 01/08 | Escalonamento Multidimensional  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Escalonamento/escalonamento.html#/mds-métrico-para-matriz-de-similaridades "MDS métrico para matriz de similaridades"){aria-label="MDS métrico para matriz de similaridades"} | | | | | |
-|  [14](programacao/semana-14.html)  | Sex, 08/08 | Análise de Correlação Canônica  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Correlacao_Canonica/canonica.html "Análise de Correlação Canônica"){aria-label="Análise de Correlação Canônica"} | | | | | |
-|  [15](programacao/semana-15.html)  | Sex, 15/08 | Análise de Correspondência  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Analise_Correspondencia/correspondencia.html "Análise de Correspondência"){aria-label="Análise de Correspondência"} | | | | | |
+|  [13](programacao/semana-13.html)  | Sex, 01/08 | Escalonamento Multidimensional  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Escalonamento/escalonamento.html#/mds-métrico-para-matriz-de-similaridades "MDS métrico para matriz de similaridades"){aria-label="MDS métrico para matriz de similaridades"} | || [{{< fa brands r-project size=2xl >}}](/analises_dados/escalonamento.html "Análise de dados"){aria-label="Análise de dados"} | | |
+|  [14](programacao/semana-14.html)  | Sex, 08/08 | Análise de Correlação Canônica  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Correlacao_Canonica/canonica.html "Análise de Correlação Canônica"){aria-label="Análise de Correlação Canônica"} | | | [{{< fa brands r-project size=2xl >}}](/analises_dados/acc.html "Análise de dados"){aria-label="Análise de dados"} | | |
+|  [15](programacao/semana-15.html)  | Sex, 15/08 | Análise de Correspondência  | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Analise_Correspondencia/correspondencia.html "Análise de Correspondência"){aria-label="Análise de Correspondência"} | | |[{{< fa brands r-project size=2xl >}}](/analises_dados/acs.html "Análise de dados"){aria-label="Análise de dados"} | | |
 :::
 
 ```{r echo = FALSE}

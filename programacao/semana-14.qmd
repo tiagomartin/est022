@@ -7,3 +7,8 @@ title: "Semana 14"
 ## Slides
 
 {{< fa file-powerpoint size=lg >}} [Análise de Correlação Canônica](/aulas/Correlacao_Canonica/canonica.html "Análise de Correlação Canônica"){aria-label="Análise de Correlação Canônica"}
+
+
+## Script R
+
+{{< fa brands r-project size=lg >}}[Análise da Relação entre Navegação e Vendas no E-commerce](/analises_dados/acc.html "Análise de dados"){aria-label="Análise de dados"}

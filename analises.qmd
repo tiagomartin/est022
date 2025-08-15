@@ -3,4 +3,8 @@ title: "Análise de Dados"
 format: html
 ---
 
--   [Análise de Preferência de Consumidores por Sabonetes Artesanais](/analises_dados/escalonamento.html "Análise de dados"){aria-label="Análise de dados"}
+- [Análise de Preferência de Consumidores por Sabonetes Artesanais](/analises_dados/escalonamento.html "Análise de dados"){aria-label="Análise de dados"}
+
+- [Análise da Relação entre Navegação e Vendas no E-commerce](/analises_dados/acc.html "Análise de dados"){aria-label="Análise de dados"}
+
+- [Análise da Percepção de Sabores de Café](/analises_dados/acs.html "Análise de dados"){aria-label="Análise de dados"}

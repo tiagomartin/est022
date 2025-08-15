@@ -1,5 +1,5 @@
 ---
-title: "acc"
+title: "Análise da Relação entre Navegação e Vendas no E-commerce"
 format: html
 ---
 
@@ -27,11 +27,15 @@ A Análise de Correlação Canônica (CCA) é a técnica ideal para essa situaç
 ```{r, warning=FALSE, message=FALSE}
 # Carregar pacotes necessários
 library(tidyverse)
+library(yacca)
 library(rio)
 
 dados <- rio::import("https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/dados_site.csv")
 dados %>% 
   glimpse()
+
+X = dados %>% select(c("Tempo_Sessao","Paginas_Visitadas","Itens_Carrinho"))
+Y = dados %>% select(c("Valor_Medio_Compra","Frequencia_Compra","Itens_Comprados"))
 ```
 
 
@@ -44,3 +48,66 @@ Com esses dados, a análise de correlação canônica ajudaria a empresa a respo
  - Qual é a "contribuição" de cada variável original para as novas variáveis canônicas?
 
 A partir das respostas, a equipe de marketing poderia, por exemplo, focar em estratégias para aumentar o tempo de sessão e o número de páginas visitadas, sabendo que isso tem uma alta probabilidade de levar a um aumento nas vendas e na frequência de compras.
+
+Para começar a análise de correlação canônica, o primeiro passo é utilizar a função `cca()` do pacote `yacca`. Essa função realiza a análise de correlações canônicas entre os conjuntos de dados X e Y.
+
+```{r}
+# Realizar a CCA com a função `cca()` do pacote `yacca`
+cca_model <- cca(X, Y)
+```
+
+
+Os prinncipais resultados são apresentados utilizando a função `summary()`:
+
+
+```{r}
+# Resumo do modelo
+summary(cca_model)
+```
+
+Podemos observar que, apenas o primeiro par de variáveis canônicas é estatisticamente significativo (`p<2e−16`), com uma forte correlação de 0,928. Isso indica que há uma relação linear robusta entre o conjunto de variáveis de navegação no site e o conjunto de variáveis de compra. Os pares canônicos subsequentes (`CV 2` e `CV 3`) não são significativos, o que significa que o primeiro par já captura a maior parte da relação.
+
+## Interpretação do Primeiro Par Canônico
+
+A análise das correlações de estrutura (`loadings`) revela o que cada variável canônica representa:
+
+```{r}
+cca_model$xstructcorr
+```
+
+- Variável Canônica de Navegação (`CV 1` = $U_1$): Esta variável é fortemente correlacionada com `Itens_Carrinho` (0,998), `Paginas_Visitadas` (0,970) e `Tempo_Sessao` (0,886). Portanto, esta variável pode ser interpretada como "Engajamento no Site". Clientes com alto engajamento tendem a passar mais tempo no site, visitar mais páginas e adicionar mais itens ao carrinho.
+
+```{r}
+cca_model$ystructcorr
+```
+
+
+- Variável Canônica de Compra (`CV 1` = $V_1$): Esta variável é fortemente correlacionada com `Itens_Comprados` (0,989) e `Valor_Medio_Compra` (0,964). A correlação com `Frequencia_Compra` (0,044) é muito baixa. Isso sugere que este variável representa o "Valor e Volume de Compra" e não a frequência.
+
+
+
+## Análise de Redundância
+
+Os coeficientes de redundância indicam a capacidade de um conjunto de variáveis explicar a variância do outro:
+
+```{r}
+cca_model$xvrd
+```
+
+
+A redundância de X em relação a Y é de 0,782. Isso significa que 78,2% da variância no conjunto de variáveis de navegação (X) é explicada pelo primeiro variável canônico de compra (Y).
+
+```{r}
+cca_model$yvrd
+```
+
+
+A redundância de Y em relação a X é de 0,549. Isso significa que 54,9% da variância no conjunto de variáveis de compra (Y) é explicada pelo primeiro variável canônico de navegação (X).
+
+
+
+## Estratégias de Marketing Baseadas na Análise Canônica
+
+A análise de correlação canônica confirmou que existe uma relação comprovada entre o engajamento do cliente no site (medido por tempo, páginas e itens no carrinho) e o valor total de suas compras.
+
+No entanto, a análise revelou um ponto crucial para a estratégia: a correlação forte foi com o valor e o volume de compra, e não com a frequência de compras. Isso significa que as estratégias devem focar em fazer com que cada visita ao site seja mais valiosa, em vez de necessariamente aumentar o número de vezes que o cliente compra.

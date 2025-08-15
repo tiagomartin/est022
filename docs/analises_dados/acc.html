@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>acc – EST022 - Estatística Multivariada II</title>
+<title>Análise da Relação entre Navegação e Vendas no E-commerce – EST022 - Estatística Multivariada II</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,8 +106,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="acc – EST022 - Estatística Multivariada II">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Análise da Relação entre Navegação e Vendas no E-commerce – EST022 - Estatística Multivariada II">
 <meta property="og:description" content="Homepage da disciplina EST022 - Estatística Multivariada II, 2025/1.">
 <meta property="og:site_name" content="EST022 - Estatística Multivariada II">
 </head>
@@ -282,7 +311,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">acc</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Análise da Relação entre Navegação e Vendas no E-commerce</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -352,8 +381,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#interpretação-do-primeiro-par-canônico" id="toc-interpretação-do-primeiro-par-canônico" class="nav-link active" data-scroll-target="#interpretação-do-primeiro-par-canônico">Interpretação do Primeiro Par Canônico</a></li>
+  <li><a href="#análise-de-redundância" id="toc-análise-de-redundância" class="nav-link" data-scroll-target="#análise-de-redundância">Análise de Redundância</a></li>
+  <li><a href="#estratégias-de-marketing-baseadas-na-análise-canônica" id="toc-estratégias-de-marketing-baseadas-na-análise-canônica" class="nav-link" data-scroll-target="#estratégias-de-marketing-baseadas-na-análise-canônica">Estratégias de Marketing Baseadas na Análise Canônica</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tiagomartin/est022/edit/main/analises_dados/acc.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est022/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -361,7 +398,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">acc</h1>
+<h1 class="title">Análise da Relação entre Navegação e Vendas no E-commerce</h1>
 </div>
 
 
@@ -398,11 +435,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregar pacotes necessários</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="st">"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/dados_site.csv"</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">%&gt;%</span> </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(yacca)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rio)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="st">"https://raw.githubusercontent.com/tiagomartin/est022/refs/heads/main/dados/dados_site.csv"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">%&gt;%</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 150
 Columns: 6
@@ -413,6 +451,8 @@ $ Tempo_Sessao       &lt;int&gt; 27, 31, 28, 32, 19, 10, 15, 20, 27, 35, 6, 10, 
 $ Paginas_Visitadas  &lt;int&gt; 18, 21, 14, 20, 13, 7, 10, 12, 23, 24, 5, 6, 15, 3,…
 $ Itens_Carrinho     &lt;int&gt; 8, 8, 6, 10, 5, 3, 4, 5, 9, 11, 2, 3, 6, 1, 5, 3, 3…</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>X <span class="ot">=</span> dados <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"Tempo_Sessao"</span>,<span class="st">"Paginas_Visitadas"</span>,<span class="st">"Itens_Carrinho"</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Y <span class="ot">=</span> dados <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">"Valor_Medio_Compra"</span>,<span class="st">"Frequencia_Compra"</span>,<span class="st">"Itens_Comprados"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Com esses dados, a análise de correlação canônica ajudaria a empresa a responder perguntas como:</p>
 <ul>
@@ -421,8 +461,186 @@ $ Itens_Carrinho     &lt;int&gt; 8, 8, 6, 10, 5, 3, 4, 5, 9, 11, 2, 3, 6, 1, 5, 
 <li><p>Qual é a “contribuição” de cada variável original para as novas variáveis canônicas?</p></li>
 </ul>
 <p>A partir das respostas, a equipe de marketing poderia, por exemplo, focar em estratégias para aumentar o tempo de sessão e o número de páginas visitadas, sabendo que isso tem uma alta probabilidade de levar a um aumento nas vendas e na frequência de compras.</p>
+<p>Para começar a análise de correlação canônica, o primeiro passo é utilizar a função <code>cca()</code> do pacote <code>yacca</code>. Essa função realiza a análise de correlações canônicas entre os conjuntos de dados X e Y.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Realizar a CCA com a função `cca()` do pacote `yacca`</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cca_model <span class="ot">&lt;-</span> <span class="fu">cca</span>(X, Y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Os prinncipais resultados são apresentados utilizando a função <code>summary()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumo do modelo</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cca_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Canonical Correlation Analysis - Summary
 
 
+Canonical Correlations:
+
+      CV 1       CV 2       CV 3 
+0.92804984 0.17189915 0.07137503 
+
+Shared Variance on Each Canonical Variate:
+
+       CV 1        CV 2        CV 3 
+0.861276511 0.029549317 0.005094395 
+
+Bartlett's Chi-Squared Test:
+
+          rho^2      Chisq df Pr(&gt;X)    
+CV 1 8.6128e-01 2.9251e+02  9 &lt;2e-16 ***
+CV 2 2.9549e-02 5.1074e+00  4 0.2765    
+CV 3 5.0944e-03 7.4313e-01  1 0.3887    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+
+Canonical Variate Coefficients:
+
+    X Vars:
+                          CV 1       CV 2        CV 3
+Tempo_Sessao      -0.009488142 -0.2755513  0.02245737
+Paginas_Visitadas  0.034733717  0.2495045 -0.66226675
+Itens_Carrinho     0.362241342  0.3286780  1.43309331
+
+    Y Vars:
+                           CV 1        CV 2         CV 3
+Valor_Medio_Compra  0.004451491 -0.02943845 -0.007879572
+Frequencia_Compra  -0.017596797 -0.10773217  0.773184396
+Itens_Comprados     0.292365687  1.06268946  0.263760781
+
+
+Structural Correlations (Loadings):
+
+    X Vars:
+                       CV 1        CV 2        CV 3
+Tempo_Sessao      0.8865065 -0.44642673 -0.12169386
+Paginas_Visitadas 0.9709651 -0.05245552 -0.23339913
+Itens_Carrinho    0.9986893 -0.03107348  0.04067126
+
+    Y Vars:
+                         CV 1       CV 2        CV 3
+Valor_Medio_Compra 0.96499076 -0.2618813 -0.01452731
+Frequencia_Compra  0.04412846 -0.2520768  0.96670056
+Itens_Comprados    0.98948887  0.1384335  0.04180837
+
+
+Fractional Variance Deposition on Canonical Variates:
+
+    X Vars:
+                       CV 1         CV 2        CV 3
+Tempo_Sessao      0.7858938 0.1992968288 0.014809396
+Paginas_Visitadas 0.9427733 0.0027515811 0.054475155
+Itens_Carrinho    0.9973803 0.0009655609 0.001654151
+
+    Y Vars:
+                          CV 1       CV 2         CV 3
+Valor_Medio_Compra 0.931207165 0.06858179 0.0002110428
+Frequencia_Compra  0.001947321 0.06354271 0.9345099732
+Itens_Comprados    0.979088217 0.01916384 0.0017479399
+
+
+Canonical Communalities (Fraction of Total Variance
+Explained for Each Variable, Within Sets):
+
+    X Vars:
+     Tempo_Sessao Paginas_Visitadas    Itens_Carrinho 
+                1                 1                 1 
+
+    Y Vars:
+Valor_Medio_Compra  Frequencia_Compra    Itens_Comprados 
+                 1                  1                  1 
+
+
+Canonical Variate Adequacies (Fraction of Total Variance
+Explained by Each CV, Within Sets):
+
+
+    X Vars:
+      CV 1       CV 2       CV 3 
+0.90868244 0.06767132 0.02364623 
+
+    Y Vars:
+      CV 1       CV 2       CV 3 
+0.63741423 0.05042945 0.31215632 
+
+
+Redundancy Coefficients (Fraction of Total Variance
+Explained by Each CV, Across Sets):
+
+
+    X | Y:
+        CV 1         CV 2         CV 3 
+0.7826268436 0.0019996414 0.0001204633 
+
+    Y | X:
+       CV 1        CV 2        CV 3 
+0.548989908 0.001490156 0.001590248 
+
+
+Aggregate Redundancy Coefficients (Total Variance
+Explained by All CVs, Across Sets):
+
+    X | Y: 0.7847469 
+    Y | X: 0.5520703 </code></pre>
+</div>
+</div>
+<p>Podemos observar que, apenas o primeiro par de variáveis canônicas é estatisticamente significativo (<code>p&lt;2e−16</code>), com uma forte correlação de 0,928. Isso indica que há uma relação linear robusta entre o conjunto de variáveis de navegação no site e o conjunto de variáveis de compra. Os pares canônicos subsequentes (<code>CV 2</code> e <code>CV 3</code>) não são significativos, o que significa que o primeiro par já captura a maior parte da relação.</p>
+<section id="interpretação-do-primeiro-par-canônico" class="level2">
+<h2 class="anchored" data-anchor-id="interpretação-do-primeiro-par-canônico">Interpretação do Primeiro Par Canônico</h2>
+<p>A análise das correlações de estrutura (<code>loadings</code>) revela o que cada variável canônica representa:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cca_model<span class="sc">$</span>xstructcorr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                       CV 1        CV 2        CV 3
+Tempo_Sessao      0.8865065 -0.44642673 -0.12169386
+Paginas_Visitadas 0.9709651 -0.05245552 -0.23339913
+Itens_Carrinho    0.9986893 -0.03107348  0.04067126</code></pre>
+</div>
+</div>
+<ul>
+<li>Variável Canônica de Navegação (<code>CV 1</code> = <span class="math inline">\(U_1\)</span>): Esta variável é fortemente correlacionada com <code>Itens_Carrinho</code> (0,998), <code>Paginas_Visitadas</code> (0,970) e <code>Tempo_Sessao</code> (0,886). Portanto, esta variável pode ser interpretada como “Engajamento no Site”. Clientes com alto engajamento tendem a passar mais tempo no site, visitar mais páginas e adicionar mais itens ao carrinho.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cca_model<span class="sc">$</span>ystructcorr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                         CV 1       CV 2        CV 3
+Valor_Medio_Compra 0.96499076 -0.2618813 -0.01452731
+Frequencia_Compra  0.04412846 -0.2520768  0.96670056
+Itens_Comprados    0.98948887  0.1384335  0.04180837</code></pre>
+</div>
+</div>
+<ul>
+<li>Variável Canônica de Compra (<code>CV 1</code> = <span class="math inline">\(V_1\)</span>): Esta variável é fortemente correlacionada com <code>Itens_Comprados</code> (0,989) e <code>Valor_Medio_Compra</code> (0,964). A correlação com <code>Frequencia_Compra</code> (0,044) é muito baixa. Isso sugere que este variável representa o “Valor e Volume de Compra” e não a frequência.</li>
+</ul>
+</section>
+<section id="análise-de-redundância" class="level2">
+<h2 class="anchored" data-anchor-id="análise-de-redundância">Análise de Redundância</h2>
+<p>Os coeficientes de redundância indicam a capacidade de um conjunto de variáveis explicar a variância do outro:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cca_model<span class="sc">$</span>xvrd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        CV 1         CV 2         CV 3 
+0.7826268436 0.0019996414 0.0001204633 </code></pre>
+</div>
+</div>
+<p>A redundância de X em relação a Y é de 0,782. Isso significa que 78,2% da variância no conjunto de variáveis de navegação (X) é explicada pelo primeiro variável canônico de compra (Y).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cca_model<span class="sc">$</span>yvrd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       CV 1        CV 2        CV 3 
+0.548989908 0.001490156 0.001590248 </code></pre>
+</div>
+</div>
+<p>A redundância de Y em relação a X é de 0,549. Isso significa que 54,9% da variância no conjunto de variáveis de compra (Y) é explicada pelo primeiro variável canônico de navegação (X).</p>
+</section>
+<section id="estratégias-de-marketing-baseadas-na-análise-canônica" class="level2">
+<h2 class="anchored" data-anchor-id="estratégias-de-marketing-baseadas-na-análise-canônica">Estratégias de Marketing Baseadas na Análise Canônica</h2>
+<p>A análise de correlação canônica confirmou que existe uma relação comprovada entre o engajamento do cliente no site (medido por tempo, páginas e itens no carrinho) e o valor total de suas compras.</p>
+<p>No entanto, a análise revelou um ponto crucial para a estratégia: a correlação forte foi com o valor e o volume de compra, e não com a frequência de compras. Isso significa que as estratégias devem focar em fazer com que cada visita ao site seja mais valiosa, em vez de necessariamente aumentar o número de vezes que o cliente compra.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -845,7 +1063,7 @@ $ Itens_Carrinho     &lt;int&gt; 8, 8, 6, 10, 5, 3, 4, 5, 9, 11, 2, 3, 6, 1, 5, 
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/tiagomartin/est022/edit/main/analises_dados/acc.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est022/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tiagomartin/est022/edit/main/analises_dados/acc.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est022/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Página construída usando <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
